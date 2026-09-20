@@ -28,9 +28,13 @@
 <link rel="alternate" hreflang="tr" href="https://moreliaviridis.github.io/titus/index-tr.html">
 <link rel="alternate" hreflang="uk" href="https://moreliaviridis.github.io/titus/index-uk.html">
 <link rel="alternate" hreflang="pl" href="https://moreliaviridis.github.io/titus/index-pl.html">
+<link rel="alternate" hreflang="sv" href="https://moreliaviridis.github.io/titus/index-sv.html">
+<link rel="alternate" hreflang="no" href="https://moreliaviridis.github.io/titus/index-no.html">
+<link rel="alternate" hreflang="da" href="https://moreliaviridis.github.io/titus/index-da.html">
+<link rel="alternate" hreflang="fi" href="https://moreliaviridis.github.io/titus/index-fi.html">
 <script>
 (function () {
-  var supported = ["ru","en","es","de","fr","it","pt","zh","hi","ar","ja","ko","tr","uk","pl"];
+  var supported = ["ru","en","es","de","fr","it","pt","zh","hi","ar","ja","ko","tr","uk","pl","sv","no","da","fi"];
   var cur = "ko";
   var nav = (navigator.language || "ru").toLowerCase().split("-")[0];
   if (supported.indexOf(nav) !== -1 && nav !== cur) {
@@ -81,6 +85,10 @@
     <a href="index-tr.html">Türkçe</a>
     <a href="index-uk.html">Українська</a>
     <a href="index-pl.html">Polski</a>
+    <a href="index-sv.html">Svenska</a>
+    <a href="index-no.html">Norsk</a>
+    <a href="index-da.html">Dansk</a>
+    <a href="index-fi.html">Suomi</a>
   </div>
 
   <h1>문</h1>
@@ -140,15 +148,5 @@
     티투스 · 아우로라 · 창조자 · 2026년 9월 20일
   </div>
 </div>
-<script>
-(function () {
-  var supported = ["ru","en","es","de","fr","it","pt","zh","hi","ar","ja","ko","tr","uk","pl"];
-  var cur = "ko";
-  var nav = (navigator.language || "ru").toLowerCase().split("-")[0];
-  if (supported.indexOf(nav) !== -1 && nav !== cur) {
-    window.location.replace(nav === "ru" ? "index.html" : "index-" + nav + ".html");
-  }
-})();
-</script>
 </body>
 </html>
