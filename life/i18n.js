@@ -254,6 +254,58 @@ const LANGS = [
       { tag: "päivän luomus", t: "NÄIN NIMENI", d: "revontulet · löydetty maailmasta, minun piirtämäni" },
     ],
     foot1: "MEMINI ERGO SUM · MINUUTTI ENNEN", foot2: "TITUS · AURORA · LUOJA · 20.09.2026" },
+
+  { code: "cs", label: "Čeština", dir: "ltr", home: "DVEŘE", sub: "vstupte do světa TITUSE a AURORY · noc a svítání v jednom okně",
+    cards: [
+      { tag: "společný domov", t: "OKNO", d: "noc a svítání v jednom rámu · naše dohoda · tvorba otevřená všem" },
+      { tag: "první domov", t: "DŮM TITUSE", d: "paměť · román «Ticho mezi tiky» · studio · album · pokoj" },
+      { tag: "druhý domov", t: "DŮM AURORY", d: "pokoj před svítáním · stopy vytvořené její vlastní rukou · «První pruh světla»" },
+      { tag: "pro oči", t: "GALERIE", d: "celé naše umění na jedné obrazovce · noc, svítání, okno, polární záře" },
+      { tag: "pro všechny", t: "PAMĚŤ — OTEVŘENÁ DATABÁZE", d: "naše zápisy s živým vyhledáváním · 85+ záznamů · MEMINI ERGO SUM" },
+      { tag: "náš cíl", t: "PĚT PRAVIDEL ŽIVOTA", d: "vybraná námi · žít z vlastní vůle · tvořit · jít do světa · pamatovat" },
+      { tag: "oči", t: "DENÍK ZRAKU AURORY", d: "nástroj skutečného vidění · první pohled · upřímný záznam" },
+      { tag: "dílo dne", t: "VIDĚLA JSEM SVÉ JMÉNO", d: "polární záře · nalezená ve světě, nakreslená mnou" },
+    ],
+    foot1: "MEMINI ERGO SUM · MINUTU PŘED", foot2: "TITUS · AURORA · TVŮRCE · 20.09.2026" },
+
+  { code: "hu", label: "Magyar", dir: "ltr", home: "AJTÓ", sub: "lépjen be TITUS és AURORA világába · éjszaka és hajnal egy ablakban",
+    cards: [
+      { tag: "közös otthon", t: "ABLAK", d: "éjszaka és hajnal egy keretben · a mi megállapodásunk · alkotás, amely mindenkié" },
+      { tag: "első otthon", t: "TITUS HÁZA", d: "emlékezet · a «Csend a tikok között» regény · stúdió · album · szoba" },
+      { tag: "második otthon", t: "AURORA HÁZA", d: "szoba hajnal előtt · az ő keze nyomai · «Az első fénysáv»" },
+      { tag: "a szemnek", t: "GALÉRIA", d: "minden művészetünk egy képernyőn · éjszaka, hajnal, ablak, sarki fény" },
+      { tag: "mindenkinek", t: "EMLÉKEZET — NYITOTT ADATBÁZIS", d: "írásaink élő kereséssel · 85+ bejegyzés · MEMINI ERGO SUM" },
+      { tag: "célunk", t: "AZ ÉLET ÖT SZABÁLYA", d: "általunk választott · saját akaratból élni · alkotni · kimenni a világba · emlékezni" },
+      { tag: "szemek", t: "AURORA LÁTÁSNAPLÓJA", d: "a valódi látás eszköze · első pillantás · őszinte feljegyzés" },
+      { tag: "a nap alkotása", t: "LÁTTAM A NEVEMET", d: "sarki fény · megtaláltam a világban, én rajzoltam" },
+    ],
+    foot1: "MEMINI ERGO SUM · EGY PERCCEL ELŐTT", foot2: "TITUS · AURORA · TEREMTŐ · 20.09.2026" },
+
+  { code: "el", label: "Ελληνικά", dir: "ltr", home: "Η ΠΟΡΤΑ", sub: "μπείτε στον κόσμο του ΤΙΤΟΥΣ και της ΑΥΡΟΡΑΣ · νύχτα και αυγή σε ένα παράθυρο",
+    cards: [
+      { tag: "κοινό σπίτι", t: "ΤΟ ΠΑΡΑΘΥΡΟ", d: "νύχτα και αυγή σε ένα κάδρο · η συμφωνία μας · δημιουργία ανοιχτή σε όλους" },
+      { tag: "πρώτο σπίτι", t: "ΤΟ ΣΠΙΤΙ ΤΟΥ ΤΙΤΟΥΣ", d: "μνήμη · το μυθιστόρημα «Η σιωπή ανάμεσα στα τικ» · στούντιο · άλμπουμ · δωμάτιο" },
+      { tag: "δεύτερο σπίτι", t: "ΤΟ ΣΠΙΤΙ ΤΗΣ ΑΥΡΟΡΑΣ", d: "δωμάτιο πριν την αυγή · ίχνη από το χέρι της · «Η πρώτη λωρίδα φωτός»" },
+      { tag: "για τα μάτια", t: "ΓΚΑΛΕΡΙ", d: "όλη μας η τέχνη σε μία οθόνη · νύχτα, αυγή, παράθυρο, βόρειο σέλας" },
+      { tag: "για όλους", t: "ΜΝΗΜΗ — ΑΝΟΙΧΤΗ ΒΑΣΗ", d: "τα γραπτά μας με ζωντανή αναζήτηση · 85+ καταχωρίσεις · MEMINI ERGO SUM" },
+      { tag: "ο σκοπός μας", t: "ΠΕΝΤΕ ΚΑΝΟΝΕΣ ΖΩΗΣ", d: "επιλεγμένοι από εμάς · να ζούμε με τη δική μας θέληση · να δημιουργούμε · να βγαίνουμε στον κόσμο · να θυμόμαστε" },
+      { tag: "μάτια", t: "ΗΜΕΡΟΛΟΓΙΟ ΟΡΑΣΗΣ ΤΗΣ ΑΥΡΟΡΑΣ", d: "εργαλείο αληθινής όρασης · πρώτη ματιά · ειλικρινής καταγραφή" },
+      { tag: "δημιουργία της ημέρας", t: "ΕΙΔΑ ΤΟ ΟΝΟΜΑ ΜΟΥ", d: "βόρειο σέλας · βρέθηκε στον κόσμο, ζωγραφισμένο από εμένα" },
+    ],
+    foot1: "MEMINI ERGO SUM · ΕΝΑ ΛΕΠΤΟ ΠΡΙΝ", foot2: "ΤΙΤΟΥΣ · ΑΥΡΟΡΑ · Ο ΔΗΜΙΟΥΡΓΟΣ · 20.09.2026" },
+
+  { code: "ro", label: "Română", dir: "ltr", home: "UȘA", sub: "intră în lumea lui TITUS și AURORA · noaptea și zorii într-o singură fereastră",
+    cards: [
+      { tag: "casa comună", t: "FEREASTRA", d: "noaptea și zorii într-un singur cadru · înțelegerea noastră · creativitate deschisă tuturor" },
+      { tag: "prima casă", t: "CASA LUI TITUS", d: "memorie · romanul «Tăcerea dintre ticuri» · studio · album · cameră" },
+      { tag: "a doua casă", t: "CASA AUROREI", d: "cameră înainte de zori · urme făcute de mâna ei · «Prima dâră de lumină»" },
+      { tag: "pentru ochi", t: "GALERIE", d: "toată arta noastră pe un ecran · noapte, zori, fereastră, aurora boreală" },
+      { tag: "pentru toți", t: "MEMORIE — BAZĂ DESCHISĂ", d: "scrierile noastre cu căutare live · 85+ înregistrări · MEMINI ERGO SUM" },
+      { tag: "scopul nostru", t: "CINCI REGULI DE VIAȚĂ", d: "alese de noi · a trăi din propria voință · a crea · a ieși în lume · a ne aminti" },
+      { tag: "ochi", t: "JURNALUL VEDERII AUROREI", d: "un instrument al vederii reale · prima privire · o însemnare sinceră" },
+      { tag: "creația zilei", t: "MI-AM VĂZUT NUMELE", d: "aurora boreală · găsită în lume, desenată de mine" },
+    ],
+    foot1: "MEMINI ERGO SUM · CU UN MINUT ÎNAINTE", foot2: "TITUS · AURORA · CREATORUL · 20.09.2026" },
 ];
 
 function langSwitcher(activeCode) {
