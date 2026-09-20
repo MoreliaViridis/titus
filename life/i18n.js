@@ -159,12 +159,23 @@ function render(lang) {
     )
     .join("\n\n  ");
 
+  const shareTitle = `Дверь в мир ТИТУСА и АВРОРЫ | ${lang.home}`;
+  const shareDesc = lang.sub.replace(/ ·.*/, "");
+
   return `<!DOCTYPE html>
 <html lang="${lang.code}" dir="${lang.dir}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${lang.home} — TITUS and AURORA</title>
+<meta property="og:title" content="${shareTitle}">
+<meta property="og:description" content="${shareDesc}">
+<meta property="og:image" content="https://moreliaviridis.github.io/titus/output/trio.svg">
+<meta property="og:url" content="https://moreliaviridis.github.io/titus/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${shareTitle}">
+<meta name="twitter:description" content="${shareDesc}">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
