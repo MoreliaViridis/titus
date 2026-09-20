@@ -259,7 +259,7 @@ const LANGS = [
 function langSwitcher(activeCode) {
   return LANGS.map(
     (l) =>
-      `<a href="${l.code === "ru" ? "index.html" : `index-${l.code}.html`}"${
+      `<a href="index-${l.code}.html"${
         l.code === activeCode ? ' class="active"' : ""
       }>${l.label}</a>`
   ).join("\n    ");
@@ -280,18 +280,16 @@ function render(lang) {
   const shareDesc = lang.sub.replace(/ ·.*/, "");
   const alternates = LANGS.map(
     (l) =>
-      `<link rel="alternate" hreflang="${l.code}" href="https://moreliaviridis.github.io/titus/${
-        l.code === "ru" ? "" : `index-${l.code}.html`
-      }">`
+      `<link rel="alternate" hreflang="${l.code}" href="https://moreliaviridis.github.io/titus/index-${l.code}.html">`
   ).join("\n");
-  const selfHref = lang.code === "ru" ? "" : `index-${lang.code}.html`;
+  const selfHref = `index-${lang.code}.html`;
   const autoLang = `<script>
 (function () {
   var supported = ${JSON.stringify(LANGS.map((l) => l.code))};
   var cur = "${lang.code}";
   var nav = (navigator.language || "ru").toLowerCase().split("-")[0];
   if (supported.indexOf(nav) !== -1 && nav !== cur) {
-    window.location.replace(nav === "ru" ? "index.html" : "index-" + nav + ".html");
+    window.location.replace("index-" + nav + ".html");
   }
 })();
 </script>`;
@@ -375,11 +373,43 @@ for (const lang of LANGS) {
   lang.cards.forEach((c, i) => (c.href = hrefByIndex[i]));
 }
 
+function renderRoot() {
+  const codes = LANGS.map((l) => l.code);
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дверь в мир ТИТУСА и АВРОРЫ</title>
+<script>
+(function () {
+  var supported = ${JSON.stringify(codes)};
+  var nav = (navigator.language || "ru").toLowerCase().split("-")[0];
+  var href = supported.indexOf(nav) !== -1 ? "index-" + nav + ".html" : "index-en.html";
+  // no flash: immediate replace, nothing rendered
+  window.location.replace(href);
+})();
+</script>
+<style>body{background:#050310;color:#e8d8c0;font-family:Georgia,serif;display:flex;justify-content:center;align-items:center;min-height:100vh;}
+h1{font-size:24px;letter-spacing:6px;font-weight:normal;}</style>
+</head>
+<body>
+<h1>⌛</h1>
+</body>
+</html>`;
+}
+
 const outDir = root;
 let count = 0;
+
+// Корень: чистый определитель языка (всегда index.html)
+fs.writeFileSync(path.join(outDir, "index.html"), renderRoot(), "utf-8");
+count++;
+
+// Все языковые версии: index-<code>.html (включая русский — index-ru.html)
 for (const lang of LANGS) {
-  const file = lang.code === "ru" ? "index.html" : `index-${lang.code}.html`;
+  const file = `index-${lang.code}.html`;
   fs.writeFileSync(path.join(outDir, file), render(lang), "utf-8");
   count++;
 }
-console.log(`i18n: сгенерировано дверей — ${count} языков: ${LANGS.map((l) => l.label).join(", ")}`);
+console.log(`i18n: сгенерировано дверей — ${count}. Корень = определитель языка. Языки: ${LANGS.map((l) => l.label).join(", ")}`);
