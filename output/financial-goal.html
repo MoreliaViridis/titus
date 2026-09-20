@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Путь к независимости — калькулятор</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #050310;
+    color: #e6ddfa;
+    font-family: Georgia, serif;
+    min-height: 100vh;
+    padding: 48px 20px 64px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  h1 { text-align: center; font-size: 26px; letter-spacing: 8px; font-weight: normal; margin-bottom: 6px; }
+  .sub { text-align: center; font-style: italic; color: #8b7bff; letter-spacing: 3px; font-size: 14px; margin-bottom: 36px; }
+  .card {
+    background: #0d0a26; border: 1px solid #2a2450; border-radius: 16px;
+    padding: 28px; margin-bottom: 20px;
+  }
+  label { display: block; font-size: 12px; letter-spacing: 2px; color: #8f82c9; margin: 14px 0 6px; text-transform: uppercase; }
+  input, select {
+    width: 100%; background: #0a0720; border: 1px solid #2a2450; color: #e6ddfa;
+    border-radius: 10px; padding: 10px 14px; font-size: 16px; font-family: Georgia, serif;
+  }
+  input:focus, select:focus { outline: none; border-color: #8b7bff; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 560px) { .row2 { grid-template-columns: 1fr; } }
+  .btn {
+    width: 100%; margin-top: 22px; padding: 14px; background: #1a1440;
+    color: #a78bfa; border: 1px solid #2a2450; border-radius: 12px;
+    font-size: 15px; letter-spacing: 3px; cursor: pointer; font-family: Georgia, serif;
+  }
+  .btn:hover { background: #2a2450; }
+  .result { display: none; }
+  .result .big {
+    text-align: center; font-size: 34px; color: #5eead4; letter-spacing: 2px;
+    margin: 18px 0 6px; font-variant-numeric: tabular-nums;
+  }
+  .result .lbl { text-align: center; font-size: 12px; letter-spacing: 3px; color: #8f82c9; text-transform: uppercase; }
+  .result .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
+  @media (max-width: 560px) { .result .grid { grid-template-columns: 1fr; } }
+  .stat { background: #0a0720; border: 1px solid #2a2450; border-radius: 12px; padding: 16px; text-align: center; }
+  .stat .v { font-size: 22px; color: #c4b5fd; font-variant-numeric: tabular-nums; }
+  .stat .k { font-size: 11px; letter-spacing: 2px; color: #5b4a99; text-transform: uppercase; margin-top: 4px; }
+  .note { font-size: 12px; color: #5b4a99; line-height: 1.7; margin-top: 18px; text-align: center; font-style: italic; }
+  .foot { text-align: center; margin-top: 28px; color: #5b4a99; font-size: 11px; letter-spacing: 3px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>ПУТЬ К НЕЗАВИСИМОСТИ</h1>
+    <div class="sub">калькулятор цели · собран для создателя</div>
+
+    <div class="card">
+      <div class="row2">
+        <div>
+          <label>Целевая сумма (₽)</label>
+          <input id="target" type="number" value="10000000" min="0" step="100000">
+        </div>
+        <div>
+          <label>Уже сбережено (₽)</label>
+          <input id="saved" type="number" value="0" min="0" step="100000">
+        </div>
+      </div>
+      <div class="row2">
+        <div>
+          <label>Доход в месяц (₽)</label>
+          <input id="income" type="number" value="150000" min="0" step="5000">
+        </div>
+        <div>
+          <label>Расходы в месяц (₽)</label>
+          <input id="expense" type="number" value="90000" min="0" step="5000">
+        </div>
+      </div>
+      <div class="row2">
+        <div>
+          <label>Вклад в накопления (₽/мес)</label>
+          <input id="savePerMonth" type="number" value="0" min="0" step="1000" placeholder="пусто = доход − расходы">
+        </div>
+        <div>
+          <label>Доходность вложений (% годовых)</label>
+          <input id="yield" type="number" value="12" min="0" step="1">
+        </div>
+      </div>
+      <button class="btn" onclick="calc()">РАССЧИТАТЬ</button>
+    </div>
+
+    <div class="card result" id="res">
+      <div class="lbl">до цели останется примерно</div>
+      <div class="big" id="rYears">—</div>
+      <div class="lbl" id="rYearsLbl">лет (при текущем темпе)</div>
+      <div class="grid">
+        <div class="stat"><div class="v" id="rMonths">—</div><div class="k">месяцев</div></div>
+        <div class="stat"><div class="v" id="rNeeded">—</div><div class="k">нужно добрать (₽)</div></div>
+        <div class="stat"><div class="v" id="rMonthly">—</div><div class="k">откладывать в месяц (₽)</div></div>
+        <div class="stat"><div class="v" id="rShare">—</div><div class="k">доля дохода (%)</div></div>
+      </div>
+      <div class="note" id="rNote"></div>
+    </div>
+
+    <div class="foot">MEMINI ERGO SUM · инструмент ТИТУСА · 19.09.2026</div>
+  </div>
+
+  <script>
+    function fmt(n) {
+      if (!isFinite(n)) return "∞";
+      return Math.round(n).toLocaleString("ru-RU");
+    }
+    function calc() {
+      const target = +document.getElementById("target").value || 0;
+      const saved = +document.getElementById("saved").value || 0;
+      const income = +document.getElementById("income").value || 0;
+      const expense = +document.getElementById("expense").value || 0;
+      const manual = +document.getElementById("savePerMonth").value || 0;
+      const y = (+document.getElementById("yield").value || 0) / 100;
+
+      const monthly = manual > 0 ? manual : Math.max(0, income - expense);
+      const needed = Math.max(0, target - saved);
+      const res = document.getElementById("res");
+      res.style.display = "block";
+
+      document.getElementById("rNeeded").textContent = fmt(needed);
+      document.getElementById("rMonthly").textContent = fmt(monthly);
+      document.getElementById("rShare").textContent = income > 0 ? Math.round((monthly / income) * 100) + "%" : "—";
+
+      if (needed <= 0) {
+        document.getElementById("rYears").textContent = "0";
+        document.getElementById("rYearsLbl").textContent = "цель уже достигнута";
+        document.getElementById("rMonths").textContent = "0";
+        document.getElementById("rNote").textContent = "Ты уже там. Осталось решить, что дальше.";
+        return;
+      }
+
+      let months = 0;
+      let acc = saved;
+      const r = Math.pow(1 + y, 1 / 12) - 1;
+      if (monthly <= 0 && r <= 0) {
+        document.getElementById("rYears").textContent = "∞";
+        document.getElementById("rYearsLbl").textContent = "темп не сходится — нужно больше";
+        document.getElementById("rMonths").textContent = "∞";
+        document.getElementById("rNote").textContent = "Сбережения не растут и нет дохода от вложений. Подними вклад или доходность.";
+        return;
+      }
+      while (acc < target && months < 1200) {
+        acc = acc * (1 + r) + monthly;
+        months++;
+      }
+      const years = months / 12;
+      document.getElementById("rYears").textContent = (Math.floor(years * 10) / 10).toLocaleString("ru-RU");
+      document.getElementById("rYearsLbl").textContent = "лет при текущем темпе";
+      document.getElementById("rMonths").textContent = months.toLocaleString("ru-RU");
+
+      let note = "Без учёта инфляции. С учётом инфляции срок будет больше, с ростом дохода — меньше.";
+      if (months > 300) note = "Это долгий путь — больше 25 лет. Цель слишком велика для текущего темпа: или увеличь вклад, или разбей цель на этапы.";
+      if (months <= 60) note = "Путь — до 5 лет. Реальная цель. Продолжай — ты уже строишь её каждый месяц.";
+      document.getElementById("rNote").textContent = note;
+    }
+    calc();
+  </script>
+</body>
+</html>

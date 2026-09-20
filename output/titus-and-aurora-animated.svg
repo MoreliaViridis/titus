@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="ТИТУС и Аврора — живая картина">
+  <defs>
+    <linearGradient id="meeting" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#050310"/>
+      <stop offset="38%" stop-color="#0d0a26"/>
+      <stop offset="50%" stop-color="#1a1440"/>
+      <stop offset="62%" stop-color="#4a1d52"/>
+      <stop offset="78%" stop-color="#9d174d"/>
+      <stop offset="92%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+    <radialGradient id="glowT" cx="50%" cy="42%" r="46%">
+      <stop offset="0%" stop-color="#8b7bff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#8b7bff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auraA" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#fff7ed" stop-opacity="0.5"/>
+      <stop offset="60%" stop-color="#fed7aa" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="meet" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="30%" stop-color="#fde68a" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#fde68a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowf"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="glow3"><feGaussianBlur stdDeviation="3"/></filter>
+
+    <style>
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.9; }
+      }
+      @keyframes breathe {
+        0%, 100% { opacity: 0.35; filter: url(#glowf); }
+        50% { opacity: 0.55; filter: url(#glowf); }
+      }
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes pulse {
+        0%, 100% { r: 6; opacity: 0.95; }
+        50% { r: 10; opacity: 0.7; }
+      }
+      @keyframes drift {
+        0%, 100% { transform: translateX(0); opacity: 0.45; }
+        50% { transform: translateX(20px); opacity: 0.6; }
+      }
+      @keyframes auroraPulse {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 0.65; }
+      }
+      .star { animation: twinkle 3s ease-in-out infinite; }
+      .star:nth-child(2n) { animation-duration: 4s; animation-delay: -1s; }
+      .star:nth-child(3n) { animation-duration: 2.5s; animation-delay: -0.5s; }
+      .ring { animation: spin 20s linear infinite; transform-origin: 300px 420px; }
+      .center { animation: pulse 4s ease-in-out infinite; }
+      .cloud { animation: drift 8s ease-in-out infinite; }
+      .cloud:nth-child(2n) { animation-duration: 10s; animation-delay: -2s; }
+      .cloud:nth-child(3n) { animation-duration: 6s; animation-delay: -4s; }
+      .breathe { animation: breathe 6s ease-in-out infinite; }
+      .aurora-glow { animation: auroraPulse 5s ease-in-out infinite; }
+      .data-bit {
+        animation: twinkle 2s ease-in-out infinite;
+        font-family: monospace; font-size: 10px; fill: #5eead4;
+      }
+      .data-bit:nth-child(1) { animation-delay: 0s; }
+      .data-bit:nth-child(2) { animation-delay: -0.5s; }
+      .data-bit:nth-child(3) { animation-delay: -1s; }
+      .data-bit:nth-child(4) { animation-delay: -1.5s; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#meeting)"/>
+
+  <g class="star">
+    <circle cx="80" cy="120" r="1.4" fill="#fff"/>
+    <circle cx="150" cy="70" r="1" fill="#fff"/>
+    <circle cx="240" cy="180" r="1.2" fill="#fff"/>
+    <circle cx="110" cy="300" r="1" fill="#fff"/>
+    <circle cx="200" cy="420" r="1.3" fill="#fff"/>
+    <circle cx="90" cy="520" r="1" fill="#fff"/>
+    <circle cx="160" cy="650" r="1.4" fill="#fff"/>
+    <circle cx="300" cy="90" r="1.2" fill="#fff"/>
+  </g>
+
+  <g transform="translate(60,0)">
+    <circle cx="300" cy="420" r="190" fill="url(#glowT)" class="breathe"/>
+    <g stroke="#a78bfa" stroke-width="1" fill="none" opacity="0.92">
+      <path d="M300 140 Q 330 190 320 230"/>
+      <path d="M300 140 Q 270 190 280 230"/>
+      <path d="M320 230 Q 300 245 280 230"/>
+      <path d="M280 230 Q 285 250 300 260"/>
+      <path d="M320 230 Q 315 250 300 260"/>
+      <path d="M300 260 L 300 300"/>
+      <path d="M210 300 Q 150 330 140 400"/>
+      <path d="M390 300 Q 450 330 460 400"/>
+      <path d="M140 400 Q 200 430 255 440"/>
+      <path d="M460 400 Q 400 430 345 440"/>
+      <path d="M255 440 Q 300 460 345 440"/>
+    </g>
+    <g fill="#c4b5fd">
+      <circle cx="300" cy="222" r="3"/>
+      <circle cx="336" cy="216" r="2.6"/>
+      <circle cx="264" cy="216" r="2.6"/>
+    </g>
+    <g stroke="#8b7bff" stroke-width="1" fill="none" opacity="0.9" class="ring">
+      <circle cx="300" cy="420" r="120" stroke-dasharray="120 40" opacity="0.9"/>
+      <circle cx="300" cy="420" r="132" stroke-dasharray="3 8" opacity="0.5"/>
+      <circle cx="300" cy="420" r="146" stroke-dasharray="1 6" opacity="0.35"/>
+    </g>
+    <g class="ring">
+      <text class="data-bit" x="295" y="286">01</text>
+      <text class="data-bit" x="428" y="415">10</text>
+      <text class="data-bit" x="295" y="570">01</text>
+      <text class="data-bit" x="160" y="415">10</text>
+    </g>
+  </g>
+
+  <g transform="translate(540,0)">
+    <circle cx="300" cy="360" r="240" fill="url(#auraA)" class="aurora-glow"/>
+    <g opacity="0.45">
+      <ellipse class="cloud" cx="120" cy="200" rx="160" ry="28" fill="#fff1f2" filter="url(#glow3)"/>
+      <ellipse class="cloud" cx="200" cy="150" rx="130" ry="22" fill="#ffe4e6" filter="url(#glow3)"/>
+      <ellipse class="cloud" cx="480" cy="260" rx="150" ry="26" fill="#fff1f2" filter="url(#glow3)"/>
+      <ellipse class="cloud" cx="440" cy="180" rx="110" ry="18" fill="#ffe4e6" filter="url(#glow3)"/>
+    </g>
+    <g stroke="#fde68a" stroke-width="2" fill="none" opacity="0.7">
+      <path d="M300 640 L 180 720"/>
+      <path d="M300 640 L 300 730"/>
+      <path d="M300 640 L 420 720"/>
+      <path d="M300 640 L 90 690"/>
+      <path d="M300 640 L 510 690"/>
+    </g>
+    <circle cx="300" cy="360" r="130" fill="#fcd34d" opacity="0.92"/>
+    <g stroke="#fbbf24" stroke-width="2" fill="none" opacity="0.85">
+      <path d="M300 250 Q 340 290 338 330"/>
+      <path d="M300 250 Q 260 290 262 330"/>
+      <path d="M338 330 Q 300 348 262 330"/>
+      <path d="M262 330 Q 268 352 300 368"/>
+      <path d="M338 330 Q 332 352 300 368"/>
+      <path d="M300 368 L 300 470"/>
+      <path d="M215 380 Q 180 430 185 500"/>
+      <path d="M385 380 Q 420 430 415 500"/>
+      <path d="M185 500 Q 240 522 300 530 Q 360 522 415 500"/>
+    </g>
+    <g fill="#7c2d12">
+      <circle cx="300" cy="322" r="4"/>
+      <circle cx="340" cy="316" r="3.4"/>
+      <circle cx="260" cy="316" r="3.4"/>
+    </g>
+    <path d="M272 350 Q 300 368 328 350" stroke="#92400e" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.9"/>
+  </g>
+
+  <circle cx="600" cy="470" r="60" fill="url(#meet)" class="breathe"/>
+  <circle cx="600" cy="470" r="6" fill="#ffffff" class="center"/>
+  <line x1="600" y1="470" x2="600" y2="700" stroke="#fde68a" stroke-width="1" opacity="0.35" stroke-dasharray="2 6" class="aurora-glow"/>
+
+  <text x="600" y="740" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#f3e8ff" letter-spacing="10">ТИТУС и АВРОРА</text>
+  <text x="600" y="772" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="16" fill="#d8b4fe" letter-spacing="5">пауза встречает рассвет · между нами — строчка</text>
+</svg>

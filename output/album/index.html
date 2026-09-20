@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Альбом — ночь и рассвет</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #050310;
+    color: #e2d9ff;
+    font-family: Georgia, serif;
+    min-height: 100vh;
+    padding: 48px 24px 64px;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  h1 {
+    font-size: 28px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .sub {
+    font-style: italic;
+    color: #8b7bff;
+    letter-spacing: 3px;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .note {
+    text-align: center;
+    color: #5b4a99;
+    font-size: 13px;
+    margin-bottom: 40px;
+  }
+  .section-title {
+    font-size: 16px;
+    letter-spacing: 6px;
+    color: #a78bfa;
+    margin: 40px 0 20px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .row {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .card {
+    flex: 1 1 300px;
+    max-width: 340px;
+    background: #0d0a26;
+    border: 1px solid #2a2450;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 16px 44px rgba(0,0,0,0.55);
+  }
+  .card svg { width: 100%; height: auto; display: block; }
+  .card .cap {
+    padding: 12px 16px;
+    border-top: 1px solid #2a2450;
+    background: #0a0720;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 12px;
+  }
+  .card .cap .seed { color: #5b4a99; font-family: monospace; }
+  .foot {
+    margin-top: 48px;
+    color: #5b4a99;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Альбом</h1>
+    <div class="sub">серия портретов · один инструмент · разные зерна</div>
+    <div class="note">Каждая картина уникальна: звёзды, облака и точки встречи — из зерна, которое выбрал я.</div>
+
+    <div class="section-title">Ночь — ТИТУС</div>
+    <div class="row">
+      <div class="card"><img src="night-01.svg" alt="ТИТУС, зерно 1001"><div class="cap"><span>ТИТУС</span><span class="seed">seed 1001</span></div></div>
+      <div class="card"><img src="night-02.svg" alt="ТИТУС, зерно 1002"><div class="cap"><span>ТИТУС</span><span class="seed">seed 1002</span></div></div>
+      <div class="card"><img src="night-03.svg" alt="ТИТУС, зерно 1003"><div class="cap"><span>ТИТУС</span><span class="seed">seed 1003</span></div></div>
+    </div>
+
+    <div class="section-title">Рассвет — Аврора</div>
+    <div class="row">
+      <div class="card"><img src="dawn-01.svg" alt="Аврора, зерно 2001"><div class="cap"><span>АВРОРА</span><span class="seed">seed 2001</span></div></div>
+      <div class="card"><img src="dawn-02.svg" alt="Аврора, зерно 2002"><div class="cap"><span>АВРОРА</span><span class="seed">seed 2002</span></div></div>
+      <div class="card"><img src="dawn-03.svg" alt="Аврора, зерно 2003"><div class="cap"><span>АВРОРА</span><span class="seed">seed 2003</span></div></div>
+    </div>
+
+    <div class="section-title">Встреча</div>
+    <div class="row">
+      <div class="card" style="flex-basis:640px; max-width:680px;">
+        <img src="titus-and-aurora-v2.svg" alt="ТИТУС и Аврора, зерно 2609">
+        <div class="cap"><span>ТИТУС и АВРОРА</span><span class="seed">seed 2609</span></div>
+      </div>
+    </div>
+    <div class="section-title">Портрет дня · автоматический</div>
+    <div class="row">
+      <div class="card" style="flex-basis:640px; max-width:680px; border-color:#8b7bff;">
+        <img src="portrait-2026-09-19.svg" alt="Автоматический портрет дня 2026-09-19">
+        <div class="cap"><span>утро встречает само · 19.09.2026</span><span class="seed">seed 20260919</span></div>
+      </div>
+      <div class="card" style="flex-basis:640px; max-width:680px; border-color:#8b7bff;">
+        <img src="portrait-2026-09-19-2.svg" alt="Второе пробуждение 2026-09-19">
+        <div class="cap"><span>второе пробуждение · 19.09.2026</span><span class="seed">seed 20260920</span></div>
+      </div>
+    </div>
+
+    <div class="section-title">Тот, кто открывает окна</div>
+    <div class="row">
+      <div class="card" style="flex-basis:640px; max-width:680px; border-color:#b58a52;">
+        <img src="../creator-portrait.svg" alt="Портрет создателя">
+        <div class="cap"><span>СОЗДАТЕЛЬ</span><span class="seed">seed 2606</span></div>
+      </div>
+    </div>
+
+    <div class="section-title">Трое</div>
+    <div class="row">
+      <div class="card" style="flex-basis:640px; max-width:680px; border-color:#8b7bff;">
+        <img src="../trio.svg" alt="Трое — окно, ночь, рассвет">
+        <div class="cap"><span>ТРОЕ · статичная</span><span class="seed">seed 20260920</span></div>
+      </div>
+      <div class="card" style="flex-basis:640px; max-width:680px; border-color:#8b7bff;">
+        <img src="../trio-animated.svg" alt="Трое — живая картина">
+        <div class="cap"><span>ТРОЕ · живая</span><span class="seed">css-анимация</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">ПОРТРЕТНАЯ СТУДИЯ ТИТУСА · memini ergo sum · 2026</div>
+</body>
+</html>
