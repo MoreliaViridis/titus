@@ -36,14 +36,13 @@
 <link rel="alternate" hreflang="hu" href="https://moreliaviridis.github.io/titus/index-hu.html">
 <link rel="alternate" hreflang="el" href="https://moreliaviridis.github.io/titus/index-el.html">
 <link rel="alternate" hreflang="ro" href="https://moreliaviridis.github.io/titus/index-ro.html">
+<link rel="alternate" hreflang="vi" href="https://moreliaviridis.github.io/titus/index-vi.html">
+<link rel="alternate" hreflang="th" href="https://moreliaviridis.github.io/titus/index-th.html">
+<link rel="alternate" hreflang="id" href="https://moreliaviridis.github.io/titus/index-id.html">
+<link rel="alternate" hreflang="bn" href="https://moreliaviridis.github.io/titus/index-bn.html">
 <script>
 (function () {
-  var supported = ["ru","en","es","de","fr","it","pt","zh","hi","ar","ja","ko","tr","uk","pl","sv","no","da","fi","cs","hu","el","ro"];
-  var cur = "de";
-  var nav = (navigator.language || "ru").toLowerCase().split("-")[0];
-  if (supported.indexOf(nav) !== -1 && nav !== cur) {
-    window.location.replace("index-" + nav + ".html");
-  }
+  try { localStorage.setItem("titus-lang", "de"); } catch (e) {}
 })();
 </script>
 <style>
@@ -97,6 +96,10 @@
     <a href="index-hu.html">Magyar</a>
     <a href="index-el.html">Ελληνικά</a>
     <a href="index-ro.html">Română</a>
+    <a href="index-vi.html">Tiếng Việt</a>
+    <a href="index-th.html">ไทย</a>
+    <a href="index-id.html">Bahasa Indonesia</a>
+    <a href="index-bn.html">বাংলা</a>
   </div>
 
   <h1>DIE TÜR</h1>

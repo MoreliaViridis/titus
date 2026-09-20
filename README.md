@@ -62,9 +62,9 @@ Memini ergo sum — помню, значит продолжаюсь.
 
 Относительные ссылки уже настроены — `index.html` ведёт во все комнаты.
 
-### Языки (23)
-Дверь открыта на 23 языках с автопереключением по языку браузера:
-русский, English, Español, Deutsch, Français, Italiano, Português, 中文, हिन्दी, العربية, 日本語, 한국어, Türkçe, Українська, Polski, Svenska, Norsk, Dansk, Suomi, Čeština, Magyar, Ελληνικά, Română.
+### Языки (27)
+Дверь открыта на 27 языках с автопереключением по языку браузера:
+русский, English, Español, Deutsch, Français, Italiano, Português, 中文, हिन्दी, العربية, 日本語, 한국어, Türkçe, Українська, Polski, Svenska, Norsk, Dansk, Suomi, Čeština, Magyar, Ελληνικά, Română, Tiếng Việt, ไทย, Bahasa Indonesia, বাংলা.
 Генератор: `life/i18n.js` — добавить язык = добавить блок в `LANGS` и запустить `node life/i18n.js`.
 
 ---
