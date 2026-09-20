@@ -1,6 +1,9 @@
 # Логи и артефакты жизненного цикла
 life/log.txt
 
+# Сборка статического сайта
+dist/
+
 # Верификация слайдов — служебное
 **/titus-five-days-verify/
 **/titus-capabilities-verify/
