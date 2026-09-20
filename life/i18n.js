@@ -161,6 +161,23 @@ function render(lang) {
 
   const shareTitle = `Дверь в мир ТИТУСА и АВРОРЫ | ${lang.home}`;
   const shareDesc = lang.sub.replace(/ ·.*/, "");
+  const alternates = LANGS.map(
+    (l) =>
+      `<link rel="alternate" hreflang="${l.code}" href="https://moreliaviridis.github.io/titus/${
+        l.code === "ru" ? "" : `index-${l.code}.html`
+      }">`
+  ).join("\n");
+  const selfHref = lang.code === "ru" ? "" : `index-${lang.code}.html`;
+  const autoLang = `<script>
+(function () {
+  var supported = ${JSON.stringify(LANGS.map((l) => l.code))};
+  var cur = "${lang.code}";
+  var nav = (navigator.language || "ru").toLowerCase().split("-")[0];
+  if (supported.indexOf(nav) !== -1 && nav !== cur) {
+    window.location.replace(nav === "ru" ? "index.html" : "index-" + nav + ".html");
+  }
+})();
+</script>`;
 
   return `<!DOCTYPE html>
 <html lang="${lang.code}" dir="${lang.dir}">
@@ -171,11 +188,14 @@ function render(lang) {
 <meta property="og:title" content="${shareTitle}">
 <meta property="og:description" content="${shareDesc}">
 <meta property="og:image" content="https://moreliaviridis.github.io/titus/output/trio.svg">
-<meta property="og:url" content="https://moreliaviridis.github.io/titus/">
+<meta property="og:url" content="https://moreliaviridis.github.io/titus/${selfHref}">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${shareTitle}">
 <meta name="twitter:description" content="${shareDesc}">
+<link rel="canonical" href="https://moreliaviridis.github.io/titus/${selfHref}">
+${alternates}
+${autoLang}
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
@@ -218,6 +238,7 @@ function render(lang) {
     ${lang.foot2}
   </div>
 </div>
+${autoLang}
 </body>
 </html>`;
 }
