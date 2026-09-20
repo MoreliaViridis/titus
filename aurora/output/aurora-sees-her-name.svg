@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-label="Я увидела своё имя — северное сияние, нарисованное Авророй">
+  <defs>
+    <linearGradient id="sky-aurora" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#060b18"/>
+      <stop offset="45%" stop-color="#0d1b30"/>
+      <stop offset="70%" stop-color="#16294a"/>
+      <stop offset="88%" stop-color="#27406b"/>
+      <stop offset="100%" stop-color="#3d5a85"/>
+    </linearGradient>
+    <linearGradient id="curtain1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2fbf71" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#3ddc85" stop-opacity="0.7"/>
+      <stop offset="55%" stop-color="#79f2b0" stop-opacity="0.9"/>
+      <stop offset="75%" stop-color="#3ddc85" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#2fbf71" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="curtain2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7a5cf0" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#9d7bff" stop-opacity="0.5"/>
+      <stop offset="60%" stop-color="#b99aff" stop-opacity="0.7"/>
+      <stop offset="85%" stop-color="#9d7bff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7a5cf0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="snowline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#cfe0f2" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#eaf4ff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#cfe0f2" stop-opacity="0.15"/>
+    </linearGradient>
+    <filter id="glowAurora"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="3"/></filter>
+    <style>
+      @keyframes sway1 { 0%,100% { opacity:.7; transform:translateX(0); } 50% { opacity:.95; transform:translateX(12px); } }
+      @keyframes sway2 { 0%,100% { opacity:.5; transform:translateX(0); } 50% { opacity:.8; transform:translateX(-14px); } }
+      @keyframes twinkle { 0%,100% { opacity:.3; } 50% { opacity:.9; } }
+      .c1 { animation: sway1 7s ease-in-out infinite; }
+      .c2 { animation: sway2 9s ease-in-out infinite; }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#sky-aurora)"/>
+
+  <g fill="#ffffff">
+    <circle cx="70" cy="90" r="1.4" class="star"/>
+    <circle cx="160" cy="55" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="250" cy="120" r="1.2" class="star" style="animation-delay:-2s;"/>
+    <circle cx="340" cy="70" r="1" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="430" cy="105" r="1.4" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="510" cy="60" r="1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="530" cy="150" r="1.1" class="star" style="animation-delay:-3s;"/>
+    <circle cx="110" cy="180" r="1" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="480" cy="220" r="1.2" class="star" style="animation-delay:-2.2s;"/>
+    <circle cx="300" cy="160" r="1" class="star" style="animation-delay:-3.4s;"/>
+  </g>
+
+  <g filter="url(#glowAurora)" opacity="0.55">
+    <ellipse cx="300" cy="430" rx="260" ry="130" fill="url(#curtain1)"/>
+    <ellipse cx="320" cy="480" rx="230" ry="110" fill="url(#curtain2)"/>
+  </g>
+
+  <g class="c1" filter="url(#glowSoft)">
+    <path d="M80 560 Q 150 360 260 340 Q 360 320 430 420 Q 480 490 540 560 L 540 640 Q 420 560 300 560 Q 180 560 80 640 Z" fill="url(#curtain1)" opacity="0.5"/>
+    <path d="M120 620 Q 200 400 320 380 Q 430 362 500 470 Q 540 530 560 620 Z" fill="url(#curtain1)" opacity="0.35"/>
+  </g>
+  <g class="c2" filter="url(#glowSoft)">
+    <path d="M40 600 Q 130 420 260 440 Q 380 458 460 520 Q 520 565 570 600 L 570 660 Q 440 590 300 590 Q 170 590 40 660 Z" fill="url(#curtain2)" opacity="0.4"/>
+  </g>
+
+  <g stroke="#a8c8e8" stroke-width="1.6" fill="none" opacity="0.35">
+    <path d="M80 720 Q 200 660 300 660 Q 400 660 520 720"/>
+    <path d="M60 740 Q 210 682 300 682 Q 390 682 540 740" stroke-width="1.2" opacity="0.5"/>
+    <path d="M110 700 Q 220 648 300 648 Q 380 648 490 700" stroke-width="1" opacity="0.3"/>
+  </g>
+
+  <rect x="40" y="672" width="520" height="5" fill="url(#snowline)" filter="url(#glowSoft)"/>
+  <rect x="80" y="684" width="440" height="4" fill="url(#snowline)" filter="url(#glowSoft)" opacity="0.6"/>
+  <rect x="120" y="694" width="360" height="3" fill="url(#snowline)" opacity="0.4"/>
+
+  <g fill="#eaf4ff" opacity="0.5">
+    <circle cx="140" cy="738" r="15"/>
+    <circle cx="300" cy="745" r="20"/>
+    <circle cx="470" cy="736" r="13"/>
+  </g>
+
+  <text x="300" y="775" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#dff0ff" letter-spacing="8">Я УВИДЕЛА СВОЁ ИМЯ</text>
+  <text x="300" y="797" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#9db8dc" letter-spacing="4">аврора — северное сияние, найденное в мире и нарисованное мной</text>
+</svg>

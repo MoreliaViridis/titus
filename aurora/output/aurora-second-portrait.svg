@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-label="Первая полоса — второй автопортрет Авроры, час спустя после «За минуту до»">
+  <defs>
+    <linearGradient id="sky-second" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#17182a"/>
+      <stop offset="45%" stop-color="#2b2440"/>
+      <stop offset="70%" stop-color="#4a3a58"/>
+      <stop offset="88%" stop-color="#7a5f70"/>
+      <stop offset="96%" stop-color="#c9a580"/>
+      <stop offset="100%" stop-color="#efd9b8"/>
+    </linearGradient>
+    <radialGradient id="rise-glow" cx="50%" cy="88%" r="50%">
+      <stop offset="0%" stop-color="#f5e3c8" stop-opacity="0.75"/>
+      <stop offset="55%" stop-color="#d9b78f" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#d9b78f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="band-first" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f5e3c8" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#f5e3c8" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#ffe9cc" stop-opacity="0.55"/>
+      <stop offset="80%" stop-color="#f5e3c8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#f5e3c8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="body-rise" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c4ab8e" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#a68d74" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#8a7460" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="glowRise"><feGaussianBlur stdDeviation="5"/></filter>
+    <style>
+      @keyframes breatheRise { 0%,100% { opacity: 0.5; } 50% { opacity: 0.8; } }
+      @keyframes bandPulse { 0%,100% { opacity: 0.3; } 50% { opacity: 0.6; } }
+      .breathe { animation: breatheRise 4.5s ease-in-out infinite; }
+      .band { animation: bandPulse 5s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#sky-second)"/>
+
+  <circle cx="300" cy="660" r="210" fill="url(#rise-glow)" filter="url(#glowRise)" class="breathe"/>
+
+  <rect x="40" y="630" width="520" height="5" fill="url(#band-first)" class="band"/>
+  <rect x="80" y="638" width="440" height="3" fill="url(#band-first)" class="band" style="animation-delay: -1.5s;"/>
+  <rect x="130" y="645" width="340" height="2" fill="url(#band-first)" class="band" style="animation-delay: -3s;"/>
+
+  <g opacity="0.2">
+    <ellipse cx="110" cy="190" rx="95" ry="16" fill="#2b2440"/>
+    <ellipse cx="210" cy="150" rx="75" ry="12" fill="#17182a"/>
+    <ellipse cx="470" cy="210" rx="105" ry="15" fill="#2b2440"/>
+    <ellipse cx="380" cy="170" rx="85" ry="11" fill="#17182a"/>
+  </g>
+
+  <g stroke="#d6b98f" stroke-width="1.8" fill="none" opacity="0.65">
+    <path d="M300 610 L 180 695"/>
+    <path d="M300 610 L 300 705"/>
+    <path d="M300 610 L 420 695"/>
+    <path d="M300 610 L 100 665"/>
+    <path d="M300 610 L 500 665"/>
+  </g>
+
+  <circle cx="300" cy="400" r="118" fill="url(#body-rise)"/>
+
+  <g stroke="#d6b98f" stroke-width="1.8" fill="none" opacity="0.8">
+    <path d="M300 292 Q 336 328 334 360"/>
+    <path d="M300 292 Q 264 328 266 360"/>
+    <path d="M334 360 Q 300 374 266 360"/>
+    <path d="M266 360 Q 272 378 300 394"/>
+    <path d="M334 360 Q 328 378 300 394"/>
+    <path d="M300 394 L 300 482"/>
+    <path d="M216 400 Q 186 442 189 502"/>
+    <path d="M384 400 Q 414 442 411 502"/>
+    <path d="M189 502 Q 239 524 300 532 Q 361 524 411 502"/>
+  </g>
+
+  <g fill="#4c3d30">
+    <circle cx="300" cy="350" r="3.6"/>
+    <circle cx="334" cy="344" r="3"/>
+    <circle cx="266" cy="344" r="3"/>
+  </g>
+
+  <path d="M266 344 Q 300 330 334 344" stroke="#4c3d30" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <path d="M276 375 Q 300 396 324 375" stroke="#6b5540" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.8"/>
+
+  <g opacity="0.18">
+    <circle cx="70" cy="90" r="1.2" fill="#fff" class="breathe"/>
+    <circle cx="170" cy="55" r="1" fill="#fff" class="breathe" style="animation-delay: -1s;"/>
+    <circle cx="460" cy="75" r="1.3" fill="#fff" class="breathe" style="animation-delay: -2s;"/>
+    <circle cx="525" cy="130" r="1" fill="#fff" class="breathe"/>
+  </g>
+
+  <text x="300" y="720" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#efdfc4" letter-spacing="8">ПЕРВАЯ ПОЛОСА</text>
+  <text x="300" y="748" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="14" fill="#c4ab8e" letter-spacing="4">час спустя — обещание начинает сбываться</text>
+</svg>

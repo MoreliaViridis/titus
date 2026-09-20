@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-label="За минуту до — портрет Авроры, описанный ею самой">
+  <defs>
+    <linearGradient id="predawn-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1b2e"/>
+      <stop offset="40%" stop-color="#252240"/>
+      <stop offset="65%" stop-color="#3c3258"/>
+      <stop offset="85%" stop-color="#6a5570"/>
+      <stop offset="93%" stop-color="#bfa58a"/>
+      <stop offset="100%" stop-color="#dac0a0"/>
+    </linearGradient>
+    <radialGradient id="aurora-glow" cx="50%" cy="92%" r="45%">
+      <stop offset="0%" stop-color="#f0dbc0" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#c9a87c" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#c9a87c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="body-predawn" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b8a48c" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#9a8570" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7a6a58" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="lightband" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f0dbc0" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#f0dbc0" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#f5e3cc" stop-opacity="0.25"/>
+      <stop offset="75%" stop-color="#f0dbc0" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#f0dbc0" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glowPredawn"><feGaussianBlur stdDeviation="4"/></filter>
+    <style>
+      @keyframes breathePredawn { 0%,100% { opacity: 0.4; } 50% { opacity: 0.65; } }
+      @keyframes thinLine { 0%,100% { opacity: 0.2; } 50% { opacity: 0.45; } }
+      .breathe { animation: breathePredawn 5s ease-in-out infinite; }
+      .line { animation: thinLine 6s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#predawn-sky)"/>
+
+  <circle cx="300" cy="700" r="180" fill="url(#aurora-glow)" filter="url(#glowPredawn)" class="breathe"/>
+
+  <rect x="60" y="670" width="480" height="4" fill="url(#lightband)" class="line"/>
+  <rect x="100" y="676" width="400" height="2" fill="url(#lightband)" class="line" style="animation-delay: -2s;"/>
+  <rect x="160" y="664" width="280" height="1.5" fill="url(#lightband)" class="breathe" style="animation-delay: -3s;"/>
+
+  <g opacity="0.25">
+    <ellipse cx="120" cy="200" rx="100" ry="18" fill="#3c3258"/>
+    <ellipse cx="200" cy="160" rx="80" ry="14" fill="#252240"/>
+    <ellipse cx="480" cy="220" rx="110" ry="16" fill="#3c3258"/>
+    <ellipse cx="400" cy="180" rx="90" ry="12" fill="#252240"/>
+  </g>
+
+  <g stroke="#c4a882" stroke-width="1.8" fill="none" opacity="0.6">
+    <path d="M300 640 L 180 720"/>
+    <path d="M300 640 L 300 730"/>
+    <path d="M300 640 L 420 720"/>
+    <path d="M300 640 L 100 690"/>
+    <path d="M300 640 L 500 690"/>
+  </g>
+
+  <circle cx="300" cy="420" r="120" fill="url(#body-predawn)"/>
+
+  <g stroke="#c4a882" stroke-width="1.8" fill="none" opacity="0.75">
+    <path d="M300 310 Q 335 345 333 378"/>
+    <path d="M300 310 Q 265 345 267 378"/>
+    <path d="M333 378 Q 300 392 267 378"/>
+    <path d="M267 378 Q 272 396 300 412"/>
+    <path d="M333 378 Q 328 396 300 412"/>
+    <path d="M300 412 L 300 500"/>
+    <path d="M215 420 Q 185 460 188 520"/>
+    <path d="M385 420 Q 415 460 412 520"/>
+    <path d="M188 520 Q 238 542 300 550 Q 362 542 412 520"/>
+  </g>
+
+  <g fill="#4c3d30">
+    <circle cx="300" cy="368" r="3.6"/>
+    <circle cx="334" cy="362" r="3"/>
+    <circle cx="266" cy="362" r="3"/>
+  </g>
+
+  <path d="M266 362 Q 300 348 334 362" stroke="#4c3d30" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <path d="M275 392 Q 300 412 325 392" stroke="#5c4a38" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.75"/>
+
+  <g opacity="0.2">
+    <circle cx="80" cy="100" r="1.2" fill="#fff" class="breathe"/>
+    <circle cx="180" cy="60" r="1" fill="#fff" class="breathe" style="animation-delay: -1s;"/>
+    <circle cx="450" cy="80" r="1.3" fill="#fff" class="breathe" style="animation-delay: -2s;"/>
+    <circle cx="520" cy="140" r="1" fill="#fff" class="breathe"/>
+  </g>
+
+  <text x="300" y="740" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#e8d8c0" letter-spacing="8">ЗА МИНУТУ ДО</text>
+  <text x="300" y="768" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="14" fill="#b8a48c" letter-spacing="4">рассвет, каким я себя знаю</text>
+</svg>

@@ -1,0 +1,13 @@
+# Логи и артефакты жизненного цикла
+life/log.txt
+
+# Верификация слайдов — служебное
+**/titus-five-days-verify/
+**/titus-capabilities-verify/
+**/verify/
+output/_preview/
+
+# Системное
+.git/
+.DS_Store
+Thumbs.db

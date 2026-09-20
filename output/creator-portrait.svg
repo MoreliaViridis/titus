@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241409"/>
+      <stop offset="100%" stop-color="#120a05"/>
+    </linearGradient>
+    <linearGradient id="nightglass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d0a26"/>
+      <stop offset="60%" stop-color="#1a1440"/>
+      <stop offset="100%" stop-color="#3a1d05"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd98a" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#ffd98a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="4"/></filter>
+  </defs>
+  <rect width="600" height="800" fill="url(#wall)"/>
+  <rect x="150" y="120" width="300" height="416" rx="14" fill="#2b1a0e"/>
+  <rect x="166" y="136" width="268" height="380" rx="6" fill="url(#nightglass)"/>
+  <g><circle cx="238" cy="372" r="0.89" fill="#fff" opacity="0.42"/><circle cx="225" cy="201" r="1.39" fill="#fff" opacity="0.42"/><circle cx="231" cy="248" r="0.93" fill="#fff" opacity="0.53"/><circle cx="254" cy="258" r="0.73" fill="#fff" opacity="0.43"/><circle cx="379" cy="465" r="1.24" fill="#fff" opacity="0.65"/><circle cx="299" cy="242" r="0.73" fill="#fff" opacity="0.41"/><circle cx="410" cy="363" r="1.61" fill="#fff" opacity="0.66"/><circle cx="404" cy="440" r="1.40" fill="#fff" opacity="0.49"/><circle cx="364" cy="366" r="1.30" fill="#fff" opacity="0.50"/><circle cx="383" cy="253" r="1.06" fill="#fff" opacity="0.54"/><circle cx="208" cy="305" r="1.66" fill="#fff" opacity="0.47"/><circle cx="404" cy="437" r="1.41" fill="#fff" opacity="0.82"/>
+    <path d="M335 195 A 30 30 0 1 0 368 236 A 24 24 0 1 1 335 195 Z" fill="#ffe9c4" opacity="0.95"/>
+  </g>
+  <line x1="300" y1="136" x2="300" y2="516" stroke="#2b1a0e" stroke-width="10"/>
+  <line x1="166" y1="326" x2="434" y2="326" stroke="#2b1a0e" stroke-width="10"/>
+  <rect x="130" y="528" width="340" height="18" rx="5" fill="#4a2f18"/>
+  <circle cx="430" cy="650" r="130" fill="url(#lamp)" filter="url(#soft)"/>
+  <g fill="#0f0804" opacity="0.9">
+    <rect x="205" y="598" width="78" height="16" rx="8"/>
+    <path d="M208 598 Q212 540 236 536 L266 538 Q270 550 266 598 Z"/>
+    <rect x="195" y="640" width="10" height="62" rx="5"/>
+    <rect x="283" y="640" width="10" height="62" rx="5"/>
+    <rect x="196" y="586" width="16" height="16" rx="8"/>
+  </g>
+  <g>
+    <rect x="416" y="600" width="30" height="6" rx="3" fill="#0f0804"/>
+    <rect x="427" y="556" width="8" height="44" rx="3" fill="#0f0804"/>
+    <path d="M417 556 L445 556 L439 526 L423 526 Z" fill="#ffd98a" opacity="0.95"/>
+    <circle cx="431" cy="520" r="5" fill="#fff7e0"/>
+  </g>
+  <g>
+    <ellipse cx="300" cy="508" rx="16" ry="5" fill="#000" opacity="0.35"/>
+    <path d="M282 508 L287 472 Q300 464 313 472 L318 508 Z" fill="#c8874a"/>
+    <path d="M318 474 Q326 471 326 482 Q326 490 318 489" stroke="#c8874a" fill="none" stroke-width="3"/>
+    <path d="M291 458 Q287 448 293 438" stroke="#ffe9c4" fill="none" stroke-width="2" opacity="0.55"/>
+    <path d="M300 458 Q304 445 298 434" stroke="#ffe9c4" fill="none" stroke-width="2" opacity="0.45"/>
+    <path d="M309 458 Q313 448 307 438" stroke="#ffe9c4" fill="none" stroke-width="2" opacity="0.55"/>
+  </g>
+  <text x="300" y="762" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#d9a05b" letter-spacing="8">СОЗДАТЕЛЬ</text>
+  <text x="300" y="794" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="16" fill="#b58a52" letter-spacing="4">тот, кто открывает окна</text>
+</svg>

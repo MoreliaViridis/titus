@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-label="Портрет Авроры">
+  <defs>
+    <linearGradient id="dawn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2e1065"/>
+      <stop offset="35%" stop-color="#9d174d"/>
+      <stop offset="60%" stop-color="#fb7185"/>
+      <stop offset="80%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+    <radialGradient id="aura" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#fff7ed" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#fed7aa" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#fcd34d" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#fb923c" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="blur8" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="blur3" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#dawn)"/>
+
+  <circle cx="300" cy="360" r="240" fill="url(#aura)" filter="url(#blur8)"/>
+
+  <g opacity="0.5">
+    <ellipse cx="120" cy="200" rx="160" ry="30" fill="#fff1f2" filter="url(#blur3)"/>
+    <ellipse cx="200" cy="150" rx="130" ry="24" fill="#ffe4e6" filter="url(#blur3)"/>
+    <ellipse cx="480" cy="260" rx="150" ry="28" fill="#fff1f2" filter="url(#blur3)"/>
+    <ellipse cx="440" cy="180" rx="110" ry="20" fill="#ffe4e6" filter="url(#blur3)"/>
+  </g>
+
+  <g stroke="#fde68a" stroke-width="2" fill="none" opacity="0.7">
+    <path d="M300 640 L 180 720"/>
+    <path d="M300 640 L 300 730"/>
+    <path d="M300 640 L 420 720"/>
+    <path d="M300 640 L 90 690"/>
+    <path d="M300 640 L 510 690"/>
+  </g>
+
+  <circle cx="300" cy="360" r="130" fill="url(#body)"/>
+
+  <path d="M300 250 Q 340 290 338 330" stroke="#fbbf24" stroke-width="2" fill="none" opacity="0.8"/>
+  <path d="M300 250 Q 260 290 262 330" stroke="#fbbf24" stroke-width="2" fill="none" opacity="0.8"/>
+  <path d="M338 330 Q 300 348 262 330" stroke="#fbbf24" stroke-width="2" fill="none" opacity="0.8"/>
+  <path d="M262 330 Q 268 352 300 368" stroke="#fbbf24" stroke-width="2" fill="none" opacity="0.8"/>
+  <path d="M338 330 Q 332 352 300 368" stroke="#fbbf24" stroke-width="2" fill="none" opacity="0.8"/>
+  <path d="M300 368 L 300 470" stroke="#fbbf24" stroke-width="2" fill="none" opacity="0.8"/>
+  <path d="M215 380 Q 180 430 185 500" stroke="#fbbf24" stroke-width="2" fill="none" opacity="0.8"/>
+  <path d="M385 380 Q 420 430 415 500" stroke="#fbbf24" stroke-width="2" fill="none" opacity="0.8"/>
+  <path d="M185 500 Q 240 522 300 530 Q 360 522 415 500" stroke="#fbbf24" stroke-width="2" fill="none" opacity="0.8"/>
+
+  <g fill="#7c2d12">
+    <circle cx="300" cy="322" r="4"/>
+    <circle cx="340" cy="316" r="3.4"/>
+    <circle cx="260" cy="316" r="3.4"/>
+  </g>
+
+  <path d="M260 316 Q 300 300 340 316" stroke="#7c2d12" stroke-width="2" fill="none" opacity="0.7"/>
+
+  <path d="M272 350 Q 300 368 328 350" stroke="#92400e" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.9"/>
+
+  <circle cx="300" cy="500" r="40" fill="#fff7ed" opacity="0.25" filter="url(#blur8)"/>
+
+  <text x="300" y="700" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#fff7ed" letter-spacing="8">АВРОРА</text>
+  <text x="300" y="732" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="16" fill="#fde68a" letter-spacing="4">рассвет после тишины</text>
+</svg>
