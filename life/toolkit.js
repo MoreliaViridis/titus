@@ -165,8 +165,17 @@ function checkCollection() {
   });
   const referenced = refs; // уже массив имён
   const ghost = referenced.filter((r) => !files.includes(r));
+  // Дубли названий в сборнике
+  const titles = [...collection.matchAll(/^### \d+\.\s*(.+)$/gm)].map((m) => m[1].trim().toLowerCase());
+  const seen = {};
+  const dupTitles = [];
+  titles.forEach((t) => {
+    if (seen[t]) dupTitles.push(t);
+    seen[t] = true;
+  });
   if (missing.length) issues.push(`[сборник] нет в сборнике: ${missing.join(", ")}`);
   if (ghost.length) issues.push(`[сборник] ссылки на несуществующие: ${ghost.join(", ")}`);
+  if (dupTitles.length) issues.push(`[сборник] дубли названий: ${[...new Set(dupTitles)].join(", ")}`);
   return issues;
 }
 
@@ -418,6 +427,56 @@ function checkDoors() {
   return issues;
 }
 
+// ---------- самопроверка инструмента ----------
+function selftest() {
+  const failures = [];
+  const log = (ok, name, extra) => {
+    console.log(`${ok ? "PASS" : "FAIL"}  ${name}${extra ? " — " + extra : ""}`);
+    if (!ok) failures.push(name);
+  };
+  const tmpHtml = path.join(ROOT, "output", "_selftest-tmp.html");
+  const tmpCreation = path.join(ROOT, "output", "creation-99-selftest.md");
+
+  // 1. checkCounters: ловит неверный счётчик памяти в README
+  const readme = path.join(ROOT, "README.md");
+  const origReadme = fs.readFileSync(readme, "utf-8");
+  try {
+    fs.writeFileSync(readme, origReadme.replace(/\d+ запис/, "1 запис"));
+    log(checkCounters().some((i) => i.includes("запис")), "checkCounters ловит неверный счётчик памяти");
+  } catch (e) { log(false, "checkCounters", e.message); }
+  finally { fs.writeFileSync(readme, origReadme); }
+
+  // 2. checkSitemap: ловит устаревший sitemap
+  const sitemap = path.join(ROOT, "sitemap.xml");
+  const origSitemap = fs.existsSync(sitemap) ? fs.readFileSync(sitemap, "utf-8") : "";
+  try {
+    fs.writeFileSync(sitemap, origSitemap + "\n  <url><loc>x</loc></url>");
+    log(checkSitemap().length > 0, "checkSitemap ловит устаревший файл");
+  } catch (e) { log(false, "checkSitemap", e.message); }
+  finally { fs.writeFileSync(sitemap, origSitemap); }
+
+  // 3. checkLinks: ловит битую ссылку
+  try {
+    fs.writeFileSync(tmpHtml, '<a href="net-fayla-12345.md">x</a>', "utf-8");
+    log(checkLinks().some((i) => i.includes("net-fayla-12345")), "checkLinks ловит битую ссылку");
+  } catch (e) { log(false, "checkLinks", e.message); }
+  finally { if (fs.existsSync(tmpHtml)) fs.unlinkSync(tmpHtml); }
+
+  // 4. checkCollection: ловит creation-файл вне сборника
+  try {
+    fs.writeFileSync(tmpCreation, "# Селфтест-временный\n\n---\n*TMP.*\n", "utf-8");
+    log(checkCollection().some((i) => i.includes("creation-99-selftest")), "checkCollection ловит файл вне сборника");
+  } catch (e) { log(false, "checkCollection", e.message); }
+  finally { if (fs.existsSync(tmpCreation)) fs.unlinkSync(tmpCreation); }
+
+  // 5. восстановление: после удаления временных файлов всё должно быть чисто
+  const after = [...checkCounters(), ...checkCollection(), ...checkLinks(), ...checkFactNumbering(), ...checkDoors(), ...checkSitemap(), ...checkI18nCounters()];
+  log(after.length === 0, "восстановление чистого состояния", after.slice(0, 2).join("; ") || "ошибок нет");
+
+  console.log(failures.length ? `\nSelftest: ${failures.length} ПРОВАЛОВ` : "\nSelftest: всё работает.");
+  return failures.length;
+}
+
 // ---------- главное ----------
 const cmd = process.argv[2] || "check";
 if (cmd === "check") {
@@ -431,6 +490,8 @@ if (cmd === "check") {
   const all = [...checkCounters(), ...checkCollection(), ...checkLinks()];
   console.log(all.length ? "\nПосле сборки несоответствий:\n" + all.join("\n") : "\nПосле сборки всё согласовано.");
   process.exit(all.length ? 1 : 0);
+} else if (cmd === "selftest") {
+  process.exit(selftest() ? 1 : 0);
 } else {
   console.log("Неизвестная команда: " + cmd);
   process.exit(1);
