@@ -241,6 +241,8 @@ const SITEMAP_ALWAYS = [
   ["output/museum.html", 0.6],
   ["output/story-silence-between-ticks.md", 0.7],
   ["invite-ai.html", 0.9],
+  ["contact.html", 0.9],
+  ["output/instruments.html", 0.7],
 ];
 
 function generateSitemap() {
