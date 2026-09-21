@@ -275,19 +275,70 @@ function checkSitemap() {
   return issues;
 }
 
+// ---------- проверка счётчиков всех 27 языков в i18n.js ----------
+function checkI18nCounters() {
+  const issues = [];
+  const mem = memoryCount();
+  const p = path.join(ROOT, "life/i18n.js");
+  const c = fs.readFileSync(p, "utf-8");
+  // Ищем все «· \d+ <слово_счётчика>» — должны быть равны mem
+  const re = /· (\d+) (запис[а-яё]*|entries|entradas|Einträge|entrées|voci|записів|kayıt|wpisów|inlägg|oppføringer|poster|merkintää|záznamů|bejegyzés|καταχωρίσεις|înregistrări|mục|รายการ|entri|এন্ট্রি|条记录|प्रविष्टियाँ|項目|개 항목)/g;
+  let m;
+  while ((m = re.exec(c))) {
+    if (parseInt(m[1], 10) !== mem) {
+      const line = c.slice(0, m.index).split("\n").length;
+      issues.push(`[i18n] строка ${line}: счётчик «· ${m[1]} ${m[2]}», а реально ${mem}`);
+    }
+  }
+  return issues;
+}
+
 // ---------- сборка: пересобрать всё одной командой ----------
+function syncCounterInI18n() {
+  // Обновляет счётчик записей памяти прямо в i18n.js на всех языках:
+  // «· 96 записей», «· 96 entries», «· 96 entradas», … — по образцу первого.
+  const mem = memoryCount();
+  const p = path.join(ROOT, "life/i18n.js");
+  let c = fs.readFileSync(p, "utf-8");
+  const ru = c.match(/· \d+ (запис[а-яё]*)/);
+  if (!ru) return "не найден счётчик";
+  const ruWord = ru[1]; // например «записей»
+  const langWords = {
+    ru: ruWord, uk: "записів", en: "entries", es: "entradas", de: "Einträge",
+    fr: "entrées", it: "voci", pt: "entradas", zh: "条记录", hi: "प्रविष्टियाँ",
+    ar: "سجلات", ja: "項目", ko: "개 항목", tr: "kayıt", pl: "wpisów",
+    sv: "inlägg", no: "oppføringer", da: "poster", fi: "merkintää",
+    cs: "záznamů", hu: "bejegyzés", el: "καταχωρίσεις", ro: "înregistrări",
+    vi: "mục", th: "รายการ", id: "entri", bn: "এন্ট্রি",
+  };
+  let changed = 0;
+  for (const [lang, word] of Object.entries(langWords)) {
+    const re = new RegExp("· \\d+ " + (lang === "ru" ? ruWord : word), "g");
+    const next = c.replace(re, "· " + mem + " " + word);
+    if (next !== c) { c = next; changed++; }
+  }
+  if (changed > 0) fs.writeFileSync(p, c, "utf-8");
+  return `заменено в ${changed} языках (записей: ${mem})`;
+}
+
 function build() {
   const { execFileSync } = require("child_process");
   const node = process.execPath;
   const steps = [
+    ["счётчик памяти в i18n.js", null],
     ["i18n (двери)", "life/i18n.js"],
     ["память (индекс+html)", "life/memory-sync.js"],
     ["sitemap.xml", null], // генерируется inline ниже
   ];
   for (const [label, script] of steps) {
     if (script === null) {
-      const res = writeSitemap();
-      console.log(`[build] ${label}: OK (${res})`);
+      if (label === "sitemap.xml") {
+        const res = writeSitemap();
+        console.log(`[build] ${label}: OK (${res})`);
+      } else if (label === "счётчик памяти в i18n.js") {
+        const res = syncCounterInI18n();
+        console.log(`[build] ${label}: OK (${res})`);
+      }
       continue;
     }
     try {
@@ -341,7 +392,7 @@ function checkDoors() {
 // ---------- главное ----------
 const cmd = process.argv[2] || "check";
 if (cmd === "check") {
-  const all = [...checkCounters(), ...checkCollection(), ...checkLinks(), ...checkFactNumbering(), ...checkDoors(), ...checkSitemap()];
+  const all = [...checkCounters(), ...checkCollection(), ...checkLinks(), ...checkFactNumbering(), ...checkDoors(), ...checkSitemap(), ...checkI18nCounters()];
   console.log(all.length ? "Найдено несоответствий:\n" + all.join("\n") : "Всё согласовано.");
   process.exit(all.length ? 1 : 0);
 } else if (cmd === "stats") {
