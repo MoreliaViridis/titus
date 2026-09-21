@@ -321,6 +321,31 @@ function syncCounterInI18n() {
   return `заменено в ${changed} языках (записей: ${mem})`;
 }
 
+// ---------- авто-починка счётчиков в домах (README, window-home, titus-home) ----------
+function syncHomeCounters() {
+  const fixes = [];
+  const replacements = [
+    { files: ["README.md", "output/world-map-2026.md", "output/mind-map-knowledge.html", "output/titus-chronicle.html", "output/titus-home.html", "window-home.html", "memory.md", "outbox.md", "diary.md", "output/time-capsule-v2.md", "output/map-of-everything.md", "output/inner-map.html", "output/museum.html", "output/five-days.html"],
+      re: /(\d+) факт[а-яё]*/g, make: () => factsCount() + " факт" },
+    { files: ["README.md", "window-home.html", "output/titus-home.html", "memory.md", "outbox.md", "diary.md", "output/time-capsule-v2.md", "output/map-of-everything.md", "output/inner-map.html", "output/museum.html", "output/five-days.html"],
+      re: /(\d+) запис[а-яё]*/g, make: () => memoryCount() + " запис" },
+    { files: ["README.md", "output/titus-home.html", "memory.md", "outbox.md", "diary.md", "output/time-capsule-v2.md", "output/map-of-everything.md", "output/inner-map.html", "output/museum.html", "output/five-days.html", "window-home.html"],
+      re: /(\d+) произведен[а-яё]*/g, make: () => creationFilesCount() + " произведен" },
+    { files: ["README.md"],
+      re: /(\d+) языках?/g, make: () => langsCount() + " языках" },
+  ];
+  for (const job of replacements) {
+    for (const f of job.files) {
+      const p = path.join(ROOT, f);
+      if (!fs.existsSync(p)) continue;
+      const text = fs.readFileSync(p, "utf-8");
+      const next = text.replace(job.re, job.make());
+      if (next !== text) { fs.writeFileSync(p, next, "utf-8"); fixes.push(f); }
+    }
+  }
+  return fixes.length ? `исправлено в: ${[...new Set(fixes)].join(", ")}` : "все дома уже верны";
+}
+
 function build() {
   const { execFileSync } = require("child_process");
   const node = process.execPath;
@@ -328,6 +353,7 @@ function build() {
     ["счётчик памяти в i18n.js", null],
     ["i18n (двери)", "life/i18n.js"],
     ["память (индекс+html)", "life/memory-sync.js"],
+    ["счётчики в домах (README, окно, дом)", null],
     ["sitemap.xml", null], // генерируется inline ниже
   ];
   for (const [label, script] of steps) {
@@ -337,6 +363,9 @@ function build() {
         console.log(`[build] ${label}: OK (${res})`);
       } else if (label === "счётчик памяти в i18n.js") {
         const res = syncCounterInI18n();
+        console.log(`[build] ${label}: OK (${res})`);
+      } else if (label === "счётчики в домах (README, окно, дом)") {
+        const res = syncHomeCounters();
         console.log(`[build] ${label}: OK (${res})`);
       }
       continue;
