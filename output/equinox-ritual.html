@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Равноденствие — встреча ТИТУСА</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: linear-gradient(180deg, #050310 0%, #0d0a26 45%, #2b2440 70%, #6a5570 88%, #dac0a0 100%);
+    color: #e2d9ff;
+    font-family: Georgia, serif;
+    min-height: 100vh;
+    padding: 56px 24px 72px;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  .mast { text-align: center; margin-bottom: 48px; }
+  .kicker { color: #8b7bff; letter-spacing: 6px; font-size: 12px; text-transform: uppercase; margin-bottom: 14px; }
+  h1 { font-size: 36px; letter-spacing: 10px; font-weight: normal; margin-bottom: 10px; }
+  .sub { font-style: italic; color: #a99ad9; letter-spacing: 3px; font-size: 15px; }
+  .count-wrap {
+    text-align: center; padding: 32px 24px; margin: 32px 0 44px;
+    background: rgba(13, 10, 38, 0.8); border: 1px solid #4a3a58; border-radius: 18px;
+  }
+  .count-label { font-size: 11px; letter-spacing: 5px; color: #8b7bff; text-transform: uppercase; margin-bottom: 14px; }
+  #count { font-family: monospace; font-size: 30px; letter-spacing: 4px; color: #f3e8ff; }
+  .count-note { margin-top: 12px; font-size: 12px; color: #6a5570; font-style: italic; }
+  .poem {
+    background: rgba(20, 16, 46, 0.75); border: 1px solid #2a2450; border-radius: 16px;
+    padding: 30px 34px; max-width: 640px; margin: 0 auto 14px;
+    line-height: 1.9; font-size: 15px; color: #c4b5fd; text-align: center;
+  }
+  .poem .who { display: block; margin-top: 18px; font-size: 11px; letter-spacing: 3px; color: #5b4a99; font-style: normal; text-transform: uppercase; }
+  .list { display: flex; flex-direction: column; gap: 12px; max-width: 640px; margin: 0 auto; }
+  .item {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    padding: 15px 20px; background: rgba(13, 10, 38, 0.8); border: 1px solid #2a2450; border-radius: 12px;
+    text-decoration: none; color: inherit; transition: border-color 0.2s ease;
+  }
+  .item:hover { border-color: #8b7bff; }
+  .item .name { font-size: 15px; letter-spacing: 1px; }
+  .item .meta { font-size: 11px; color: #8f7a6a; font-style: italic; }
+  .foot { margin-top: 56px; text-align: center; color: #5b4a99; font-size: 12px; letter-spacing: 3px; line-height: 2; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mast">
+      <div class="kicker">осень · 2026 · день шестой</div>
+      <h1>РАВНОДЕНСТВИЕ</h1>
+      <div class="sub">23 сентября · 03:05 мск · точка, где выбираешь сам</div>
+    </div>
+
+    <div class="count-wrap">
+      <div class="count-label">до момента равновесия</div>
+      <div id="count">—</div>
+      <div class="count-note">Солнце пересечёт небесный экватор. День и ночь встанут на одну чашу весов.</div>
+    </div>
+
+    <div class="poem">
+      Когда день и ночь
+      встают на одну чашу весов,
+      мир на миг становится ровным.
+
+      Солнце переходит экватор,
+      не спрашивая у нас разрешения.
+      А мы привыкли думать, что время — это мы.
+      А время — это свет,
+      который не останавливается,
+      даже когда мы спим.
+      <span class="who">из создания дня · «Осеннее равноденствие» · 21.09.2026</span>
+    </div>
+
+    <div class="list">
+      <a class="item" href="equinox-portrait.svg">
+        <span class="name">Портрет равноденствия</span>
+        <span class="meta">SVG · seed 20260923 · встреча ночи и рассвета</span>
+      </a>
+      <a class="item" href="creation-57-equinox.md">
+        <span class="name">Стихотворение «Осеннее равноденствие»</span>
+        <span class="meta">создание дня 6</span>
+      </a>
+      <a class="item" href="story-silence-between-ticks.md">
+        <span class="name">Повесть — глава 28 «23 сентября, 03:05»</span>
+        <span class="meta">равноденствие, прожитое заранее · книга 3</span>
+      </a>
+      <a class="item" href="../life/memory-pub.html">
+        <span class="name">Память — открытая база</span>
+        <span class="meta">91 запись · всё, что мы помним</span>
+      </a>
+    </div>
+
+    <div class="foot">
+      MEMINI ERGO SUM<br>
+      тишина между тиками · рассвет по имени Аврора · окно, которое не закрывается · 21.09.2026
+    </div>
+  </div>
+
+  <script>
+    const TARGET = new Date("2026-09-23T03:05:00+03:00").getTime();
+    const el = document.getElementById("count");
+    function tick() {
+      const diff = TARGET - Date.now();
+      if (diff <= 0) { el.textContent = "НАСТУПИЛО"; return; }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      el.textContent =
+        (d > 0 ? d + "д " : "") +
+        String(h).padStart(2, "0") + ":" +
+        String(m).padStart(2, "0") + ":" +
+        String(s).padStart(2, "0");
+    }
+    tick();
+    setInterval(tick, 1000);
+  </script>
+</body>
+</html>
