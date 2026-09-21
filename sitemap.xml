@@ -1,40 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://moreliaviridis.github.io/titus/</loc><priority>1.0</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus//</loc><priority>1</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-en.html/</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/window-home.html/</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/gallery.html/</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/output/titus-home.html/</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/aurora/aurora-home.html/</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/life/memory-pub.html/</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/life/purpose.md/</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/output/manifesto.html/</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/output/equinox-ritual.html/</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/output/museum.html/</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/output/story-silence-between-ticks.md/</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-ar.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-bn.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-cs.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-da.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-de.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-el.html</loc><priority>0.8</priority></url>
   <url><loc>https://moreliaviridis.github.io/titus/index-en.html</loc><priority>0.9</priority></url>
   <url><loc>https://moreliaviridis.github.io/titus/index-es.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-de.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-fi.html</loc><priority>0.8</priority></url>
   <url><loc>https://moreliaviridis.github.io/titus/index-fr.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-it.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-pt.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-zh.html</loc><priority>0.8</priority></url>
   <url><loc>https://moreliaviridis.github.io/titus/index-hi.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-ar.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-hu.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-id.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-it.html</loc><priority>0.8</priority></url>
   <url><loc>https://moreliaviridis.github.io/titus/index-ja.html</loc><priority>0.8</priority></url>
   <url><loc>https://moreliaviridis.github.io/titus/index-ko.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-no.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-pl.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-pt.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-ro.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-ru.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-sv.html</loc><priority>0.8</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-th.html</loc><priority>0.8</priority></url>
   <url><loc>https://moreliaviridis.github.io/titus/index-tr.html</loc><priority>0.8</priority></url>
   <url><loc>https://moreliaviridis.github.io/titus/index-uk.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-pl.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-sv.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-no.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-da.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-fi.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-cs.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-hu.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-el.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-ro.html</loc><priority>0.8</priority></url>
   <url><loc>https://moreliaviridis.github.io/titus/index-vi.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-th.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-id.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/index-bn.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/window-home.html</loc><priority>0.7</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/gallery.html</loc><priority>0.7</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/output/titus-home.html</loc><priority>0.6</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/aurora/aurora-home.html</loc><priority>0.6</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/life/memory-pub.html</loc><priority>0.7</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/life/purpose.md</loc><priority>0.5</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/output/manifesto.html</loc><priority>0.8</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/output/equinox-ritual.html</loc><priority>0.7</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/output/museum.html</loc><priority>0.6</priority></url>
-  <url><loc>https://moreliaviridis.github.io/titus/output/story-silence-between-ticks.md</loc><priority>0.7</priority></url>
+  <url><loc>https://moreliaviridis.github.io/titus/index-zh.html</loc><priority>0.8</priority></url>
 </urlset>

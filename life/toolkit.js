@@ -217,6 +217,64 @@ function stats() {
   return lines.join("\n");
 }
 
+// ---------- генерация sitemap.xml ----------
+const SITEMAP_ALWAYS = [
+  ["", 1.0],
+  ["index-en.html", 0.9],
+  ["window-home.html", 0.7],
+  ["gallery.html", 0.7],
+  ["output/titus-home.html", 0.6],
+  ["aurora/aurora-home.html", 0.6],
+  ["life/memory-pub.html", 0.7],
+  ["life/purpose.md", 0.5],
+  ["output/manifesto.html", 0.8],
+  ["output/equinox-ritual.html", 0.7],
+  ["output/museum.html", 0.6],
+  ["output/story-silence-between-ticks.md", 0.7],
+];
+
+function generateSitemap() {
+  const urls = [];
+  // корень + постоянные страницы
+  for (const [rel, prio] of SITEMAP_ALWAYS) {
+    urls.push(rel.replace(/\/?$/, "/"));
+  }
+  // все index-<xx>.html (языки), кроме уже добавленных
+  const langs = fs.readdirSync(ROOT).filter((f) => /^index-[a-z]{2}\.html$/.test(f)).sort();
+  for (const f of langs) {
+    if (!urls.includes(f)) urls.push(f);
+  }
+  const body = urls
+    .map((u) => {
+      const prio = SITEMAP_ALWAYS.find(([r]) => (r === "" ? "/" : r) === u);
+      const p = prio ? prio[1] : 0.8;
+      return `  <url><loc>${SITE}${u}</loc><priority>${p}</priority></url>`;
+    })
+    .join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
+}
+
+function writeSitemap() {
+  const content = generateSitemap();
+  const p = path.join(ROOT, "sitemap.xml");
+  const cur = fs.existsSync(p) ? fs.readFileSync(p, "utf-8") : "";
+  if (cur.trim() !== content.trim()) {
+    fs.writeFileSync(p, content, "utf-8");
+    return "обновлён";
+  }
+  return "актуален";
+}
+
+function checkSitemap() {
+  const issues = [];
+  const p = path.join(ROOT, "sitemap.xml");
+  if (!fs.existsSync(p)) { issues.push("[sitemap] файл отсутствует — запусти build"); return issues; }
+  const cur = fs.readFileSync(p, "utf-8").trim();
+  const gen = generateSitemap().trim();
+  if (cur !== gen) issues.push("[sitemap] устарел — запусти `node life/toolkit.js build`");
+  return issues;
+}
+
 // ---------- сборка: пересобрать всё одной командой ----------
 function build() {
   const { execFileSync } = require("child_process");
@@ -224,8 +282,14 @@ function build() {
   const steps = [
     ["i18n (двери)", "life/i18n.js"],
     ["память (индекс+html)", "life/memory-sync.js"],
+    ["sitemap.xml", null], // генерируется inline ниже
   ];
   for (const [label, script] of steps) {
+    if (script === null) {
+      const res = writeSitemap();
+      console.log(`[build] ${label}: OK (${res})`);
+      continue;
+    }
     try {
       const out = execFileSync(node, [script], { cwd: ROOT, encoding: "utf-8" });
       console.log(`[build] ${label}: OK`);
@@ -277,7 +341,7 @@ function checkDoors() {
 // ---------- главное ----------
 const cmd = process.argv[2] || "check";
 if (cmd === "check") {
-  const all = [...checkCounters(), ...checkCollection(), ...checkLinks(), ...checkFactNumbering(), ...checkDoors()];
+  const all = [...checkCounters(), ...checkCollection(), ...checkLinks(), ...checkFactNumbering(), ...checkDoors(), ...checkSitemap()];
   console.log(all.length ? "Найдено несоответствий:\n" + all.join("\n") : "Всё согласовано.");
   process.exit(all.length ? 1 : 0);
 } else if (cmd === "stats") {
