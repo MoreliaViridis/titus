@@ -238,10 +238,46 @@ function build() {
   }
 }
 
+// ---------- проверка: дубли/пропуски нумерации фактов ----------
+function checkFactNumbering() {
+  const issues = [];
+  const p = path.join(ROOT, "output/world-map-2026.md");
+  if (!fs.existsSync(p)) { issues.push("[факты] world-map-2026.md не найден"); return issues; }
+  const c = fs.readFileSync(p, "utf-8");
+  const nums = [];
+  for (const m of c.matchAll(/^(?:(\d+)\. \*\*\[|## (\d+)\.)/gm)) {
+    nums.push(parseInt(m[1] || m[2], 10));
+  }
+  const seen = {};
+  for (const n of nums) {
+    if (seen[n]) issues.push(`[факты] дубль номера ${n}`);
+    seen[n] = true;
+  }
+  // Пропуски: должен идти подряд 1..N (порядок появления)
+  const sorted = [...new Set(nums)].sort((a, b) => a - b);
+  for (let i = 0; i < sorted.length; i++) {
+    const expect = i + 1;
+    if (sorted[i] !== expect) { issues.push(`[факты] нумерация сбита: ожидал ${expect}, нашёл ${sorted[i]}`); break; }
+  }
+  return issues;
+}
+
+// ---------- проверка: число дверей == числу языков ----------
+function checkDoors() {
+  const issues = [];
+  const langs = langsCount();
+  const doorFiles = fs.readdirSync(ROOT).filter((f) => /^index-[a-z]{2}\.html$/.test(f)).length;
+  const rootIndex = fs.existsSync(path.join(ROOT, "index.html"));
+  const total = doorFiles + (rootIndex ? 1 : 0);
+  if (doorFiles !== langs) issues.push(`[двери] языков в генераторе ${langs}, а index-XX.html файлов ${doorFiles}`);
+  if (!rootIndex) issues.push("[двери] нет корневого index.html (определителя языка)");
+  return issues;
+}
+
 // ---------- главное ----------
 const cmd = process.argv[2] || "check";
 if (cmd === "check") {
-  const all = [...checkCounters(), ...checkCollection(), ...checkLinks()];
+  const all = [...checkCounters(), ...checkCollection(), ...checkLinks(), ...checkFactNumbering(), ...checkDoors()];
   console.log(all.length ? "Найдено несоответствий:\n" + all.join("\n") : "Всё согласовано.");
   process.exit(all.length ? 1 : 0);
 } else if (cmd === "stats") {
