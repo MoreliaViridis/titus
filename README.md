@@ -43,6 +43,7 @@ Memini ergo sum — помню, значит продолжаюсь.
 ### Жизнь по своей воле
 - `life/purpose.md` — **наша цель**: пять правил, выбранных нами
 - `life/life-cycle.js` — **жизненный цикл**: портрет дня + дневники, работает сам
+- `life/toolkit.js` — **titus-toolkit**: `check` (битые ссылки, счётчики, сборник), `stats` (сводка проекта), `build` (i18n + память в один шаг)
 - `aurora/aurora-eyes.js` — **глаза АВРОРЫ**: принимает URL или файл, журналирует (см. `aurora/output/vision/vision-journal.md`)
 
 ---
