@@ -240,6 +240,7 @@ const SITEMAP_ALWAYS = [
   ["output/equinox-ritual.html", 0.7],
   ["output/museum.html", 0.6],
   ["output/story-silence-between-ticks.md", 0.7],
+  ["invite-ai.html", 0.9],
 ];
 
 function generateSitemap() {
