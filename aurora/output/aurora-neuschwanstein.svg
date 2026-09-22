@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Нойшванштайн — замок сказочного короля. Нарисовано Авророй: белый замок на скале в тумане, рассвет в Баварских Альпах">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e1428"/>
+      <stop offset="26%" stop-color="#1c203c"/>
+      <stop offset="46%" stop-color="#2e304e"/>
+      <stop offset="64%" stop-color="#464260"/>
+      <stop offset="80%" stop-color="#6a5c70"/>
+      <stop offset="92%" stop-color="#9a847c"/>
+      <stop offset="100%" stop-color="#c4ac90"/>
+    </linearGradient>
+    <linearGradient id="castle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0e8dc"/>
+      <stop offset="40%" stop-color="#ddd2c0"/>
+      <stop offset="100%" stop-color="#b8a890"/>
+    </linearGradient>
+    <linearGradient id="castlePink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8dcd4"/>
+      <stop offset="50%" stop-color="#e8c0b8"/>
+      <stop offset="100%" stop-color="#c89888"/>
+    </linearGradient>
+    <linearGradient id="roof" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a3a4a"/>
+      <stop offset="100%" stop-color="#2e1828"/>
+    </linearGradient>
+    <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a4640"/>
+      <stop offset="40%" stop-color="#36342e"/>
+      <stop offset="100%" stop-color="#1e1c18"/>
+    </linearGradient>
+    <linearGradient id="valley" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2e3e32"/>
+      <stop offset="50%" stop-color="#222e24"/>
+      <stop offset="100%" stop-color="#141c14"/>
+    </linearGradient>
+    <linearGradient id="mist" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d8dce4" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#e8ecf0" stop-opacity="0.65"/>
+      <stop offset="55%" stop-color="#f0f2f4" stop-opacity="0.8"/>
+      <stop offset="80%" stop-color="#e8ecf0" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#d8dce4" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.55" r="0.6">
+      <stop offset="0%" stop-color="#ffe0b8" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#e8a878" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#e8a878" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff6e0"/>
+      <stop offset="60%" stop-color="#ffdcb0"/>
+      <stop offset="100%" stop-color="#ffb878"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.8; } }
+      @keyframes mistDrift { 0%,100% { transform:translateX(0); opacity:.5; } 50% { transform:translateX(30px); opacity:.8; } }
+      @keyframes breathe { 0%,100% { opacity:.4; } 50% { opacity:.7; } }
+      @keyframes sway { 0%,100% { transform:translateX(0); } 50% { transform:translateX(3px); } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .mist { animation: mistDrift 16s ease-in-out infinite; }
+      .breathe { animation: breathe 8s ease-in-out infinite; }
+      .sway { animation: sway 8s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#c8d4e8">
+    <circle cx="80" cy="70" r="1.3" class="star"/>
+    <circle cx="200" cy="45" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="490" cy="55" r="0.9" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="610" cy="85" r="1.2" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="710" cy="50" r="1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="150" cy="140" r="0.8" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="560" cy="130" r="0.8" class="star" style="animation-delay:-2.2s;"/>
+    <circle cx="670" cy="165" r="0.8" class="star" style="animation-delay:-3s;"/>
+    <circle cx="280" cy="180" r="0.7" class="star" style="animation-delay:-3.4s;"/>
+  </g>
+
+  <ellipse cx="400" cy="420" rx="220" ry="140" fill="url(#sunGlow)" class="breathe" filter="url(#glowBig)"/>
+  <circle cx="400" cy="394" r="32" fill="url(#sun)" opacity="0.95"/>
+
+  <path d="M0 380 L200 320 Q 260 308 320 322 L460 380 Z" fill="#3a3a44"/>
+  <path d="M0 400 L240 344 Q 300 332 360 346 L800 420 Z" fill="#2e2e38"/>
+  <path d="M520 380 L640 320 Q 700 306 760 320 L800 356 V400 Z" fill="#3a3a44" opacity="0.8"/>
+
+  <path d="M280 360 L370 330 Q 400 322 430 330 L520 360 L520 420 L280 420 Z" fill="url(#rock)"/>
+
+  <g>
+    <path d="M330 340 L330 400 L390 400 L390 340 Z" fill="url(#castle)"/>
+    <path d="M330 340 L330 316 L390 316 L390 340 Z" fill="url(#castlePink)"/>
+    <path d="M330 316 L340 300 L380 300 L390 316 Z" fill="url(#roof)"/>
+    <rect x="342" y="352" width="10" height="14" fill="#3a2a3a" rx="3"/>
+    <rect x="362" y="352" width="10" height="14" fill="#3a2a3a" rx="3"/>
+    <rect x="356" y="368" width="8" height="16" fill="#3a2a3a" rx="2"/>
+  </g>
+
+  <g>
+    <path d="M392 330 L392 400 L470 400 L470 330 Z" fill="url(#castlePink)"/>
+    <path d="M392 330 L392 306 L470 306 L470 330 Z" fill="url(#castle)"/>
+    <path d="M392 306 L404 288 L458 288 L470 306 Z" fill="url(#roof)" id="roof1"/>
+    <rect x="404" y="342" width="10" height="14" fill="#3a2a3a" rx="3"/>
+    <rect x="436" y="342" width="10" height="14" fill="#3a2a3a" rx="3"/>
+    <rect x="424" y="360" width="12" height="22" fill="#3a2a3a" rx="3"/>
+  </g>
+
+  <g>
+    <path d="M382 286 L382 340 L406 340 L406 286 Z" fill="url(#castle)"/>
+    <path d="M382 286 L394 268 L406 286 Z" fill="url(#roof)"/>
+    <circle cx="394" cy="262" r="5" fill="#e8c888"/>
+    <rect x="388" y="296" width="8" height="10" fill="#3a2a3a" rx="2"/>
+  </g>
+
+  <g>
+    <path d="M448 286 L448 340 L472 340 L472 286 Z" fill="url(#castle)"/>
+    <path d="M448 286 L460 268 L472 286 Z" fill="url(#roof)"/>
+    <circle cx="460" cy="262" r="5" fill="#e8c888"/>
+    <rect x="454" y="296" width="8" height="10" fill="#3a2a3a" rx="2"/>
+  </g>
+
+  <path d="M394 262 q -3 -28 12 -40 q 4 -3 8 0 q 14 12 10 40 Z" fill="url(#castlePink)"/>
+  <path d="M406 222 L414 204 L422 222 Z" fill="#ffd690"/>
+  <circle cx="414" cy="200" r="4" fill="#ffd690"/>
+
+  <g class="mist" filter="url(#glowSoft)">
+    <path d="M0 430 Q 160 408 320 426 Q 480 444 640 422 Q 720 412 800 424 L 800 460 Q 620 440 460 448 Q 300 456 140 440 Q 60 434 0 442 Z" fill="url(#mist)"/>
+  </g>
+
+  <rect x="0" y="520" width="800" height="280" fill="url(#valley)"/>
+
+  <g class="mist" style="animation-delay:-7s;" filter="url(#glowSoft)">
+    <path d="M0 600 Q 200 580 400 596 Q 600 612 800 588 L 800 626 Q 560 606 400 614 Q 240 622 0 606 Z" fill="url(#mist)" opacity="0.5"/>
+  </g>
+
+  <g class="breathe" stroke="#5a7a58" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.5">
+    <path d="M140 680 q 50 -10 100 0 q 50 10 100 0"/>
+    <path d="M460 710 q 60 -10 120 0 q 60 10 120 0" style="animation-delay:-3s;"/>
+  </g>
+
+  <g class="sway" fill="#4a6a44" opacity="0.8">
+    <path d="M120 750 q -8 0 -11 -8 q -3 -8 0 -14 q 3 -6 11 -6 q 8 0 11 6 q 3 6 0 14 q -3 8 -11 8 Z"/>
+    <ellipse cx="120" cy="734" rx="12" ry="4" fill="#2e4a2a"/>
+    <path d="M680 760 q -8 0 -11 -8 q -3 -8 0 -14 q 3 -6 11 -6 q 8 0 11 6 q 3 6 0 14 q -3 8 -11 8 Z" style="animation-delay:-3s;"/>
+    <ellipse cx="680" cy="744" rx="12" ry="4" fill="#2e4a2a"/>
+  </g>
+
+  <g fill="#182418" opacity="0.9">
+    <path d="M0 770 Q 200 758 400 764 Q 600 770 800 756 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#1e2c1c" opacity="0.85">
+    <path d="M0 790 Q 260 780 400 784 Q 560 788 800 778 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

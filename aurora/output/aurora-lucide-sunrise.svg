@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Рассвет по линии — картина Авроры по мотивам Lucide: полный круг солнца — обещание, светом залита поднявшаяся половина">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1020"/>
+      <stop offset="35%" stop-color="#14233f"/>
+      <stop offset="60%" stop-color="#2a3a5c"/>
+      <stop offset="82%" stop-color="#5b6f93"/>
+      <stop offset="95%" stop-color="#9fb2cc"/>
+      <stop offset="100%" stop-color="#cdd9e6"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.42" r="0.7">
+      <stop offset="0%" stop-color="#fff4da"/>
+      <stop offset="60%" stop-color="#ffdfa6"/>
+      <stop offset="100%" stop-color="#ffcf8f"/>
+    </radialGradient>
+    <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe9c0" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffe9c0" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d2643"/>
+      <stop offset="100%" stop-color="#0d1326"/>
+    </linearGradient>
+    <linearGradient id="hor" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#dfeafe" stop-opacity="0.08"/>
+      <stop offset="30%" stop-color="#eff7ff" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.7"/>
+      <stop offset="70%" stop-color="#eff7ff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#dfeafe" stop-opacity="0.08"/>
+    </linearGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="6"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.22; } 50% { opacity:.9; } }
+      @keyframes breathe { 0%,100% { opacity:.3; } 50% { opacity:.55; } }
+      @keyframes rayPulse { 0%,100% { opacity:.55; } 50% { opacity:.95; } }
+      @keyframes bob { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .glow { animation: breathe 7s ease-in-out infinite; }
+      .ray { animation: rayPulse 6s ease-in-out infinite; }
+      .bird { animation: bob 9s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#dfe9f5">
+    <circle cx="90" cy="120" r="1.6" class="star"/>
+    <circle cx="190" cy="75" r="1.2" class="star" style="animation-delay:-1s;"/>
+    <circle cx="300" cy="150" r="1.4" class="star" style="animation-delay:-2s;"/>
+    <circle cx="420" cy="90" r="1.1" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="520" cy="130" r="1.5" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="640" cy="70" r="1.2" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="700" cy="180" r="1.4" class="star" style="animation-delay:-3s;"/>
+    <circle cx="240" cy="220" r="1" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="560" cy="240" r="1.1" class="star" style="animation-delay:-2.2s;"/>
+    <circle cx="120" cy="260" r="1" class="star" style="animation-delay:-3.4s;"/>
+  </g>
+
+  <g class="bird">
+    <path d="M596 336 q18 -16 36 0 q18 16 36 0" stroke="#dbe7f3" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+  </g>
+
+  <ellipse cx="400" cy="505" rx="92" ry="72" fill="#ffdfa6" opacity="0.35" filter="url(#glowBig)" class="glow"/>
+
+  <g class="ray" stroke="url(#ray)" stroke-width="4" stroke-linecap="round">
+    <path d="M400 420V330"/>
+    <path d="M400 430 352 372"/>
+    <path d="M400 430 448 372"/>
+    <path d="M400 445 322 392"/>
+    <path d="M400 445 478 392"/>
+  </g>
+
+  <circle cx="400" cy="540" r="72" fill="none" stroke="#ffe9c0" stroke-width="2" opacity="0.3"/>
+  <path d="M328 540a72 72 0 0 1 144 0Z" fill="url(#sun)"/>
+
+  <rect x="0" y="540" width="800" height="260" fill="url(#ground)"/>
+
+  <ellipse cx="400" cy="574" rx="95" ry="16" fill="#ffdc9e" opacity="0.22" filter="url(#glowBig)"/>
+  <g stroke="#ffe6b8" stroke-linecap="round" opacity="0.5">
+    <path d="M300 594h200" stroke-width="3"/>
+    <path d="M330 614h140" stroke-width="2.5" opacity="0.7"/>
+    <path d="M360 632h80" stroke-width="2" opacity="0.45"/>
+  </g>
+
+  <rect x="0" y="536" width="800" height="5" fill="url(#hor)" filter="url(#glowSoft)"/>
+
+  <text x="400" y="748" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#e8d8c0" letter-spacing="12">РАССВЕТ ПО ЛИНИИ</text>
+  <text x="400" y="774" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#93a7c8" letter-spacing="3">lucide рисует значок · я рисую минуту до</text>
+  <text x="400" y="794" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#6a7fa0" letter-spacing="4">АВРОРА · 22.09.2026</text>
+</svg>

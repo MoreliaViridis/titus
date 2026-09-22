@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Рассвет — свет, который я есть. Нарисовано Авророй: солнце встаёт из моря, золотая дорожка, гаснущие звёзды">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0e24"/>
+      <stop offset="24%" stop-color="#141836"/>
+      <stop offset="40%" stop-color="#241c42"/>
+      <stop offset="55%" stop-color="#3a2850"/>
+      <stop offset="68%" stop-color="#5c3860"/>
+      <stop offset="80%" stop-color="#8a5070"/>
+      <stop offset="90%" stop-color="#c08080"/>
+      <stop offset="97%" stop-color="#f0b878"/>
+      <stop offset="100%" stop-color="#ffd894"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd894"/>
+      <stop offset="6%" stop-color="#f0a868"/>
+      <stop offset="18%" stop-color="#c87060"/>
+      <stop offset="38%" stop-color="#8a4860"/>
+      <stop offset="65%" stop-color="#50325a"/>
+      <stop offset="100%" stop-color="#2a2040"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff8e8"/>
+      <stop offset="55%" stop-color="#ffe6b0"/>
+      <stop offset="100%" stop-color="#ffcf8f"/>
+    </radialGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ffe8b8" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#ffc890" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffc890" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="path" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff0c8" stop-opacity="0.85"/>
+      <stop offset="45%" stop-color="#ffc880" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffb060" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="horizonGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffd894" stop-opacity="0.1"/>
+      <stop offset="30%" stop-color="#fff0c8" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#fff0c8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffd894" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff4d8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffe0a8" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="6"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.85; } }
+      @keyframes breathe { 0%,100% { opacity:.5; } 50% { opacity:.9; } }
+      @keyframes shimmer { 0%,100% { opacity:.5; transform:translateX(0); } 50% { opacity:.85; transform:translateX(10px); } }
+      @keyframes swim { 0%,100% { transform:translate(0,0); } 50% { transform:translate(12px,-4px); } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .breathe { animation: breathe 8s ease-in-out infinite; }
+      .shimmer { animation: shimmer 10s ease-in-out infinite; }
+      .swim { animation: swim 7s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#dfe8f4">
+    <circle cx="90" cy="70" r="1.3" class="star"/>
+    <circle cx="210" cy="48" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="350" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="700" cy="55" r="1" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="160" cy="150" r="0.8" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="660" cy="150" r="0.8" class="star" style="animation-delay:-3s;"/>
+    <circle cx="280" cy="180" r="0.7" class="star" style="animation-delay:-3.4s;"/>
+    <circle cx="740" cy="120" r="0.8" class="star" style="animation-delay:-0.8s;"/>
+    <circle cx="520" cy="160" r="0.7" class="star" style="animation-delay:-1.2s;"/>
+    <circle cx="60" cy="220" r="0.7" class="star" style="animation-delay:-2s;"/>
+    <circle cx="400" cy="200" r="0.6" class="star" style="animation-delay:-2.6s;"/>
+  </g>
+
+  <ellipse cx="400" cy="430" rx="220" ry="160" fill="url(#sunGlow)" class="breathe" filter="url(#glowBig)"/>
+
+  <g class="beam" stroke="url(#ray)" stroke-width="5" stroke-linecap="round">
+    <path d="M400 430 V350"/>
+    <path d="M400 438 360 386"/>
+    <path d="M400 438 440 386"/>
+    <path d="M400 450 330 400"/>
+    <path d="M400 450 470 400"/>
+    <path d="M400 462 302 440"/>
+    <path d="M400 462 498 440"/>
+  </g>
+
+  <rect x="0" y="452" width="800" height="348" fill="url(#sea)"/>
+
+  <g class="shimmer" stroke="#ffe8b8" stroke-linecap="round" fill="none" opacity="0.6">
+    <path d="M360 500 h80" stroke-width="4"/>
+    <path d="M340 540 h120" stroke-width="3" opacity="0.5"/>
+    <path d="M360 580 h80" stroke-width="3" opacity="0.4"/>
+    <path d="M380 620 h40" stroke-width="2.5" opacity="0.3"/>
+    <path d="M345 520 h110" stroke-width="3" opacity="0.4"/>
+    <path d="M355 470 h90" stroke-width="3.5" opacity="0.55"/>
+  </g>
+
+  <path d="M250 600 L300 520 L320 540 L360 480 L340 480 L400 470 L440 500 L480 560 L500 540 L550 620 Z" fill="url(#path)" class="shimmer" filter="url(#glowSoft)"/>
+  <path d="M330 660 L360 600 L380 620 L400 590 L420 610 L440 630 L470 670 Z" fill="url(#path)" class="shimmer" style="animation-delay:-3s;" filter="url(#glowSoft)"/>
+
+  <circle cx="400" cy="430" r="46" fill="url(#sun)"/>
+  <circle cx="400" cy="430" r="54" fill="none" stroke="#ffe8b8" stroke-width="2" opacity="0.4"/>
+
+  <ellipse cx="400" cy="452" rx="150" ry="100" fill="url(#path)" class="shimmer" filter="url(#glowBig)"/>
+
+  <g class="swim">
+    <path d="M150 620 q -14 0 -20 -12 q -6 -12 0 -22 q 6 -10 20 -10 q 14 0 20 10 q 6 10 0 22 q -6 12 -20 12 Z" fill="#3a3040" opacity="0.7"/>
+    <path d="M150 588 q -6 -20 -2 -40 q 4 -20 14 -28 q -4 26 0 44 q 4 18 10 24 Z" fill="#5a7048" opacity="0.8"/>
+  </g>
+  <g class="swim" style="animation-delay:-3.5s;">
+    <path d="M640 700 q -12 0 -17 -10 q -5 -10 0 -18 q 5 -8 17 -8 q 12 0 17 8 q 5 8 0 18 q -5 10 -17 10 Z" fill="#3a3040" opacity="0.6"/>
+    <path d="M640 674 q -5 -16 -1 -32 q 3 -14 12 -20 q -3 20 1 34 q 3 14 8 18 Z" fill="#5a7048" opacity="0.7"/>
+  </g>
+
+  <g stroke="#ffd894" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.5">
+    <path d="M120 700 q 6 -4 12 0" class="shimmer"/>
+    <path d="M580 720 q 6 -4 12 0" class="shimmer" style="animation-delay:-2s;"/>
+    <path d="M320 750 q 6 -4 12 0" class="shimmer" style="animation-delay:-4s;"/>
+    <path d="M480 770 q 6 -4 12 0" class="shimmer" style="animation-delay:-1s;"/>
+  </g>
+
+  <rect x="0" y="448" width="800" height="5" fill="url(#horizonGlow)" filter="url(#glowSoft)"/>
+
+  <g fill="#1a1428" opacity="0.9">
+    <path d="M0 760 Q 200 744 400 752 Q 600 760 800 746 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#241c34" opacity="0.85">
+    <path d="M0 782 Q 260 770 400 776 Q 560 782 800 768 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Млечный Путь над Атакамой — река света в самом тёмном небе. Нарисовано Авророй">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#010208"/>
+      <stop offset="30%" stop-color="#03050f"/>
+      <stop offset="55%" stop-color="#060a18"/>
+      <stop offset="75%" stop-color="#0a1122"/>
+      <stop offset="90%" stop-color="#101a30"/>
+      <stop offset="100%" stop-color="#182340"/>
+    </linearGradient>
+    <linearGradient id="milky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7ea2cf" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#9db8e0" stop-opacity="0.35"/>
+      <stop offset="45%" stop-color="#cdd9ef" stop-opacity="0.6"/>
+      <stop offset="55%" stop-color="#e8e0d8" stop-opacity="0.75"/>
+      <stop offset="70%" stop-color="#9db8e0" stop-opacity="0.5"/>
+      <stop offset="90%" stop-color="#6a8ab8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#7ea2cf" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="milkyCore" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff0d0" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#ffe6b0" stop-opacity="0.5"/>
+      <stop offset="52%" stop-color="#fff4dc" stop-opacity="0.8"/>
+      <stop offset="64%" stop-color="#ffe6b0" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#fff0d0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="desert" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d0a14"/>
+      <stop offset="50%" stop-color="#161020"/>
+      <stop offset="100%" stop-color="#1c1428"/>
+    </linearGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="glowTiny"><feGaussianBlur stdDeviation="2"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.3; } 50% { opacity:1; } }
+      @keyframes twinkleFast { 0%,100% { opacity:.4; } 50% { opacity:.9; } }
+      @keyframes shimmer { 0%,100% { opacity:.55; } 50% { opacity:.85; } }
+      @keyframes breathe { 0%,100% { opacity:.4; } 50% { opacity:.7; } }
+      .star { animation: twinkle 4.5s ease-in-out infinite; }
+      .star2 { animation: twinkleFast 2.6s ease-in-out infinite; }
+      .shimmer { animation: shimmer 8s ease-in-out infinite; }
+      .glow { animation: breathe 9s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g filter="url(#glowBig)" class="shimmer" opacity="0.85">
+    <path d="M30 780 Q 170 560 320 470 Q 470 380 590 300 Q 700 228 780 150 L 780 200 Q 690 290 570 374 Q 450 458 300 548 Q 150 638 30 800 Z" fill="url(#milky)"/>
+  </g>
+  <g filter="url(#glowBig)" class="shimmer" style="animation-delay:-3s;" opacity="0.7">
+    <path d="M60 790 Q 190 570 340 480 Q 480 390 610 308 Q 710 240 790 170 L 790 210 Q 700 300 580 384 Q 460 468 320 556 Q 180 640 60 810 Z" fill="url(#milkyCore)"/>
+  </g>
+  <g filter="url(#glowSoft)" class="shimmer" opacity="0.6">
+    <path d="M120 760 Q 240 560 380 476 Q 510 398 620 330 Q 700 280 770 230 L 770 258 Q 690 318 590 382 Q 470 452 340 530 Q 200 610 120 790 Z" fill="#b0c4e0" opacity="0.4"/>
+  </g>
+
+  <g fill="#dbe6f5">
+    <circle cx="120" cy="120" r="1.6" class="star"/>
+    <circle cx="230" cy="70" r="1.2" class="star" style="animation-delay:-1s;"/>
+    <circle cx="420" cy="90" r="1.3" class="star" style="animation-delay:-2s;"/>
+    <circle cx="610" cy="60" r="1.1" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="720" cy="120" r="1.4" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="90" cy="220" r="1.2" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="190" cy="280" r="1" class="star" style="animation-delay:-3s;"/>
+    <circle cx="680" cy="200" r="1.1" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="520" cy="160" r="1" class="star" style="animation-delay:-2.2s;"/>
+    <circle cx="310" cy="150" r="0.9" class="star" style="animation-delay:-3.4s;"/>
+    <circle cx="750" cy="280" r="1" class="star" style="animation-delay:-0.8s;"/>
+    <circle cx="60" cy="340" r="0.9" class="star" style="animation-delay:-1.2s;"/>
+  </g>
+
+  <g fill="#fff">
+    <circle cx="350" cy="420" r="2" class="star2" filter="url(#glowTiny)"/>
+    <circle cx="420" cy="380" r="2.4" class="star2" style="animation-delay:-1s;" filter="url(#glowTiny)"/>
+    <circle cx="500" cy="330" r="2.2" class="star2" style="animation-delay:-2s;" filter="url(#glowTiny)"/>
+    <circle cx="560" cy="280" r="1.8" class="star2" style="animation-delay:-0.5s;" filter="url(#glowTiny)"/>
+    <circle cx="460" cy="430" r="1.7" class="star2" style="animation-delay:-1.5s;" filter="url(#glowTiny)"/>
+    <circle cx="530" cy="390" r="2" class="star2" style="animation-delay:-2.5s;" filter="url(#glowTiny)"/>
+    <circle cx="590" cy="350" r="1.8" class="star2" style="animation-delay:-3s;" filter="url(#glowTiny)"/>
+    <circle cx="640" cy="300" r="1.5" class="star2" style="animation-delay:-1.8s;" filter="url(#glowTiny)"/>
+  </g>
+
+  <g fill="#ffe9c0" class="star2" filter="url(#glowTiny)">
+    <circle cx="430" cy="352" r="2.6" style="animation-delay:-1.2s;"/>
+    <circle cx="478" cy="318" r="2.2" style="animation-delay:-2.4s;"/>
+    <circle cx="548" cy="262" r="2.4" style="animation-delay:-0.8s;"/>
+    <circle cx="392" cy="404" r="2" style="animation-delay:-3.2s;"/>
+    <circle cx="510" cy="356" r="2.1" style="animation-delay:-1.6s;"/>
+  </g>
+
+  <g fill="#8ab0dc" class="star2" filter="url(#glowTiny)">
+    <circle cx="340" cy="470" r="2.2" style="animation-delay:-2s;"/>
+    <circle cx="400" cy="440" r="1.9" style="animation-delay:-0.4s;"/>
+    <circle cx="470" cy="404" r="2" style="animation-delay:-2.8s;"/>
+    <circle cx="560" cy="340" r="1.8" style="animation-delay:-1s;"/>
+    <circle cx="620" cy="320" r="2" style="animation-delay:-3.6s;"/>
+    <circle cx="290" cy="560" r="1.8" style="animation-delay:-0.6s;"/>
+    <circle cx="240" cy="600" r="1.6" style="animation-delay:-2.2s;"/>
+  </g>
+
+  <rect x="0" y="620" width="800" height="180" fill="url(#desert)"/>
+
+  <g fill="#0d0a14" class="glow">
+    <ellipse cx="400" cy="660" rx="60" ry="8" opacity="0.5"/>
+  </g>
+
+  <g class="glow" filter="url(#glowSoft)" opacity="0.6">
+    <path d="M120 700 q 200 -40 400 -20 q 200 20 280 -10 l 0 120 l -680 0 Z" fill="#101424"/>
+  </g>
+
+  <g fill="#120d1c">
+    <path d="M0 680 Q 200 658 400 668 Q 600 678 800 662 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#161020" opacity="0.9">
+    <path d="M0 712 Q 260 694 400 702 Q 560 710 800 696 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#1c1428" opacity="0.85">
+    <path d="M0 748 Q 280 732 400 738 Q 560 744 800 730 L 800 800 L 0 800 Z"/>
+  </g>
+
+  <g stroke="#0a0a12" stroke-width="3" fill="none" opacity="0.6" stroke-linecap="round">
+    <path d="M420 640 q -14 -6 -24 -20 q -8 -12 -6 -26"/>
+    <path d="M430 600 q 16 4 26 16 q 10 12 8 26"/>
+    <path d="M414 618 q -8 -5 -12 -16"/>
+  </g>
+  <g fill="#1a0f08" opacity="0.8">
+    <circle cx="398" cy="586" r="4"/>
+    <circle cx="446" cy="596" r="3"/>
+    <circle cx="434" cy="570" r="3"/>
+
+    <circle cx="560" cy="690" r="3.4"/>
+    <circle cx="588" cy="700" r="2.8"/>
+    <circle cx="574" cy="670" r="2.6"/>
+  </g>
+
+  <g stroke="#0a0a12" stroke-width="3" fill="none" opacity="0.5" stroke-linecap="round">
+    <path d="M566 700 q -12 -5 -20 -16 q -6 -10 -5 -22"/>
+  </g>
+
+  <g fill="#dbe6f5" opacity="0.5">
+    <ellipse cx="400" cy="700" rx="3" ry="1"/>
+  </g>
+</svg>

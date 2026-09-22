@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Бледно-голубая точка — Земля, увиденная с 6 миллиардов километров. Нарисовано Авророй: крошка света в солнечном луче">
+  <defs>
+    <linearGradient id="space" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#010105"/>
+      <stop offset="40%" stop-color="#03030a"/>
+      <stop offset="70%" stop-color="#050712"/>
+      <stop offset="100%" stop-color="#070a18"/>
+    </linearGradient>
+    <radialGradient id="beamGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#c8a878" stop-opacity="0.35"/>
+      <stop offset="55%" stop-color="#a88858" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#a88858" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dotGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#80b8e8" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#58a0d8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#58a0d8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c8a878" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#d0b080" stop-opacity="0.3"/>
+      <stop offset="55%" stop-color="#d8b888" stop-opacity="0.42"/>
+      <stop offset="75%" stop-color="#d0b080" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#c8a878" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.3; } 50% { opacity:1; } }
+      @keyframes breathe { 0%,100% { opacity:.5; } 50% { opacity:.9; } }
+      @keyframes shimmer { 0%,100% { opacity:.4; } 50% { opacity:.75; } }
+      .star { animation: twinkle 5s ease-in-out infinite; }
+      .breathe { animation: breathe 8s ease-in-out infinite; }
+      .shimmer { animation: shimmer 11s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#space)"/>
+
+  <g fill="#c8d4e8">
+    <circle cx="80" cy="60" r="1.2" class="star"/>
+    <circle cx="200" cy="40" r="0.9" class="star" style="animation-delay:-1s;"/>
+    <circle cx="330" cy="80" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="460" cy="40" r="0.8" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="580" cy="70" r="1" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="700" cy="45" r="0.9" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="140" cy="130" r="0.7" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="520" cy="120" r="0.7" class="star" style="animation-delay:-2.2s;"/>
+    <circle cx="640" cy="150" r="0.7" class="star" style="animation-delay:-3s;"/>
+    <circle cx="260" cy="170" r="0.6" class="star" style="animation-delay:-3.4s;"/>
+    <circle cx="60" cy="250" r="0.7" class="star" style="animation-delay:-1.2s;"/>
+    <circle cx="740" cy="280" r="0.7" class="star" style="animation-delay:-2.8s;"/>
+    <circle cx="170" cy="330" r="0.6" class="star" style="animation-delay:-0.6s;"/>
+    <circle cx="360" cy="300" r="0.6" class="star" style="animation-delay:-3.2s;"/>
+    <circle cx="690" cy="360" r="0.6" class="star" style="animation-delay:-1.4s;"/>
+  </g>
+
+  <g class="shimmer" filter="url(#glowBig)">
+    <ellipse cx="400" cy="400" rx="320" ry="290" fill="url(#beamGlow)"/>
+  </g>
+
+  <path d="M60 760 Q 200 540 400 520 Q 600 500 760 620 L 760 780 Q 600 660 400 660 Q 220 660 60 800 Z" fill="url(#beam)" class="shimmer" filter="url(#glowSoft)"/>
+
+  <circle cx="400" cy="524" r="26" fill="url(#dotGlow)" class="breathe" filter="url(#glowBig)"/>
+  <circle cx="400" cy="524" r="5" fill="#90c8f0"/>
+  <circle cx="400" cy="524" r="5" fill="none" stroke="#c8e0f8" stroke-width="1" opacity="0.7"/>
+  <circle cx="400" cy="524" r="1.8" fill="#e8f4ff"/>
+
+  <g stroke="#c8a878" stroke-width="2.5" fill="none" opacity="0.3" stroke-linecap="round" class="shimmer">
+    <path d="M200 640 q 160 -40 400 -20"/>
+    <path d="M240 680 q 160 -36 380 -18" style="animation-delay:-4s;"/>
+    <path d="M300 610 q 120 -28 260 -14" style="animation-delay:-7s;"/>
+  </g>
+
+  <g fill="#0a0810" opacity="0.9">
+    <path d="M0 780 Q 200 770 400 774 Q 600 778 800 768 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

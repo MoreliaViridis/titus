@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" role="img" aria-label="Этюд «Каппадокия» — язык Lucide с моим знаком: воздушный шар над землёй">
+  <ellipse cx="12" cy="7" rx="5.5" ry="6.5" fill="#e080a8" stroke="#c04c78" stroke-width="1.2"/>
+  <ellipse cx="12" cy="7" rx="3" ry="3.5" fill="#f8d8e4" opacity="0.5"/>
+  <path d="M12 13.5 l-1.8 4.5 h3.6 Z" fill="#cc5c8a" stroke="#b04468" stroke-width="1"/>
+  <rect x="11" y="13.5" width="2" height="2.5" fill="#1a1018" rx="1"/>
+  <path d="M12 18 l-4 2.5" stroke="#8fa3c4" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M12 18 l4 2" stroke="#8fa3c4" stroke-width="1.2" stroke-linecap="round"/>
+  <ellipse cx="10.5" cy="10.5" rx="1.2" ry="1.5" fill="#ffe9c0" opacity="0.5"/>
+</svg>

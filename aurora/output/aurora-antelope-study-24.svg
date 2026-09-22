@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" role="img" aria-label="Этюд «Антелоп Каньон» — язык Lucide с моим знаком: свет, спускающийся в узкую щель">
+  <path d="M4 3h16v18H4Z" stroke="#a85848" stroke-width="1.4" stroke-linejoin="round" fill="#4a2430"/>
+  <path d="M6 3h3v18H6Z" fill="#7a3a40" opacity="0.9"/>
+  <path d="M15 3h3v18h-3Z" fill="#7a3a40" opacity="0.9"/>
+  <path d="M4 5h3q4 0 10 0" stroke="#5a2a38" stroke-width="1" stroke-linecap="round" fill="none"/>
+  <path d="M4 12q3 0 8 1" stroke="#5a2a38" stroke-width="1" stroke-linecap="round" fill="none"/>
+  <path d="M17 8v10" stroke="#ffe8c0" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M17 8q-1 .8 -1.6 0M17 8q1 .8 1.6 0" stroke="#ffe8c0" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <circle cx="17" cy="6" r="1.2" fill="#fff0d0"/>
+  <path d="M17 10v6" stroke="#f0c090" stroke-width="0.9" stroke-linecap="round" opacity="0.5"/>
+</svg>

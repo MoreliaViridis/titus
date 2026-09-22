@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-label="Канун равноденствия — день и ночь равны, нарисовано Авророй">
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#070a18"/>
+      <stop offset="55%" stop-color="#0d1226"/>
+      <stop offset="100%" stop-color="#141b36"/>
+    </linearGradient>
+    <linearGradient id="dawn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c3a5c"/>
+      <stop offset="55%" stop-color="#4a5a80"/>
+      <stop offset="85%" stop-color="#7d8fb2"/>
+      <stop offset="100%" stop-color="#b7c3da"/>
+    </linearGradient>
+    <linearGradient id="axis" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dfeafe" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#dfeafe" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#dfeafe" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="horizon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#cfe0f2" stop-opacity="0.1"/>
+      <stop offset="30%" stop-color="#eaf4ff" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#eaf4ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#cfe0f2" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="glowMid"><feGaussianBlur stdDeviation="6"/></filter>
+    <style>
+      @keyframes breathe { 0%,100% { opacity:.35; } 50% { opacity:.8; } }
+      @keyframes twinkle { 0%,100% { opacity:.3; } 50% { opacity:.9; } }
+      .axis { animation: breathe 6s ease-in-out infinite; }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="300" height="800" fill="url(#night)"/>
+  <rect x="300" y="0" width="300" height="800" fill="url(#dawn)"/>
+
+  <g fill="#ffffff">
+    <circle cx="60" cy="90" r="1.4" class="star"/>
+    <circle cx="150" cy="50" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="220" cy="130" r="1.2" class="star" style="animation-delay:-2s;"/>
+    <circle cx="90" cy="200" r="1" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="250" cy="70" r="1" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="40" cy="160" r="1.1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="180" cy="250" r="1" class="star" style="animation-delay:-3s;"/>
+    <circle cx="120" cy="320" r="1" class="star" style="animation-delay:-1.8s;"/>
+  </g>
+
+  <ellipse cx="450" cy="640" rx="200" ry="90" fill="#eaf4ff" opacity="0.12" filter="url(#glowMid)"/>
+
+  <rect x="298.5" y="80" width="3" height="560" fill="url(#axis)" class="axis" filter="url(#glowSoft)"/>
+
+  <rect x="0" y="640" width="600" height="4" fill="url(#horizon)" filter="url(#glowSoft)"/>
+  <rect x="0" y="650" width="600" height="3" fill="url(#horizon)" opacity="0.5"/>
+
+  <g stroke="#a8c8e8" stroke-width="1.4" fill="none" opacity="0.3">
+    <path d="M0 700 Q 150 680 300 685 Q 450 690 600 700"/>
+    <path d="M0 726 Q 200 706 300 708 Q 400 710 600 726" stroke-width="1.1" opacity="0.6"/>
+  </g>
+  <g fill="#dce8f5" opacity="0.35">
+    <circle cx="110" cy="686" r="12"/>
+    <circle cx="300" cy="692" r="16"/>
+    <circle cx="490" cy="684" r="10"/>
+    <circle cx="200" cy="712" r="9"/>
+    <circle cx="420" cy="710" r="11"/>
+  </g>
+
+  <text x="300" y="770" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#dce8f5" letter-spacing="8">КАНУН РАВНОДЕНСТВИЯ</text>
+  <text x="300" y="792" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#93a7c8" letter-spacing="3">день и ночь равны · завтра, 23.09 · 03:05</text>
+</svg>

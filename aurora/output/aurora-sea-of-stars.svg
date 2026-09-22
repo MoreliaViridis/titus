@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Море звёзд — биолюминесцентный планктон на острове Ваадхоо. Нарисовано Авророй: светящиеся сине-голубые волны в чёрной ночи">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#02040a"/>
+      <stop offset="35%" stop-color="#050a16"/>
+      <stop offset="60%" stop-color="#0a1224"/>
+      <stop offset="80%" stop-color="#101c34"/>
+      <stop offset="100%" stop-color="#16233f"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#061224"/>
+      <stop offset="50%" stop-color="#0a1a30"/>
+      <stop offset="100%" stop-color="#141f36"/>
+    </linearGradient>
+    <radialGradient id="glowBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#59e8ff" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#2fc9f2" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#2fc9f2" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowCyan" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#a8f0ff" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#59e8ff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#59e8ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="glowTiny"><feGaussianBlur stdDeviation="2.5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.2; } 50% { opacity:.95; } }
+      @keyframes waveGlow { 0%,100% { opacity:.5; } 50% { opacity:.95; } }
+      @keyframes sparkle { 0%,100% { opacity:.3; } 50% { opacity:1; } }
+      @keyframes wash { 0%,100% { transform:translateX(0); opacity:.45; } 50% { transform:translateX(18px); opacity:.85; } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .waveglow { animation: waveGlow 7s ease-in-out infinite; }
+      .sparkle { animation: sparkle 3.4s ease-in-out infinite; }
+      .wash { animation: wash 10s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#cfe9ff">
+    <circle cx="80" cy="70" r="1.4" class="star"/>
+    <circle cx="190" cy="45" r="1.1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="310" cy="90" r="1.2" class="star" style="animation-delay:-2s;"/>
+    <circle cx="440" cy="55" r="1" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="560" cy="85" r="1.3" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="690" cy="60" r="1.1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="140" cy="140" r="0.9" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="500" cy="130" r="0.9" class="star" style="animation-delay:-2.2s;"/>
+    <circle cx="640" cy="150" r="0.9" class="star" style="animation-delay:-3s;"/>
+    <circle cx="250" cy="170" r="0.8" class="star" style="animation-delay:-3.4s;"/>
+    <circle cx="720" cy="180" r="0.8" class="star" style="animation-delay:-0.8s;"/>
+  </g>
+
+  <rect x="0" y="420" width="800" height="380" fill="url(#sea)"/>
+
+  <path d="M0 420 Q 200 400 400 414 Q 600 428 800 408 L 800 800 L 0 800 Z" fill="#0b1c33"/>
+
+  <g class="wash" fill="none" stroke-linecap="round">
+    <path d="M60 600 Q 200 560 340 590" stroke="#2fc9f2" stroke-width="3" opacity="0.5" filter="url(#glowSoft)"/>
+    <path d="M420 640 Q 580 600 740 630" stroke="#59e8ff" stroke-width="3" opacity="0.45" filter="url(#glowSoft)" style="animation-delay:-4s;"/>
+    <path d="M100 680 Q 260 650 420 672" stroke="#2fc9f2" stroke-width="2.6" opacity="0.4" filter="url(#glowSoft)"/>
+    <path d="M500 700 Q 640 670 780 692" stroke="#59e8ff" stroke-width="2.6" opacity="0.35" filter="url(#glowSoft)" style="animation-delay:-2s;"/>
+  </g>
+
+  <g class="waveglow" filter="url(#glowBig)">
+    <ellipse cx="300" cy="590" rx="210" ry="60" fill="url(#glowBlue)"/>
+    <ellipse cx="600" cy="650" rx="180" ry="55" fill="url(#glowCyan)"/>
+    <ellipse cx="170" cy="700" rx="140" ry="45" fill="url(#glowBlue)" style="animation-delay:-3s;"/>
+    <ellipse cx="700" cy="720" rx="150" ry="48" fill="url(#glowCyan)" style="animation-delay:-5s;"/>
+  </g>
+
+  <g filter="url(#glowSoft)" fill="none" stroke-linecap="round">
+    <path d="M120 560 Q 240 540 360 556" stroke="#59e8ff" stroke-width="4" opacity="0.8"/>
+    <path d="M180 580 Q 300 562 420 576" stroke="#a8f0ff" stroke-width="3" opacity="0.6"/>
+    <path d="M480 610 Q 600 594 720 606" stroke="#59e8ff" stroke-width="4" opacity="0.75"/>
+    <path d="M540 640 Q 660 624 780 636" stroke="#a8f0ff" stroke-width="3" opacity="0.55"/>
+    <path d="M260 660 Q 380 644 500 658" stroke="#59e8ff" stroke-width="3.4" opacity="0.65"/>
+    <path d="M360 700 Q 480 686 600 698" stroke="#a8f0ff" stroke-width="3" opacity="0.5"/>
+  </g>
+
+  <g fill="#bff4ff" class="sparkle">
+    <circle cx="150" cy="580" r="2.2"/>
+    <circle cx="260" cy="565" r="1.8" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="585" r="2" style="animation-delay:-2s;"/>
+    <circle cx="420" cy="600" r="1.6" style="animation-delay:-0.5s;"/>
+    <circle cx="520" cy="615" r="2.2" style="animation-delay:-1.5s;"/>
+    <circle cx="630" cy="630" r="1.8" style="animation-delay:-2.5s;"/>
+    <circle cx="710" cy="612" r="2" style="animation-delay:-3s;"/>
+    <circle cx="190" cy="640" r="1.6" style="animation-delay:-0.8s;"/>
+    <circle cx="300" cy="655" r="2" style="animation-delay:-1.8s;"/>
+    <circle cx="450" cy="670" r="1.7" style="animation-delay:-2.8s;"/>
+    <circle cx="570" cy="685" r="2.1" style="animation-delay:-3.2s;"/>
+    <circle cx="680" cy="660" r="1.6" style="animation-delay:-1.2s;"/>
+    <circle cx="120" cy="720" r="1.8" style="animation-delay:-2.2s;"/>
+    <circle cx="380" cy="730" r="1.6" style="animation-delay:-3.4s;"/>
+    <circle cx="620" cy="740" r="1.9" style="animation-delay:-0.3s;"/>
+    <circle cx="760" cy="700" r="1.7" style="animation-delay:-1.4s;"/>
+  </g>
+
+  <g fill="#59e8ff" filter="url(#glowTiny)" class="sparkle" style="animation-delay:-1.6s;">
+    <circle cx="210" cy="598" r="1.1"/>
+    <circle cx="330" cy="576" r="1"/>
+    <circle cx="470" cy="590" r="1.2"/>
+    <circle cx="560" cy="636" r="1.1"/>
+    <circle cx="660" cy="606" r="1"/>
+    <circle cx="270" cy="644" r="1.1"/>
+    <circle cx="430" cy="700" r="1.2"/>
+    <circle cx="700" cy="726" r="1.1"/>
+  </g>
+
+  <g fill="#0b1c33">
+    <path d="M0 700 Q 260 688 420 698 Q 580 706 800 692 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#0e2340" opacity="0.9">
+    <path d="M0 730 Q 280 720 420 728 Q 580 736 800 724 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#102848" opacity="0.85">
+    <path d="M0 760 Q 300 750 420 756 Q 560 762 800 752 L 800 800 L 0 800 Z"/>
+  </g>
+
+  <g fill="#59e8ff" opacity="0.7" filter="url(#glowTiny)">
+    <circle cx="150" cy="752" r="1.3" class="sparkle" style="animation-delay:-2s;"/>
+    <circle cx="620" cy="764" r="1.1" class="sparkle" style="animation-delay:-1s;"/>
+    <circle cx="360" cy="772" r="1" class="sparkle" style="animation-delay:-3s;"/>
+  </g>
+</svg>

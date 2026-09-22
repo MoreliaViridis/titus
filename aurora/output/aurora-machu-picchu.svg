@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Мачу-Пикчу — затерянный город, встающий из тумана. Нарисовано Авророй: город инков на гребне, туман, рассвет">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1024"/>
+      <stop offset="26%" stop-color="#141a34"/>
+      <stop offset="46%" stop-color="#202844"/>
+      <stop offset="64%" stop-color="#343c58"/>
+      <stop offset="80%" stop-color="#565a70"/>
+      <stop offset="92%" stop-color="#807c86"/>
+      <stop offset="100%" stop-color="#a89a82"/>
+    </linearGradient>
+    <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a4a34"/>
+      <stop offset="45%" stop-color="#2a3a28"/>
+      <stop offset="100%" stop-color="#16221c"/>
+    </linearGradient>
+    <linearGradient id="peakF" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c3a28"/>
+      <stop offset="100%" stop-color="#16221c"/>
+    </linearGradient>
+    <linearGradient id="terrace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a5a3c"/>
+      <stop offset="100%" stop-color="#2e3a26"/>
+    </linearGradient>
+    <linearGradient id="stoneWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6a6254"/>
+      <stop offset="50%" stop-color="#4e483e"/>
+      <stop offset="100%" stop-color="#2e2a24"/>
+    </linearGradient>
+    <linearGradient id="stoneRoof" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4e483e"/>
+      <stop offset="100%" stop-color="#26221c"/>
+    </linearGradient>
+    <linearGradient id="mist" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c8d0da" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#dce2e8" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#e8ecef" stop-opacity="0.85"/>
+      <stop offset="70%" stop-color="#dce2e8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#c8d0da" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.6" r="0.6">
+      <stop offset="0%" stop-color="#ffdcb0" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#e8a878" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#e8a878" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff6e0"/>
+      <stop offset="60%" stop-color="#ffe2ab"/>
+      <stop offset="100%" stop-color="#ffcf8f"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="6"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.85; } }
+      @keyframes mistDrift { 0%,100% { transform:translateX(0); opacity:.55; } 50% { transform:translateX(26px); opacity:.85; } }
+      @keyframes mistDrift2 { 0%,100% { transform:translateX(0); opacity:.4; } 50% { transform:translateX(-22px); opacity:.7; } }
+      @keyframes breathe { 0%,100% { opacity:.4; } 50% { opacity:.7; } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .mist1 { animation: mistDrift 15s ease-in-out infinite; }
+      .mist2 { animation: mistDrift2 19s ease-in-out infinite; }
+      .breathe { animation: breathe 8s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#c8d4e8">
+    <circle cx="80" cy="70" r="1.3" class="star"/>
+    <circle cx="200" cy="45" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="490" cy="55" r="0.9" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="610" cy="85" r="1.2" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="710" cy="50" r="1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="150" cy="140" r="0.8" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="560" cy="130" r="0.8" class="star" style="animation-delay:-2.2s;"/>
+    <circle cx="670" cy="165" r="0.8" class="star" style="animation-delay:-3s;"/>
+  </g>
+
+  <ellipse cx="400" cy="360" rx="240" ry="150" fill="url(#sunGlow)" class="breathe" filter="url(#glowBig)"/>
+  <circle cx="400" cy="344" r="36" fill="url(#sun)" opacity="0.95"/>
+
+  <path d="M0 300 Q 160 250 260 276 Q 350 300 420 268 Q 500 232 580 280 Q 660 328 800 296 L 800 320 L 0 320 Z" fill="#1c261c" opacity="0.5"/>
+
+  <path d="M60 620 Q 180 430 300 380 Q 240 300 260 240 Q 270 210 300 220 Q 340 234 350 280 Q 365 360 320 430 Q 420 430 480 400 Q 520 260 560 170 Q 575 130 610 150 Q 650 170 640 230 Q 610 350 560 430 Q 500 480 460 520 L 500 650 L 620 650 L 620 620 Q 760 500 800 560 L 800 650 Z" fill="url(#ridge)"/>
+
+  <path d="M560 170 Q 575 130 610 150 Q 650 170 640 230 Q 610 350 560 430 Z" fill="url(#peakF)"/>
+
+  <path d="M300 380 Q 250 330 280 280 Q 300 250 330 275 Q 340 300 330 340 Z" fill="url(#peakF)" opacity="0.8"/>
+
+  <path d="M330 560 L400 540 L400 480 L330 500 Z" fill="url(#terrace)"/>
+  <path d="M400 540 L480 520 L480 460 L400 480 Z" fill="url(#terrace)"/>
+  <path d="M280 620 L330 600 L330 560 L280 575 Z" fill="url(#terrace)" opacity="0.9"/>
+  <path d="M480 520 L560 500 L560 440 L480 460 Z" fill="url(#terrace)" opacity="0.85"/>
+  <g stroke="#6a7a50" stroke-width="2" fill="none" opacity="0.4">
+    <path d="M330 545 L400 525 L400 490 L330 505"/>
+    <path d="M400 525 L480 505 L480 470 L400 490"/>
+    <path d="M280 605 L330 585 L330 570 L280 580"/>
+    <path d="M480 505 L560 485 L560 450 L480 470"/>
+  </g>
+
+  <g>
+    <rect x="350" y="430" width="26" height="34" fill="url(#stoneWall)"/>
+    <path d="M350 430 l13 -12 13 12 Z" fill="url(#stoneRoof)"/>
+    <rect x="356" y="440" width="6" height="8" fill="#241e18" rx="1.5"/>
+    <rect x="366" y="440" width="6" height="8" fill="#241e18" rx="1.5"/>
+
+    <rect x="388" y="416" width="30" height="38" fill="url(#stoneWall)"/>
+    <path d="M388 416 l15 -14 15 14 Z" fill="url(#stoneRoof)"/>
+    <rect x="395" y="426" width="6" height="8" fill="#241e18" rx="1.5"/>
+    <rect x="406" y="426" width="6" height="8" fill="#241e18" rx="1.5"/>
+
+    <rect x="428" y="424" width="24" height="34" fill="url(#stoneWall)"/>
+    <path d="M428 424 l12 -11 12 11 Z" fill="url(#stoneRoof)"/>
+    <rect x="434" y="432" width="5" height="7" fill="#241e18" rx="1.5"/>
+    <rect x="442" y="432" width="5" height="7" fill="#241e18" rx="1.5"/>
+
+    <rect x="360" y="380" width="16" height="20" fill="url(#stoneWall)"/>
+    <rect x="382" y="374" width="18" height="22" fill="url(#stoneWall)"/>
+    <rect x="406" y="378" width="14" height="18" fill="url(#stoneWall)"/>
+
+    <path d="M452 470 l26 -8 0 20 -26 8 Z" fill="url(#stoneWall)"/>
+    <rect x="330" y="360" width="30" height="26" fill="url(#stoneWall)"/>
+    <path d="M330 360 l15 -14 15 14 Z" fill="url(#stoneRoof)"/>
+    <rect x="338" y="370" width="6" height="7" fill="#241e18" rx="1.5"/>
+    <rect x="348" y="370" width="6" height="7" fill="#241e18" rx="1.5"/>
+  </g>
+
+  <g class="mist2" filter="url(#glowSoft)">
+    <path d="M60 430 Q 200 410 340 426 Q 480 442 640 420 Q 720 412 780 424 L 780 458 Q 620 440 460 450 Q 300 460 140 444 Q 90 438 60 444 Z" fill="url(#mist)"/>
+  </g>
+
+  <g class="mist1" filter="url(#glowSoft)" style="animation-delay:-5s;">
+    <path d="M80 480 Q 220 458 380 476 Q 540 494 700 470 Q 750 466 790 474 L 790 506 Q 620 490 460 498 Q 300 506 140 490 Q 100 486 80 494 Z" fill="url(#mist)" opacity="0.8"/>
+  </g>
+
+  <path d="M0 560 Q 160 540 280 548 Q 400 556 520 544 Q 640 532 800 548 L 800 570 L 0 570 Z" fill="#202a20"/>
+
+  <rect x="0" y="620" width="800" height="180" fill="#16221c"/>
+
+  <g class="mist1" style="animation-delay:-9s;" filter="url(#glowSoft)">
+    <path d="M0 660 Q 200 642 400 656 Q 600 670 800 650 L 800 686 Q 560 664 400 672 Q 240 680 0 660 Z" fill="url(#mist)" opacity="0.5"/>
+  </g>
+
+  <g fill="#121c14" opacity="0.9">
+    <path d="M0 730 Q 200 718 400 724 Q 600 730 800 716 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#182418" opacity="0.85">
+    <path d="M0 764 Q 260 752 400 758 Q 560 764 800 750 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Каппадокия — сто шаров на рассвете. Нарисовано Авророй: воздушные шары, сказочные дымоходы, предрассветное небо">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0f20"/>
+      <stop offset="28%" stop-color="#141b33"/>
+      <stop offset="48%" stop-color="#24294a"/>
+      <stop offset="65%" stop-color="#3f3f64"/>
+      <stop offset="80%" stop-color="#7a6880"/>
+      <stop offset="92%" stop-color="#bd9a92"/>
+      <stop offset="100%" stop-color="#e0b89a"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#160f18"/>
+      <stop offset="40%" stop-color="#201a28"/>
+      <stop offset="100%" stop-color="#2a2034"/>
+    </linearGradient>
+    <linearGradient id="balloon1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2b8d0"/>
+      <stop offset="60%" stop-color="#e080a8"/>
+      <stop offset="100%" stop-color="#cc5c8a"/>
+    </linearGradient>
+    <linearGradient id="balloon2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5d9a0"/>
+      <stop offset="60%" stop-color="#e8b870"/>
+      <stop offset="100%" stop-color="#d49450"/>
+    </linearGradient>
+    <linearGradient id="balloon3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8cce8"/>
+      <stop offset="60%" stop-color="#80a0d0"/>
+      <stop offset="100%" stop-color="#5070a8"/>
+    </linearGradient>
+    <linearGradient id="balloon4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b0e0b8"/>
+      <stop offset="60%" stop-color="#70b880"/>
+      <stop offset="100%" stop-color="#409058"/>
+    </linearGradient>
+    <linearGradient id="balloon5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e0a8e8"/>
+      <stop offset="60%" stop-color="#b878c8"/>
+      <stop offset="100%" stop-color="#9050a8"/>
+    </linearGradient>
+    <linearGradient id="chimney" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#441d1d"/>
+      <stop offset="30%" stop-color="#381a20"/>
+      <stop offset="70%" stop-color="#2a1620"/>
+      <stop offset="100%" stop-color="#201020"/>
+    </linearGradient>
+    <radialGradient id="sungalow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff0d0" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#ffd795" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffd795" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.85; } }
+      @keyframes float1 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-9px); } }
+      @keyframes float2 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+      @keyframes float3 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-7px); } }
+      @keyframes breathe { 0%,100% { opacity:.35; } 50% { opacity:.6; } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .f1 { animation: float1 8s ease-in-out infinite; }
+      .f2 { animation: float2 11s ease-in-out infinite; }
+      .f3 { animation: float3 9s ease-in-out infinite; }
+      .glow { animation: breathe 7s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#dfe9f5">
+    <circle cx="90" cy="70" r="1.4" class="star"/>
+    <circle cx="200" cy="45" r="1.1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="95" r="1.2" class="star" style="animation-delay:-2s;"/>
+    <circle cx="480" cy="55" r="1" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="600" cy="90" r="1.3" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="720" cy="60" r="1.1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="150" cy="150" r="0.9" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="560" cy="140" r="0.9" class="star" style="animation-delay:-2.2s;"/>
+    <circle cx="680" cy="160" r="0.9" class="star" style="animation-delay:-3s;"/>
+    <circle cx="280" cy="180" r="0.8" class="star" style="animation-delay:-3.4s;"/>
+  </g>
+
+  <ellipse cx="400" cy="410" rx="200" ry="130" fill="url(#sungalow)" class="glow" filter="url(#glowBig)"/>
+
+  <g class="f1">
+    <ellipse cx="240" cy="208" rx="38" ry="44" fill="url(#balloon1)"/>
+    <path d="M240 252 l-10 28 h20 Z" fill="#cc5c8a"/>
+    <path d="M240 280 q-12 4 -24 0" fill="none" stroke="#cc5c8a" stroke-width="3"/>
+    <path d="M240 282 q-8 3 -16 0" fill="none" stroke="#cc5c8a" stroke-width="2.4"/>
+    <ellipse cx="240" cy="218" rx="20" ry="24" fill="#f8d8e4" opacity="0.35"/>
+    <rect x="235" y="252" width="10" height="12" fill="#1a1018" rx="2"/>
+
+    <ellipse cx="480" cy="178" rx="32" ry="38" fill="url(#balloon3)"/>
+    <path d="M480 216 l-8 22 h16 Z" fill="#5070a8"/>
+    <rect x="476" y="216" width="8" height="10" fill="#1a1018" rx="2"/>
+    <path d="M480 238 q-10 3 -20 0" fill="none" stroke="#5070a8" stroke-width="2.5"/>
+    <ellipse cx="480" cy="186" rx="17" ry="20" fill="#c8d8f0" opacity="0.35"/>
+
+    <ellipse cx="640" cy="228" rx="28" ry="34" fill="url(#balloon4)"/>
+    <path d="M640 262 l-7 20 h14 Z" fill="#409058"/>
+    <rect x="637" y="262" width="6" height="9" fill="#1a1018" rx="2"/>
+    <path d="M640 282 q-9 3 -18 0" fill="none" stroke="#409058" stroke-width="2.2"/>
+    <ellipse cx="640" cy="236" rx="15" ry="17" fill="#c8e8d0" opacity="0.35"/>
+  </g>
+
+  <g class="f2" style="animation-delay:-3s;">
+    <ellipse cx="350" cy="140" rx="34" ry="40" fill="url(#balloon2)"/>
+    <path d="M350 180 l-9 24 h18 Z" fill="#d49450"/>
+    <rect x="346" y="180" width="8" height="10" fill="#1a1018" rx="2"/>
+    <path d="M350 204 q-10 3 -20 0" fill="none" stroke="#d49450" stroke-width="2.5"/>
+    <ellipse cx="350" cy="148" rx="18" ry="20" fill="#f8e4b8" opacity="0.35"/>
+
+    <ellipse cx="560" cy="128" rx="24" ry="30" fill="url(#balloon5)"/>
+    <path d="M560 158 l-6 18 h12 Z" fill="#9050a8"/>
+    <rect x="557" y="158" width="6" height="8" fill="#1a1018" rx="2"/>
+    <path d="M560 176 q-8 2 -16 0" fill="none" stroke="#9050a8" stroke-width="2"/>
+    <ellipse cx="560" cy="134" rx="13" ry="15" fill="#e0c0e8" opacity="0.35"/>
+
+    <ellipse cx="130" cy="108" rx="22" ry="26" fill="url(#balloon4)"/>
+    <path d="M130 134 l-5 14 h10 Z" fill="#409058"/>
+    <rect x="127" y="134" width="6" height="7" fill="#1a1018" rx="2"/>
+    <ellipse cx="130" cy="114" rx="12" ry="14" fill="#c8e8d0" opacity="0.35"/>
+  </g>
+
+  <g class="f3" style="animation-delay:-5s;">
+    <ellipse cx="440" cy="258" rx="28" ry="34" fill="url(#balloon1)"/>
+    <path d="M440 292 l-7 20 h14 Z" fill="#cc5c8a"/>
+    <rect x="437" y="292" width="6" height="8" fill="#1a1018" rx="2"/>
+    <ellipse cx="440" cy="266" rx="15" ry="18" fill="#f8d8e4" opacity="0.35"/>
+
+    <ellipse cx="310" cy="280" rx="24" ry="28" fill="url(#balloon3)"/>
+    <path d="M310 308 l-6 16 h12 Z" fill="#5070a8"/>
+    <rect x="307" y="308" width="6" height="7" fill="#1a1018" rx="2"/>
+    <ellipse cx="310" cy="286" rx="13" ry="15" fill="#c8d8f0" opacity="0.35"/>
+
+    <ellipse cx="700" cy="168" rx="20" ry="24" fill="url(#balloon2)"/>
+    <path d="M700 192 l-5 14 h10 Z" fill="#d49450"/>
+    <rect x="697" y="192" width="6" height="7" fill="#1a1018" rx="2"/>
+    <ellipse cx="700" cy="174" rx="11" ry="13" fill="#f8e4b8" opacity="0.35"/>
+  </g>
+
+  <g>
+    <path d="M680 620 q80 -50 120 -150" fill="none" stroke="#c89478" stroke-width="2.5" opacity="0.3"/>
+    <path d="M520 600 q60 -30 80 -98" fill="none" stroke="#c89478" stroke-width="2" opacity="0.25"/>
+  </g>
+
+  <path d="M0 600 Q 160 478 280 528 Q 400 578 500 528 Q 600 478 800 600 L 800 800 L 0 800 Z" fill="url(#ground)"/>
+
+  <g>
+    <path d="M568 528 Q 576 440 600 430 Q 612 424 618 440 Q 614 460 610 480" fill="url(#chimney)"/>
+    <path d="M600 430 Q 608 420 614 424 Q 610 414 604 420" fill="#2a1620"/>
+    <path d="M680 540 Q 686 460 700 448 Q 708 442 714 458 Q 710 478 706 498" fill="url(#chimney)"/>
+    <path d="M700 448 Q 708 438 714 442 Q 710 432 704 438" fill="#2a1620"/>
+    <path d="M420 554 Q 426 500 440 490 Q 446 486 450 496 Q 448 510 444 526" fill="url(#chimney)"/>
+    <path d="M440 490 Q 446 484 450 488 Q 447 480 442 484" fill="#2a1620"/>
+    <path d="M240 560 Q 248 498 260 488 Q 266 482 270 494 Q 266 514 262 534" fill="url(#chimney)"/>
+    <path d="M260 488 Q 268 480 274 484 Q 269 476 264 480" fill="#2a1620"/>
+    <path d="M160 580 Q 166 524 176 516 Q 180 512 184 522 Q 180 540 178 556" fill="url(#chimney)"/>
+    <path d="M176 516 Q 182 510 186 514 Q 182 506 178 510" fill="#2a1620"/>
+  </g>
+
+  <g fill="#1a1020" opacity="0.8">
+    <ellipse cx="160" cy="600" rx="24" ry="6"/>
+    <ellipse cx="260" cy="580" rx="22" ry="6"/>
+    <ellipse cx="440" cy="570" rx="20" ry="5"/>
+    <ellipse cx="600" cy="550" rx="22" ry="6"/>
+    <ellipse cx="700" cy="562" rx="20" ry="5"/>
+  </g>
+
+  <rect x="0" y="640" width="800" height="3" fill="#e0b89a" opacity="0.2" filter="url(#glowSoft)"/>
+
+  <g fill="#1a1020" opacity="0.9">
+    <path d="M0 648 Q 200 630 400 640 Q 600 650 800 636 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#24182c" opacity="0.85">
+    <path d="M0 680 Q 260 664 400 672 Q 560 680 800 666 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#2a2034" opacity="0.8">
+    <path d="M0 716 Q 280 702 400 708 Q 560 714 800 702 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

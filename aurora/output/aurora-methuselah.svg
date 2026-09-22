@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Мафусаил — дерево, помнящее 5000 лет. Нарисовано Авророй: остистая сосна на рассвете в Белых горах">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1022"/>
+      <stop offset="28%" stop-color="#181a36"/>
+      <stop offset="48%" stop-color="#2a2a4a"/>
+      <stop offset="66%" stop-color="#44405e"/>
+      <stop offset="80%" stop-color="#685e6e"/>
+      <stop offset="92%" stop-color="#948072"/>
+      <stop offset="100%" stop-color="#c0a488"/>
+    </linearGradient>
+    <linearGradient id="mountain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4a5a"/>
+      <stop offset="40%" stop-color="#3a3444"/>
+      <stop offset="100%" stop-color="#1e1c28"/>
+    </linearGradient>
+    <linearGradient id="mountain2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6a5a62"/>
+      <stop offset="40%" stop-color="#443a48"/>
+      <stop offset="100%" stop-color="#241e2c"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a3a34"/>
+      <stop offset="50%" stop-color="#382c2a"/>
+      <stop offset="100%" stop-color="#221a18"/>
+    </linearGradient>
+    <linearGradient id="trunk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8a6a50"/>
+      <stop offset="35%" stop-color="#a87850"/>
+      <stop offset="70%" stop-color="#c89058"/>
+      <stop offset="100%" stop-color="#a87048"/>
+    </linearGradient>
+    <linearGradient id="trunkDead" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3a3228"/>
+      <stop offset="50%" stop-color="#5a4a38"/>
+      <stop offset="100%" stop-color="#2c2518"/>
+    </linearGradient>
+    <linearGradient id="livebark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c89058"/>
+      <stop offset="50%" stop-color="#e0a860"/>
+      <stop offset="100%" stop-color="#b87840"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.55" r="0.6">
+      <stop offset="0%" stop-color="#ffe0b0" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#e8a070" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#e8a070" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff6e0"/>
+      <stop offset="60%" stop-color="#ffe0a8"/>
+      <stop offset="100%" stop-color="#ffcf8f"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.8; } }
+      @keyframes breathe { 0%,100% { opacity:.4; } 50% { opacity:.75; } }
+      @keyframes needleSway { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-3px); } }
+      @keyframes dust { 0%,100% { opacity:.3; } 50% { opacity:.7; } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .breathe { animation: breathe 8s ease-in-out infinite; }
+      .sway { animation: needleSway 6s ease-in-out infinite; }
+      .dust { animation: dust 7s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#c8d4e8">
+    <circle cx="80" cy="70" r="1.3" class="star"/>
+    <circle cx="200" cy="45" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="490" cy="55" r="0.9" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="610" cy="85" r="1.2" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="710" cy="50" r="1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="150" cy="140" r="0.8" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="560" cy="130" r="0.8" class="star" style="animation-delay:-2.2s;"/>
+    <circle cx="670" cy="165" r="0.8" class="star" style="animation-delay:-3s;"/>
+  </g>
+
+  <ellipse cx="400" cy="430" rx="220" ry="140" fill="url(#sunGlow)" class="breathe" filter="url(#glowBig)"/>
+  <circle cx="400" cy="405" r="34" fill="url(#sun)" opacity="0.96"/>
+
+  <path d="M0 440 L200 300 Q 260 270 320 300 L520 440 Z" fill="url(#mountain)"/>
+  <path d="M220 370 L420 240 Q 470 220 520 250 L720 420 Z" fill="url(#mountain2)" opacity="0.85"/>
+  <path d="M520 440 L640 320 Q 690 300 740 320 L800 380 L800 440 Z" fill="url(#mountain)" opacity="0.7"/>
+
+  <g class="breathe" stroke="#f0d8b8" stroke-width="2.5" stroke-linecap="round" filter="url(#glowSoft)">
+    <path d="M400 410 L388 380"/>
+    <path d="M400 410 L412 382"/>
+  </g>
+
+  <path d="M0 520 Q 180 496 340 512 Q 500 528 660 506 Q 740 498 800 508 L 800 800 L 0 800 Z" fill="url(#ground)"/>
+
+  <g>
+    <path d="M420 700 Q 402 540 398 420 Q 396 330 390 240 Q 388 200 396 168 Q 404 142 420 132" stroke="url(#trunkDead)" stroke-width="30" fill="none" stroke-linecap="round"/>
+    <path d="M398 420 Q 380 340 376 270 Q 373 210 370 180" stroke="url(#trunkDead)" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <path d="M420 132 Q 440 116 462 112 Q 486 108 500 118" stroke="url(#trunkDead)" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M462 112 Q 452 90 468 76 Q 484 64 498 72" stroke="url(#trunkDead)" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M370 180 Q 348 166 330 170 Q 314 174 306 166" stroke="url(#trunkDead)" stroke-width="8" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <path d="M398 420 Q 420 330 434 260 Q 442 210 446 168" stroke="url(#livebark)" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <path d="M446 168 Q 452 134 470 120" stroke="url(#livebark)" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M470 120 Q 482 108 490 100" stroke="url(#livebark)" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g class="sway">
+    <path d="M490 100 q 6 -26 30 -34 q 8 -2 10 8 q 4 22 -16 32 q -12 6 -24 -6 Z" fill="#8ab06a"/>
+    <path d="M496 88 q 2 -20 20 -26 q 6 -2 8 6 q 3 17 -12 24 q -9 4 -16 -4 Z" fill="#9cc078" opacity="0.9"/>
+    <path d="M486 108 q -8 -18 2 -34 q 4 -6 10 -2 q 10 8 -2 28 q -5 12 -10 8 Z" fill="#7aa05a" opacity="0.9"/>
+  </g>
+
+  <g class="sway" style="animation-delay:-2s;">
+    <path d="M446 168 q 22 -6 40 -28 q 4 -6 12 0 q 14 12 -10 34 q -20 16 -42 -6 Z" fill="#8ab06a"/>
+    <path d="M470 150 q 16 -14 34 -18 q 7 -2 9 6 q 4 16 -16 24 q -20 8 -27 -12 Z" fill="#9cc078" opacity="0.9"/>
+  </g>
+
+  <g stroke="#e8d8b8" stroke-width="2" fill="none" class="dust" opacity="0.5">
+    <path d="M398 400 q -8 -4 -6 -10 M402 380 q -6 -2 -4 -8 M396 360 q -8 -4 -6 -10"/>
+    <path d="M410 300 q 8 -2 6 -8 M408 270 q 6 -2 4 -8"/>
+  </g>
+
+  <g fill="#2a2018" opacity="0.85">
+    <path d="M0 560 Q 200 548 400 554 Q 600 560 800 548 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#33281e" opacity="0.9">
+    <path d="M0 610 Q 240 598 400 604 Q 560 610 800 598 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#3c3024" opacity="0.85">
+    <path d="M0 662 Q 280 650 400 656 Q 560 662 800 650 L 800 800 L 0 800 Z"/>
+  </g>
+
+  <g class="dust" fill="#9cc078" opacity="0.7">
+    <path d="M560 700 q -8 0 -11 -8 q -3 -8 0 -14 q 3 -6 11 -6 q 8 0 11 6 q 3 6 0 14 q -3 8 -11 8 Z"/>
+    <ellipse cx="560" cy="684" rx="12" ry="4" fill="#4a6a38"/>
+    <path d="M120 720 q -8 0 -11 -8 q -3 -8 0 -14 q 3 -6 11 -6 q 8 0 11 6 q 3 6 0 14 q -3 8 -11 8 Z" style="animation-delay:-3s;"/>
+    <ellipse cx="120" cy="704" rx="12" ry="4" fill="#4a6a38"/>
+  </g>
+</svg>

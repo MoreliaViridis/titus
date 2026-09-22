@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Алмазный пляж — айсберги на чёрном песке. Нарисовано Авророй: ледяные камни на вулканическом песке, рассвет в Исландии">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080c1c"/>
+      <stop offset="24%" stop-color="#12182e"/>
+      <stop offset="42%" stop-color="#202644"/>
+      <stop offset="58%" stop-color="#343a5a"/>
+      <stop offset="72%" stop-color="#504e6e"/>
+      <stop offset="84%" stop-color="#786878"/>
+      <stop offset="93%" stop-color="#a88278"/>
+      <stop offset="100%" stop-color="#d0a080"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1414"/>
+      <stop offset="40%" stop-color="#121010"/>
+      <stop offset="100%" stop-color="#080808"/>
+    </linearGradient>
+    <linearGradient id="ice" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8f6fc"/>
+      <stop offset="35%" stop-color="#b0dcec"/>
+      <stop offset="70%" stop-color="#74b4d4"/>
+      <stop offset="100%" stop-color="#3a8ab0"/>
+    </linearGradient>
+    <linearGradient id="iceDeep" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9acce4"/>
+      <stop offset="50%" stop-color="#5aa2c8"/>
+      <stop offset="100%" stop-color="#2a6a90"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16282e"/>
+      <stop offset="50%" stop-color="#101c22"/>
+      <stop offset="100%" stop-color="#0a1216"/>
+    </linearGradient>
+    <radialGradient id="sunglow" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#ffe0b8" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#e8a878" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#e8a878" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff6e0"/>
+      <stop offset="60%" stop-color="#ffdcb0"/>
+      <stop offset="100%" stop-color="#ffb878"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="glowTiny"><feGaussianBlur stdDeviation="2.5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.8; } }
+      @keyframes sparkle { 0%,100% { opacity:.4; } 50% { opacity:1; } }
+      @keyframes shimmer { 0%,100% { opacity:.4; } 50% { opacity:.8; } }
+      @keyframes wave { 0%,100% { transform:translateX(0); } 50% { transform:translateX(16px); } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .sparkle { animation: sparkle 4.5s ease-in-out infinite; }
+      .shimmer { animation: shimmer 9s ease-in-out infinite; }
+      .wave { animation: wave 12s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#c8d4e8">
+    <circle cx="80" cy="70" r="1.3" class="star"/>
+    <circle cx="200" cy="45" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="490" cy="55" r="0.9" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="610" cy="85" r="1.2" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="710" cy="50" r="1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="150" cy="140" r="0.8" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="560" cy="130" r="0.8" class="star" style="animation-delay:-2.2s;"/>
+  </g>
+
+  <ellipse cx="400" cy="430" rx="220" ry="130" fill="url(#sunglow)" filter="url(#glowBig)"/>
+  <circle cx="400" cy="402" r="34" fill="url(#sun)" opacity="0.95"/>
+
+  <g class="shimmer" stroke="#ffe0b8" stroke-width="2.5" stroke-linecap="round" filter="url(#glowSoft)" opacity="0.5">
+    <path d="M400 410 340 300"/>
+    <path d="M400 410 460 300"/>
+  </g>
+
+  <path d="M0 430 Q 160 410 320 424 Q 480 438 640 420 Q 720 412 800 424 L 800 470 L 0 470 Z" fill="url(#sea)"/>
+
+  <g class="wave" stroke="#4a7a88" stroke-width="2.5" stroke-linecap="round" fill="none" class="shimmer" opacity="0.5">
+    <path d="M120 460 q 60 -10 120 0 q 60 10 120 0 q 60 -10 120 0 q 60 10 120 0"/>
+  </g>
+
+  <rect x="0" y="520" width="800" height="280" fill="url(#sand)"/>
+
+  <g class="wave" stroke="#3aa0c0" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.5">
+    <path d="M80 540 q 80 -8 160 0 q 80 8 160 0 q 80 -8 160 0 q 80 8 160 0"/>
+    <path d="M120 560 q 70 -6 140 0 q 70 6 140 0 q 70 -6 140 0 q 70 6 140 0" opacity="0.3"/>
+  </g>
+
+  <g>
+    <path d="M180 640 L210 560 L250 560 L268 640 Z" fill="url(#ice)"/>
+    <path d="M210 560 L230 540 L250 560 Z" fill="url(#iceDeep)"/>
+    <path d="M180 640 q 6 -30 30 -70 M268 640 q -10 -50 -56 -80" stroke="#3a8ab0" stroke-width="2" fill="none" opacity="0.5"/>
+    <path d="M196 600 h24 M204 580 h18" stroke="#e8f6fc" stroke-width="1.6" fill="none" opacity="0.6"/>
+  </g>
+
+  <g>
+    <path d="M380 660 L395 580 L435 580 L450 660 Z" fill="url(#iceDeep)"/>
+    <path d="M395 580 L415 562 L435 580 Z" fill="url(#ice)"/>
+    <path d="M405 618 h22 M410 596 h16" stroke="#e8f6fc" stroke-width="1.6" fill="none" opacity="0.6"/>
+  </g>
+
+  <g>
+    <path d="M520 630 L540 570 L570 570 L590 630 Z" fill="url(#ice)"/>
+    <path d="M540 570 L555 556 L570 570 Z" fill="url(#iceDeep)"/>
+    <path d="M545 600 h18" stroke="#e8f6fc" stroke-width="1.5" fill="none" opacity="0.6"/>
+  </g>
+
+  <g>
+    <path d="M640 660 L650 610 L672 610 L690 660 Z" fill="url(#iceDeep)"/>
+    <path d="M650 610 L661 600 L672 610 Z" fill="url(#ice)"/>
+  </g>
+
+  <g class="sparkle" fill="#ffffff">
+    <circle cx="222" cy="584" r="2.2"/>
+    <circle cx="415" cy="600" r="2"/>
+    <circle cx="555" cy="586" r="1.8"/>
+    <circle cx="661" cy="616" r="1.8"/>
+    <circle cx="200" cy="620" r="1.6" style="animation-delay:-1s;"/>
+    <circle cx="430" cy="636" r="1.6" style="animation-delay:-2s;"/>
+    <circle cx="575" cy="620" r="1.5" style="animation-delay:-3s;"/>
+  </g>
+
+  <g class="sparkle" filter="url(#glowTiny)" fill="#e8f6fc">
+    <circle cx="240" cy="570" r="1.1"/>
+    <circle cx="395" cy="590" r="1.2" style="animation-delay:-1.4s;"/>
+    <circle cx="565" cy="580" r="1"/>
+    <circle cx="655" cy="626" r="1.1" style="animation-delay:-2.4s;"/>
+  </g>
+
+  <g class="shimmer" stroke="#888" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.3">
+    <path d="M140 700 q 60 -8 120 0 q 60 8 120 0 q 60 -8 120 0 q 60 8 120 0"/>
+    <path d="M200 740 q 80 -8 160 0 q 80 8 160 0 q 80 -8 160 0" style="animation-delay:-3s;"/>
+  </g>
+
+  <g fill="#0a0a0a" opacity="0.9">
+    <path d="M0 760 Q 200 750 400 756 Q 600 762 800 750 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#100c0c" opacity="0.85">
+    <path d="M0 786 Q 260 776 400 780 Q 560 784 800 774 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

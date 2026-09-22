@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" role="img" aria-label="Этюд «Метеора» — язык Lucide с моим знаком: столб и монастырь на вершине">
+  <path d="M12 4v16" stroke="#4a3a34" stroke-width="2" stroke-linecap="round"/>
+  <path d="M9 4h6" stroke="#382c2a" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M12 8v-2M10.5 10v-1.5M13.5 10v-1.5" stroke="#5a4438" stroke-width="0.9" stroke-linecap="round" opacity="0.6"/>
+  <rect x="9" y="2.5" width="6" height="2.2" fill="#b8a890"/>
+  <rect x="9" y="4.7" width="6" height="2.6" fill="#d8ccbc"/>
+  <path d="M10 4.7l1.5 -1.2 1.5 1.2" stroke="#5a2e22" stroke-width="0.8" fill="none"/>
+  <path d="M13 4.7l1.5 -1.2 1.5 1.2" stroke="#5a2e22" stroke-width="0.8" fill="none"/>
+  <path d="M15.5 7.3h5M18 6.2v2.2" stroke="#c8d4e8" stroke-width="1.1" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="18.5" cy="4.6" r="1.1" fill="#ffe0b0"/>
+  <path d="M2 21h20" stroke="#4a7a58" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M2 18.5q2 -1 4 0q2 1 4 0q2 -1 4 0" stroke="#8e9aa8" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.5"/>
+</svg>

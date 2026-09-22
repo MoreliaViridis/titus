@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Золотой час — свет, когда всё уже происходит. Нарисовано Авророй: тёплый свет перед закатом, длинные тени, золотое поле">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2a4c"/>
+      <stop offset="18%" stop-color="#5a3a58"/>
+      <stop offset="32%" stop-color="#7a4a60"/>
+      <stop offset="46%" stop-color="#a8605e"/>
+      <stop offset="58%" stop-color="#d07a52"/>
+      <stop offset="70%" stop-color="#e89a48"/>
+      <stop offset="82%" stop-color="#f0b850"/>
+      <stop offset="92%" stop-color="#f8d870"/>
+      <stop offset="98%" stop-color="#fce89a"/>
+      <stop offset="100%" stop-color="#fff0b8"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d8b046"/>
+      <stop offset="40%" stop-color="#b88838"/>
+      <stop offset="100%" stop-color="#8a6028"/>
+    </linearGradient>
+    <linearGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff8e0"/>
+      <stop offset="55%" stop-color="#ffe8a0"/>
+      <stop offset="100%" stop-color="#ffd878"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#ffe8a0" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#f0b850" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#f0b850" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="6"/></filter>
+    <style>
+      @keyframes shimmer { 0%,100% { opacity:.4; } 50% { opacity:.8; } }
+      @keyframes sway { 0%,100% { transform:translateX(0); } 50% { transform:translateX(3px); } }
+      @keyframes glowPulse { 0%,100% { opacity:.5; } 50% { opacity:.9; } }
+      .shimmer { animation: shimmer 9s ease-in-out infinite; }
+      .sway { animation: sway 8s ease-in-out infinite; }
+      .glow { animation: glowPulse 7s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <ellipse cx="400" cy="500" rx="260" ry="160" fill="url(#sunGlow)" class="glow" filter="url(#glowBig)"/>
+  <circle cx="400" cy="470" r="52" fill="url(#sun)" opacity="0.97"/>
+  <circle cx="400" cy="470" r="52" fill="none" stroke="#fff0b8" stroke-width="2" opacity="0.4"/>
+
+  <g class="glow" stroke="#ffe8a0" stroke-width="3" stroke-linecap="round" opacity="0.6" filter="url(#glowSoft)">
+    <path d="M400 470v-50"/>
+    <path d="M400 478 350 430"/>
+    <path d="M400 478 450 430"/>
+  </g>
+
+  <rect x="0" y="560" width="800" height="240" fill="url(#field)"/>
+
+  <g class="shimmer" stroke="#f8e0a0" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6">
+    <path d="M120 620 q 60 -10 120 0 q 60 10 120 0"/>
+    <path d="M440 660 q 70 -10 140 0 q 70 10 140 0" style="animation-delay:-3s;"/>
+    <path d="M260 720 q 80 -10 160 0 q 80 10 160 0" style="animation-delay:-5s;"/>
+  </g>
+
+  <g stroke="#6a4a1e" stroke-width="3" fill="none" opacity="0.5" stroke-linecap="round">
+    <path d="M300 560 l120 70"/>
+    <path d="M480 560 l100 60"/>
+    <path d="M220 580 l90 50"/>
+    <path d="M540 570 l60 40"/>
+  </g>
+  <g fill="#6a4a1e" opacity="0.45">
+    <ellipse cx="300" cy="638" rx="10" ry="3"/>
+    <ellipse cx="480" cy="628" rx="9" ry="3"/>
+    <ellipse cx="220" cy="636" rx="8" ry="3"/>
+  </g>
+
+  <g class="sway">
+    <path d="M140 730 q -8 0 -11 -8 q -3 -8 0 -14 q 3 -6 11 -6 q 8 0 11 6 q 3 6 0 14 q -3 8 -11 8 Z" fill="#8a6a2a" opacity="0.8"/>
+    <ellipse cx="140" cy="714" rx="12" ry="4" fill="#6a501e"/>
+    <path d="M660 742 q -8 0 -11 -8 q -3 -8 0 -14 q 3 -6 11 -6 q 8 0 11 6 q 3 6 0 14 q -3 8 -11 8 Z" fill="#8a6a2a" opacity="0.7"/>
+    <ellipse cx="660" cy="726" rx="12" ry="4" fill="#6a501e"/>
+  </g>
+
+  <g fill="#7a5822" opacity="0.9">
+    <path d="M0 770 Q 200 758 400 764 Q 600 770 800 756 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#8a6426" opacity="0.85">
+    <path d="M0 790 Q 260 780 400 784 Q 560 788 800 778 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

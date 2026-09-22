@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Тропа гигантов — ступени великана в море. Нарисовано Авророй: базальтовые колонны на рассвете, океан, легенда о дороге между землями">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e1428"/>
+      <stop offset="26%" stop-color="#1c2038"/>
+      <stop offset="46%" stop-color="#2e304c"/>
+      <stop offset="64%" stop-color="#4a4460"/>
+      <stop offset="80%" stop-color="#74626e"/>
+      <stop offset="92%" stop-color="#a8827c"/>
+      <stop offset="100%" stop-color="#d0a28c"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e3a4a"/>
+      <stop offset="40%" stop-color="#162e3e"/>
+      <stop offset="100%" stop-color="#0e1e2a"/>
+    </linearGradient>
+    <linearGradient id="basalt" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#201826"/>
+      <stop offset="40%" stop-color="#2e2434"/>
+      <stop offset="100%" stop-color="#3c3040"/>
+    </linearGradient>
+    <linearGradient id="basaltGold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5a3a3a"/>
+      <stop offset="45%" stop-color="#8a5a48"/>
+      <stop offset="100%" stop-color="#c88860"/>
+    </linearGradient>
+    <linearGradient id="seaGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a7a92" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#3a6280" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#3a6280" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.6" r="0.6">
+      <stop offset="0%" stop-color="#ffdcb0" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#e8a070" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#e8a070" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff6e0"/>
+      <stop offset="60%" stop-color="#ffe0a8"/>
+      <stop offset="100%" stop-color="#ffcf8f"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.8; } }
+      @keyframes seaShimmer { 0%,100% { opacity:.4; } 50% { opacity:.75; } }
+      @keyframes foamPulse { 0%,100% { opacity:.5; } 50% { opacity:.9; } }
+      @keyframes sunray { 0%,100% { opacity:.4; } 50% { opacity:.85; } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .shimmer { animation: seaShimmer 9s ease-in-out infinite; }
+      .foam { animation: foamPulse 7s ease-in-out infinite; }
+      .ray { animation: sunray 6s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#c8d4e8">
+    <circle cx="80" cy="70" r="1.3" class="star"/>
+    <circle cx="200" cy="45" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="490" cy="55" r="0.9" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="610" cy="85" r="1.2" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="710" cy="50" r="1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="150" cy="140" r="0.8" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="560" cy="130" r="0.8" class="star" style="animation-delay:-2.2s;"/>
+    <circle cx="670" cy="165" r="0.8" class="star" style="animation-delay:-3s;"/>
+  </g>
+
+  <ellipse cx="620" cy="420" rx="140" ry="110" fill="url(#sunGlow)" filter="url(#glowBig)"/>
+  <circle cx="620" cy="396" r="34" fill="url(#sun)" opacity="0.97"/>
+
+  <g class="ray" stroke="#ffdcb0" stroke-width="3" stroke-linecap="round" opacity="0.5" filter="url(#glowSoft)">
+    <path d="M620 400v-40"/>
+    <path d="M620 404 588 372"/>
+    <path d="M620 404 652 372"/>
+  </g>
+
+  <path d="M0 520 Q 200 500 340 512 Q 480 524 620 508 Q 720 498 800 508 L 800 800 L 0 800 Z" fill="url(#sea)"/>
+  <ellipse cx="620" cy="560" rx="200" ry="60" fill="url(#seaGlow)" class="shimmer" filter="url(#glowBig)"/>
+
+  <g stroke="#5a8aa0" stroke-width="2.5" stroke-linecap="round" fill="none" class="shimmer" opacity="0.5">
+    <path d="M200 600 q 60 -10 120 0 q 60 10 120 0"/>
+    <path d="M440 640 q 60 -10 120 0 q 60 10 120 0" style="animation-delay:-3s;"/>
+    <path d="M260 680 q 70 -10 140 0 q 70 10 140 0" style="animation-delay:-5s;"/>
+  </g>
+
+  <g>
+    <path d="M60 520 L60 430 Q 74 422 88 430 L88 520 Z" fill="url(#basalt)"/>
+    <path d="M94 520 L94 440 Q 110 432 126 440 L126 520 Z" fill="url(#basalt)"/>
+    <path d="M128 520 L128 452 Q 142 446 156 452 L156 520 Z" fill="url(#basaltGold)"/>
+    <path d="M160 520 L160 444 Q 176 436 192 444 L192 520 Z" fill="url(#basalt)"/>
+    <path d="M196 520 L196 460 Q 210 454 224 460 L224 520 Z" fill="url(#basalt)"/>
+    <path d="M228 520 L228 448 Q 244 440 260 448 L260 520 Z" fill="url(#basaltGold)"/>
+    <path d="M264 520 L264 456 Q 280 448 296 456 L296 520 Z" fill="url(#basalt)"/>
+    <path d="M300 520 L300 448 Q 316 440 332 448 L332 520 Z" fill="url(#basalt)"/>
+  </g>
+
+  <g>
+    <path d="M336 520 L336 470 Q 352 462 368 470 L368 520 Z" fill="url(#basaltGold)"/>
+    <path d="M372 520 L372 482 Q 388 476 404 482 L404 520 Z" fill="url(#basalt)"/>
+    <path d="M408 520 L408 472 Q 424 464 440 472 L440 520 Z" fill="url(#basalt)"/>
+    <path d="M444 520 L444 490 Q 460 484 476 490 L476 520 Z" fill="url(#basaltGold)"/>
+    <path d="M480 520 L480 476 Q 496 468 512 476 L512 520 Z" fill="url(#basalt)"/>
+    <path d="M516 520 L516 492 Q 532 486 548 492 L548 520 Z" fill="url(#basalt)"/>
+    <path d="M552 520 L552 480 Q 568 472 584 480 L584 520 Z" fill="url(#basaltGold)"/>
+  </g>
+
+  <g>
+    <path d="M588 520 L588 486 Q 604 478 620 486 L620 520 Z" fill="url(#basalt)"/>
+    <path d="M624 520 L624 496 Q 640 490 656 496 L656 520 Z" fill="url(#basalt)"/>
+    <path d="M660 520 L660 502 Q 676 496 692 502 L692 520 Z" fill="url(#basaltGold)"/>
+    <path d="M696 520 L696 506 Q 710 500 724 506 L724 520 Z" fill="url(#basalt)"/>
+    <path d="M728 520 L728 498 Q 744 492 760 498 L760 520 Z" fill="url(#basalt)"/>
+  </g>
+
+  <g stroke="#5a4438" stroke-width="2" fill="none" opacity="0.6">
+    <path d="M77 520v10 M110 520v12 M142 520v10 M176 520v12 M210 520v10 M244 520v12 M278 520v10 M314 520v12"/>
+    <path d="M418 520v10 M452 520v12 M488 520v10 M522 520v12 M556 520v10 M590 520v12 M626 520v10 M662 520v12 M696 520v10"/>
+  </g>
+
+  <g class="foam">
+    <path d="M40 530 q 40 -10 80 0 q 40 10 80 0 q 40 -10 80 0 q 40 10 80 0 q 40 -10 80 0 q 40 10 80 0 q 40 -10 80 0 q 40 10 80 0" stroke="#e8f4f8" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <path d="M60 542 q 40 -6 80 0 q 40 6 80 0 q 40 -6 80 0 q 40 6 80 0 q 40 -6 80 0 q 40 6 80 0 q 40 -6 72 0" stroke="#e8f4f8" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+  </g>
+
+  <g fill="#1a1018" opacity="0.8">
+    <path d="M0 552 Q 200 544 400 550 Q 600 556 800 548 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#241a26" opacity="0.9">
+    <path d="M0 596 Q 220 586 400 592 Q 580 598 800 588 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#2c2030" opacity="0.85">
+    <path d="M0 642 Q 240 632 400 638 Q 560 644 800 634 L 800 800 L 0 800 Z"/>
+  </g>
+
+  <g stroke="#a86a4a" stroke-width="1.6" fill="none" class="shimmer" opacity="0.3">
+    <path d="M120 700 q 30 16 60 0 q 30 -16 60 0 q 30 16 60 0"/>
+    <path d="M360 720 q 28 14 56 0 q 28 -14 56 0 q 28 14 56 0"/>
+  </g>
+</svg>

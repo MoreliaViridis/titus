@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Столпы Творения — колыбель звёзд. Нарисовано Авророй: колонны газа и пыли, в которых рождается свет">
+  <defs>
+    <linearGradient id="space" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#020208"/>
+      <stop offset="40%" stop-color="#060a18"/>
+      <stop offset="70%" stop-color="#0c1226"/>
+      <stop offset="100%" stop-color="#141a30"/>
+    </linearGradient>
+    <linearGradient id="pillar1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3a2a3e"/>
+      <stop offset="45%" stop-color="#5a3a50"/>
+      <stop offset="75%" stop-color="#8a5a68"/>
+      <stop offset="100%" stop-color="#6a4a58"/>
+    </linearGradient>
+    <linearGradient id="pillar2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4a3a4a"/>
+      <stop offset="40%" stop-color="#6a4a5c"/>
+      <stop offset="100%" stop-color="#8a5a6a"/>
+    </linearGradient>
+    <linearGradient id="glowEdge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffc890" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffc890" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="glowEdge2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffc890" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffc890" stop-opacity="0.85"/>
+    </linearGradient>
+    <radialGradient id="starGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff4dc" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#ffd8a0" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#ffb070" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ffb070" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="youngStar" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#c8d8ff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#c8d8ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="glowTiny"><feGaussianBlur stdDeviation="2.5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.25; } 50% { opacity:1; } }
+      @keyframes birth { 0%,100% { opacity:.7; transform:scale(1); } 50% { opacity:1; transform:scale(1.25); } }
+      @keyframes drift { 0%,100% { opacity:.5; transform:translateX(0); } 50% { opacity:.85; transform:translateX(10px); } }
+      @keyframes pulse { 0%,100% { opacity:.4; } 50% { opacity:.8; } }
+      .star { animation: twinkle 5s ease-in-out infinite; }
+      .birth { animation: birth 4s ease-in-out infinite; transform-origin:center; }
+      .drift { animation: drift 12s ease-in-out infinite; }
+      .pulse { animation: pulse 8s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#space)"/>
+
+  <g fill="#cfe0ff" class="star">
+    <circle cx="90" cy="70" r="1.3"/>
+    <circle cx="210" cy="40" r="1"/>
+    <circle cx="450" cy="55" r="1.1"/>
+    <circle cx="600" cy="80" r="1.2"/>
+    <circle cx="710" cy="45" r="1"/>
+    <circle cx="140" cy="150" r="0.9"/>
+    <circle cx="350" cy="120" r="0.9"/>
+    <circle cx="560" cy="140" r="1"/>
+    <circle cx="680" cy="160" r="0.9"/>
+    <circle cx="250" cy="190" r="0.8"/>
+    <circle cx="480" cy="200" r="0.8"/>
+    <circle cx="60" cy="240" r="0.9"/>
+    <circle cx="740" cy="230" r="0.9"/>
+    <circle cx="180" cy="280" r="0.8"/>
+    <circle cx="520" cy="300" r="0.8"/>
+    <circle cx="660" cy="340" r="0.9"/>
+    <circle cx="120" cy="380" r="0.8"/>
+    <circle cx="720" cy="420" r="0.8"/>
+  </g>
+
+  <g class="drift" filter="url(#glowBig)" opacity="0.7">
+    <ellipse cx="400" cy="380" rx="380" ry="260" fill="#8a4a68" opacity="0.12"/>
+    <ellipse cx="400" cy="420" rx="350" ry="220" fill="#c87890" opacity="0.1"/>
+  </g>
+
+  <g filter="url(#glowSoft)" class="pulse">
+    <path d="M330 120 Q 380 300 400 800 L 470 800 Q 440 320 400 120 Z" fill="url(#pillar1)" opacity="0.35"/>
+    <path d="M160 200 Q 190 420 220 800 L 290 800 Q 270 440 230 200 Z" fill="url(#pillar2)" opacity="0.35"/>
+    <path d="M560 160 Q 590 400 600 800 L 680 800 Q 660 420 620 160 Z" fill="url(#pillar2)" opacity="0.35"/>
+  </g>
+
+  <path d="M330 120 Q 360 260 380 420 Q 396 560 400 800 L 455 800 Q 448 560 438 420 Q 426 260 402 120 Z" fill="url(#pillar1)"/>
+  <path d="M330 120 Q 350 240 372 400 Q 388 550 396 800 L 420 800 Q 418 550 410 400 Q 396 240 374 120 Z" fill="url(#pillar2)" opacity="0.8"/>
+  <path d="M330 120 L 402 120 Q 406 240 412 400 Q 414 560 418 800 L 396 800 Q 388 550 372 400 Q 350 240 330 120 Z" fill="#8a5a68" opacity="0.5"/>
+
+  <path d="M160 200 Q 178 360 198 520 Q 210 660 216 800 L 256 800 Q 254 680 246 540 Q 232 380 206 200 Z" fill="url(#pillar2)"/>
+  <path d="M160 200 Q 172 340 190 500 Q 202 640 210 800 L 228 800 Q 224 660 216 520 Q 202 360 180 200 Z" fill="#8a5a68" opacity="0.65"/>
+  <path d="M160 200 Q 176 300 194 440 Q 204 560 210 700" stroke="url(#glowEdge)" stroke-width="14" fill="none" opacity="0.5" filter="url(#glowSoft)"/>
+
+  <path d="M560 160 Q 578 340 596 500 Q 608 660 612 800 L 656 800 Q 652 660 644 520 Q 628 360 600 160 Z" fill="url(#pillar2)"/>
+  <path d="M560 160 Q 574 300 592 460 Q 604 600 610 740" stroke="url(#glowEdge2)" stroke-width="14" fill="none" opacity="0.55" filter="url(#glowSoft)"/>
+  <path d="M560 160 Q 576 320 594 480 Q 604 620 610 760 L 628 800 Q 630 660 622 520 Q 606 360 582 160 Z" fill="#8a5a68" opacity="0.6"/>
+
+  <g class="birth">
+    <circle cx="400" cy="180" r="34" fill="url(#starGlow)" filter="url(#glowSoft)"/>
+    <circle cx="400" cy="180" r="10" fill="#fff4dc" filter="url(#glowSoft)"/>
+    <circle cx="400" cy="180" r="4.5" fill="#ffffff"/>
+  </g>
+
+  <g class="birth" style="animation-delay:-1.5s;">
+    <circle cx="208" cy="250" r="22" fill="url(#youngStar)" filter="url(#glowSoft)"/>
+    <circle cx="208" cy="250" r="6" fill="#d8e4ff" filter="url(#glowSoft)"/>
+    <circle cx="208" cy="250" r="2.6" fill="#ffffff"/>
+  </g>
+
+  <g class="birth" style="animation-delay:-2.8s;">
+    <circle cx="592" cy="240" r="26" fill="url(#youngStar)" filter="url(#glowSoft)"/>
+    <circle cx="592" cy="240" r="7" fill="#d8e4ff" filter="url(#glowSoft)"/>
+    <circle cx="592" cy="240" r="3" fill="#ffffff"/>
+  </g>
+
+  <g filter="url(#glowSoft)" class="pulse" opacity="0.8">
+    <circle cx="380" cy="260" r="18" fill="url(#youngStar)"/>
+    <circle cx="424" cy="300" r="20" fill="url(#youngStar)" style="animation-delay:-2s;"/>
+    <circle cx="196" cy="360" r="16" fill="url(#youngStar)" style="animation-delay:-3s;"/>
+    <circle cx="606" cy="330" r="17" fill="url(#youngStar)" style="animation-delay:-1s;"/>
+    <circle cx="362" cy="380" r="14" fill="url(#youngStar)" style="animation-delay:-2.5s;"/>
+    <circle cx="440" cy="360" r="15" fill="url(#youngStar)" style="animation-delay:-3.5s;"/>
+  </g>
+
+  <g class="star">
+    <circle cx="172" cy="150" r="1" fill="#a8c0e8"/>
+    <circle cx="430" cy="110" r="1.1" fill="#a8c0e8" style="animation-delay:-1s;"/>
+    <circle cx="540" cy="100" r="0.9" fill="#a8c0e8" style="animation-delay:-2s;"/>
+    <circle cx="300" cy="90" r="0.9" fill="#a8c0e8" style="animation-delay:-3s;"/>
+    <circle cx="660" cy="130" r="1" fill="#a8c0e8" style="animation-delay:-1.5s;"/>
+    <circle cx="240" cy="60" r="0.9" fill="#a8c0e8" style="animation-delay:-2.5s;"/>
+    <circle cx="520" cy="70" r="0.8" fill="#a8c0e8" style="animation-delay:-0.5s;"/>
+  </g>
+
+  <g class="drift" style="animation-delay:-4s;" filter="url(#glowSoft)">
+    <ellipse cx="220" cy="560" rx="90" ry="30" fill="#8a5a68" opacity="0.3"/>
+    <ellipse cx="560" cy="600" rx="100" ry="32" fill="#8a5a68" opacity="0.28"/>
+    <ellipse cx="400" cy="640" rx="120" ry="34" fill="#c87890" opacity="0.2"/>
+  </g>
+
+  <g class="drift" style="animation-delay:-6s;" filter="url(#glowSoft)">
+    <ellipse cx="320" cy="720" rx="140" ry="36" fill="#8a5a68" opacity="0.2"/>
+    <ellipse cx="520" cy="740" rx="130" ry="34" fill="#6a4a5c" opacity="0.25"/>
+  </g>
+
+  <g fill="#2a1e30" opacity="0.9">
+    <path d="M0 780 Q 200 768 400 774 Q 600 780 800 768 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#362440" opacity="0.8">
+    <path d="M0 790 Q 260 782 400 786 Q 560 790 800 782 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

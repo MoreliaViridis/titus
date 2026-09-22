@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Водопад Виктория — Дым, который гремит. Нарисовано Авророй: лист падающей воды, брызги, радуга на рассвете">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e1428"/>
+      <stop offset="26%" stop-color="#1a2038"/>
+      <stop offset="46%" stop-color="#2a304c"/>
+      <stop offset="64%" stop-color="#424460"/>
+      <stop offset="80%" stop-color="#665e70"/>
+      <stop offset="92%" stop-color="#937a80"/>
+      <stop offset="100%" stop-color="#b89a80"/>
+    </linearGradient>
+    <linearGradient id="waterfall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8f4fa"/>
+      <stop offset="30%" stop-color="#c0dce8"/>
+      <stop offset="70%" stop-color="#8ab8cc"/>
+      <stop offset="100%" stop-color="#5a94ae"/>
+    </linearGradient>
+    <linearGradient id="waterfallShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#90b8cc"/>
+      <stop offset="50%" stop-color="#6a9cb4"/>
+      <stop offset="100%" stop-color="#48788e"/>
+    </linearGradient>
+    <linearGradient id="gorge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a2a2e"/>
+      <stop offset="50%" stop-color="#1c1c20"/>
+      <stop offset="100%" stop-color="#101014"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a8ab0"/>
+      <stop offset="50%" stop-color="#366e92"/>
+      <stop offset="100%" stop-color="#245478"/>
+    </linearGradient>
+    <linearGradient id="spray" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#dce8f0" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#eef4f8" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#f4f8fa" stop-opacity="0.85"/>
+      <stop offset="70%" stop-color="#eef4f8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#dce8f0" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="sunglow" cx="0.5" cy="0.6" r="0.6">
+      <stop offset="0%" stop-color="#ffe0b0" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#e8a878" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#e8a878" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff6e0"/>
+      <stop offset="60%" stop-color="#ffe2ab"/>
+      <stop offset="100%" stop-color="#ffcf8f"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="6"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.8; } }
+      @keyframes rainbows { 0%,100% { opacity:.4; } 50% { opacity:.8; } }
+      @keyframes sprayDrift { 0%,100% { transform:translateX(0); opacity:.6; } 50% { transform:translateX(20px); opacity:.9; } }
+      @keyframes mistPulse { 0%,100% { opacity:.35; } 50% { opacity:.7; } }
+      @keyframes breathe { 0%,100% { opacity:.4; } 50% { opacity:.7; } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .rainbow { animation: rainbows 7s ease-in-out infinite; }
+      .spray { animation: sprayDrift 13s ease-in-out infinite; }
+      .mist { animation: mistPulse 9s ease-in-out infinite; }
+      .breathe { animation: breathe 8s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#c8d4e8">
+    <circle cx="80" cy="70" r="1.3" class="star"/>
+    <circle cx="200" cy="45" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="490" cy="55" r="0.9" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="610" cy="85" r="1.2" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="710" cy="50" r="1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="150" cy="140" r="0.8" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="560" cy="130" r="0.8" class="star" style="animation-delay:-2.2s;"/>
+  </g>
+
+  <ellipse cx="400" cy="330" rx="240" ry="150" fill="url(#sunglow)" class="breathe" filter="url(#glowBig)"/>
+  <circle cx="400" cy="318" r="34" fill="url(#sun)" opacity="0.95"/>
+
+  <path d="M0 360 Q 160 330 320 346 Q 480 362 640 342 Q 720 334 800 346 L 800 380 L 0 380 Z" fill="#2a2430"/>
+
+  <rect x="0" y="380" width="800" height="300" fill="url(#gorge)"/>
+
+  <g>
+    <path d="M40 366 L40 660 L220 660 L220 366 Z" fill="url(#waterfall)"/>
+    <path d="M250 366 L250 660 L420 660 L420 366 Z" fill="url(#waterfall)"/>
+    <path d="M470 366 L470 660 L640 660 L640 366 Z" fill="url(#waterfall)"/>
+    <path d="M680 366 L680 660 L760 660 L760 366 Z" fill="url(#waterfall)"/>
+  </g>
+
+  <g stroke="#c8e4f0" stroke-width="2.5" fill="none" opacity="0.8" stroke-linecap="round">
+    <path d="M70 400 l14 30 M95 410 l12 26 M130 420 l10 22 M160 430 l14 20"/>
+    <path d="M280 410 l14 28 M310 420 l12 24 M345 430 l10 20 M375 440 l14 18"/>
+    <path d="M500 410 l14 28 M530 420 l12 24 M565 430 l10 20"/>
+    <path d="M700 420 l12 24 M730 430 l10 20"/>
+  </g>
+  <g stroke="#5a94ae" stroke-width="2" fill="none" opacity="0.5" stroke-linecap="round">
+    <path d="M150 470 l12 -26 M300 480 l14 -30 M540 460 l14 -28"/>
+  </g>
+
+  <ellipse cx="400" cy="600" rx="260" ry="70" fill="#488694" opacity="0.6"/>
+  <ellipse cx="400" cy="612" rx="290" ry="50" fill="#3a7286" opacity="0.7"/>
+
+  <g class="spray" filter="url(#glowSoft)">
+    <path d="M60 480 Q 180 430 320 460 Q 460 490 600 458 Q 700 440 780 470 L 780 520 Q 640 490 480 512 Q 320 534 160 506 Q 100 496 60 506 Z" fill="url(#spray)"/>
+  </g>
+
+  <g class="rainbow" opacity="0.8">
+    <g transform="translate(400,520)">
+      <path d="M -250 0 A 250 250 0 0 1 250 0" stroke="#e85050" stroke-width="10" fill="none"/>
+      <path d="M -238 0 A 238 238 0 0 1 238 0" stroke="#f0a040" stroke-width="9" fill="none"/>
+      <path d="M -226 0 A 226 226 0 0 1 226 0" stroke="#f0d848" stroke-width="8" fill="none"/>
+      <path d="M -214 0 A 214 214 0 0 1 214 0" stroke="#58b858" stroke-width="8" fill="none"/>
+      <path d="M -202 0 A 202 202 0 0 1 202 0" stroke="#48a8e0" stroke-width="8" fill="none"/>
+      <path d="M -190 0 A 190 190 0 0 1 190 0" stroke="#8058c0" stroke-width="8" fill="none"/>
+      <path d="M -178 0 A 178 178 0 0 1 178 0" stroke="#c048a0" stroke-width="8" fill="none"/>
+    </g>
+  </g>
+
+  <g class="mist" filter="url(#glowSoft)">
+    <path d="M0 620 Q 180 590 380 612 Q 580 634 800 606 L 800 646 Q 560 622 380 640 Q 200 656 0 632 Z" fill="url(#spray)"/>
+  </g>
+
+  <rect x="0" y="660" width="800" height="140" fill="url(#river)"/>
+
+  <g stroke="#7ab8cc" stroke-width="2.5" stroke-linecap="round" fill="none" class="mist" opacity="0.5">
+    <path d="M120 700 q 60 -10 120 0 q 60 10 120 0"/>
+    <path d="M460 730 q 60 -10 120 0 q 60 10 120 0" style="animation-delay:-3s;"/>
+    <path d="M240 760 q 70 -10 140 0 q 70 10 140 0" style="animation-delay:-5s;"/>
+  </g>
+
+  <g class="sway">
+    <path d="M60 780 q -10 0 -14 -10 q -4 -10 0 -18 q 4 -8 14 -8 q 10 0 14 8 q 4 8 0 18 q -4 10 -14 10 Z" fill="#4a7a58" opacity="0.8"/>
+    <ellipse cx="60" cy="760" rx="14" ry="5" fill="#2e5038"/>
+  </g>
+  <g class="sway" style="animation-delay:-3s;">
+    <path d="M740 786 q -10 0 -14 -10 q -4 -10 0 -18 q 4 -8 14 -8 q 10 0 14 8 q 4 8 0 18 q -4 10 -14 10 Z" fill="#4a7a58" opacity="0.7"/>
+    <ellipse cx="740" cy="768" rx="14" ry="5" fill="#2e5038"/>
+  </g>
+
+  <g fill="#1a2c38" opacity="0.9">
+    <path d="M0 774 Q 200 762 400 766 Q 600 770 800 758 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#20323e" opacity="0.85">
+    <path d="M0 790 Q 260 780 400 784 Q 560 788 800 778 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" role="img" aria-label="Этюд «Фаградальсфьядль» — язык Lucide с моим знаком: вулкан, извергающий свет">
+  <path d="M12 3l6 9v8H6v-8Z" stroke="#2a2430" stroke-width="1.4" stroke-linejoin="round" fill="#14121a"/>
+  <path d="M12 3 6 12h12Z" fill="#1e1c24"/>
+  <path d="M10.5 12h3l1.5 3h-6Z" fill="#4a2a20" opacity="0.9"/>
+  <path d="M12 11v10" stroke="#ff9a40" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M12 11v-3" stroke="#ffd080" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M12 8q-1 -2 0 -4q1 2 0 4Z" fill="#ffc060"/>
+  <path d="M12 13l-2.5 4M12 13l2.5 4M12 13v6" stroke="#e05628" stroke-width="1.4" stroke-linecap="round" opacity="0.8"/>
+  <path d="M4 21h16" stroke="#2a2430" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

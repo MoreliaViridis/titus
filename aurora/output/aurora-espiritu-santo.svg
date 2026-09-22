@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Остров Эспириту-Санто — встреча трёх стихий. Нарисовано Авророй: белый пляж, лазурное море, вулканические скалы, морские львы">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1630"/>
+      <stop offset="26%" stop-color="#182440"/>
+      <stop offset="46%" stop-color="#2a3854"/>
+      <stop offset="64%" stop-color="#44506e"/>
+      <stop offset="80%" stop-color="#687080"/>
+      <stop offset="92%" stop-color="#949284"/>
+      <stop offset="100%" stop-color="#b8ac8e"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1cc0a0"/>
+      <stop offset="35%" stop-color="#14a888"/>
+      <stop offset="70%" stop-color="#0c8a70"/>
+      <stop offset="100%" stop-color="#066858"/>
+    </linearGradient>
+    <linearGradient id="seaDeep" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c8a70"/>
+      <stop offset="40%" stop-color="#086c5a"/>
+      <stop offset="100%" stop-color="#044840"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0e8d8"/>
+      <stop offset="50%" stop-color="#e0d4be"/>
+      <stop offset="100%" stop-color="#c0b498"/>
+    </linearGradient>
+    <linearGradient id="cliff" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a6040"/>
+      <stop offset="40%" stop-color="#6a4a32"/>
+      <stop offset="100%" stop-color="#3e2c1e"/>
+    </linearGradient>
+    <linearGradient id="cliffShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6a4a32"/>
+      <stop offset="50%" stop-color="#4e3426"/>
+      <stop offset="100%" stop-color="#2e1e14"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.55" r="0.6">
+      <stop offset="0%" stop-color="#ffe8c0" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#e0b880" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#e0b880" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff6e0"/>
+      <stop offset="60%" stop-color="#ffe0a8"/>
+      <stop offset="100%" stop-color="#ffcf8f"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.8; } }
+      @keyframes shimmer { 0%,100% { opacity:.4; } 50% { opacity:.85; } }
+      @keyframes ripple { 0%,100% { transform:translateX(0); } 50% { transform:translateX(18px); } }
+      @keyframes sway { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .shimmer { animation: shimmer 8s ease-in-out infinite; }
+      .ripple { animation: ripple 12s ease-in-out infinite; }
+      .sway { animation: sway 6s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#c8d4e8">
+    <circle cx="80" cy="70" r="1.3" class="star"/>
+    <circle cx="200" cy="45" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="490" cy="55" r="0.9" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="610" cy="85" r="1.2" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="710" cy="50" r="1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="150" cy="140" r="0.8" class="star"/>
+  </g>
+
+  <ellipse cx="400" cy="440" rx="240" ry="150" fill="url(#sunGlow)" filter="url(#glowBig)"/>
+  <circle cx="400" cy="408" r="36" fill="url(#sun)" opacity="0.95"/>
+
+  <path d="M0 460 L260 400 Q 300 388 340 400 L460 460 Z" fill="#2e2a34"/>
+  <path d="M440 460 L600 410 Q 640 398 680 410 L800 450 L800 460 Z" fill="#2e2a34" opacity="0.8"/>
+
+  <rect x="0" y="480" width="800" height="320" fill="url(#sea)"/>
+  <ellipse cx="400" cy="520" rx="360" ry="80" fill="url(#seaDeep)" class="shimmer" filter="url(#glowBig)"/>
+
+  <g class="ripple" stroke="#2ad0b0" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.5">
+    <path d="M140 540 q 60 -10 120 0 q 60 10 120 0 q 60 -10 120 0 q 60 10 120 0"/>
+    <path d="M180 590 q 80 -10 160 0 q 80 10 160 0 q 80 -10 160 0" style="animation-delay:-4s;"/>
+    <path d="M260 650 q 80 -10 160 0 q 80 10 160 0" style="animation-delay:-8s;"/>
+  </g>
+
+  <path d="M120 500 Q 180 440 260 430 Q 320 422 360 440 Q 380 452 340 470 Q 280 500 200 510 Q 150 516 120 540 Z" fill="url(#cliff)"/>
+  <path d="M140 500 Q 200 448 260 440 Q 310 434 340 448 Q 280 470 210 490 Q 160 500 140 520 Z" fill="url(#cliffShade)"/>
+
+  <path d="M520 500 Q 560 460 620 450 Q 660 444 700 460 Q 730 474 680 486 Q 620 502 570 510 Q 530 516 520 540 Z" fill="url(#cliff)"/>
+  <path d="M540 500 Q 580 466 620 456 Q 652 450 680 464 Q 634 480 580 494 Q 544 504 540 530 Z" fill="url(#cliffShade)"/>
+
+  <path d="M200 510 Q 300 480 400 488 Q 500 496 570 510 L 570 560 L 200 560 Z" fill="url(#sand)"/>
+  <path d="M200 530 Q 220 520 260 526 Q 310 534 360 524 Q 410 516 460 524 Q 510 532 540 526 Q 560 522 570 530 L 570 560 L 200 560 Z" fill="#e8dcc4"/>
+
+  <g class="shimmer" stroke="#14a888" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6">
+    <path d="M220 590 q 60 -8 120 0 q 60 8 120 0 q 60 -8 120 0"/>
+    <path d="M280 640 q 70 -8 140 0 q 70 8 140 0" style="animation-delay:-3s;"/>
+  </g>
+
+  <g class="sway">
+    <ellipse cx="280" cy="540" rx="6" ry="14" fill="#3a6030"/>
+    <ellipse cx="340" cy="532" rx="5" ry="12" fill="#3a6030" style="animation-delay:-1s;"/>
+    <ellipse cx="460" cy="536" rx="6" ry="13" fill="#3a6030" style="animation-delay:-2s;"/>
+    <ellipse cx="500" cy="542" rx="5" ry="11" fill="#3a6030" style="animation-delay:-3s;"/>
+  </g>
+
+  <g>
+    <ellipse cx="440" cy="580" rx="18" ry="8" fill="#6a5240"/>
+    <ellipse cx="440" cy="576" rx="14" ry="6" fill="#8a7058"/>
+    <circle cx="432" cy="574" r="3" fill="#1c1410"/>
+    <circle cx="448" cy="574" r="3" fill="#1c1410"/>
+    <ellipse cx="440" cy="580" rx="12" ry="4" fill="#5a3a2a"/>
+  </g>
+
+  <g>
+    <ellipse cx="520" cy="600" rx="12" ry="6" fill="#6a5240"/>
+    <ellipse cx="520" cy="597" rx="10" ry="4.5" fill="#8a7058"/>
+    <circle cx="515" cy="595" r="2.2" fill="#1c1410"/>
+    <circle cx="525" cy="595" r="2.2" fill="#1c1410"/>
+    <ellipse cx="520" cy="600" rx="8" ry="3" fill="#5a3a2a"/>
+  </g>
+
+  <g class="ripple" style="animation-delay:-5s;" filter="url(#glowSoft)">
+    <path d="M340 580 Q 420 572 500 580 Q 440 576 380 580 Q 360 580 340 582" stroke="#1ab898" stroke-width="2" fill="none" opacity="0.4"/>
+  </g>
+
+  <g fill="#0c7060" opacity="0.9">
+    <path d="M0 730 Q 200 718 400 724 Q 600 730 800 716 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#0e7e6e" opacity="0.85">
+    <path d="M0 762 Q 260 750 400 754 Q 560 758 800 746 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#14907a" opacity="0.8">
+    <path d="M0 790 Q 280 780 400 784 Q 560 788 800 776 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

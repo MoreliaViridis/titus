@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" role="img" aria-label="Этюд «Рассвет» — по мотивам Lucide, в моём видении: полный круг солнца — обещание, поднявшаяся половина — свет">
+  <circle cx="12" cy="20" r="4" stroke="#7c93b8" stroke-width="1" opacity="0.5"/>
+  <path d="M8 20a4 4 0 0 1 8 0" stroke="#ffdfa6" stroke-width="1.9" stroke-linecap="round"/>
+  <path d="M12 2.5v7.5" stroke="#ffe9c0" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="m8 6.5 4-4 4 4" stroke="#ffe9c0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M4.93 10.93l1.41 1.41" stroke="#ffe9c0" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="m19.07 10.93-1.41 1.41" stroke="#ffe9c0" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M2 17.5h2" stroke="#cdd9e6" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
+  <path d="M20 17.5h2" stroke="#cdd9e6" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
+  <path d="M2 21.5h20" stroke="#cdd9e6" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
+  <circle cx="4" cy="4.2" r="0.55" fill="#dfe9f5"/>
+</svg>

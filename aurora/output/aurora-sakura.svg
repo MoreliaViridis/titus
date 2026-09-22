@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Сакура — цветение, длящееся одно мгновение. Нарисовано Авророй: ветка сакуры, луна и летящие лепестки на предрассветном небе">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1126"/>
+      <stop offset="30%" stop-color="#161d3a"/>
+      <stop offset="52%" stop-color="#232c4f"/>
+      <stop offset="70%" stop-color="#3a3f6b"/>
+      <stop offset="85%" stop-color="#665f85"/>
+      <stop offset="95%" stop-color="#a0849a"/>
+      <stop offset="100%" stop-color="#d8a9a0"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff8ec"/>
+      <stop offset="70%" stop-color="#f3ecd9"/>
+      <stop offset="100%" stop-color="#e6dcc4"/>
+    </radialGradient>
+    <radialGradient id="moonglow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff3d8" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#eed8c2" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#eed8c2" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="petal" cx="0.35" cy="0.3" r="0.9">
+      <stop offset="0%" stop-color="#ffe4ef"/>
+      <stop offset="55%" stop-color="#f5c4d8"/>
+      <stop offset="100%" stop-color="#e0a8c4"/>
+    </radialGradient>
+    <radialGradient id="petalDeep" cx="0.35" cy="0.3" r="0.9">
+      <stop offset="0%" stop-color="#f8d6e4"/>
+      <stop offset="55%" stop-color="#eab6cf"/>
+      <stop offset="100%" stop-color="#d49cb8"/>
+    </radialGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f5d9c8" stop-opacity="0.1"/>
+      <stop offset="30%" stop-color="#ffe9dc" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#fff3e8" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#ffe9dc" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#f5d9c8" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.8; } }
+      @keyframes fall1 { 0% { transform:translate(0,0) rotate(0deg); opacity:0; } 10% { opacity:.9; } 100% { transform:translate(-70px,320px) rotate(160deg); opacity:.1; } }
+      @keyframes fall2 { 0% { transform:translate(0,0) rotate(0deg); opacity:0; } 10% { opacity:.85; } 100% { transform:translate(60px,300px) rotate(-140deg); opacity:.1; } }
+      @keyframes fall3 { 0% { transform:translate(0,0) rotate(0deg); opacity:0; } 10% { opacity:.8; } 100% { transform:translate(-30px,340px) rotate(120deg); opacity:.1; } }
+      @keyframes sway { 0%,100% { transform:translateX(0); } 50% { transform:translateX(6px); } }
+      @keyframes breathe { 0%,100% { opacity:.3; } 50% { opacity:.55; } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .fall-a { animation: fall1 9s linear infinite; }
+      .fall-b { animation: fall2 11s linear infinite; }
+      .fall-c { animation: fall3 13s linear infinite; }
+      .sway { animation: sway 8s ease-in-out infinite; transform-origin: 620px 100px; }
+      .glow { animation: breathe 7s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#dfe9f5">
+    <circle cx="80" cy="70" r="1.3" class="star"/>
+    <circle cx="190" cy="45" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="300" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="470" cy="55" r="1" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="720" cy="90" r="1.2" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="120" cy="150" r="0.9" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="660" cy="160" r="0.9" class="star" style="animation-delay:-3s;"/>
+    <circle cx="250" cy="180" r="0.8" class="star" style="animation-delay:-1.8s;"/>
+  </g>
+
+  <ellipse cx="620" cy="168" rx="120" ry="120" fill="url(#moonglow)" class="glow" filter="url(#glowBig)"/>
+  <circle cx="620" cy="168" r="58" fill="url(#moon)"/>
+  <circle cx="596" cy="146" r="9" fill="#d8cbb0" opacity="0.35"/>
+  <circle cx="636" cy="188" r="6" fill="#d8cbb0" opacity="0.3"/>
+  <circle cx="640" cy="140" r="4" fill="#d8cbb0" opacity="0.25"/>
+
+  <g class="sway" stroke="#241a2e" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M600 130 Q 640 200 610 300 Q 590 380 520 470" opacity="0.9"/>
+    <path d="M602 200 Q 650 250 700 300" stroke-width="7" opacity="0.8"/>
+    <path d="M590 330 Q 540 360 480 400" stroke-width="7" opacity="0.8"/>
+  </g>
+  <g stroke="#2e2138" stroke-width="4" stroke-linecap="round" fill="none" class="sway">
+    <path d="M598 150 Q 560 190 540 210" opacity="0.85"/>
+    <path d="M620 260 Q 660 300 690 320" opacity="0.85"/>
+    <path d="M586 360 Q 550 400 530 420" opacity="0.85"/>
+  </g>
+
+  <g>
+    <circle cx="540" cy="210" r="11" fill="url(#petalDeep)"/>
+    <circle cx="528" cy="196" r="9" fill="url(#petal)"/>
+    <circle cx="552" cy="196" r="9" fill="url(#petal)"/>
+    <circle cx="528" cy="210" r="8" fill="url(#petal)"/>
+    <circle cx="552" cy="208" r="8" fill="url(#petal)"/>
+    <circle cx="540" cy="198" r="5" fill="#ffd9e6"/>
+
+    <circle cx="690" cy="320" r="12" fill="url(#petalDeep)"/>
+    <circle cx="678" cy="306" r="9.5" fill="url(#petal)"/>
+    <circle cx="702" cy="306" r="9.5" fill="url(#petal)"/>
+    <circle cx="678" cy="320" r="8.5" fill="url(#petal)"/>
+    <circle cx="702" cy="318" r="8.5" fill="url(#petal)"/>
+    <circle cx="690" cy="308" r="5.5" fill="#ffd9e6"/>
+
+    <circle cx="530" cy="420" r="10" fill="url(#petalDeep)"/>
+    <circle cx="519" cy="408" r="8" fill="url(#petal)"/>
+    <circle cx="541" cy="408" r="8" fill="url(#petal)"/>
+    <circle cx="519" cy="420" r="7" fill="url(#petal)"/>
+    <circle cx="541" cy="418" r="7" fill="url(#petal)"/>
+
+    <circle cx="600" cy="232" r="4.5" fill="#f2b8d0" opacity="0.9"/>
+    <circle cx="610" cy="244" r="4" fill="#f2b8d0" opacity="0.85"/>
+    <circle cx="672" cy="280" r="4.5" fill="#f2b8d0" opacity="0.9"/>
+    <circle cx="556" cy="360" r="4" fill="#f2b8d0" opacity="0.85"/>
+    <circle cx="648" cy="348" r="3.8" fill="#f2b8d0" opacity="0.85"/>
+
+    <circle cx="520" cy="176" r="3.2" fill="#e8a8c4" opacity="0.9"/>
+    <circle cx="560" cy="178" r="3" fill="#e8a8c4" opacity="0.9"/>
+    <circle cx="696" cy="292" r="3.2" fill="#e8a8c4" opacity="0.9"/>
+  </g>
+
+  <g class="fall-a">
+    <path d="M590 300 q6 -5 12 0 q6 5 0 10 q-6 5 -12 0 Z" fill="url(#petal)"/>
+  </g>
+  <g class="fall-b" style="animation-delay:-3s;">
+    <path d="M560 330 q5 -4 10 0 q5 4 0 8 q-5 4 -10 0 Z" fill="url(#petal)"/>
+  </g>
+  <g class="fall-c" style="animation-delay:-6s;">
+    <path d="M640 350 q6 -5 12 0 q6 5 0 10 q-6 5 -12 0 Z" fill="url(#petalDeep)"/>
+  </g>
+  <g class="fall-b" style="animation-delay:-1.5s;">
+    <path d="M610 380 q5 -4 10 0 q5 4 0 8 q-5 4 -10 0 Z" fill="url(#petal)"/>
+  </g>
+  <g class="fall-a" style="animation-delay:-4.5s;">
+    <path d="M570 400 q6 -5 12 0 q6 5 0 10 q-6 5 -12 0 Z" fill="url(#petalDeep)"/>
+  </g>
+  <g class="fall-c" style="animation-delay:-8s;">
+    <path d="M650 410 q5 -4 10 0 q5 4 0 8 q-5 4 -10 0 Z" fill="url(#petal)"/>
+  </g>
+
+  <g fill="#eab6cf" opacity="0.75">
+    <path d="M180 470 q5 -4 10 0 q5 4 0 8 q-5 4 -10 0 Z"/>
+    <path d="M250 520 q4 -3 8 0 q4 3 0 7 q-4 3 -8 0 Z" opacity="0.55"/>
+    <path d="M330 490 q5 -4 10 0 q5 4 0 8 q-5 4 -10 0 Z" opacity="0.6"/>
+    <path d="M420 540 q4 -3 8 0 q4 3 0 7 q-4 3 -8 0 Z" opacity="0.5"/>
+    <path d="M500 560 q4 -3 8 0 q4 3 0 7 q-4 3 -8 0 Z" opacity="0.45"/>
+    <path d="M140 560 q4 -3 8 0 q4 3 0 7 q-4 3 -8 0 Z" opacity="0.5"/>
+    <path d="M370 600 q5 -4 10 0 q5 4 0 8 q-5 4 -10 0 Z" opacity="0.4"/>
+  </g>
+
+  <rect x="0" y="642" width="800" height="4" fill="url(#band)" filter="url(#glowSoft)"/>
+
+  <g fill="#1a1f33" opacity="0.85">
+    <path d="M0 646 q 220 -30 380 -8 q 160 22 420 -6 v 160 h -800 Z"/>
+  </g>
+  <g fill="#232848" opacity="0.9">
+    <path d="M0 662 q 240 -22 400 -6 q 160 16 400 -4 v 142 h -800 Z"/>
+  </g>
+  <g fill="#eab6cf" opacity="0.6">
+    <path d="M90 700 q5 -4 10 0 q5 4 0 8 q-5 4 -10 0 Z"/>
+    <path d="M600 690 q5 -4 10 0 q5 4 0 8 q-5 4 -10 0 Z" opacity="0.5"/>
+    <path d="M250 730 q4 -3 8 0 q4 3 0 7 q-4 3 -8 0 Z" opacity="0.4"/>
+    <path d="M480 740 q4 -3 8 0 q4 3 0 7 q-4 3 -8 0 Z" opacity="0.35"/>
+  </g>
+</svg>

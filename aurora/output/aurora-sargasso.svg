@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Саргассово море — море без берегов. Нарисовано Авророй: золотой саргассум в спокойной синей воде, свет сквозь толщу, черепашата и угри">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1424"/>
+      <stop offset="26%" stop-color="#16203a"/>
+      <stop offset="46%" stop-color="#242a4c"/>
+      <stop offset="64%" stop-color="#3a3a5e"/>
+      <stop offset="80%" stop-color="#58506a"/>
+      <stop offset="92%" stop-color="#7a6e6a"/>
+      <stop offset="100%" stop-color="#9e8c74"/>
+    </linearGradient>
+    <linearGradient id="seaTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e5a76"/>
+      <stop offset="35%" stop-color="#1a4e68"/>
+      <stop offset="100%" stop-color="#143e56"/>
+    </linearGradient>
+    <linearGradient id="seaLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#48a4c0"/>
+      <stop offset="50%" stop-color="#3890b0"/>
+      <stop offset="100%" stop-color="#287ca0"/>
+    </linearGradient>
+    <linearGradient id="seaDeep" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#287ca0"/>
+      <stop offset="40%" stop-color="#1a5a78"/>
+      <stop offset="100%" stop-color="#0e3850"/>
+    </linearGradient>
+    <linearGradient id="sargassum" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d8a848"/>
+      <stop offset="50%" stop-color="#b88830"/>
+      <stop offset="100%" stop-color="#886818"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#ffe8c0" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#d8a878" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#d8a878" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff6e0"/>
+      <stop offset="60%" stop-color="#ffe0a8"/>
+      <stop offset="100%" stop-color="#ffcf8f"/>
+    </radialGradient>
+    <linearGradient id="beamLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8e0f0" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#b8e0f0" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="glowTiny"><feGaussianBlur stdDeviation="2.5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.8; } }
+      @keyframes sway { 0%,100% { transform:translateX(0); } 50% { transform:translateX(12px); } }
+      @keyframes drift { 0%,100% { transform:translate(0,0); } 50% { transform:translate(10px,-6px); } }
+      @keyframes bubble { 0% { transform:translateY(0); opacity:0; } 15% { opacity:.6; } 100% { transform:translateY(-40px); opacity:0; } }
+      @keyframes shimmer { 0%,100% { opacity:.4; } 50% { opacity:.8; } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .sway { animation: sway 9s ease-in-out infinite; }
+      .drift { animation: drift 7s ease-in-out infinite; }
+      .bubble { animation: bubble 6s linear infinite; }
+      .shimmer { animation: shimmer 9s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#c8d4e8">
+    <circle cx="80" cy="70" r="1.3" class="star"/>
+    <circle cx="200" cy="45" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="490" cy="55" r="0.9" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="610" cy="85" r="1.2" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="710" cy="50" r="1" class="star" style="animation-delay:-2.5s;"/>
+  </g>
+
+  <ellipse cx="400" cy="380" rx="200" ry="120" fill="url(#sunGlow)" filter="url(#glowBig)"/>
+  <circle cx="400" cy="356" r="30" fill="url(#sun)" opacity="0.95"/>
+
+  <rect x="0" y="430" width="800" height="370" fill="url(#seaTop)"/>
+  <ellipse cx="400" cy="460" rx="350" ry="70" fill="url(#seaLight)" class="shimmer" filter="url(#glowBig)"/>
+
+  <g class="shimmer" stroke="#48a4c0" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6">
+    <path d="M140 470 q 60 -10 120 0 q 60 10 120 0 q 60 -10 120 0 q 60 10 120 0"/>
+    <path d="M180 520 q 80 -10 160 0 q 80 10 160 0 q 80 -10 160 0" style="animation-delay:-3s;"/>
+  </g>
+
+  <rect x="0" y="500" width="800" height="300" fill="url(#seaDeep)"/>
+
+  <g class="beamG" opacity="0.25">
+    <path d="M330 430 L300 800" stroke="url(#beamLight)" stroke-width="26" stroke-linecap="round"/>
+    <path d="M410 430 L410 800" stroke="url(#beamLight)" stroke-width="30" stroke-linecap="round"/>
+    <path d="M490 430 L520 800" stroke="url(#beamLight)" stroke-width="24" stroke-linecap="round"/>
+  </g>
+
+  <g class="sway">
+    <path d="M200 540 q 0 -24 14 -34 q 10 -6 20 0 q 14 10 14 34 q 0 16 -12 20 q -24 8 -36 0 q -12 -4 -12 -20 Z" fill="url(#sargassum)" opacity="0.8"/>
+    <path d="M230 510 q -10 -14 -6 -26 q 4 -8 14 -6 q 12 4 10 20 q -2 14 -10 16 Z" fill="#a88028" opacity="0.7"/>
+    <path d="M210 560 q 2 20 0 40" stroke="#a88028" stroke-width="3" fill="none" opacity="0.5"/>
+  </g>
+
+  <g class="sway" style="animation-delay:-3s;">
+    <path d="M420 560 q 0 -20 12 -28 q 8 -6 16 0 q 12 8 12 28 q 0 14 -10 18 q -20 6 -30 0 q -10 -4 -10 -18 Z" fill="url(#sargassum)" opacity="0.8"/>
+    <path d="M445 536 q -8 -12 -4 -22 q 4 -6 12 -4 q 10 4 8 16 q -2 12 -8 14 Z" fill="#a88028" opacity="0.7"/>
+    <path d="M430 586 q 2 16 0 32" stroke="#a88028" stroke-width="3" fill="none" opacity="0.5"/>
+  </g>
+
+  <g class="sway" style="animation-delay:-5s;">
+    <path d="M300 620 q 0 -18 10 -25 q 8 -4 14 0 q 10 7 10 25 q 0 12 -9 15 q -18 6 -26 0 q -9 -3 -9 -15 Z" fill="url(#sargassum)" opacity="0.75"/>
+    <path d="M320 600 q -6 -10 -3 -18 q 3 -5 10 -3 q 8 3 6 14 q -1 10 -8 11 Z" fill="#a88028" opacity="0.65"/>
+  </g>
+
+  <g class="drift">
+    <ellipse cx="340" cy="680" rx="34" ry="22" fill="#3a7a5a" opacity="0.9"/>
+    <ellipse cx="340" cy="690" rx="28" ry="14" fill="#4e9468"/>
+    <circle cx="322" cy="676" r="3.5" fill="#1c3424"/>
+    <circle cx="358" cy="676" r="3.5" fill="#1c3424"/>
+    <path d="M314 688 q 10 4 18 0" stroke="#1c3424" stroke-width="2" fill="none"/>
+    <path d="M340 660 l3 -8 M332 664 l2 -6 M350 664 l2 -6" stroke="#2e5a3e" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <g class="drift" style="animation-delay:-3s;">
+    <ellipse cx="560" cy="650" rx="22" ry="15" fill="#3a7a5a" opacity="0.85"/>
+    <ellipse cx="560" cy="658" rx="18" ry="9" fill="#4e9468"/>
+    <circle cx="547" cy="648" r="2.6" fill="#1c3424"/>
+    <circle cx="573" cy="648" r="2.6" fill="#1c3424"/>
+    <path d="M560 634 l2 -6" stroke="#2e5a3e" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+
+  <g class="drift" style="animation-delay:-1.5s;" stroke="#48a4c0" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.8">
+    <path d="M240 720 q -10 -16 -6 -32 M252 724 q -8 -14 -4 -28 M264 720 q -10 -16 -6 -30"/>
+    <path d="M520 740 q -8 -14 -4 -28 M532 744 q -6 -12 -3 -24"/>
+  </g>
+
+  <g class="bubble"><circle cx="380" cy="560" r="3" fill="#b8e0f0" opacity="0.6"/></g>
+  <g class="bubble" style="animation-delay:-1.5s;"><circle cx="410" cy="600" r="2.4" fill="#b8e0f0" opacity="0.5"/></g>
+  <g class="bubble" style="animation-delay:-3s;"><circle cx="390" cy="520" r="2" fill="#c8e8f8" opacity="0.55"/></g>
+  <g class="bubble" style="animation-delay:-4.5s;"><circle cx="520" cy="580" r="2.6" fill="#b8e0f0" opacity="0.5"/></g>
+
+  <rect x="0" y="700" width="800" height="100" fill="#0e3850"/>
+  <g fill="#0c3048" opacity="0.9">
+    <path d="M0 740 Q 200 728 400 734 Q 600 740 800 726 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#0e3850" opacity="0.85">
+    <path d="M0 770 Q 260 758 400 762 Q 560 766 800 754 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

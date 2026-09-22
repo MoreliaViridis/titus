@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Маттерхорн — вершина, которая ловит свет раньше долины. Нарисовано Авророй: пирамида над Церматтом, альпийское сияние на рассвете">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1020"/>
+      <stop offset="28%" stop-color="#141a34"/>
+      <stop offset="48%" stop-color="#242a48"/>
+      <stop offset="66%" stop-color="#3c3e5c"/>
+      <stop offset="80%" stop-color="#62606e"/>
+      <stop offset="92%" stop-color="#94807e"/>
+      <stop offset="100%" stop-color="#c0a08c"/>
+    </linearGradient>
+    <linearGradient id="peakLit" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffe8b8"/>
+      <stop offset="30%" stop-color="#f0b878"/>
+      <stop offset="60%" stop-color="#b86a58"/>
+      <stop offset="100%" stop-color="#5a3040"/>
+    </linearGradient>
+    <linearGradient id="peakShade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6a4a58"/>
+      <stop offset="40%" stop-color="#3a2a40"/>
+      <stop offset="100%" stop-color="#14101c"/>
+    </linearGradient>
+    <linearGradient id="snowlit" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff4dc"/>
+      <stop offset="50%" stop-color="#f8e0c0"/>
+      <stop offset="100%" stop-color="#e0b890"/>
+    </linearGradient>
+    <linearGradient id="snowshade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b0b8c8"/>
+      <stop offset="100%" stop-color="#7a8298"/>
+    </linearGradient>
+    <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c2834"/>
+      <stop offset="100%" stop-color="#100e18"/>
+    </linearGradient>
+    <linearGradient id="valley" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e3a34"/>
+      <stop offset="50%" stop-color="#162c28"/>
+      <stop offset="100%" stop-color="#0e1e1a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#ffe8b8" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#f0a878" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#f0a878" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.8; } }
+      @keyframes peakPulse { 0%,100% { opacity:.6; } 50% { opacity:1; } }
+      @keyframes breathe { 0%,100% { opacity:.4; } 50% { opacity:.7; } }
+      @keyframes cloudDrift { 0%,100% { transform:translateX(0); opacity:.35; } 50% { transform:translateX(26px); opacity:.7; } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .peak { animation: peakPulse 6s ease-in-out infinite; }
+      .breathe { animation: breathe 8s ease-in-out infinite; }
+      .cloud { animation: cloudDrift 18s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#c8d4e8">
+    <circle cx="80" cy="70" r="1.3" class="star"/>
+    <circle cx="200" cy="45" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="490" cy="55" r="0.9" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="610" cy="85" r="1.2" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="710" cy="50" r="1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="150" cy="140" r="0.8" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="560" cy="130" r="0.8" class="star" style="animation-delay:-2.2s;"/>
+    <circle cx="670" cy="160" r="0.8" class="star" style="animation-delay:-3s;"/>
+    <circle cx="280" cy="175" r="0.7" class="star" style="animation-delay:-3.4s;"/>
+  </g>
+
+  <ellipse cx="400" cy="350" rx="200" ry="130" fill="url(#glow)" class="breathe" filter="url(#glowBig)"/>
+
+  <path d="M400 96 L500 240 L470 300 L430 300 L460 246 Z" fill="url(#peakShade)"/>
+  <path d="M400 96 L330 240 L360 300 L400 300 L400 96 Z" fill="url(#peakLit)"/>
+  <path d="M400 96 L500 240 L470 300 L430 300 L460 246 Z" fill="#1a101c" opacity="0.25"/>
+
+  <path d="M400 96 L430 202 L404 234 L398 200 Z" fill="url(#snowlit)"/>
+  <path d="M400 96 L404 234 L398 302 L386 240 L360 300 L330 240 Z" fill="url(#snowshade)" opacity="0.8"/>
+  <path d="M430 202 L470 300 L460 246 Z" fill="url(#snowshade)" opacity="0.5"/>
+  <path d="M398 240 L430 202 L404 234 Z" fill="#fff8e8" opacity="0.5"/>
+
+  <path d="M400 96 L470 300 L480 400 L400 400 Z" fill="url(#ridge)" opacity="0.8"/>
+  <path d="M400 96 L330 240 L340 330 L400 340 Z" fill="url(#ridge)" opacity="0.6"/>
+
+  <path d="M330 240 L340 330 L400 340 L360 300 L330 240 Z" fill="#2c2430" opacity="0.7"/>
+  <path d="M470 300 L480 400 L400 400 L430 300 Z" fill="#201c28" opacity="0.7"/>
+
+  <path d="M0 380 Q 140 350 260 366 Q 380 382 500 366 Q 620 350 800 372 L 800 396 L 0 396 Z" fill="#1a2c28"/>
+  <path d="M0 392 Q 160 366 300 380 Q 440 394 580 378 Q 700 364 800 380 L 800 800 L 0 800 Z" fill="url(#valley)"/>
+
+  <g class="cloud" filter="url(#glowSoft)">
+    <ellipse cx="240" cy="420" rx="130" ry="18" fill="#c8d4dc" opacity="0.4"/>
+    <ellipse cx="560" cy="440" rx="120" ry="16" fill="#d0dae0" opacity="0.35" style="animation-delay:-7s;"/>
+  </g>
+  <g class="cloud" style="animation-delay:-12s;" filter="url(#glowSoft)">
+    <ellipse cx="620" cy="400" rx="100" ry="14" fill="#d8e0e6" opacity="0.3"/>
+  </g>
+
+  <g stroke="#5a8a74" stroke-width="2.5" stroke-linecap="round" fill="none" class="breathe" opacity="0.5">
+    <path d="M140 470 q 50 -10 100 0 q 50 10 100 0"/>
+    <path d="M420 500 q 60 -10 120 0 q 60 10 120 0" style="animation-delay:-3s;"/>
+  </g>
+
+  <g class="breathe">
+    <ellipse cx="400" cy="520" rx="70" ry="10" fill="#fff0c8" opacity="0.25" filter="url(#glowBig)"/>
+  </g>
+
+  <g fill="#1a3a34" opacity="0.9">
+    <path d="M0 620 Q 200 606 400 612 Q 600 618 800 604 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#203e38" opacity="0.9">
+    <path d="M0 668 Q 260 654 400 660 Q 560 666 800 652 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#26443c" opacity="0.85">
+    <path d="M0 716 Q 280 702 400 708 Q 560 714 800 700 L 800 800 L 0 800 Z"/>
+  </g>
+
+  <g fill="#4a7a58" opacity="0.85">
+    <path d="M120 700 q -10 0 -14 -10 q -4 -10 0 -18 q 4 -8 14 -8 q 10 0 14 8 q 4 8 0 18 q -4 10 -14 10 Z" class="cloud"/>
+    <ellipse cx="120" cy="682" rx="14" ry="5" fill="#2e5038"/>
+    <path d="M690 720 q -10 0 -14 -10 q -4 -10 0 -18 q 4 -8 14 -8 q 10 0 14 8 q 4 8 0 18 q -4 10 -14 10 Z" class="cloud" style="animation-delay:-4s;"/>
+    <ellipse cx="690" cy="702" rx="14" ry="5" fill="#2e5038"/>
+  </g>
+</svg>

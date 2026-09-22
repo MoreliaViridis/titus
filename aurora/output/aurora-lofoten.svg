@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Лофотены — красные домики против Арктики. Нарисовано Авророй: рыбацкие рорбу у воды, гранитные пики, полярные сумерки">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080c1a"/>
+      <stop offset="22%" stop-color="#101828"/>
+      <stop offset="40%" stop-color="#1a2436"/>
+      <stop offset="55%" stop-color="#26324a"/>
+      <stop offset="68%" stop-color="#3a4258"/>
+      <stop offset="80%" stop-color="#585666"/>
+      <stop offset="90%" stop-color="#7a6e6c"/>
+      <stop offset="100%" stop-color="#a08672"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2c36"/>
+      <stop offset="40%" stop-color="#142430"/>
+      <stop offset="100%" stop-color="#0c1820"/>
+    </linearGradient>
+    <linearGradient id="peak1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a4258"/>
+      <stop offset="40%" stop-color="#282e42"/>
+      <stop offset="100%" stop-color="#141826"/>
+    </linearGradient>
+    <linearGradient id="peak2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#464e60"/>
+      <stop offset="40%" stop-color="#32384a"/>
+      <stop offset="100%" stop-color="#1a1e30"/>
+    </linearGradient>
+    <linearGradient id="cabin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b85040"/>
+      <stop offset="50%" stop-color="#8a3a30"/>
+      <stop offset="100%" stop-color="#5e2820"/>
+    </linearGradient>
+    <linearGradient id="cabinShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c86850"/>
+      <stop offset="50%" stop-color="#9a4434"/>
+      <stop offset="100%" stop-color="#6a2e22"/>
+    </linearGradient>
+    <linearGradient id="roof" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a2e3a"/>
+      <stop offset="100%" stop-color="#14161e"/>
+    </linearGradient>
+    <radialGradient id="auroraGlow" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#7ae88a" stop-opacity="0.7"/>
+      <stop offset="55%" stop-color="#3ac87a" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#3ac87a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="windowGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ffd890" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#f0a050" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="glowTiny"><feGaussianBlur stdDeviation="2.5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.2; } 50% { opacity:.9; } }
+      @keyframes auroraSway { 0%,100% { opacity:.5; transform:translateX(0); } 50% { opacity:.9; transform:translateX(16px); } }
+      @keyframes windowWarm { 0%,100% { opacity:.7; } 50% { opacity:1; } }
+      @keyframes shimmer { 0%,100% { opacity:.4; } 50% { opacity:.8; } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .aurora { animation: auroraSway 9s ease-in-out infinite; }
+      .warm { animation: windowWarm 5s ease-in-out infinite; }
+      .shimmer { animation: shimmer 9s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#c8d4e8">
+    <circle cx="80" cy="70" r="1.3" class="star"/>
+    <circle cx="200" cy="45" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="490" cy="55" r="0.9" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="610" cy="85" r="1.2" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="710" cy="50" r="1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="150" cy="140" r="0.8" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="560" cy="130" r="0.8" class="star" style="animation-delay:-2.2s;"/>
+  </g>
+
+  <g class="aurora" filter="url(#glowBig)">
+    <path d="M100 260 Q 260 220 400 250 Q 540 280 700 240 L 700 270 Q 540 310 400 280 Q 260 250 100 290 Z" fill="url(#auroraGlow)"/>
+  </g>
+  <g class="aurora" style="animation-delay:-4s;" filter="url(#glowSoft)">
+    <path d="M150 320 Q 300 290 450 310 Q 580 328 720 300 L 720 320 Q 580 348 450 330 Q 300 310 150 340 Z" fill="#6ae080" opacity="0.35"/>
+  </g>
+
+  <g>
+    <path d="M0 300 L260 180 Q 300 168 340 180 L520 300 Z" fill="url(#peak1)"/>
+    <path d="M460 300 L640 170 Q 680 158 720 170 L800 260 L800 300 Z" fill="url(#peak2)"/>
+    <path d="M120 300 L260 200 Q 290 190 320 200 L440 300 Z" fill="url(#peak2)" opacity="0.8"/>
+  </g>
+
+  <g fill="url(#snow)">
+    <path d="M260 180 Q 280 172 300 178 L296 190 Q 280 184 262 190 Z"/>
+    <path d="M640 170 Q 658 164 676 170 L672 182 Q 656 176 640 182 Z"/>
+  </g>
+  <defs><linearGradient id="snow" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d8e0e8"/><stop offset="100%" stop-color="#a8b4c4"/></linearGradient></defs>
+
+  <rect x="0" y="420" width="800" height="380" fill="url(#sea)"/>
+
+  <g class="shimmer" stroke="#4a7a8a" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.5">
+    <path d="M140 500 q 60 -10 120 0 q 60 10 120 0 q 60 -10 120 0 q 60 10 120 0"/>
+    <path d="M220 560 q 70 -10 140 0 q 70 10 140 0 q 70 -10 140 0" style="animation-delay:-3s;"/>
+  </g>
+
+  <g>
+    <path d="M120 470 L120 430 L220 430 L220 470 L260 470 L260 560 L80 560 L80 470 Z" fill="#1a1620" opacity="0.7"/>
+  </g>
+
+  <g>
+    <rect x="130" y="410" width="70" height="60" fill="url(#cabin)"/>
+    <path d="M130 410 L165 384 L200 410 Z" fill="url(#roof)"/>
+    <rect x="130" y="470" width="70" height="34" fill="url(#cabinShade)"/>
+    <path d="M170 470 L170 444" stroke="#3a1010" stroke-width="8" stroke-linecap="round"/>
+    <rect x="136" y="420" width="14" height="14" fill="#e8c888"/>
+    <rect x="156" y="420" width="14" height="14" fill="#e8c888"/>
+    <rect x="146" y="446" width="14" height="36" fill="#2a1a16"/>
+    <path d="M160 410 L160 384" stroke="#14161e" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g class="warm" filter="url(#glowSoft)">
+    <circle cx="143" cy="427" r="12" fill="url(#windowGlow)" opacity="0.6"/>
+    <circle cx="163" cy="427" r="12" fill="url(#windowGlow)" opacity="0.6"/>
+  </g>
+
+  <g>
+    <rect x="250" y="400" width="80" height="70" fill="url(#cabinShade)"/>
+    <path d="M250 400 L290 372 L330 400 Z" fill="url(#roof)"/>
+    <rect x="250" y="470" width="80" height="40" fill="url(#cabin)"/>
+    <rect x="258" y="412" width="16" height="16" fill="#e8c888"/>
+    <rect x="282" y="412" width="16" height="16" fill="#e8c888"/>
+    <rect x="306" y="412" width="16" height="16" fill="#e8c888"/>
+    <rect x="272" y="438" width="16" height="42" fill="#2a1a16"/>
+    <path d="M290 400 L290 372" stroke="#14161e" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g class="warm" style="animation-delay:-1.5s;" filter="url(#glowSoft)">
+    <circle cx="266" cy="420" r="13" fill="url(#windowGlow)" opacity="0.6"/>
+    <circle cx="290" cy="420" r="13" fill="url(#windowGlow)" opacity="0.6"/>
+    <circle cx="314" cy="420" r="13" fill="url(#windowGlow)" opacity="0.6"/>
+  </g>
+
+  <g>
+    <rect x="560" y="430" width="64" height="54" fill="url(#cabin)"/>
+    <path d="M560 430 L592 406 L624 430 Z" fill="url(#roof)"/>
+    <rect x="566" y="440" width="12" height="12" fill="#e8c888"/>
+    <rect x="582" y="440" width="12" height="12" fill="#e8c888"/>
+    <rect x="574" y="462" width="12" height="30" fill="#2a1a16"/>
+  </g>
+  <g class="warm" style="animation-delay:-2.5s;" filter="url(#glowSoft)">
+    <circle cx="572" cy="446" r="11" fill="url(#windowGlow)" opacity="0.6"/>
+    <circle cx="588" cy="446" r="11" fill="url(#windowGlow)" opacity="0.6"/>
+  </g>
+
+  <g>
+    <rect x="680" y="470" width="40" height="90" fill="#3a3a44" stroke="#2a2a34" stroke-width="2"/>
+    <path d="M680 470 L720 470 L720 474 L680 474 Z" fill="#5a4a3a"/>
+    <path d="M684 500 L700 524 L684 548 L700 524 Z" fill="#4a3a2a"/>
+    <path d="M708 500 L724 524 L708 548 L724 524 Z" fill="#4a3a2a"/>
+  </g>
+
+  <g fill="#0c1820" opacity="0.9">
+    <path d="M0 620 Q 200 606 400 612 Q 600 618 800 604 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#101c26" opacity="0.85">
+    <path d="M0 680 Q 260 666 400 672 Q 560 678 800 664 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#14222e" opacity="0.8">
+    <path d="M0 740 Q 280 726 400 732 Q 560 738 800 724 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

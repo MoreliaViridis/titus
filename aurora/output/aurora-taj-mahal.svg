@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Тадж-Махал на рассвете — мрамор, меняющий цвет. Нарисовано Авророй: купол, минареты, отражение в Ямуне">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#161a30"/>
+      <stop offset="28%" stop-color="#242640"/>
+      <stop offset="48%" stop-color="#3a3854"/>
+      <stop offset="66%" stop-color="#5a4c68"/>
+      <stop offset="82%" stop-color="#8a7084"/>
+      <stop offset="92%" stop-color="#be9a8e"/>
+      <stop offset="100%" stop-color="#e0b898"/>
+    </linearGradient>
+    <linearGradient id="marble" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0e8e2"/>
+      <stop offset="30%" stop-color="#e2dcd8"/>
+      <stop offset="65%" stop-color="#c8c4c2"/>
+      <stop offset="100%" stop-color="#a0a0a0"/>
+    </linearGradient>
+    <linearGradient id="marbleDawn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2d8d0"/>
+      <stop offset="35%" stop-color="#e0c0b8"/>
+      <stop offset="100%" stop-color="#b0989a"/>
+    </linearGradient>
+    <linearGradient id="domesky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe6c8"/>
+      <stop offset="50%" stop-color="#f2d0b0"/>
+      <stop offset="100%" stop-color="#d8b090"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a4a58"/>
+      <stop offset="50%" stop-color="#2c3a44"/>
+      <stop offset="100%" stop-color="#1c2630"/>
+    </linearGradient>
+    <radialGradient id="sunglow" cx="0.5" cy="0.55" r="0.6">
+      <stop offset="0%" stop-color="#ffe8c0" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#e0a888" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#e0a888" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.8; } }
+      @keyframes shimmer { 0%,100% { opacity:.4; } 50% { opacity:.75; } }
+      @keyframes breathe { 0%,100% { opacity:.4; } 50% { opacity:.7; } }
+      @keyframes sway { 0%,100% { transform:translateX(0); } 50% { transform:translateX(4px); } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .shimmer { animation: shimmer 9s ease-in-out infinite; }
+      .breathe { animation: breathe 8s ease-in-out infinite; }
+      .sway { animation: sway 6s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#dfe9f5">
+    <circle cx="90" cy="70" r="1.4" class="star"/>
+    <circle cx="200" cy="45" r="1.1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="330" cy="90" r="1.2" class="star" style="animation-delay:-2s;"/>
+    <circle cx="480" cy="55" r="1" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="610" cy="85" r="1.3" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="710" cy="50" r="1.1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="150" cy="140" r="0.9" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="560" cy="130" r="0.9" class="star" style="animation-delay:-2.2s;"/>
+    <circle cx="670" cy="160" r="0.9" class="star" style="animation-delay:-3s;"/>
+    <circle cx="280" cy="175" r="0.8" class="star" style="animation-delay:-3.4s;"/>
+  </g>
+
+  <ellipse cx="400" cy="420" rx="240" ry="160" fill="url(#sunglow)" class="breathe" filter="url(#glowBig)"/>
+  <circle cx="400" cy="378" r="34" fill="#fff4dc" opacity="0.92"/>
+  <circle cx="400" cy="378" r="34" fill="none" stroke="#ffe8c0" stroke-width="1.6" opacity="0.6"/>
+
+  <rect x="0" y="520" width="800" height="280" fill="url(#water)"/>
+
+  <g stroke="#7a9aa8" stroke-width="2.5" stroke-linecap="round" fill="none" class="shimmer" opacity="0.45">
+    <path d="M120 620 q 60 -10 120 0 q 60 10 120 0"/>
+    <path d="M440 660 q 60 -10 120 0 q 60 10 120 0" style="animation-delay:-3s;"/>
+    <path d="M200 710 q 70 -10 140 0 q 70 10 140 0" style="animation-delay:-5s;"/>
+  </g>
+
+  <g>
+    <path d="M200 480 L130 520 h540 L600 480 Z" fill="url(#marble)"/>
+    <path d="M200 480 h400 v10 h-400 Z" fill="url(#marbleDawn)"/>
+
+    <rect x="280" y="468" width="40" height="14" fill="url(#marble)" rx="3"/>
+    <rect x="480" y="468" width="40" height="14" fill="url(#marble)" rx="3"/>
+
+    <path d="M360 440 v28 h80 v-28 Z" fill="url(#marble)"/>
+    <path d="M360 440 v20 h80 v-20 Z" fill="url(#marbleDawn)" opacity="0.5"/>
+    <path d="M368 442 L392 462 L408 462 L432 442" stroke="#a0a0a0" stroke-width="2" fill="none" opacity="0.5"/>
+
+    <path d="M368 416 v24 h64 v-24 Z" fill="url(#marble)"/>
+    <path d="M368 416 v16 h64 v-16 Z" fill="url(#marbleDawn)" opacity="0.4"/>
+    <path d="M375 418 L392 434 L408 434 L425 418" stroke="#a0a0a0" stroke-width="1.6" fill="none" opacity="0.4"/>
+
+    <path d="M380 388 v28 h40 v-28 Z" fill="url(#marble)"/>
+    <path d="M380 388 v18 h40 v-18 Z" fill="url(#marbleDawn)" opacity="0.4"/>
+    <path d="M384 390 L398 406 L402 406 L416 390" stroke="#a0a0a0" stroke-width="1.4" fill="none" opacity="0.4"/>
+
+    <path d="M372 346 Q 400 280 428 346 Z" fill="url(#marble)"/>
+    <path d="M372 346 Q 400 310 428 346 Z" fill="url(#domesky)" opacity="0.5"/>
+    <path d="M400 286 L400 346" stroke="#a0a0a0" stroke-width="1.8" fill="none" opacity="0.5"/>
+    <ellipse cx="400" cy="490" rx="22" ry="8" fill="#d8c8c0"/>
+    <path d="M380 362 Q 400 352 420 362" stroke="#a0a0a0" stroke-width="1.6" fill="none" opacity="0.6"/>
+
+    <rect x="260" y="472" width="10" height="30" fill="url(#marble)"/>
+    <rect x="530" y="472" width="10" height="30" fill="url(#marble)"/>
+  </g>
+
+  <g>
+    <rect x="168" y="400" width="12" height="80" fill="url(#marble)" rx="4"/>
+    <rect x="168" y="396" width="12" height="10" fill="url(#marbleDawn)"/>
+    <path d="M166 396 Q 174 376 182 396 Z" fill="url(#marble)"/>
+    <path d="M166 396 Q 174 384 182 396 Z" fill="url(#domesky)" opacity="0.5"/>
+    <rect x="253" y="400" width="12" height="72" fill="url(#marble)" rx="4"/>
+    <rect x="253" y="396" width="12" height="10" fill="url(#marbleDawn)"/>
+    <path d="M251 396 Q 259 376 267 396 Z" fill="url(#marble)"/>
+    <path d="M251 396 Q 259 384 267 396 Z" fill="url(#domesky)" opacity="0.5"/>
+    <rect x="535" y="400" width="12" height="72" fill="url(#marble)" rx="4"/>
+    <rect x="535" y="396" width="12" height="10" fill="url(#marbleDawn)"/>
+    <path d="M533 396 Q 541 376 549 396 Z" fill="url(#marble)"/>
+    <path d="M533 396 Q 541 384 549 396 Z" fill="url(#domesky)" opacity="0.5"/>
+    <rect x="620" y="400" width="12" height="80" fill="url(#marble)" rx="4"/>
+    <rect x="620" y="396" width="12" height="10" fill="url(#marbleDawn)"/>
+    <path d="M618 396 Q 626 376 634 396 Z" fill="url(#marble)"/>
+    <path d="M618 396 Q 626 384 634 396 Z" fill="url(#domesky)" opacity="0.5"/>
+  </g>
+
+  <g opacity="0.35">
+    <g transform="translate(0,1040) scale(1,-1)">
+      <path d="M200 480 L130 520 h540 L600 480 Z" fill="url(#marble)" opacity="0.8"/>
+      <rect x="280" y="468" width="40" height="14" fill="url(#marble)" rx="3"/>
+      <rect x="480" y="468" width="40" height="14" fill="url(#marble)" rx="3"/>
+      <path d="M360 440 v28 h80 v-28 Z" fill="url(#marble)"/>
+      <path d="M372 346 Q 400 280 428 346 Z" fill="url(#marble)"/>
+      <rect x="168" y="400" width="12" height="80" fill="url(#marble)" rx="4"/>
+      <rect x="620" y="400" width="12" height="80" fill="url(#marble)" rx="4"/>
+      <rect x="253" y="400" width="12" height="72" fill="url(#marble)" rx="4"/>
+      <rect x="535" y="400" width="12" height="72" fill="url(#marble)" rx="4"/>
+    </g>
+  </g>
+
+  <ellipse cx="400" cy="530" rx="200" ry="22" fill="#f0d8c8" opacity="0.2" class="breathe" filter="url(#glowBig)"/>
+
+  <g class="sway">
+    <path d="M140 720 q -10 0 -14 -10 q -4 -10 0 -18 q 4 -8 14 -8 q 10 0 14 8 q 4 8 0 18 q -4 10 -14 10 Z" fill="#5a8a6a" opacity="0.8"/>
+    <path d="M140 690 q -4 -14 -1 -26" stroke="#4a7a5a" stroke-width="1.6" fill="none"/>
+    <ellipse cx="140" cy="700" rx="16" ry="6" fill="#3a5a48"/>
+  </g>
+  <g class="sway" style="animation-delay:-3s;">
+    <path d="M660 730 q -10 0 -14 -10 q -4 -10 0 -18 q 4 -8 14 -8 q 10 0 14 8 q 4 8 0 18 q -4 10 -14 10 Z" fill="#5a8a6a" opacity="0.7"/>
+    <ellipse cx="660" cy="712" rx="14" ry="5" fill="#3a5a48"/>
+  </g>
+
+  <g fill="#1c2630" opacity="0.9">
+    <path d="M0 750 Q 200 736 400 742 Q 600 748 800 734 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#242e38" opacity="0.9">
+    <path d="M0 774 Q 260 762 400 766 Q 560 770 800 758 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

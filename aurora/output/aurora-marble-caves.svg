@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Мраморные пещеры — камень, вырезанный водой до света. Нарисовано Авророй: бирюзовая вода, мраморные арки, свет сквозь камень">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1220"/>
+      <stop offset="26%" stop-color="#141e30"/>
+      <stop offset="46%" stop-color="#222e44"/>
+      <stop offset="64%" stop-color="#3a3e5a"/>
+      <stop offset="80%" stop-color="#5a5268"/>
+      <stop offset="92%" stop-color="#847068"/>
+      <stop offset="100%" stop-color="#a88e78"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2ac098"/>
+      <stop offset="35%" stop-color="#1ea080"/>
+      <stop offset="65%" stop-color="#14806a"/>
+      <stop offset="100%" stop-color="#0a5c4c"/>
+    </linearGradient>
+    <linearGradient id="waterBright" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5ae0b8"/>
+      <stop offset="50%" stop-color="#38c098"/>
+      <stop offset="100%" stop-color="#1a9072"/>
+    </linearGradient>
+    <linearGradient id="marble" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d0c8c0"/>
+      <stop offset="35%" stop-color="#a8a0a0"/>
+      <stop offset="70%" stop-color="#8a8288"/>
+      <stop offset="100%" stop-color="#60586e"/>
+    </linearGradient>
+    <linearGradient id="marbleGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8ded8"/>
+      <stop offset="40%" stop-color="#c8b8b0"/>
+      <stop offset="100%" stop-color="#a08888"/>
+    </linearGradient>
+    <linearGradient id="marbleBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b0d0e0"/>
+      <stop offset="50%" stop-color="#7ab0c8"/>
+      <stop offset="100%" stop-color="#508898"/>
+    </linearGradient>
+    <linearGradient id="reflection" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38c098" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#0a5c4c" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#ffe0c0" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#d8a888" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#d8a888" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff6e0"/>
+      <stop offset="60%" stop-color="#ffdcb0"/>
+      <stop offset="100%" stop-color="#ffb878"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.8; } }
+      @keyframes shimmer { 0%,100% { opacity:.4; } 50% { opacity:.85; } }
+      @keyframes pulse { 0%,100% { opacity:.5; } 50% { opacity:.9; } }
+      @keyframes waterRipple { 0%,100% { transform:translateX(0); } 50% { transform:translateX(20px); } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .shimmer { animation: shimmer 8s ease-in-out infinite; }
+      .pulse { animation: pulse 6s ease-in-out infinite; }
+      .ripple { animation: waterRipple 12s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#c8d4e8">
+    <circle cx="80" cy="70" r="1.3" class="star"/>
+    <circle cx="200" cy="45" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="490" cy="55" r="0.9" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="610" cy="85" r="0.8" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="150" cy="140" r="0.7" class="star"/>
+  </g>
+
+  <ellipse cx="400" cy="430" rx="220" ry="130" fill="url(#sunGlow)" filter="url(#glowBig)"/>
+  <circle cx="400" cy="406" r="34" fill="url(#sun)" opacity="0.95"/>
+
+  <rect x="0" y="460" width="800" height="340" fill="url(#water)"/>
+
+  <path d="M30 460 Q 200 420 360 448 Q 500 472 640 440 Q 740 418 800 440 L 800 462 L 0 462 Z" fill="#1c2a32"/>
+
+  <g class="ripple">
+    <path d="M400 480 Q 340 472 280 480 Q 220 488 160 480" stroke="#0e6e58" stroke-width="4" fill="none" opacity="0.5"/>
+    <path d="M500 520 Q 440 510 380 520 Q 320 530 260 520" stroke="#0e6e58" stroke-width="3.5" fill="none" opacity="0.5" style="animation-delay:-3s;"/>
+    <path d="M450 570 Q 380 560 310 570 Q 240 580 170 570" stroke="#0e6e58" stroke-width="3" fill="none" opacity="0.4" style="animation-delay:-6s;"/>
+  </g>
+
+  <g>
+    <path d="M260 320 L260 500 Q 280 480 320 480 Q 360 480 380 500 L380 320 Z" fill="url(#marble)"/>
+    <path d="M260 320 Q 320 296 380 320 Z" fill="url(#marbleGlow)"/>
+    <path d="M300 350 q 20 -10 40 0" stroke="#60586e" stroke-width="3" fill="none" opacity="0.5"/>
+    <ellipse cx="320" cy="420" rx="26" ry="14" fill="url(#waterBright)" class="pulse" filter="url(#glowSoft)"/>
+  </g>
+
+  <g>
+    <path d="M386 350 L386 520 Q 410 490 450 490 Q 490 490 514 520 L514 350 Z" fill="url(#marbleBlue)"/>
+    <path d="M386 350 Q 450 326 514 350 Z" fill="url(#marbleGlow)"/>
+    <path d="M420 400 q 26 -12 52 0" stroke="#508898" stroke-width="3" fill="none" opacity="0.5"/>
+    <ellipse cx="450" cy="450" rx="22" ry="12" fill="url(#waterBright)" class="pulse" style="animation-delay:-2s;" filter="url(#glowSoft)"/>
+  </g>
+
+  <g>
+    <path d="M520 380 L520 540 Q 548 510 588 510 Q 628 510 656 540 L656 380 Z" fill="url(#marbleGlow)"/>
+    <path d="M520 380 Q 588 356 656 380 Z" fill="url(#marble)"/>
+    <path d="M560 430 q 30 -12 60 0" stroke="#8a8288" stroke-width="3" fill="none" opacity="0.5"/>
+  </g>
+
+  <g>
+    <path d="M180 380 L180 480 Q 200 462 230 462 Q 260 462 280 480 L280 380 Z" fill="url(#marbleBlue)"/>
+    <path d="M180 380 Q 230 364 280 380 Z" fill="url(#marble)"/>
+  </g>
+
+  <g class="shimmer" filter="url(#glowBig)" opacity="0.85">
+    <ellipse cx="320" cy="420" rx="50" ry="22" fill="url(#waterBright)"/>
+    <ellipse cx="450" cy="450" rx="46" ry="20" fill="url(#waterBright)" style="animation-delay:-2s;"/>
+  </g>
+
+  <ellipse cx="260" cy="520" rx="80" ry="20" fill="url(#reflection)" class="shimmer"/>
+  <ellipse cx="450" cy="560" rx="90" ry="22" fill="url(#reflection)" class="shimmer" style="animation-delay:-2s;"/>
+  <ellipse cx="588" cy="560" rx="80" ry="18" fill="url(#reflection)" class="shimmer" style="animation-delay:-4s;"/>
+
+  <g class="shimmer" stroke="#2ac098" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.4">
+    <path d="M180 660 q 80 -12 160 0 q 80 12 160 0 q 80 -12 160 0"/>
+    <path d="M220 710 q 80 -10 160 0 q 80 10 160 0" style="animation-delay:-3s;"/>
+  </g>
+
+  <g fill="#0e5c4c" opacity="0.9">
+    <path d="M0 740 Q 200 728 400 734 Q 600 740 800 728 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#126454" opacity="0.85">
+    <path d="M0 770 Q 260 758 400 762 Q 560 766 800 756 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

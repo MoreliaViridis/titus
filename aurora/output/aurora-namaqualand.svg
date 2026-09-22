@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Намакваленд — пустыня, которая расцвела. Нарисовано Авророй: ковёр ромашек, горы, рассвет в южноафриканской весне">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e1222"/>
+      <stop offset="26%" stop-color="#1c2038"/>
+      <stop offset="46%" stop-color="#2e2c4a"/>
+      <stop offset="64%" stop-color="#4a405c"/>
+      <stop offset="80%" stop-color="#726070"/>
+      <stop offset="92%" stop-color="#a8826e"/>
+      <stop offset="100%" stop-color="#d0a080"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8783a"/>
+      <stop offset="35%" stop-color="#a06838"/>
+      <stop offset="70%" stop-color="#885428"/>
+      <stop offset="100%" stop-color="#6a401c"/>
+    </linearGradient>
+    <linearGradient id="groundDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#966030"/>
+      <stop offset="50%" stop-color="#7a4e26"/>
+      <stop offset="100%" stop-color="#5c3a1c"/>
+    </linearGradient>
+    <linearGradient id="mountain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a4a58"/>
+      <stop offset="40%" stop-color="#383842"/>
+      <stop offset="100%" stop-color="#201e26"/>
+    </linearGradient>
+    <linearGradient id="mountain2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#565660"/>
+      <stop offset="40%" stop-color="#3a3a46"/>
+      <stop offset="100%" stop-color="#26242e"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.55" r="0.6">
+      <stop offset="0%" stop-color="#ffdcb0" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#e8a070" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#e8a070" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff6e0"/>
+      <stop offset="60%" stop-color="#ffdcb0"/>
+      <stop offset="100%" stop-color="#ffb878"/>
+    </radialGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.15; } 50% { opacity:.8; } }
+      @keyframes sway { 0%,100% { transform:rotate(0deg); } 50% { transform:rotate(2deg); } }
+      @keyframes shimmer { 0%,100% { opacity:.4; } 50% { opacity:.8; } }
+      .star { animation: twinkle 4s ease-in-out infinite; }
+      .sway { animation: sway 6s ease-in-out infinite; transform-origin:center bottom; }
+      .shimmer { animation: shimmer 9s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <g fill="#c8d4e8">
+    <circle cx="80" cy="70" r="1.3" class="star"/>
+    <circle cx="200" cy="45" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="490" cy="55" r="0.9" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="610" cy="85" r="1.2" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="710" cy="50" r="1" class="star" style="animation-delay:-2.5s;"/>
+  </g>
+
+  <ellipse cx="400" cy="410" rx="230" ry="140" fill="url(#sunGlow)" filter="url(#glowBig)"/>
+  <circle cx="400" cy="380" r="36" fill="url(#sun)" opacity="0.95"/>
+  <g class="shimmer" stroke="#ffe0b8" stroke-width="3" stroke-linecap="round" opacity="0.5" filter="url(#glowSoft)">
+    <path d="M400 384V332"/>
+    <path d="M400 390 356 346"/>
+    <path d="M400 390 444 346"/>
+  </g>
+
+  <path d="M0 420 L200 340 Q 260 326 320 340 L460 420 Z" fill="url(#mountain)"/>
+  <path d="M420 420 L600 330 Q 660 316 720 330 L800 400 L800 420 Z" fill="url(#mountain2)"/>
+  <path d="M100 420 L240 360 Q 280 350 320 360 L420 420 Z" fill="url(#mountain2)" opacity="0.8"/>
+
+  <rect x="0" y="460" width="800" height="340" fill="url(#ground)"/>
+
+  <g fill="url(#groundDark)" opacity="0.8">
+    <ellipse cx="200" cy="560" rx="120" ry="16"/>
+    <ellipse cx="600" cy="620" rx="140" ry="18"/>
+    <ellipse cx="400" cy="700" rx="160" ry="20"/>
+  </g>
+
+  <g class="shimmer" stroke="#5a3a1a" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4">
+    <path d="M140 620 q 60 -8 120 0 q 60 8 120 0 q 60 -8 120 0 q 60 8 120 0"/>
+    <path d="M220 680 q 80 -8 160 0 q 80 8 160 0" style="animation-delay:-3s;"/>
+  </g>
+
+  <g>
+    <circle cx="160" cy="540" r="5" fill="#f08030"/>
+    <g stroke="#f08030" stroke-width="2" fill="none" class="sway"><line x1="160" y1="535" x2="146" y2="520"/><line x1="160" y1="535" x2="158" y2="518"/><line x1="160" y1="535" x2="172" y2="522"/><line x1="160" y1="535" x2="174" y2="534"/></g>
+    <circle cx="160" cy="535" r="7" fill="#ffa850" opacity="0.4"/>
+
+    <circle cx="280" cy="520" r="5" fill="#f8d050"/>
+    <g stroke="#f8d050" stroke-width="2" fill="none" class="sway" style="animation-delay:-1s;"><line x1="280" y1="515" x2="266" y2="500"/><line x1="280" y1="515" x2="280" y2="499"/><line x1="280" y1="515" x2="294" y2="502"/></g>
+
+    <circle cx="380" cy="510" r="5" fill="#f08030"/>
+    <g stroke="#f08030" stroke-width="2" fill="none" class="sway" style="animation-delay:-2s;"><line x1="380" y1="505" x2="368" y2="490"/><line x1="380" y1="505" x2="380" y2="488"/><line x1="380" y1="505" x2="392" y2="492"/></g>
+
+    <circle cx="470" cy="530" r="5" fill="#f8d050"/>
+    <g stroke="#f8d050" stroke-width="2" fill="none" class="sway" style="animation-delay:-0.5s;"><line x1="470" y1="525" x2="456" y2="510"/><line x1="470" y1="525" x2="470" y2="508"/><line x1="470" y1="525" x2="484" y2="512"/></g>
+
+    <circle cx="560" cy="545" r="5" fill="#f08030"/>
+    <g stroke="#f08030" stroke-width="2" fill="none" class="sway" style="animation-delay:-1.5s;"><line x1="560" y1="540" x2="548" y2="526"/><line x1="560" y1="540" x2="560" y2="524"/><line x1="560" y1="540" x2="572" y2="528"/></g>
+
+    <circle cx="660" cy="520" r="5" fill="#e8708a"/>
+    <g stroke="#e8708a" stroke-width="2" fill="none" class="sway" style="animation-delay:-2.5s;"><line x1="660" y1="515" x2="648" y2="500"/><line x1="660" y1="515" x2="660" y2="499"/><line x1="660" y1="515" x2="672" y2="502"/></g>
+
+    <circle cx="230" cy="620" r="4" fill="#f8d050"/>
+    <circle cx="340" cy="640" r="4" fill="#f08030"/>
+    <circle cx="440" cy="620" r="4" fill="#ffa850"/>
+    <circle cx="540" cy="650" r="4" fill="#f8d050"/>
+    <circle cx="630" cy="630" r="4" fill="#e8708a"/>
+    <circle cx="130" cy="650" r="3.5" fill="#f08030"/>
+    <circle cx="720" cy="640" r="3.5" fill="#f8d050"/>
+    <circle cx="300" cy="690" r="3.5" fill="#f08030"/>
+    <circle cx="500" cy="700" r="3.5" fill="#ffa850"/>
+    <circle cx="680" cy="690" r="3.5" fill="#f08030"/>
+    <circle cx="190" cy="720" r="3" fill="#f8d050"/>
+    <circle cx="410" cy="730" r="3" fill="#e8708a"/>
+    <circle cx="570" cy="725" r="3" fill="#f8d050"/>
+    <circle cx="250" cy="760" r="2.5" fill="#f08030"/>
+    <circle cx="460" cy="760" r="2.5" fill="#f8d050"/>
+    <circle cx="620" cy="755" r="2.5" fill="#f08030"/>
+  </g>
+
+  <g fill="#f0f0e8" opacity="0.25">
+    <circle cx="520" cy="530" r="9"/>
+    <circle cx="160" cy="545" r="9"/>
+    <circle cx="380" cy="515" r="9"/>
+    <circle cx="660" cy="525" r="9"/>
+  </g>
+
+  <g fill="#2c1c10" opacity="0.85">
+    <path d="M0 770 Q 200 758 400 764 Q 600 770 800 756 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#382416" opacity="0.8">
+    <path d="M0 792 Q 260 782 400 786 Q 560 790 800 780 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>

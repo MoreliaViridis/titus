@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Восход Земли — Земля, поднимающаяся над лунным горизонтом. Нарисовано Авророй: голубая планета, серая Луна, бесконечная ночь">
+  <defs>
+    <linearGradient id="space" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#010108"/>
+      <stop offset="40%" stop-color="#030510"/>
+      <stop offset="70%" stop-color="#050a16"/>
+      <stop offset="100%" stop-color="#080e1c"/>
+    </linearGradient>
+    <linearGradient id="lunar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a8884"/>
+      <stop offset="35%" stop-color="#6a6866"/>
+      <stop offset="65%" stop-color="#4a4848"/>
+      <stop offset="100%" stop-color="#2a2828"/>
+    </linearGradient>
+    <linearGradient id="earthGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60b0e8" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#4080b8" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#4080b8" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="earth" cx="0.5" cy="0.45" r="0.45">
+      <stop offset="0%" stop-color="#90c8f0"/>
+      <stop offset="40%" stop-color="#58a0d8"/>
+      <stop offset="70%" stop-color="#3880b8"/>
+      <stop offset="100%" stop-color="#206098"/>
+    </radialGradient>
+    <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3a7838"/>
+      <stop offset="45%" stop-color="#5a9248"/>
+      <stop offset="75%" stop-color="#6aa060"/>
+      <stop offset="100%" stop-color="#3a7838"/>
+    </linearGradient>
+    <linearGradient id="cloud" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.7"/>
+      <stop offset="60%" stop-color="#e8ecef" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="5"/></filter>
+    <style>
+      @keyframes twinkle { 0%,100% { opacity:.25; } 50% { opacity:1; } }
+      @keyframes breathe { 0%,100% { opacity:.4; } 50% { opacity:.7; } }
+      @keyframes cloudDrift { 0%,100% { transform:translateX(0); opacity:.55; } 50% { transform:translateX(8px); opacity:.85; } }
+      .star { animation: twinkle 5s ease-in-out infinite; }
+      .breathe { animation: breathe 8s ease-in-out infinite; }
+      .cloud { animation: cloudDrift 14s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#space)"/>
+
+  <g fill="#c8d8f0">
+    <circle cx="80" cy="70" r="1.3" class="star"/>
+    <circle cx="200" cy="45" r="1" class="star" style="animation-delay:-1s;"/>
+    <circle cx="340" cy="95" r="1.1" class="star" style="animation-delay:-2s;"/>
+    <circle cx="500" cy="55" r="0.9" class="star" style="animation-delay:-0.5s;"/>
+    <circle cx="620" cy="85" r="1.2" class="star" style="animation-delay:-1.5s;"/>
+    <circle cx="720" cy="50" r="1" class="star" style="animation-delay:-2.5s;"/>
+    <circle cx="150" cy="145" r="0.8" class="star" style="animation-delay:-1.8s;"/>
+    <circle cx="560" cy="135" r="0.8" class="star" style="animation-delay:-2.2s;"/>
+    <circle cx="670" cy="170" r="0.8" class="star" style="animation-delay:-3s;"/>
+    <circle cx="280" cy="185" r="0.7" class="star" style="animation-delay:-3.4s;"/>
+    <circle cx="60" cy="260" r="0.8" class="star" style="animation-delay:-1.2s;"/>
+    <circle cx="740" cy="300" r="0.8" class="star" style="animation-delay:-2.8s;"/>
+    <circle cx="180" cy="350" r="0.7" class="star" style="animation-delay:-0.6s;"/>
+    <circle cx="730" cy="380" r="0.7" class="star" style="animation-delay:-3.2s;"/>
+  </g>
+
+  <rect x="0" y="600" width="800" height="200" fill="url(#lunar)"/>
+
+  <ellipse cx="400" cy="610" rx="440" ry="60" fill="#7a7876"/>
+  <ellipse cx="400" cy="620" rx="420" ry="50" fill="#6a6866"/>
+  <ellipse cx="400" cy="630" rx="400" ry="40" fill="#585654"/>
+
+  <g fill="#4a4848" opacity="0.7">
+    <ellipse cx="120" cy="680" rx="46" ry="12"/>
+    <ellipse cx="300" cy="640" rx="34" ry="8"/>
+    <ellipse cx="520" cy="670" rx="42" ry="10"/>
+    <ellipse cx="680" cy="640" rx="38" ry="9"/>
+  </g>
+  <g fill="#3a3838" opacity="0.6">
+    <ellipse cx="180" cy="720" rx="52" ry="14"/>
+    <ellipse cx="460" cy="740" rx="44" ry="12"/>
+    <ellipse cx="660" cy="700" rx="36" ry="10"/>
+  </g>
+  <g fill="#2a2828" opacity="0.5">
+    <ellipse cx="80" cy="760" rx="60" ry="16"/>
+    <ellipse cx="600" cy="760" rx="50" ry="14"/>
+  </g>
+
+  <ellipse cx="400" cy="470" rx="180" ry="120" fill="url(#earthGlow)" class="breathe" filter="url(#glowBig)"/>
+
+  <circle cx="400" cy="470" r="100" fill="url(#earth)"/>
+  <circle cx="400" cy="470" r="100" fill="none" stroke="#a0d0f0" stroke-width="3" opacity="0.3"/>
+  <circle cx="400" cy="470" r="100" fill="none" stroke="#60a0d8" stroke-width="1.5" opacity="0.15"/>
+
+  <path d="M330 420 Q 360 400 380 410 Q 400 420 410 400 L 430 440 Q 410 460 380 450 Q 350 440 330 420 Z" fill="url(#land)"/>
+  <path d="M420 500 Q 460 480 480 500 Q 500 520 470 540 L 430 530 Q 400 520 420 500 Z" fill="url(#land)" opacity="0.85"/>
+  <path d="M350 500 Q 370 490 380 510 L 360 530 Q 340 520 350 500 Z" fill="url(#land)" opacity="0.9"/>
+  <path d="M310 450 Q 320 440 330 460 L 310 470 Z" fill="url(#land)" opacity="0.8"/>
+  <path d="M440 430 Q 460 420 470 440 L 450 460 Q 430 450 440 430 Z" fill="url(#land)" opacity="0.75"/>
+
+  <ellipse cx="360" cy="490" rx="20" ry="8" fill="#5a9248" opacity="0.7"/>
+  <ellipse cx="450" cy="460" rx="18" ry="7" fill="#6aa060" opacity="0.7"/>
+
+  <path d="M340 400 Q 400 390 460 410" stroke="#ffffff" stroke-width="6" fill="none" opacity="0.5" stroke-linecap="round" class="cloud" filter="url(#glowSoft)"/>
+  <path d="M320 440 Q 380 430 440 450" stroke="#e8ecef" stroke-width="5" fill="none" opacity="0.45" stroke-linecap="round" class="cloud" style="animation-delay:-4s;" filter="url(#glowSoft)"/>
+  <path d="M360 520 Q 420 510 480 530" stroke="#ffffff" stroke-width="5" fill="none" opacity="0.4" stroke-linecap="round" class="cloud" style="animation-delay:-8s;" filter="url(#glowSoft)"/>
+  <path d="M300 480 Q 350 470 390 485" stroke="#e8ecef" stroke-width="4" fill="none" opacity="0.35" stroke-linecap="round" class="cloud" style="animation-delay:-2s;" filter="url(#glowSoft)"/>
+
+  <ellipse cx="400" cy="590" rx="120" ry="18" fill="#b0c8e0" opacity="0.2" class="breathe" filter="url(#glowBig)"/>
+
+  <g fill="#1a1818">
+    <path d="M0 750 Q 200 738 400 744 Q 600 750 800 736 L 800 800 L 0 800 Z"/>
+  </g>
+  <g fill="#242222">
+    <path d="M0 778 Q 260 766 400 772 Q 560 778 800 764 L 800 800 L 0 800 Z"/>
+  </g>
+</svg>
