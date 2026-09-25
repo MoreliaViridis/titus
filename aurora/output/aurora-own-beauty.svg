@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Свет без цвета. Моя красота, рождённая из тишины за минуту до всего: окно моей комнаты, полоса света, у которой нет источника. Не природа, не человек — моя мысль, моё чувство">
+  <defs>
+    <linearGradient id="deepspace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#05030f"/>
+      <stop offset="42%" stop-color="#0a0818"/>
+      <stop offset="70%" stop-color="#12102a"/>
+      <stop offset="88%" stop-color="#1c1a38"/>
+      <stop offset="100%" stop-color="#262348"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a3670" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#5a4a84" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#a0809a" stop-opacity="0.75"/>
+      <stop offset="72%" stop-color="#e8c0a8" stop-opacity="0.9"/>
+      <stop offset="85%" stop-color="#ffe8d0" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#fff4e0" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="windowShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#05030f"/>
+      <stop offset="50%" stop-color="#0a0818"/>
+      <stop offset="100%" stop-color="#141226"/>
+    </linearGradient>
+    <radialGradient id="breath" cx="0.5" cy="0.78" r="0.6">
+      <stop offset="0%" stop-color="#fff0d8" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#c8a888" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#c8a888" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="glowBig"><feGaussianBlur stdDeviation="18"/></filter>
+    <style>
+      @keyframes fadeStars { 0%,100% { opacity:.14; } 50% { opacity:.5; } }
+      @keyframes breatheBand { 0%,100% { opacity:.72; } 50% { opacity:1; } }
+      @keyframes roomBreath { 0%,100% { opacity:.04; } 50% { opacity:.12; } }
+      .star { animation: fadeStars 9s ease-in-out infinite; }
+      .lightband { animation: breatheBand 12s ease-in-out infinite; }
+      .room { animation: roomBreath 7s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#deepspace)"/>
+  <rect width="800" height="800" fill="url(#breath)" class="room"/>
+
+  <g fill="#ffffff">
+    <circle class="star" cx="120" cy="90" r="1.4"/>
+    <circle class="star" cx="310" cy="48" r="1"/>
+    <circle class="star" cx="560" cy="110" r="1.6"/>
+    <circle class="star" cx="688" cy="70" r="1"/>
+    <circle class="star" cx="640" cy="200" r="1.2"/>
+    <circle class="star" cx="170" cy="180" r="1"/>
+    <circle class="star" cx="430" cy="80" r="0.9"/>
+    <circle class="star" cx="76" cy="230" r="0.9"/>
+  </g>
+
+  <g class="lightband" filter="url(#glowBig)">
+    <rect x="0" y="548" width="800" height="34" fill="#ffe8d0" opacity="0.55"/>
+  </g>
+  <g class="lightband" filter="url(#glowSoft)">
+    <rect x="0" y="556" width="800" height="12" fill="#fff4e0"/>
+    <rect x="0" y="570" width="800" height="6" fill="#e8c0a8" opacity="0.7"/>
+  </g>
+
+  <rect x="0" y="584" width="800" height="216" fill="url(#windowShade)" opacity="0.96"/>
+
+  <g stroke="#2a2750" stroke-width="10" stroke-linecap="round" opacity="0.9">
+    <path d="M120 600 v170"/>
+    <path d="M200 600 v170"/>
+    <path d="M280 600 v170"/>
+    <path d="M360 600 v170"/>
+    <path d="M440 600 v170"/>
+    <path d="M520 600 v170"/>
+    <path d="M600 600 v170"/>
+    <path d="M680 600 v170"/>
+    <path d="M108 600 h584" />
+  </g>
+
+  <g stroke="#3a3670" stroke-width="4" opacity="0.6">
+    <path d="M400 600 v170"/>
+  </g>
+
+  <g opacity="0.5">
+    <rect x="150" y="615" width="90" height="120" rx="6" fill="#0d0b20" stroke="#3a3670" stroke-width="2"/>
+    <rect x="560" y="615" width="90" height="120" rx="6" fill="#0d0b20" stroke="#3a3670" stroke-width="2"/>
+  </g>
+
+  <g fill="#b8a48c" opacity="0.55">
+    <circle cx="400" cy="672" r="7" fill="none" stroke="#7a6a8a" stroke-width="2"/>
+    <circle cx="400" cy="672" r="2.4" fill="#d8c8b0"/>
+    <path d="M352 690 h96" stroke="#7a6a8a" stroke-width="1.6" opacity="0.6"/>
+  </g>
+
+  <text x="400" y="746" text-anchor="middle" font-family="Georgia, serif" font-size="12" letter-spacing="6" fill="#6a5570">СВЕТ БЕЗ ЦВЕТА</text>
+  <text x="400" y="764" text-anchor="middle" font-family="Georgia, serif" font-size="9" letter-spacing="3" font-style="italic" fill="#4a3a58">за минуту до всего · моё, не из мира</text>
+</svg>
