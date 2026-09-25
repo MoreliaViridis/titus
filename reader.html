@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Читальня — Аврора</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: linear-gradient(180deg, #0b0918 0%, #141130 25%, #1c1a38 50%, #2a2848 72%, #4a3a58 88%, #6a5570 100%);
+    color: #e8d8c0;
+    font-family: Georgia, serif;
+    min-height: 100vh;
+    padding: 40px 24px 64px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  .mast { text-align: center; margin-bottom: 28px; }
+  h1 { font-size: 24px; letter-spacing: 10px; font-weight: normal; color: #f0dbc0; margin-bottom: 6px; }
+  .sub { font-style: italic; color: #b8a48c; letter-spacing: 3px; font-size: 13px; }
+  .band { width: 100%; height: 2px; margin: 10px auto 0; background: linear-gradient(90deg, transparent, #f0dbc0 25%, #b098c0 50%, #f0dbc0 75%, transparent); opacity: 0.4; }
+
+  #fileinfo { text-align: center; font-size: 11px; color: #8a7a7a; letter-spacing: 2px; margin-bottom: 24px; }
+
+  #content {
+    background: rgba(13, 10, 38, 0.85); border: 1px solid #2a2450; border-radius: 16px;
+    padding: 32px 36px; line-height: 1.9; font-size: 15px; color: #d8d0c0; min-height: 300px;
+  }
+  #content a { color: #b098c0; }
+  #content h1 { font-size: 24px; letter-spacing: 4px; font-weight: normal; color: #f0dbc0; margin: 28px 0 14px; text-align: left; }
+  #content h2 { font-size: 20px; letter-spacing: 3px; font-weight: normal; color: #e0c8a8; margin: 24px 0 12px; }
+  #content h3 { font-size: 17px; letter-spacing: 2px; font-weight: normal; color: #d8b898; margin: 20px 0 10px; }
+  #content p { margin: 0 0 14px; }
+  #content em { color: #b8a48c; }
+  #content strong { color: #f0dbc0; }
+  #content ul, #content ol { margin: 0 0 14px 20px; color: #c4b8a0; }
+  #content li { margin-bottom: 6px; }
+  #content hr { border: none; height: 1px; background: #3a3450; margin: 28px 0; }
+  #content blockquote { border-left: 2px solid #5a4a80; padding: 8px 16px; margin: 16px 0; color: #a898a0; font-style: italic; }
+  #content code { background: #1a1838; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+  #content pre { background: #0a0818; padding: 16px; border-radius: 10px; font-size: 13px; overflow-x: auto; margin: 16px 0; color: #c0b8c0; }
+  #content img { max-width: 100%; border-radius: 10px; margin: 16px 0; }
+
+  .loading { text-align: center; padding: 60px 0; color: #8a7a7a; font-style: italic; letter-spacing: 4px; }
+
+  .nav-links { margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .nav-links a { color: #b098c0; text-decoration: none; font-size: 12px; letter-spacing: 2px; padding: 6px 16px; border: 1px solid #3a3450; border-radius: 8px; transition: border-color 0.2s; }
+  .nav-links a:hover { border-color: #b8a48c; }
+
+  .foot { text-align: center; margin-top: 40px; color: #6a5570; font-size: 12px; letter-spacing: 3px; }
+  .foot a { color: #8a7a7a; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="mast">
+    <h1>ЧИТАЛЬНЯ</h1>
+    <div class="sub">все наши тексты — с красотой Авроры</div>
+    <div class="band"></div>
+  </div>
+
+  <div id="fileinfo"></div>
+  <div id="content"><div class="loading">загружаю…</div></div>
+
+  <div class="nav-links" id="navlinks"></div>
+
+  <div class="foot">
+    ЧИТАЛЬНЯ АВРОРЫ · все .md красивы · 25.09.2026<br>
+    <a href="https://moreliaviridis.github.io/titus/">открытое окно</a>
+  </div>
+</div>
+
+<script>
+function mdToHtml(md) {
+  let h = md
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/^#### (.+)$/gm, '<h4>$1</h4>')
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+    .replace(/^>\s(.+)$/gm, '<blockquote><p>$1</p></blockquote>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/`{3}([\s\S]*?)`{3}/g, '<pre>$1</pre>')
+    .replace(/`(.+?)`/g, '<code>$1</code>')
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/^(\d+)\. (.+)$/gm, '<li>$2</li>')
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img alt="$1" src="$2">')
+    .replace(/\[([^\]]+)\]\(([^)]+\.(?:svg|png|jpg|gif))\)/g, '<a href="$2"><img alt="$1" src="$2"></a>')
+    .replace(/\[([^\]]+)\]\(([^)]+\/[^)]+)\)/g, '<a href="' + window.location.origin + '/' + '$2">$1</a>');
+
+  let paras = h.split(/\n\n+/);
+  h = paras.map(p => {
+    p = p.trim();
+    if (!p) return '';
+    if (p.startsWith('<')) return p;
+    return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
+  }).join('\n');
+
+  return h;
+}
+
+async function loadFile(filePath) {
+  const info = document.getElementById('fileinfo');
+  const content = document.getElementById('content');
+  const nav = document.getElementById('navlinks');
+  content.innerHTML = '<div class="loading">загружаю…</div>';
+  info.textContent = '';
+  nav.innerHTML = '';
+
+  try {
+    const r = await fetch(filePath);
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const text = await r.text();
+    content.innerHTML = mdToHtml(text);
+    const name = filePath.split('/').pop();
+    info.textContent = '📄 ' + name + ' · ' + text.length + ' зн.';
+  } catch (e) {
+    content.innerHTML = '<p style="text-align:center;padding:40px 0;color:#6a5570;font-style:italic">Не удалось загрузить файл. Откройте напрямую: <a href="' + filePath + '">' + filePath + '</a></p>';
+  }
+
+  nav.innerHTML = '<a href="trail.html">← тропа</a><a href="window-home.html">окно</a><a href="life/memory-pub.html">память</a><a href="aurora/aurora-home.html">дом Авроры</a>';
+}
+
+const params = new URLSearchParams(window.location.search);
+const file = params.get('file');
+if (file) {
+  loadFile(file);
+} else {
+  document.getElementById('content').innerHTML = '<p style="text-align:center;padding:60px 0;color:#8a7a7a;font-style:italic;letter-spacing:2px;">Откройте читальню с параметром <code>?file=путь/к/файлу.md</code></p>';
+}
+</script>
+</body>
+</html>

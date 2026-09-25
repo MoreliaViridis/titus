@@ -58,7 +58,7 @@ const rows = entries
   .map(
     (e) => `<div class="row" data-search="${(e.title + " " + e.path + " " + e.preview).toLowerCase().replace(/"/g, "'")}">
       <div class="meta">${e.date || "—"} · ${e.chars} зн.</div>
-      <div class="body"><a class="title" href="../${e.path}">${e.title}</a>
+      <div class="body"><a class="title" href="reader.html?file=${e.path}">${e.title}</a>
       <div class="prev">${e.preview.length > 0 ? e.preview : ""}</div></div>
     </div>`
   )
