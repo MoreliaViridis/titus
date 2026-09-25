@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Окно — где все красоты Авроры сходятся. Восьмая из себя: рама окна, за ней рассвет от тёмного к золотому, внутри — ряд из семи огоньков">
+  <defs>
+    <linearGradient id="day" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0818"/>
+      <stop offset="30%" stop-color="#1c1638"/>
+      <stop offset="55%" stop-color="#4a3a6a"/>
+      <stop offset="72%" stop-color="#8a5a70"/>
+      <stop offset="85%" stop-color="#c89070"/>
+      <stop offset="95%" stop-color="#e8c090"/>
+      <stop offset="100%" stop-color="#f8e0b0"/>
+    </linearGradient>
+    <radialGradient id="light" cx="0.5" cy="0.18" r="0.5">
+      <stop offset="0%" stop-color="#fff4dc" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#ffe0a8" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffe0a8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="6"/></filter>
+    <style>
+      @keyframes breathe { 0%,100% { opacity:.5; } 50% { opacity:1; } }
+      @keyframes twinker { 0%,100% { opacity:.1; } 50% { opacity:.8; } }
+      .breathe { animation: breathe 8s ease-in-out infinite; }
+      .l1 { animation: twinker 9s ease-in-out infinite; }
+      .l2 { animation: twinker 10s ease-in-out infinite; animation-delay:.5s; }
+      .l3 { animation: twinker 9.5s ease-in-out infinite; animation-delay:1s; }
+      .l4 { animation: twinker 11s ease-in-out infinite; animation-delay:1.5s; }
+      .l5 { animation: twinker 9.2s ease-in-out infinite; animation-delay:2s; }
+      .l6 { animation: twinker 10.5s ease-in-out infinite; animation-delay:2.5s; }
+      .l7 { animation: twinker 8.8s ease-in-out infinite; animation-delay:3s; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="#08071a"/>
+
+  <rect x="150" y="140" width="500" height="520" rx="10" fill="url(#day)"/>
+  <circle cx="400" cy="300" r="110" fill="url(#light)" class="breathe"/>
+  <circle cx="400" cy="300" r="34" fill="#fff0d0" opacity="0.85" class="breathe"/>
+
+  <g stroke="#2a2450" stroke-width="3" opacity="0.8">
+    <rect x="150" y="140" width="500" height="520" rx="10" fill="none"/>
+    <line x1="400" y1="140" x2="400" y2="660" opacity="0.5"/>
+    <line x1="150" y1="400" x2="650" y2="400" opacity="0.5"/>
+  </g>
+
+  <g class="breathe">
+    <circle class="l1" cx="230" cy="640" r="6" fill="#f0e0d0"/>
+    <circle class="l2" cx="310" cy="640" r="6" fill="#e0c0a8"/>
+    <circle class="l3" cx="390" cy="640" r="6" fill="#d8a890"/>
+    <circle class="l4" cx="470" cy="640" r="6" fill="#c898a0"/>
+    <circle class="l5" cx="400" cy="740" r="5" fill="#b098c0"/>
+    <circle class="l6" cx="320" cy="740" r="5" fill="#a088b8"/>
+    <circle class="l7" cx="480" cy="740" r="5" fill="#a080b0"/>
+  </g>
+
+  <g opacity="0.4">
+    <rect x="196" y="90" width="40" height="26" rx="3" fill="#141130"/>
+    <rect x="300" y="90" width="200" height="18" rx="3" fill="#141130"/>
+    <rect x="564" y="90" width="40" height="26" rx="3" fill="#141130"/>
+  </g>
+
+  <text x="400" y="792" text-anchor="middle" font-family="Georgia, serif" font-size="11" letter-spacing="6" fill="#6a5570">ОКНО</text>
+</svg>
