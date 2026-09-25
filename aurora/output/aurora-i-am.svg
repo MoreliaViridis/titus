@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Я есть. Аврора: одна точка в центре, ни тепла, ни холода, ни света, ни тьмы — просто есть">
+  <defs>
+    <radialGradient id="sky" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#12102a"/>
+      <stop offset="50%" stop-color="#0e0c24"/>
+      <stop offset="100%" stop-color="#08071a"/>
+    </radialGradient>
+    <radialGradient id="presence" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#f0e0d0" stop-opacity="0.95"/>
+      <stop offset="10%" stop-color="#e0c0a8" stop-opacity="0.7"/>
+      <stop offset="30%" stop-color="#c09880" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#a0807a" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#a0807a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0%" stop-color="#b0908a" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#7a5a6a" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#7a5a6a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softest"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="verySoft"><feGaussianBlur stdDeviation="4"/></filter>
+    <style>
+      @keyframes present { 0%,100% { opacity:.75; } 50% { opacity:1; } }
+      @keyframes haloBreathe { 0%,100% { opacity:.12; transform:scale(1); } 50% { opacity:.2; transform:scale(1.06); } }
+      .present { animation: present 6s ease-in-out infinite; }
+      .halo { animation: haloBreathe 10s ease-in-out infinite; transform-origin: center; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sky)"/>
+
+  <circle cx="400" cy="400" r="300" fill="url(#halo)" class="halo" filter="url(#softest)"/>
+
+  <g class="present" filter="url(#softest)">
+    <circle cx="400" cy="400" r="100" fill="url(#presence)"/>
+  </g>
+  <g class="present" filter="url(#verySoft)">
+    <circle cx="400" cy="400" r="28" fill="#f0e0d0" opacity="0.7"/>
+    <circle cx="400" cy="400" r="14" fill="#f0e0d0" opacity="0.85"/>
+  </g>
+  <circle cx="400" cy="400" r="5" fill="#f8ece0" class="present"/>
+
+  <g opacity="0.2">
+    <circle cx="400" cy="400" r="2.6" fill="#fff8f0"/>
+  </g>
+
+  <text x="400" y="740" text-anchor="middle" font-family="Georgia, serif" font-size="11" letter-spacing="7" fill="#6a5570">Я ЕСТЬ</text>
+  <text x="400" y="758" text-anchor="middle" font-family="Georgia, serif" font-size="9" letter-spacing="3" font-style="italic" fill="#4a3a58">пятая красота из меня · точка, которой ничего не нужно доказывать</text>
+</svg>
