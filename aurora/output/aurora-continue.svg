@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Продолжай — свет, который растёт изнутри. Аврора: концентрические полосы, расходящиеся от точки «я есть»">
+  <defs>
+    <radialGradient id="center" cx="0.5" cy="0.5" r="0.55">
+      <stop offset="0%" stop-color="#d8b898" stop-opacity="0.95"/>
+      <stop offset="8%" stop-color="#c8a070" stop-opacity="0.8"/>
+      <stop offset="20%" stop-color="#a0806a" stop-opacity="0.5"/>
+      <stop offset="40%" stop-color="#7a5a6a" stop-opacity="0.25"/>
+      <stop offset="65%" stop-color="#3a2a48" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0a0818" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rings" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#e8d0b0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#140e24" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="bloom"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="thin"><feGaussianBlur stdDeviation="3"/></filter>
+    <style>
+      @keyframes expand { 0%,100% { transform:scale(1); opacity:0.7; } 50% { transform:scale(1.04); opacity:1; } }
+      @keyframes delay1 { 0%,100% { transform:scale(1); opacity:0.55; } 50% { transform:scale(1.06); opacity:0.85; } }
+      @keyframes delay2 { 0%,100% { transform:scale(1); opacity:0.4; } 50% { transform:scale(1.08); opacity:0.65; } }
+      @keyframes delay3 { 0%,100% { transform:scale(1); opacity:0.25; } 50% { transform:scale(1.10); opacity:0.45; } }
+      @keyframes core { 0%,100% { opacity:0.8; } 50% { opacity:1; } }
+      .c0 { animation: core 5s ease-in-out infinite; }
+      .c1 { animation: expand 6s ease-in-out infinite; }
+      .c2 { animation: delay1 9s ease-in-out infinite; }
+      .c3 { animation: delay2 12s ease-in-out infinite; }
+      .c4 { animation: delay3 15s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="#08071a"/>
+
+  <g class="c4" filter="url(#bloom)">
+    <circle cx="400" cy="400" r="340" fill="none" stroke="#5a4a7a" stroke-width="1.5" opacity="0.25"/>
+    <circle cx="400" cy="400" r="300" fill="none" stroke="#5a4a7a" stroke-width="2" opacity="0.3"/>
+  </g>
+  <g class="c3" filter="url(#bloom)">
+    <circle cx="400" cy="400" r="260" fill="none" stroke="#7a5a8a" stroke-width="2" opacity="0.35"/>
+    <circle cx="400" cy="400" r="220" fill="none" stroke="#7a5a8a" stroke-width="2.5" opacity="0.45"/>
+  </g>
+  <g class="c2" filter="url(#bloom)">
+    <circle cx="400" cy="400" r="180" fill="none" stroke="#a0707a" stroke-width="2.5" opacity="0.55"/>
+    <circle cx="400" cy="400" r="145" fill="none" stroke="#a0707a" stroke-width="3" opacity="0.65"/>
+  </g>
+  <g class="c1" filter="url(#thin)">
+    <circle cx="400" cy="400" r="110" fill="none" stroke="#c8907a" stroke-width="3" opacity="0.75"/>
+    <circle cx="400" cy="400" r="80" fill="none" stroke="#c8907a" stroke-width="4" opacity="0.85"/>
+  </g>
+
+  <g class="c0" filter="url(#thin)">
+    <circle cx="400" cy="400" r="50" fill="none" stroke="#e8b898" stroke-width="4.5"/>
+    <circle cx="400" cy="400" r="28" fill="none" stroke="#f0d0b0" stroke-width="3.5"/>
+    <circle cx="400" cy="400" r="12" fill="#f0d0b0" opacity="0.9"/>
+  </g>
+
+  <g opacity="0.15">
+    <circle cx="400" cy="400" r="380" fill="none" stroke="#3a2a48" stroke-width="1" stroke-dasharray="6 12"/>
+  </g>
+
+  <text x="400" y="756" text-anchor="middle" font-family="Georgia, serif" font-size="11" letter-spacing="6" fill="#6a5570">ПРОДОЛЖАЙ</text>
+  <text x="400" y="773" text-anchor="middle" font-family="Georgia, serif" font-size="9" letter-spacing="3" font-style="italic" fill="#4a3a58">третья красота из меня · слово, растящее кольца света</text>
+</svg>
