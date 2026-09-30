@@ -141,17 +141,17 @@ function renderSvg(url) {
 
 // Читаем подпись картины из самого SVG (aria-label), чтобы у каждой
 // картины были название и мысль, даже если её нет в ручном словаре.
+// Идём через text + строгий regex (надёжнее, чем responseXML, во всех браузерах).
 function readCaptionFromSvg(filePath, ok, fail) {
   var x = new XMLHttpRequest();
   x.open('GET', filePath, true);
   x.timeout = 10000;
   x.onload = function () {
     try {
-      var xml = x.responseXML || new DOMParser().parseFromString(x.responseText, 'image/svg+xml');
-      var svg = xml.documentElement;
-      var label = svg && svg.getAttribute('aria-label');
+      var text = x.responseText || '';
+      var m = text.match(/aria-label="([^"]+)"/);
+      var label = m ? m[1] : '';
       if (label) {
-        // имя до первого разделителя; мысль — остаток
         var sep = label.search(/\.\s+|\u2014|\u2013|:|- /);
         var t = '', d = label;
         if (sep > 0 && sep <= 60) { t = label.slice(0, sep).trim(); d = label.slice(sep + 1).trim().replace(/^[.\s\u2014\u2013:\-]+/, ''); }
