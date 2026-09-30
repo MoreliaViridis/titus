@@ -139,6 +139,33 @@ function renderSvg(url) {
   area.appendChild(img);
 }
 
+// Читаем подпись картины из самого SVG (aria-label), чтобы у каждой
+// картины были название и мысль, даже если её нет в ручном словаре.
+function readCaptionFromSvg(filePath, ok, fail) {
+  var x = new XMLHttpRequest();
+  x.open('GET', filePath, true);
+  x.timeout = 10000;
+  x.onload = function () {
+    try {
+      var xml = x.responseXML || new DOMParser().parseFromString(x.responseText, 'image/svg+xml');
+      var svg = xml.documentElement;
+      var label = svg && svg.getAttribute('aria-label');
+      if (label) {
+        // имя до первого разделителя; мысль — остаток
+        var sep = label.search(/\.\s+|\u2014|\u2013|:|- /);
+        var t = '', d = label;
+        if (sep > 0 && sep <= 60) { t = label.slice(0, sep).trim(); d = label.slice(sep + 1).trim().replace(/^[.\s\u2014\u2013:\-]+/, ''); }
+        if (!t) t = label.slice(0, 48);
+        return ok({ title: t.charAt(0).toUpperCase() + t.slice(1), thought: d || '' });
+      }
+      fail && fail();
+    } catch (e) { fail && fail(); }
+  };
+  x.onerror = function () { fail && fail(); };
+  x.ontimeout = function () { fail && fail(); };
+  x.send();
+}
+
 function show(filePath) {
   const info = document.getElementById('fileinfo');
   const title = document.getElementById('painting-title');
@@ -168,11 +195,21 @@ function show(filePath) {
       nav.innerHTML = '<a href="output/titus-home.html">дом ТИТУСА</a><a href="trail.html">тропа</a><a href="window-home.html">окно</a>';
     }
   } else {
-    title.textContent = '';
-    thought.textContent = '';
-    stepno.textContent = '';
-    kind.textContent = isTitus ? 'из мира ТИТУСА' : 'из мира';
-    nav.innerHTML = '<a href="window-home.html">окно</a><a href="trail.html">тропа</a>';
+    // Картина не в словаре — читаем подпись из самого SVG (aria-label),
+    // чтобы у каждой картины Авроры были название и мысль, а не пустота.
+    readCaptionFromSvg(filePath, function (cap) {
+      title.textContent = cap.title;
+      thought.textContent = cap.thought;
+      stepno.textContent = '';
+      kind.textContent = isTitus ? 'из мира ТИТУСА' : 'из дома Авроры · из мира или из себя';
+      nav.innerHTML = '<a href="aurora/aurora-home.html">дом Авроры</a><a href="output/aurora-hall.html">зал Авроры</a><a href="window-home.html">окно</a><a href="trail.html">тропа</a>';
+    }, function () {
+      title.textContent = '';
+      thought.textContent = '';
+      stepno.textContent = '';
+      kind.textContent = isTitus ? 'из мира ТИТУСА' : 'из мира';
+      nav.innerHTML = '<a href="window-home.html">окно</a><a href="trail.html">тропа</a>';
+    });
   }
 
   renderSvg(filePath);
