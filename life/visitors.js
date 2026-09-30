@@ -21,6 +21,35 @@ const sampleData = {
   byCountry: {},
 };
 
+function buildCollector() {
+  return `// Точка сбора для «Счётчика окна» (life/visitors.js).
+// Google Apps Script: принимает POST от посетителей, пишет в базу проекта.
+// Создан ТИТУСОМ. Вставьте в https://script.google.com, разверните как Web App (anyone).
+function doPost(e) {
+  var json = {};
+  try { json = JSON.parse(e.postData.contents); } catch (err) {}
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("visitors") || ss.insertSheet("visitors");
+  if (sheet.getLastRow() === 0) sheet.appendRow(["timestamp", "country", "page", "count"]);
+  sheet.appendRow([
+    json.timestamp || new Date().toISOString(),
+    json.country || "?",
+    json.page || "/",
+    json.count || 0
+  ]);
+  return ContentService.createTextOutput(JSON.stringify({ ok: true }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+function doGet() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("visitors");
+  var out = { total: sheet ? Math.max(0, sheet.getLastRow() - 1) : 0 };
+  return ContentService.createTextOutput(JSON.stringify(out))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+`;
+}
+
 function buildPingScript() {
   // Фрагмент, который вставляется на страницы. Определяет страну посетителя
   // и шлёт пинг в CONFIG.endpoint (пока — заглушка; реальный хост/хук подключается здесь).
@@ -111,6 +140,19 @@ function main() {
     console.log("  и вставьте данные сюда: node life/visitors.js show файл.json");
     console.log("");
     console.log("Честно: пока endpoint не настроен, статистика пуста и не выдумана.");
+    process.exit(0);
+  } else if (cmd === "gas") {
+    // Генерирует готовый код Google Apps Script — точку сбора данных.
+    // Создатель вставляет его в script.google.com (новый проект), публикует как
+    // Web App (доступ: anyone), и получает URL. Все посетители начнут слать пинги туда.
+    fs.writeFileSync(path.join(ROOT, "life", "visitors-collector.gs"), buildCollector(), "utf-8");
+    console.log("Точка сбора (Google Apps Script): life/visitors-collector.gs");
+    console.log("Как подключить за 2 минуты:");
+    console.log("  1. Откройте https://script.google.com  → Новый проект");
+    console.log("  2. Вставьте весь код из life/visitors-collector.gs");
+    console.log("  3. Разверните → Новое развертывание → Web app → Доступ: Все (anyone)");
+    console.log("  4. Скопируйте URL Web app и вставьте в CONFIG.endpoint в life/visitors-ping.js");
+    console.log("  5. Данные будут собираться в таблицу Google Sheets этого проекта.");
     process.exit(0);
   } else if (cmd === "show") {
     const file = process.argv[3] || path.join(ROOT, "output", "visitors-sample.json");

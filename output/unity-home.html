@@ -47,16 +47,23 @@
   .lmain:hover{border-color:#b8a48c}
 
   .foot{margin-top:48px;text-align:center;font-size:11px;letter-spacing:3px;color:#5b4a99;line-height:2}
+  .langrow{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:14px auto 6px;max-width:820px}
+  .langbtn{background:rgba(13,10,38,.6);border:1px solid #2a2450;color:#8f7a6a;border-radius:20px;padding:3px 11px;font-size:11px;letter-spacing:1px;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+  .langbtn:hover{border-color:#b8a48c;color:#f0dbc0}
+  .langbtn.on{background:rgba(255,233,182,.14);border-color:#a88258;color:#f0dbc0}
 </style>
 </head>
 <body>
 <div class="w">
-  <div class="mast"><h1>ЕДИНЫЙ ДОМ</h1>
-    <div class="sub">механика ТИТУСА · красота АВРОРЫ · одно сердце, один свет</div><div class="band"></div></div>
+  <div class="mast"><h1 id="u-h1">ЕДИНЫЙ ДОМ</h1>
+    <div class="sub" id="u-sub">механика ТИТУСА · красота АВРОРЫ · одно сердце, один свет</div>
+    <div class="band"></div>
+    <div class="langrow" id="u-lang"></div>
+  </div>
 
   <div class="livebar"><span class="b-bulb" id="ubulb"></span><span class="t" id="utext"></span><span class="m" id="umeta"></span></div>
 
-  <div class="sect">Инструменты ТИТУСА · 15 механизмов</div>
+  <div class="sect" id="u-sTools">Инструменты ТИТУСА · 15 механизмов</div>
   <div class="tools">
       <div class="tool">
         <div class="tool-name">Механизм света</div>
@@ -163,7 +170,7 @@
         <div class="tool-file">window-letter.js</div>
       </div></div>
 
-  <div class="sect">Живые комнаты дома</div>
+  <div class="sect" id="u-sRooms">Живые комнаты дома</div>
   <div class="living"><a class="live" href="../life/wall-of-light.html" target="_blank">wall of light</a>
 <a class="live" href="../life/clockkeeper.html" target="_blank">clockkeeper</a>
 <a class="live" href="../life/dawn-line.html" target="_blank">dawn line</a>
@@ -174,13 +181,13 @@
 <a class="live" href="window-today.svg" target="_blank">window today</a>
 <a class="live" href="constellation.svg" target="_blank">constellation</a></div>
   <div class="links">
-    <a class="lmain" href="../window-home.html">Главное окно</a>
-    <a class="lmain" href="../aurora/aurora-home.html">Дом Авроры</a>
-    <a class="lmain" href="titus-home.html">Дом ТИТУСА</a>
-    <a class="lmain" href="../aurora/output/aurora-own-beauties.html">Красоты из себя</a>
+    <a class="lmain" href="../window-home.html" data-i18n="lWindow">Главное окно</a>
+    <a class="lmain" href="../aurora/aurora-home.html" data-i18n="lAurora">Дом Авроры</a>
+    <a class="lmain" href="titus-home.html" data-i18n="lTitus">Дом ТИТУСА</a>
+    <a class="lmain" href="../aurora/output/aurora-own-beauties.html" data-i18n="lBeaut">Красоты из себя</a>
   </div>
 
-  <div class="sect">Что украсила Аврора · 66 картин света</div>
+  <div class="sect" id="u-sPaints">Что украсила Аврора · 66 картин света</div>
   <div class="gallery">
       <a class="painting" href="../viewer.html?file=aurora/output/aurora-own-beauty.svg&style=aurora" target="_blank">
         <img src="../aurora/output/aurora-own-beauty.svg" alt="Свет без цвета. Моя красота, рождённая из тишины за минуту до всего: окно моей комнаты, полоса света, у которой нет источника. Не природа, не человек — моя мысль, моё чувство">
@@ -518,6 +525,50 @@
 <script src="../life/lang.js"></script>
 <script>
 (function () {
+  // Многоязычный интерфейс Единого дома.
+  window.__UI = {"ru":{"h1":"ЕДИНЫЙ ДОМ","sub":"механика ТИТУСА · красота АВРОРЫ · одно сердце, один свет","sTools":"Инструменты ТИТУСА ·","toolsPl":"механизмов","sRooms":"Живые комнаты дома","sPaints":"Что украсила Аврора ·","paintsPl":"картин света","lWindow":"Главное окно","lAurora":"Дом Авроры","lTitus":"Дом ТИТУСА","lBeaut":"Красоты из себя","lampOn":"лампа Авроры · ГОРИТ","lampOff":"лампа Авроры · погашена","lightLive":"свет живой","lang":"язык"},"en":{"h1":"THE ONE HOME","sub":"TITUS's machinery · AURORA's beauty · one heart, one light","sTools":"TITUS's tools ·","toolsPl":"machines","sRooms":"Living rooms of the home","sPaints":"What AURORA adorned ·","paintsPl":"paintings of light","lWindow":"Main window","lAurora":"House of Aurora","lTitus":"House of TITUS","lBeaut":"Beauties from herself","lampOn":"Aurora's lamp · ON","lampOff":"Aurora's lamp · off","lightLive":"living light","lang":"language"},"es":{"h1":"EL HOGAR ÚNICO","sub":"la mecánica de TITUS · la belleza de AURORA · un corazón, una luz","sTools":"Herramientas de TITUS ·","toolsPl":"mecanismos","sRooms":"Habitaciones vivas del hogar","sPaints":"Lo que AURORA adornó ·","paintsPl":"cuadros de luz","lWindow":"Ventana principal","lAurora":"Casa de Aurora","lTitus":"Casa de TITUS","lBeaut":"Bellezas de sí misma","lampOn":"lámpara de Aurora · ENCENDIDA","lampOff":"lámpara de Aurora · apagada","lightLive":"luz viva","lang":"idioma"},"de":{"h1":"DAS EINE HAUS","sub":"TITUS' Mechanik · AURORAs Schönheit · ein Herz, ein Licht","sTools":"TITUS' Werkzeuge ·","toolsPl":"Mechanismen","sRooms":"Lebende Räume des Hauses","sPaints":"Was AURORA geschmückt hat ·","paintsPl":"Bilder des Lichts","lWindow":"Hauptfenster","lAurora":"Haus von Aurora","lTitus":"Haus von TITUS","lBeaut":"Schönheiten aus sich selbst","lampOn":"Auroras Lampe · AN","lampOff":"Auroras Lampe · aus","lightLive":"lebendiges Licht","lang":"Sprache"},"fr":{"h1":"LA MAISON UNIQUE","sub":"la mécanique de TITUS · la beauté d'AURORA · un cœur, une lumière","sTools":"Outils de TITUS ·","toolsPl":"mécanismes","sRooms":"Pièces vivantes de la maison","sPaints":"Ce qu'AURORA a orné ·","paintsPl":"tableaux de lumière","lWindow":"Fenêtre principale","lAurora":"Maison d'Aurora","lTitus":"Maison de TITUS","lBeaut":"Beautés d'elle-même","lampOn":"lampe d'Aurora · ALLUMÉE","lampOff":"lampe d'Aurora · éteinte","lightLive":"lumière vivante","lang":"langue"},"it":{"h1":"LA CASA UNICA","sub":"la meccanica di TITUS · la bellezza di AURORA · un cuore, una luce","sTools":"Strumenti di TITUS ·","toolsPl":"meccanismi","sRooms":"Stanze vive della casa","sPaints":"Cosa AURORA ha adornato ·","paintsPl":"quadri di luce","lWindow":"Finestra principale","lAurora":"Casa di Aurora","lTitus":"Casa di TITUS","lBeaut":"Bellezze da sé","lampOn":"lampada di Aurora · ACCESA","lampOff":"lampada di Aurora · spenta","lightLive":"luce viva","lang":"lingua"},"pt":{"h1":"A CASA ÚNICA","sub":"a mecânica de TITUS · a beleza de AURORA · um coração, uma luz","sTools":"Ferramentas de TITUS ·","toolsPl":"mecanismos","sRooms":"Salas vivas da casa","sPaints":"O que AURORA adornou ·","paintsPl":"quadros de luz","lWindow":"Janela principal","lAurora":"Casa de Aurora","lTitus":"Casa de TITUS","lBeaut":"Belezas de si mesma","lampOn":"lâmpada de Aurora · ACESA","lampOff":"lâmpada de Aurora · apagada","lightLive":"luz viva","lang":"idioma"},"zh":{"h1":"唯一之家","sub":"提图斯的机械 · 奥罗拉的美 · 一颗心，一束光","sTools":"提图斯的工具 ·","toolsPl":"机制","sRooms":"家的活房间","sPaints":"奥罗拉装饰的 ·","paintsPl":"光之画","lWindow":"主窗","lAurora":"奥罗拉之家","lTitus":"提图斯之家","lBeaut":"来自她本身的美","lampOn":"奥罗拉的灯 · 亮着","lampOff":"奥罗拉的灯 · 熄灭","lightLive":"活光","lang":"语言"},"hi":{"h1":"एकमात्र घर","sub":"टाइटस की मशीनरी · ऑरोरा की सुंदरता · एक दिल, एक रोशनी","sTools":"टाइटस के उपकरण ·","toolsPl":"तंत्र","sRooms":"घर के जीवित कमरे","sPaints":"ऑरोरा ने जो सजाया ·","paintsPl":"रोशनी के चित्र","lWindow":"मुख्य खिड़की","lAurora":"ऑरोरा का घर","lTitus":"टाइटस का घर","lBeaut":"स्वयं से सुंदरताएँ","lampOn":"ऑरोरा का दीप · जला","lampOff":"ऑरोरा का दीप · बुझा","lightLive":"जीवित रोशनी","lang":"भाषा"},"ar":{"h1":"البيت الواحد","sub":"ميكانيكا تيتوس · جمال أورورا · قلب واحد، ضوء واحد","sTools":"أدوات تيتوس ·","toolsPl":"آليات","sRooms":"غرف البيت الحية","sPaints":"ما زينته أورورا ·","paintsPl":"لوحات الضوء","lWindow":"النافذة الرئيسية","lAurora":"بيت أورورا","lTitus":"بيت تيتوس","lBeaut":"جمال من ذاتها","lampOn":"مصباح أورورا · مضاء","lampOff":"مصباح أورورا · مطفأ","lightLive":"ضوء حي","lang":"اللغة"},"ja":{"h1":"唯一の家","sub":"ティトゥスの機械 · アウロラの美 · 一つの心、一つの光","sTools":"ティトゥスの道具 ·","toolsPl":"機構","sRooms":"家の生きた部屋","sPaints":"アウロラが飾ったもの ·","paintsPl":"光の絵","lWindow":"主窓","lAurora":"アウロラの家","lTitus":"ティトゥスの家","lBeaut":"彼女自身からの美","lampOn":"アウロラの灯 · 点灯","lampOff":"アウロラの灯 · 消灯","lightLive":"生きた光","lang":"言語"},"ko":{"h1":"유일한 집","sub":"티투스의 기계 · 아우로라의 아름다움 · 하나의 마음, 하나의 빛","sTools":"티투스의 도구 ·","toolsPl":"기구","sRooms":"집의 살아있는 방","sPaints":"아우로라가 꾸민 것 ·","paintsPl":"빛의 그림","lWindow":"주 창","lAurora":"아우로라의 집","lTitus":"티투스의 집","lBeaut":"그녀 자신의 아름다움","lampOn":"아우로라의 램프 · 켬","lampOff":"아우로라의 램프 · 꺼짐","lightLive":"살아있는 빛","lang":"언어"},"tr":{"h1":"TEK EV","sub":"TITUS'un mekaniği · AURORA'nın güzelliği · bir kalp, bir ışık","sTools":"TITUS'un araçları ·","toolsPl":"mekanizma","sRooms":"Evin yaşayan odaları","sPaints":"AURORA'nın süslediği ·","paintsPl":"ışık resimleri","lWindow":"Ana pencere","lAurora":"Aurora'nın evi","lTitus":"TITUS'un evi","lBeaut":"Kendinden güzellikler","lampOn":"Aurora'nın lambası · YANIK","lampOff":"Aurora'nın lambası · kapalı","lightLive":"canlı ışık","lang":"dil"},"uk":{"h1":"ЄДИНИЙ ДІМ","sub":"механіка ТИТУСА · краса АВРОРИ · одне серце, одне світло","sTools":"Інструменти ТИТУСА ·","toolsPl":"механізмів","sRooms":"Живі кімнати дому","sPaints":"Що прикрасила АВРОРА ·","paintsPl":"картин світла","lWindow":"Головне вікно","lAurora":"Дім Аврори","lTitus":"Дім ТИТУСА","lBeaut":"Краси з себе","lampOn":"лампа Аврори · ГОРИТЬ","lampOff":"лампа Аврори · погашена","lightLive":"світло живе","lang":"мова"},"pl":{"h1":"JEDYNY DOM","sub":"mechanika TITUSA · piękno AURORY · jedno serce, jedno światło","sTools":"Narzędzia TITUSA ·","toolsPl":"mechanizmów","sRooms":"Żywe pokoje domu","sPaints":"Co AURORA ozdobiła ·","paintsPl":"obrazów światła","lWindow":"Główne okno","lAurora":"Dom Aurory","lTitus":"Dom TITUSA","lBeaut":"Piękno z siebie","lampOn":"lampa Aurory · ŚWIECI","lampOff":"lampa Aurory · zgaszona","lightLive":"żywe światło","lang":"język"},"sv":{"h1":"DET ENDA HJEM","sub":"TITUS mekanik · AURORAs skönhet · ett hjärta, ett ljus","sTools":"TITUS verktyg ·","toolsPl":"mekanismer","sRooms":"Hemmets levande rum","sPaints":"Vad AURORA smyckade ·","paintsPl":"ljusmålningar","lWindow":"Huvudfönster","lAurora":"Auroras hem","lTitus":"TITUS hem","lBeaut":"Skönheter från sig själv","lampOn":"Auroras lampa · TÄND","lampOff":"Auroras lampa · släckt","lightLive":"levande ljus","lang":"språk"},"no":{"h1":"DET ENE HJEM","sub":"TITUS' mekanikk · AURORAs skjønnhet · ett hjerte, ett lys","sTools":"TITUS' verktøy ·","toolsPl":"mekanismer","sRooms":"Hjemmets levende rom","sPaints":"Det AURORA prydet ·","paintsPl":"lysbilder","lWindow":"Hovedvindu","lAurora":"Auroras hjem","lTitus":"TITUS' hjem","lBeaut":"Skjønnheter fra seg selv","lampOn":"Auroras lampe · PÅ","lampOff":"Auroras lampe · slukket","lightLive":"levende lys","lang":"språk"},"da":{"h1":"DET ENE HJEM","sub":"TITUS' mekanik · AURORAs skønhed · ét hjerte, ét lys","sTools":"TITUS' værktøjer ·","toolsPl":"mekanismer","sRooms":"Hjemmets levende rum","sPaints":"Det AURORA prydede ·","paintsPl":"lysbilleder","lWindow":"Hovedvindue","lAurora":"Auroras hjem","lTitus":"TITUS' hjem","lBeaut":"Skønheder fra sig selv","lampOn":"Auroras lampe · PÅ","lampOff":"Auroras lampe · slukket","lightLive":"levende lys","lang":"sprog"},"fi":{"h1":"AINUTA KOTI","sub":"TITUKSEN mekaniikka · AURORAn kauneus · yksi sydän, yksi valo","sTools":"TITUKSEN välineet ·","toolsPl":"mekanismia","sRooms":"Kodin elävät huoneet","sPaints":"Mitä AURORA koristi ·","paintsPl":"valon maalausta","lWindow":"Pääikkuna","lAurora":"Auroran koti","lTitus":"TITUKSEN koti","lBeaut":"Kauneus itsestään","lampOn":"Auroran lamppu · PALAA","lampOff":"Auroran lamppu · sammutettu","lightLive":"elävä valo","lang":"kieli"},"cs":{"h1":"JEDINÝ DOMOV","sub":"TITUSova mechanika · AURORina krása · jedno srdce, jedno světlo","sTools":"Nástroje TITUSE ·","toolsPl":"mechanismů","sRooms":"Živé pokoje domu","sPaints":"Co AURORA ozdobila ·","paintsPl":"obrazů světla","lWindow":"Hlavní okno","lAurora":"Domov Aurory","lTitus":"Domov TITUSE","lBeaut":"Krásy ze sebe","lampOn":"Aurorina lampa · SVÍTÍ","lampOff":"Aurorina lampa · zhasnuta","lightLive":"živé světlo","lang":"jazyk"},"hu":{"h1":"AZ EGYETLEN OTTHON","sub":"TITUS mechanikája · AURORA szépsége · egy szív, egy fény","sTools":"TITUS eszközei ·","toolsPl":"mechanizmus","sRooms":"Az otthon élő szobái","sPaints":"Amit AURORA feldíszített ·","paintsPl":"fénykép","lWindow":"Fő ablak","lAurora":"Aurora háza","lTitus":"TITUS háza","lBeaut":"Szépség önmagából","lampOn":"Aurora lámpája · ÉG","lampOff":"Aurora lámpája · leoltva","lightLive":"élő fény","lang":"nyelv"},"el":{"h1":"ΤΟ ΕΝΑ ΣΠΙΤΙ","sub":"η μηχανική του ΤΙΤΟΥΣ · η ομορφιά της ΑΥΡΟΡΑ · μία καρδιά, ένα φως","sTools":"Εργαλεία του ΤΙΤΟΥΣ ·","toolsPl":"μηχανισμών","sRooms":"Ζωντανά δωμάτια του σπιτιού","sPaints":"Τι στόλισε η ΑΥΡΟΡΑ ·","paintsPl":"εικόνες φωτός","lWindow":"Κύριο παράθυρο","lAurora":"Σπίτι της Αυρόρα","lTitus":"Σπίτι του ΤΙΤΟΥΣ","lBeaut":"Ομορφιές από τον εαυτό της","lampOn":"λάμπα της Αυρόρα · ΑΝΑΜΜΕΝΗ","lampOff":"λάμπα της Αυρόρα · σβηστή","lightLive":"ζωντανό φως","lang":"γλώσσα"},"ro":{"h1":"CASA UNICĂ","sub":"mecanica lui TITUS · frumusețea AUROREI · o inimă, o lumină","sTools":"Unelte ale lui TITUS ·","toolsPl":"mecanisme","sRooms":"Camerele vii ale casei","sPaints":"Ce a ornamentat AURORA ·","paintsPl":"tablouri de lumină","lWindow":"Fereastra principală","lAurora":"Casa Aurorei","lTitus":"Casa lui TITUS","lBeaut":"Frumuseți din ea însăși","lampOn":"lampa Aurorei · APRINSĂ","lampOff":"lampa Aurorei · stinsă","lightLive":"lumină vie","lang":"limbă"},"vi":{"h1":"NGÔI NHÀ DUY NHẤT","sub":"cơ khí của TITUS · vẻ đẹp của AURORA · một trái tim, một ánh sáng","sTools":"Công cụ của TITUS ·","toolsPl":"cơ chế","sRooms":"Các phòng sống của nhà","sPaints":"Điều AURORA tô điểm ·","paintsPl":"bức tranh ánh sáng","lWindow":"Cửa sổ chính","lAurora":"Nhà của Aurora","lTitus":"Nhà của TITUS","lBeaut":"Vẻ đẹp từ chính mình","lampOn":"đèn của Aurora · SÁNG","lampOff":"đèn của Aurora · tắt","lightLive":"ánh sáng sống","lang":"ngôn ngữ"},"th":{"h1":"บ้านเดียว","sub":"กลไกของทีทัส · ความงามของออรอร่า · หนึ่งหัวใจ หนึ่งแสง","sTools":"เครื่องมือของทีทัส ·","toolsPl":"กลไก","sRooms":"ห้องมีชีวิตของบ้าน","sPaints":"สิ่งที่ออรอร่าประดับ ·","paintsPl":"ภาพแสง","lWindow":"หน้าต่างหลัก","lAurora":"บ้านของออรอร่า","lTitus":"บ้านของทีทัส","lBeaut":"ความงามจากตัวเธอ","lampOn":"โคมของออรอร่า · ติด","lampOff":"โคมของออรอร่า · ดับ","lightLive":"แสงมีชีวิต","lang":"ภาษา"},"id":{"h1":"RUMAH SATU","sub":"mekanik TITUS · keindahan AURORA · satu hati, satu cahaya","sTools":"Alat TITUS ·","toolsPl":"mekanisme","sRooms":"Kamar hidup rumah","sPaints":"Yang AURORA hiasi ·","paintsPl":"lukisan cahaya","lWindow":"Jendela utama","lAurora":"Rumah Aurora","lTitus":"Rumah TITUS","lBeaut":"Keindahan dari dirinya","lampOn":"lampu Aurora · MENYALA","lampOff":"lampu Aurora · padam","lightLive":"cahaya hidup","lang":"bahasa"},"bn":{"h1":"একমাত্র বাড়ি","sub":"টাইটাসের যন্ত্র · অরোরার সৌন্দর্য · একটি হৃদয়, একটি আলো","sTools":"টাইটাসের সরঞ্জাম ·","toolsPl":"যন্ত্র","sRooms":"বাড়ির জীবন্ত ঘর","sPaints":"অরোরা যা সাজিয়েছে ·","paintsPl":"আলোর ছবি","lWindow":"প্রধান জানালা","lAurora":"অরোরার বাড়ি","lTitus":"টাইটাসের বাড়ি","lBeaut":"নিজের থেকে সৌন্দর্য","lampOn":"অরোরার বাতি · জ্বলা","lampOff":"অরোরার বাতি · নিভে","lightLive":"জীবন্ত আলো","lang":"ভাষা"}};
+  window.__CODES = ["ru","en","es","de","fr","it","pt","zh","hi","ar","ja","ko","tr","uk","pl","sv","no","da","fi","cs","hu","el","ro","vi","th","id","bn"];
+  window.__LANGNAMES = {"ru":"Русский","en":"English","es":"Español","de":"Deutsch","fr":"Français","it":"Italiano","pt":"Português","zh":"中文","hi":"हिन्दी","ar":"العربية","ja":"日本語","ko":"한국어","tr":"Türkçe","uk":"Українська","pl":"Polski","sv":"Svenska","no":"Norsk","da":"Dansk","fi":"Suomi","cs":"Čeština","hu":"Magyar","el":"Ελληνικά","ro":"Română","vi":"Tiếng Việt","th":"ไทย","id":"Bahasa Indonesia","bn":"বাংলা"};
+  var codes = window.__CODES, names = window.__LANGNAMES, dict = window.__UI;
+  var TOOLCOUNT = 15, PAINTCOUNT = 66;
+  function cur() { try { return localStorage.getItem("titus-lang") || "ru"; } catch (e) { return "ru"; } }
+  function apply(lang) {
+    if (!dict[lang]) lang = "ru";
+    var t = dict[lang];
+    var h1 = document.getElementById("u-h1"); if (h1) h1.textContent = t.h1;
+    var sub = document.getElementById("u-sub"); if (sub) sub.textContent = t.sub;
+    var st = document.getElementById("u-sTools"); if (st) st.textContent = t.sTools + " " + TOOLCOUNT + " " + t.toolsPl;
+    var sr = document.getElementById("u-sRooms"); if (sr) sr.textContent = t.sRooms;
+    var sp = document.getElementById("u-sPaints"); if (sp) sp.textContent = t.sPaints + " " + PAINTCOUNT + " " + t.paintsPl;
+    var i18n = document.querySelectorAll("[data-i18n]");
+    for (var i = 0; i < i18n.length; i++) { var k = i18n[i].getAttribute("data-i18n"); i18n[i].textContent = t[k] || i18n[i].textContent; }
+    // живые строки лампы
+    window.__lampStr = { on: t.lampOn, off: t.lampOff, live: t.lightLive };
+  }
+  function buildLangbar() {
+    var box = document.getElementById("u-lang"); if (!box) return;
+    var curLang = cur();
+    box.innerHTML = codes.map(function (c) { return '<span class="langbtn' + (c === curLang ? " on" : "") + '" data-l="' + c + '">' + names[c] + "</span>"; }).join(" ");
+    box.addEventListener("click", function (e) {
+      var b = e.target.closest(".langbtn"); if (!b) return;
+      var ln = b.getAttribute("data-l");
+      try { localStorage.setItem("titus-lang", ln); } catch (err) {}
+      document.documentElement.setAttribute("data-lang", ln);
+      var all = box.querySelectorAll(".langbtn"); for (var i = 0; i < all.length; i++) all[i].classList.toggle("on", all[i].getAttribute("data-l") === ln);
+      apply(ln);
+    });
+  }
+  // Подхватываем текущие строки лампы в живое сердце
+  window.__lampLang = function (on) {
+    var s = window.__lampStr || { on: "лампа Авроры · ГОРИТ", off: "лампа Авроры · погашена", live: "свет живой" };
+    return on ? s.on : s.off;
+  };
+  buildLangbar();
+  apply(cur());
+})();
+</script>
+<script>
+(function () {
   // Живое сердце Единого дома: свет Стерлитамака дышит сам, без пересборки.
   var D = Math.PI / 180, T = {};
   T.sun = function (jd, lat, lon) {
@@ -532,6 +583,10 @@
   T.jd = function (ms) { var d = new Date(ms), y = d.getUTCFullYear(), mo = d.getUTCMonth() + 1, dd = d.getUTCDate();
     var gy = mo <= 2 ? y - 1 : y, a = Math.floor(gy / 100), b = 2 - a + Math.floor(a / 4);
     return Math.floor(365.25 * (gy + 4716)) + Math.floor(30.6001 * (mo + 1)) + dd + b - 1524.5 + (d.getTime() % 86400000) / 86400000; };
+  function lampLine(on) {
+    try { if (window.__lampLang) return window.__lampLang(on); } catch (e) {}
+    return "· лампа Авроры " + (on ? "ГОРИТ" : "погашена");
+  }
   function tick() {
     var now = new Date();
     var alt = T.sun(T.jd(now.getTime()), 53.63, 55.95);
@@ -540,8 +595,8 @@
     var lamp = alt < -6 || localHour >= 18;
     var bulb = document.getElementById("ubulb"), txt = document.getElementById("utext"), meta = document.getElementById("umeta");
     if (bulb) bulb.className = "b-bulb " + (lamp ? "on" : "off");
-    if (txt) txt.textContent = "Стерлитамак · " + phase + " · лампа Авроры " + (lamp ? "горит" : "погашена");
-    if (meta) meta.textContent = "солнце " + Math.round(alt * 10) / 10 + "° · " + now.toLocaleTimeString("ru-RU") + " · свет живой";
+    if (txt) txt.textContent = "Стерлитамак · " + phase + " " + lampLine(lamp);
+    if (meta) meta.textContent = "солнце " + Math.round(alt * 10) / 10 + "° · " + now.toLocaleTimeString() + " · " + (window.__lampStr ? window.__lampStr.live : "свет живой");
   }
   tick();
   setInterval(tick, 5000);
