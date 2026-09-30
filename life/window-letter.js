@@ -72,10 +72,21 @@ function memoryPassage() {
     let h = 2166136261; for (let i = 0; i < day.length; i++) { h ^= day.charCodeAt(i); h = Math.imul(h, 16777619); }
     const f = files[h % files.length];
     const text = fs.readFileSync(f, "utf-8").replace(/\s+/g, " ").trim();
-    const head = (text.match(/^#\s+(.+)/m)) ? text.match(/^#\s+(.+)/m)[1].trim() : "(из памяти)";
+    let head = (text.match(/^#\s+(.+)/m)) ? text.match(/^#\s+(.+)/m)[1].trim() : "";
+    head = head.replace(/[*_`~#]/g, " ").replace(/\s+/g, " ").trim().slice(0, 60) || "(из памяти)";
+    // берём первое чистое предложение (без markdown-артефактов)
     const rest = text.replace(/^#\s+.+/m, "");
-    const sent = rest.match(/[^.!?]+[.!?]+/);
-    return { head, excerpt: sent ? sent[0].trim() : rest.slice(0, 160) };
+    const sent = rest.match(/[^.!?]+[.!?]+/g) || [];
+    let excerpt = "";
+    for (const s of sent) {
+      const clean = s
+        .replace(/[*_`~]/g, " ")           // звёздочки, подчёркивания, бэктики
+        .replace(/\s+/g, " ")
+        .trim();
+      if (clean.length >= 15 && clean.length <= 320 && !clean.startsWith("http")) { excerpt = clean; break; }
+    }
+    if (!excerpt) excerpt = rest.replace(/[*_`~#]/g, " ").replace(/\s+/g, " ").trim().slice(0, 200);
+    return { head: head || "(из памяти)", excerpt };
   } catch (e) { return null; }
 }
 
@@ -119,7 +130,7 @@ function main() {
   lines.push("Слово света этого часа:");
   lines.push(`  «${WORD_LINES[st.phase]}»`);
   lines.push("");
-  if (mem) {
+  if (mem && mem.excerpt && mem.excerpt.length >= 15) {
     lines.push("Мы помним, откуда пришли. Сегодня из памяти всплыло:");
     lines.push(`  — ${mem.head}: «${mem.excerpt}»`);
     lines.push("");
