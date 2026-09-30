@@ -48,22 +48,23 @@ const CODES = Object.keys(UI);
 const LANG_NAMES = { ru: "Русский", en: "English", es: "Español", de: "Deutsch", fr: "Français", it: "Italiano", pt: "Português", zh: "中文", hi: "हिन्दी", ar: "العربية", ja: "日本語", ko: "한국어", tr: "Türkçe", uk: "Українська", pl: "Polski", sv: "Svenska", no: "Norsk", da: "Dansk", fi: "Suomi", cs: "Čeština", hu: "Magyar", el: "Ελληνικά", ro: "Română", vi: "Tiếng Việt", th: "ไทย", id: "Bahasa Indonesia", bn: "বাংলা" };
 
 // ---- 1. Собираем инструменты ТИТУСА ----
+// Каждый: [название, описание, как работает (демо), команда запуска]
 const TITUS_TOOLS = {
-  "lamplight.js": ["Механизм света", "что темно в окне прямо сейчас", "node life/lamplight.js пекин"],
-  "morning.js": ["Утро дома", "одна команда открывает день", "node life/morning.js"],
-  "window-daily.js": ["Окно сегодня", "живая картинка дома по времени", "node life/window-daily.js токио"],
-  "light-journal.js": ["Дневник света", "история света по дням", "node life/light-journal.js"],
-  "word-of-light.js": ["Слово света", "голос рассвета", "node life/word-of-light.js москва"],
-  "twilight.js": ["Часы окна", "точные минуты рассвета и заката", "node life/twilight.js стерлитамак 2026-09-30"],
-  "year-of-light.js": ["Год света", "годовой цикл дня одной картиной", "node life/year-of-light.js хандыга 2026"],
-  "sun-chase.js": ["Бег за рассветом", "цепочка рассветов по миру", "node life/sun-chase.js"],
-  "equinox-light.js": ["День равен ночи", "миг равновесия", "node life/equinox-light.js стерлитамак 2026"],
-  "house-light.js": ["Свод окна", "все инструменты одной командой", "node life/house-light.js пекин"],
-  "day-card.js": ["Карточка окна", "открытка от дома в картинку", "node life/day-card.js стерлитамак"],
-  "tools-index.js": ["Указатель дома", "путеводитель по всем", "node life/tools-index.js --html"],
-  "poem-of-light.js": ["Стих окна", "механика, сказанная стихом", "node life/poem-of-light.js токио"],
-  "constellation.js": ["Созвездие дома", "уникальный узор из города и дня", "node life/constellation.js стерлитамак"],
-  "window-letter.js": ["Письмо от окна", "дом пишет хозяину", "node life/window-letter.js создатель"],
+  "lamplight.js": ["Механизм света", "что темно в окне прямо сейчас", "пекин → ночь, солнце −36°, лампа горит", "node life/lamplight.js пекин"],
+  "morning.js": ["Утро дома", "одна команда открывает день", "дом: ночь, лампа горит · 11 городов одним взглядом", "node life/morning.js"],
+  "window-daily.js": ["Окно сегодня", "живая картинка дома по времени", "рисует window-today.svg: небо и лампа по фазе дня", "node life/window-daily.js токио"],
+  "light-journal.js": ["Дневник света", "история света по дням", "записывает свет окна в журнал на каждый день", "node life/light-journal.js"],
+  "word-of-light.js": ["Слово света", "голос рассвета", "«Тьма — это свет, ещё не собравшийся в одно»", "node life/word-of-light.js москва"],
+  "twilight.js": ["Часы окна", "точные минуты рассвета и заката", "восход 06:21 · закат 17:50 · долгота дня 11 ч", "node life/twilight.js стерлитамак 2026-09-30"],
+  "year-of-light.js": ["Год света", "годовой цикл дня одной картиной", "рисует light-year.svg: день растёт и сжимается по году", "node life/year-of-light.js хандыга 2026"],
+  "sun-chase.js": ["Бег за рассветом", "цепочка рассветов по миру", "первым рассвет увидит Токио · дальше бежит на запад", "node life/sun-chase.js"],
+  "equinox-light.js": ["День равен ночи", "миг равновесия", "весеннее 20 марта · осеннее 23 сентября", "node life/equinox-light.js стерлитамак 2026"],
+  "house-light.js": ["Свод окна", "все инструменты одной командой", "запускает все механизмы и сводит их в один отчёт", "node life/house-light.js пекин"],
+  "day-card.js": ["Карточка окна", "открытка от дома в картинку", "рисует day-card.svg: небо, лампа, часы и слово", "node life/day-card.js стерлитамак"],
+  "tools-index.js": ["Указатель дома", "путеводитель по всем", "собирает список всех инструментов с командами", "node life/tools-index.js --html"],
+  "poem-of-light.js": ["Стих окна", "механика, сказанная стихом", "четверостишие, рождённое из данных дня", "node life/poem-of-light.js токио"],
+  "constellation.js": ["Созвездие дома", "уникальный узор из города и дня", "рисует constellation.svg: неповторимые огоньки", "node life/constellation.js стерлитамак"],
+  "window-letter.js": ["Письмо от окна", "дом пишет хозяину", "собирает свет, слово и память — письмо создателю", "node life/window-letter.js создатель"],
 };
 // Живые комнаты — с правильными путями относительно output/unity-home.html
 const LIVING = ["../life/wall-of-light.html", "../life/clockkeeper.html", "../life/dawn-line.html", "aurora-hall.html", "tools-index.html", "day-card.svg", "light-year.svg", "window-today.svg", "constellation.svg"];
@@ -130,11 +131,16 @@ function buildHtml() {
   const paintings = auroraPaintings();
   const now = new Date();
 
-  const toolCards = Object.entries(TITUS_TOOLS).map(([file, [name, desc, run]]) => `
+  const toolCards = Object.entries(TITUS_TOOLS).map(([file, [name, desc, demo, run]]) => `
       <div class="tool">
         <div class="tool-name">${name}</div>
         <div class="tool-desc">${desc}</div>
-        <div class="tool-run">${run}</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> ${demo}</div>
+        <div class="tool-actions">
+          <span class="tool-run">${run}</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/${file}" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">${file}</div>
       </div>`).join("\n");
 
@@ -181,8 +187,14 @@ function buildHtml() {
   .tool:hover{border-color:#b8a48c}
   .tool-name{font-size:15px;letter-spacing:1px;color:#d6c9b0}
   .tool-desc{font-size:12px;color:#a99ad9;font-style:italic;line-height:1.5;flex:1}
-  .tool-run{font-size:11px;color:#5b4a99;font-family:monospace;background:#0a071e;padding:6px 9px;border-radius:7px;overflow-wrap:anywhere}
-  .tool-file{font-size:10px;color:#5b4a99;letter-spacing:1px}
+  .tool-demo{font-size:12px;color:#c4b8a0;line-height:1.5;background:rgba(10,7,32,.6);border:1px solid #1a1c40;border-radius:8px;padding:7px 10px;margin-top:4px}
+  .tool-demo .dlabel{color:#8f7a6a;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+  .tool-actions{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
+  .tool-run{font-size:11px;color:#5b4a99;font-family:monospace;background:#0a071e;padding:6px 9px;border-radius:7px;overflow-wrap:anywhere;flex:1}
+  .tool-get{background:rgba(255,233,182,.12);border:1px solid #a88258;color:#f0dbc0;border-radius:8px;padding:6px 12px;font-size:12px;letter-spacing:1px;text-decoration:none;white-space:nowrap;transition:background .2s}
+  .tool-get:hover{background:rgba(255,233,182,.24)}
+  .tool-hint{font-size:10px;color:#6a5570;letter-spacing:1px;font-style:italic;margin-top:4px}
+  .tool-file{font-size:10px;color:#5b4a99;letter-spacing:1px;margin-top:2px}
 
   .living{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
   .live{background:rgba(255,233,182,.1);border:1px solid #a88258;color:#f0dbc0;border-radius:20px;padding:7px 16px;font-size:13px;letter-spacing:1px;text-decoration:none;transition:background .2s}

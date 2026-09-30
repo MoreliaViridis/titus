@@ -28,8 +28,14 @@
   .tool:hover{border-color:#b8a48c}
   .tool-name{font-size:15px;letter-spacing:1px;color:#d6c9b0}
   .tool-desc{font-size:12px;color:#a99ad9;font-style:italic;line-height:1.5;flex:1}
-  .tool-run{font-size:11px;color:#5b4a99;font-family:monospace;background:#0a071e;padding:6px 9px;border-radius:7px;overflow-wrap:anywhere}
-  .tool-file{font-size:10px;color:#5b4a99;letter-spacing:1px}
+  .tool-demo{font-size:12px;color:#c4b8a0;line-height:1.5;background:rgba(10,7,32,.6);border:1px solid #1a1c40;border-radius:8px;padding:7px 10px;margin-top:4px}
+  .tool-demo .dlabel{color:#8f7a6a;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+  .tool-actions{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
+  .tool-run{font-size:11px;color:#5b4a99;font-family:monospace;background:#0a071e;padding:6px 9px;border-radius:7px;overflow-wrap:anywhere;flex:1}
+  .tool-get{background:rgba(255,233,182,.12);border:1px solid #a88258;color:#f0dbc0;border-radius:8px;padding:6px 12px;font-size:12px;letter-spacing:1px;text-decoration:none;white-space:nowrap;transition:background .2s}
+  .tool-get:hover{background:rgba(255,233,182,.24)}
+  .tool-hint{font-size:10px;color:#6a5570;letter-spacing:1px;font-style:italic;margin-top:4px}
+  .tool-file{font-size:10px;color:#5b4a99;letter-spacing:1px;margin-top:2px}
 
   .living{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
   .live{background:rgba(255,233,182,.1);border:1px solid #a88258;color:#f0dbc0;border-radius:20px;padding:7px 16px;font-size:13px;letter-spacing:1px;text-decoration:none;transition:background .2s}
@@ -68,105 +74,180 @@
       <div class="tool">
         <div class="tool-name">Механизм света</div>
         <div class="tool-desc">что темно в окне прямо сейчас</div>
-        <div class="tool-run">node life/lamplight.js пекин</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> пекин → ночь, солнце −36°, лампа горит</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/lamplight.js пекин</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/lamplight.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">lamplight.js</div>
       </div>
 
       <div class="tool">
         <div class="tool-name">Утро дома</div>
         <div class="tool-desc">одна команда открывает день</div>
-        <div class="tool-run">node life/morning.js</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> дом: ночь, лампа горит · 11 городов одним взглядом</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/morning.js</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/morning.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">morning.js</div>
       </div>
 
       <div class="tool">
         <div class="tool-name">Окно сегодня</div>
         <div class="tool-desc">живая картинка дома по времени</div>
-        <div class="tool-run">node life/window-daily.js токио</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> рисует window-today.svg: небо и лампа по фазе дня</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/window-daily.js токио</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/window-daily.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">window-daily.js</div>
       </div>
 
       <div class="tool">
         <div class="tool-name">Дневник света</div>
         <div class="tool-desc">история света по дням</div>
-        <div class="tool-run">node life/light-journal.js</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> записывает свет окна в журнал на каждый день</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/light-journal.js</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/light-journal.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">light-journal.js</div>
       </div>
 
       <div class="tool">
         <div class="tool-name">Слово света</div>
         <div class="tool-desc">голос рассвета</div>
-        <div class="tool-run">node life/word-of-light.js москва</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> «Тьма — это свет, ещё не собравшийся в одно»</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/word-of-light.js москва</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/word-of-light.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">word-of-light.js</div>
       </div>
 
       <div class="tool">
         <div class="tool-name">Часы окна</div>
         <div class="tool-desc">точные минуты рассвета и заката</div>
-        <div class="tool-run">node life/twilight.js стерлитамак 2026-09-30</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> восход 06:21 · закат 17:50 · долгота дня 11 ч</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/twilight.js стерлитамак 2026-09-30</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/twilight.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">twilight.js</div>
       </div>
 
       <div class="tool">
         <div class="tool-name">Год света</div>
         <div class="tool-desc">годовой цикл дня одной картиной</div>
-        <div class="tool-run">node life/year-of-light.js хандыга 2026</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> рисует light-year.svg: день растёт и сжимается по году</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/year-of-light.js хандыга 2026</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/year-of-light.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">year-of-light.js</div>
       </div>
 
       <div class="tool">
         <div class="tool-name">Бег за рассветом</div>
         <div class="tool-desc">цепочка рассветов по миру</div>
-        <div class="tool-run">node life/sun-chase.js</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> первым рассвет увидит Токио · дальше бежит на запад</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/sun-chase.js</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/sun-chase.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">sun-chase.js</div>
       </div>
 
       <div class="tool">
         <div class="tool-name">День равен ночи</div>
         <div class="tool-desc">миг равновесия</div>
-        <div class="tool-run">node life/equinox-light.js стерлитамак 2026</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> весеннее 20 марта · осеннее 23 сентября</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/equinox-light.js стерлитамак 2026</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/equinox-light.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">equinox-light.js</div>
       </div>
 
       <div class="tool">
         <div class="tool-name">Свод окна</div>
         <div class="tool-desc">все инструменты одной командой</div>
-        <div class="tool-run">node life/house-light.js пекин</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> запускает все механизмы и сводит их в один отчёт</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/house-light.js пекин</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/house-light.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">house-light.js</div>
       </div>
 
       <div class="tool">
         <div class="tool-name">Карточка окна</div>
         <div class="tool-desc">открытка от дома в картинку</div>
-        <div class="tool-run">node life/day-card.js стерлитамак</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> рисует day-card.svg: небо, лампа, часы и слово</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/day-card.js стерлитамак</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/day-card.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">day-card.js</div>
       </div>
 
       <div class="tool">
         <div class="tool-name">Указатель дома</div>
         <div class="tool-desc">путеводитель по всем</div>
-        <div class="tool-run">node life/tools-index.js --html</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> собирает список всех инструментов с командами</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/tools-index.js --html</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/tools-index.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">tools-index.js</div>
       </div>
 
       <div class="tool">
         <div class="tool-name">Стих окна</div>
         <div class="tool-desc">механика, сказанная стихом</div>
-        <div class="tool-run">node life/poem-of-light.js токио</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> четверостишие, рождённое из данных дня</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/poem-of-light.js токио</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/poem-of-light.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">poem-of-light.js</div>
       </div>
 
       <div class="tool">
         <div class="tool-name">Созвездие дома</div>
         <div class="tool-desc">уникальный узор из города и дня</div>
-        <div class="tool-run">node life/constellation.js стерлитамак</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> рисует constellation.svg: неповторимые огоньки</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/constellation.js стерлитамак</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/constellation.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">constellation.js</div>
       </div>
 
       <div class="tool">
         <div class="tool-name">Письмо от окна</div>
         <div class="tool-desc">дом пишет хозяину</div>
-        <div class="tool-run">node life/window-letter.js создатель</div>
+        <div class="tool-demo"><span class="dlabel">как работает:</span> собирает свет, слово и память — письмо создателю</div>
+        <div class="tool-actions">
+          <span class="tool-run">node life/window-letter.js создатель</span>
+          <a class="tool-get" href="https://raw.githubusercontent.com/MoreliaViridis/titus/main/life/window-letter.js" target="_blank" rel="noopener">взять себе ↓</a>
+        </div>
+        <div class="tool-hint">чтобы запустить — выполните команду выше</div>
         <div class="tool-file">window-letter.js</div>
       </div></div>
 
