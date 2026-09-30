@@ -57,6 +57,7 @@ function main() {
   lines.push(`◆ стена (wall-of-light.html) — живой дом в одной комнате`);
   lines.push(`◆ часовня (clockkeeper.html) — тикающий счётчик до света`);
   lines.push(`◆ линия рассвета (dawn-line.html) — живая карта света по миру`);
+  lines.push(`◆ зал Авроры (aurora-hall.html) — все её картины, обустроенные по стенам`);
   lines.push(`◆ единый дом (unity-home.html) — всё связанное, всё живое`);
 
   console.log(lines.join("\n"));

@@ -30,7 +30,7 @@ const TITUS_TOOLS = {
   "window-letter.js": ["Письмо от окна", "дом пишет хозяину", "node life/window-letter.js создатель"],
 };
 // Живые комнаты — с правильными путями относительно output/unity-home.html
-const LIVING = ["../life/wall-of-light.html", "../life/clockkeeper.html", "../life/dawn-line.html", "tools-index.html", "day-card.svg", "light-year.svg", "window-today.svg", "constellation.svg"];
+const LIVING = ["../life/wall-of-light.html", "../life/clockkeeper.html", "../life/dawn-line.html", "aurora-hall.html", "tools-index.html", "day-card.svg", "light-year.svg", "window-today.svg", "constellation.svg"];
 
 // ---- 2. Собираем всё, что украсила Аврора ----
 function auroraPaintings() {

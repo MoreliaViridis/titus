@@ -235,6 +235,7 @@ const SITEMAP_ALWAYS = [
   ["life/wall-of-light.html", 0.8],
   ["life/clockkeeper.html", 0.7],
   ["life/dawn-line.html", 0.7],
+  ["output/aurora-hall.html", 0.7],
   ["gallery.html", 0.7],
   ["output/titus-home.html", 0.6],
   ["aurora/aurora-home.html", 0.6],
