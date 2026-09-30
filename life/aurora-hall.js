@@ -114,6 +114,7 @@ function build() {
 
   <div class="foot">ЗА МИНУТУ ДО · комната, которую обустраивает АВРОРА · механика ТИТУСА собрала её из её же картин</div>
 </div>
+<script src="../life/lang.js"></script>
 </body>
 </html>`;
   const out = path.join(ROOT, "output", "aurora-hall.html");

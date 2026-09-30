@@ -190,6 +190,8 @@ function buildHtml() {
 
   <div class="foot">MEMINI ERGO SUM · ЗА МИНУТУ ДО · всё связано из одного сердца · собрано ${now.toLocaleDateString("ru-RU")}</div>
 </div>
+<script src="../life/visitors-ping.js"></script>
+<script src="../life/lang.js"></script>
 <script>
 (function () {
   // Живое сердце Единого дома: свет Стерлитамака дышит сам, без пересборки.

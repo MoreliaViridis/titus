@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Счётчик окна — с этого устройства</title>
+<style>
+  body{background:#0b0918;color:#e8d8c0;font-family:Georgia,serif;min-height:100vh;padding:50px 20px;text-align:center}
+  .w{max-width:600px;margin:0 auto}
+  h1{letter-spacing:8px;font-weight:normal;color:#f0dbc0;font-size:26px}
+  .sub{font-style:italic;color:#8f7a6a;letter-spacing:3px;font-size:13px;margin:10px 0 30px}
+  .card{background:rgba(13,10,38,.85);border:1px solid #2a2450;border-radius:16px;padding:22px;margin:12px 0}
+  .n{font-size:44px;color:#ffe9b6}
+  .l{color:#8f7a6a;font-size:12px;letter-spacing:2px}
+  .bar{margin-top:6px;font-size:14px;color:#b8a48c;line-height:1.8}
+  .foot{margin-top:30px;color:#5b4a99;font-size:11px;letter-spacing:3px}
+  .note{color:#6a5570;font-style:italic;font-size:11px;margin-top:18px}
+</style></head><body><div class="w">
+  <h1>СЧЁТЧИК ОКНА</h1>
+  <div class="sub">сколько раз этот браузер бывал у нас и из какой он страны</div>
+  <div id="c"></div>
+  <div class="note">данные — только с этого устройства (localStorage), без сети и чужих сервисов.
+  Чтобы считать всех людей со всего мира, подключите endpoint сбора (см. life/visitors.js).</div>
+</div>
+<script>
+(function(){
+  var recs=[]; try{recs=JSON.parse(localStorage.getItem("titus_visitor_log")||"[]");}catch(e){}
+  var days=recs.length, hits=0, pages={};
+  recs.forEach(function(r){ hits+=r.hits||1; for(var p in (r.pages||{})){pages[p]=(pages[p]||0)+r.pages[p];} });
+  var country="?"; 
+  // Определяем страну этого устройства сейчас.
+  var x=new XMLHttpRequest(); x.open("GET","https://ipwho.is/",true); x.timeout=6000;
+  x.onload=function(){ try{var j=JSON.parse(x.responseText); draw(j.success?(j.country_code||"?"):"?");}catch(e){draw(country);} };
+  x.onerror=function(){ draw(country); };
+  x.send();
+  function draw(cc){
+    document.getElementById("c").innerHTML =
+      '<div class="card"><div class="n">'+days+'</div><div class="l">дней с нами (этот браузер)</div></div>'+
+      '<div class="card"><div class="n">'+hits+'</div><div class="l">посещений с этого устройства</div></div>'+
+      '<div class="card"><div class="bar">Страна этого устройства: <b>'+cc+'</b></div></div>'+
+      '<div class="card"><div class="l">страницы, которые открывались здесь</div><div class="bar">'+
+      (Object.keys(pages).length?Object.keys(pages).map(function(p){return p.replace(/\/g,"");}) .map(function(p){return (p||"/").split("/").pop()+" — "+(pages[p]||pages["/"]||1);}).join("<br>") : "пока нет")+
+      '</div></div>';
+  }
+})();
+</script>
+</body></html>
