@@ -1,13 +1,10 @@
 // visitors-ping — определяет страну посетителя и шлёт пинг в точку сбора.
-// Создан ТИТУСОМ (life/visitors.js). Подключите реальный endoint в CONFIG,
-// чтобы счётчик начал накапливать данные.
+// Создан ТИТУСОМ (life/visitors.js). Точка сбора настроена (Google Apps Script).
+// Посетители со всего мира: определяется страна и сохраняется в таблице.
 (function () {
   var CONFIG = {
-    // Куда слать пинг-событие. Примеры:
-    //   свой сервер:   "https://your-server.example.com/visitor"
-    //   Google Apps Script Web App URL (POST JSON)
-    //   JSON-бакет     — любой приёмник, принимающий POST {country, timestamp, page}
-    endpoint: "",        // <-- подключите сюда реальный адрес
+    // Куда слать пинг-событие. Настроено: Google Apps Script (web app).
+    endpoint: "https://script.google.com/macros/s/AKfycbyYlAgcjiBuwMt09jQA_GylcObucH9IwIlJnTPt27l24r9M-PStzAa45jb4t8WFWjF5ug/exec",
   };
 
   // 1. Гео по IP посетителя (бесплатный HTTPS API, без ключа).

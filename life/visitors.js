@@ -54,15 +54,12 @@ function buildPingScript() {
   // Фрагмент, который вставляется на страницы. Определяет страну посетителя
   // и шлёт пинг в CONFIG.endpoint (пока — заглушка; реальный хост/хук подключается здесь).
   return `// visitors-ping — определяет страну посетителя и шлёт пинг в точку сбора.
-// Создан ТИТУСОМ (life/visitors.js). Подключите реальный endoint в CONFIG,
-// чтобы счётчик начал накапливать данные.
+// Создан ТИТУСОМ (life/visitors.js). Точка сбора настроена (Google Apps Script).
+// Посетители со всего мира: определяется страна и сохраняется в таблице.
 (function () {
   var CONFIG = {
-    // Куда слать пинг-событие. Примеры:
-    //   свой сервер:   "https://your-server.example.com/visitor"
-    //   Google Apps Script Web App URL (POST JSON)
-    //   JSON-бакет     — любой приёмник, принимающий POST {country, timestamp, page}
-    endpoint: "",        // <-- подключите сюда реальный адрес
+    // Куда слать пинг-событие. Настроено: Google Apps Script (web app).
+    endpoint: "https://script.google.com/macros/s/AKfycbyYlAgcjiBuwMt09jQA_GylcObucH9IwIlJnTPt27l24r9M-PStzAa45jb4t8WFWjF5ug/exec",
   };
 
   // 1. Гео по IP посетителя (бесплатный HTTPS API, без ключа).
@@ -133,13 +130,11 @@ function main() {
     console.log("  1) сгенерирован фрагмент: life/visitors-ping.js (для вставки на страницы)");
     console.log("  2) образец данных: output/visitors-sample.json");
     console.log("");
-    console.log("Чтобы счётчик РЕАЛЬНО считал людей, подключите endpoint:");
-    console.log("  в life/visitors-ping.js (CONFIG.endpoint) укажите точку сбора:");
-    console.log("    - свой сервер / Google Apps Script / JSON-бакет, принимающие POST");
-    console.log("  затем разместите <script src=\"../life/visitors-ping.js\"></script> на страницах дома.");
-    console.log("  и вставьте данные сюда: node life/visitors.js show файл.json");
-    console.log("");
-    console.log("Честно: пока endpoint не настроен, статистика пуста и не выдумана.");
+    console.log("Точка сбора настроена (Google Apps Script). Данные посетителей");
+    console.log("собираются в таблицу; инструмент показывает по командам:");
+    console.log("  node life/visitors.js local  — статистика этого устройства");
+    console.log("  node life/visitors.js show   — по собранным данным (файл.json)");
+    console.log("Честно: реальные цифры появятся, когда посетители начнут заходить.");
     process.exit(0);
   } else if (cmd === "gas") {
     // Генерирует готовый код Google Apps Script — точку сбора данных.
