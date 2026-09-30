@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-label="Карточка окна — Стерлитамак, 30 Сен 2026. Фаза: день">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#242a55"/>
+      <stop offset="100%" stop-color="#7a90b8"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ffe9b6" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#ffe9b6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="8"/></filter>
+    <style>@keyframes w{0%,100%{opacity:.8}50%{opacity:1}}.w{animation:w 6s ease-in-out infinite}</style>
+  </defs>
+  <rect width="640" height="420" fill="#242a55"/>
+  <rect x="40" y="24" width="560" height="372" rx="14" fill="url(#sky)"/>
+  <circle cx="320" cy="180" r="40" fill="#fff2c8" opacity="0.9"/>
+  <g stroke="#2a2450" stroke-width="3" opacity="0.4">
+    <line x1="320" y1="24" x2="320" y2="396"/>
+    <line x1="40" y1="210" x2="600" y2="210"/>
+  </g>
+  
+  <text x="320" y="88" text-anchor="middle" font-family="Georgia, serif" font-size="20" letter-spacing="6" fill="#f0dbc0">Стерлитамак</text>
+  <text x="320" y="112" text-anchor="middle" font-family="Georgia, serif" font-size="11" letter-spacing="3" fill="#b8a48c">30 Сен 2026 · день · солнце 17.7°</text>
+  <text x="320" y="238" text-anchor="middle" font-family="Georgia, serif" font-size="12" letter-spacing="3" fill="#ffe9b6" class="w">лампа Авроры · погашена</text>
+  <g font-family="Georgia, serif" font-size="11" fill="#a99ad9">
+    <text x="100" y="318" text-anchor="start">рассвет 05:41</text>
+    <text x="100" y="336" text-anchor="start">восход 06:21</text>
+    <text x="460" y="318" text-anchor="start">закат 17:50</text>
+    <text x="460" y="336" text-anchor="start">сумерки 18:31</text>
+  </g>
+  <text x="320" y="376" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#d6c9b0">«Вот я — в полной силе. Не потому, что меня умоляли, а потому что пришло время.»</text>
+</svg>

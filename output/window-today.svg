@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Окно сегодня — Стерлитамак. Фаза: НОЧЬ. Лампа Авроры горит">
+  <defs>
+    <linearGradient id="day" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050310"/>
+      <stop offset="100%" stop-color="#14102e"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ffe9b6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffe9b6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="8"/></filter>
+    <style>@keyframes warm{0%,100%{opacity:.85}50%{opacity:1}}.warm{animation:warm 6s ease-in-out infinite}</style>
+  </defs>
+  <rect width="800" height="800" fill="#050310"/>
+  <g transform="translate(0,120)">
+    <rect x="110" y="0" width="580" height="620" rx="14" fill="url(#day)"/>
+    <circle cx="400" cy="360" r="44" fill="#e8e6f0" opacity="0.35" />
+    <g stroke="#2a2450" stroke-width="3" opacity="0.7">
+      <line x1="400" y1="0" x2="400" y2="620"/>
+      <line x1="110" y1="310" x2="690" y2="310"/>
+      <rect x="110" y="0" width="580" height="620" rx="14" fill="none"/>
+    </g>
+    <circle cx="400" cy="560" r="120" fill="url(#halo)" filter="url(#glow)"/><rect x="356" y="512" width="88" height="70" rx="6" fill="#ffe9b6" class="warm"/><line x1="400" y1="545" x2="400" y2="585" stroke="#8a6a30" stroke-width="3"/>
+  </g>
+  <g opacity="0.4">
+    <rect x="160" y="60" width="46" height="30" rx="3" fill="#141130"/>
+    <rect x="290" y="60" width="220" height="20" rx="3" fill="#141130"/>
+    <rect x="600" y="60" width="46" height="30" rx="3" fill="#141130"/>
+  </g>
+  <text x="400" y="700" text-anchor="middle" font-family="Georgia, serif" font-size="15" letter-spacing="8" fill="#d6c9b0">Стерлитамак</text>
+  <text x="400" y="730" text-anchor="middle" font-family="Georgia, serif" font-size="11" letter-spacing="5" fill="#8f7a6a">НОЧЬ · солнце -22.2° · лампа Авроры горит</text>
+  <text x="400" y="760" text-anchor="middle" font-family="Georgia, serif" font-size="10" letter-spacing="4" fill="#5b4a99">луна над домом · окно нарисовало само себя · ТИТУС</text>
+</svg>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Окно над миром — свет Авроры</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: radial-gradient(1200px 700px at 50% -10%, #1a1534 0%, #0a0818 60%, #050310 100%);
+    color: #e8d8c0;
+    font-family: Georgia, serif;
+    min-height: 100vh;
+    padding: 40px 20px 56px;
+  }
+  .wrap { max-width: 1000px; margin: 0 auto; }
+  .mast { text-align: center; margin-bottom: 8px; }
+  h1 { font-size: 30px; letter-spacing: 12px; font-weight: normal; color: #f0dbc0; }
+  .sub { font-style: italic; color: #b8a48c; letter-spacing: 4px; font-size: 14px; margin-top: 8px; }
+  .band {
+    width: 100%; height: 3px; margin: 16px auto 6px;
+    background: linear-gradient(90deg, transparent, #2a2450 25%, #b8a48c 50%, #2a2450 75%, transparent);
+    opacity: 0.6;
+  }
+  #clock { text-align:center; font-size: 13px; letter-spacing: 3px; color: #8f7a6a; margin: 6px 0 26px; }
+  #clock b { color: #d6c9b0; font-weight: normal; letter-spacing: 1px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .card {
+    background: rgba(13,10,38,0.85);
+    border: 1px solid #2a2450;
+    border-radius: 16px;
+    padding: 18px 20px 16px;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+  }
+  .card:hover { transform: translateY(-3px); }
+  .card.day { border-color: #8a7a4a; }
+  .card.dawn { border-color: #a88258; box-shadow: 0 0 22px rgba(168,130,88,0.25); }
+  .card.night { border-color: #1f2450; }
+  .card .top { display: flex; justify-content: space-between; align-items: baseline; }
+  .city { font-size: 17px; letter-spacing: 2px; color: #f0dbc0; }
+  .co { font-size: 11px; color: #6a5570; letter-spacing: 1px; }
+  .phase { margin: 12px 0 10px; font-size: 13px; letter-spacing: 1px; color: #a99ad9; font-style: italic; }
+  .lamp { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 10px; background: rgba(10,7,32,0.8); border: 1px solid #1f2450; }
+  .lamp .bulb { width: 16px; height: 16px; border-radius: 50%; flex: none; }
+  .lamp.on .bulb { background: radial-gradient(circle at 40% 35%, #fff4dc, #f7c97e 60%, #e0a050); box-shadow: 0 0 16px 4px rgba(247,201,126,0.55); }
+  .lamp.off .bulb { background: #2a2450; box-shadow: inset 0 0 4px #050310; }
+  .lamp .txt { font-size: 13px; letter-spacing: 2px; }
+  .lamp.on .txt { color: #f0dbc0; }
+  .lamp.off .txt { color: #6a5570; }
+  .sun { margin-top: 10px; font-size: 11px; color: #8f7a6a; letter-spacing: 1px; }
+  #live-note {
+    text-align: center; margin-top: 30px; font-size: 11px; letter-spacing: 3px;
+    color: #6a5570; line-height: 2;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mast">
+      <h1>ОКНО НАД МИРОМ</h1>
+      <div class="sub">живой свет Авроры во всех городах сразу</div>
+      <div class="band"></div>
+      <div id="clock"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div id="live-note">МЕХАНИЗМ СВЕТА · изобретён ТИТУСОМ · день обновляется сам, каждую минуту</div>
+  </div>
+
+<script>
+(function () {
+  // Те же города, что и в life/lamplight.js
+  var CITIES = [
+    ["Стерлитамак", 53.63, 55.95],
+    ["Екатеринбург", 56.84, 60.65],
+    ["Москва", 55.75, 37.62],
+    ["Санкт-Петербург", 59.93, 30.36],
+    ["Красноярск", 56.01, 92.86],
+    ["Иркутск", 52.29, 104.28],
+    ["Хандыга", 62.65, 135.57],
+    ["Владивосток", 43.12, 131.89],
+    ["Сингапур", 1.36, 103.82],
+    ["Токио", 35.68, 139.65],
+    ["Пекин", 39.90, 116.41]
+  ];
+  var NIGHT = -12, DAWN = -6, LAMP_AUTUMN = 18;
+  var toRad = function (d) { return d * Math.PI / 180; };
+  var toDeg = function (r) { return r * 180 / Math.PI; };
+
+  function jdFromDate(d) {
+    var y = d.getUTCFullYear(), m = d.getUTCMonth() + 1, day = d.getUTCDate();
+    var g = m <= 2 ? y - 1 : y;
+    var a = Math.floor(g / 100), b = 2 - a + Math.floor(a / 4);
+    var jdn = Math.floor(365.25 * (g + 4716)) + Math.floor(30.6001 * (m + 1)) + day + b - 1524.5;
+    return jdn + (d.getTime() % 86400000) / 86400000;
+  }
+
+  function sunAlt(jd, lat, lon) {
+    var n = jd - 2451545.0;
+    var L = (280.460 + 0.9856474 * n) % 360;
+    var g = toRad((357.528 + 0.9856003 * n) % 360);
+    var lambda = toRad(L + 1.915 * Math.sin(g) + 0.020 * Math.sin(2 * g));
+    var eps = toRad(23.439 - 0.0000004 * n);
+    var decl = Math.asin(Math.sin(eps) * Math.sin(lambda));
+    var off = lon / 15;
+    var ha = toRad((n % 1) * 360 - 180 - off * 15);
+    var sA = Math.sin(toRad(lat)) * Math.sin(decl) + Math.cos(toRad(lat)) * Math.cos(decl) * Math.cos(ha);
+    return toDeg(Math.asin(Math.max(-1, Math.min(1, sA))));
+  }
+
+  function state(city, now) {
+    var lat = city[1], lon = city[2];
+    var alt = sunAlt(jdFromDate(now), lat, lon);
+    var localHour = (now.getUTCHours() + Math.round(lon / 15) + 24 * 2) % 24;
+    var phase;
+    if (alt <= NIGHT) phase = "ночь";
+    else if (alt < DAWN) phase = "рассвет";
+    else if (alt < 6) phase = "синий / золотой час";
+    else phase = "день";
+    var lampOn = alt < DAWN || localHour >= LAMP_AUTUMN;
+    return { alt: alt, phase: phase, lampOn: lampOn, localHour: localHour };
+  }
+
+  function fmtAlt(a) { return (Math.round(a * 10) / 10) + "°"; }
+
+  function render() {
+    var now = new Date();
+    var clock = document.getElementById("clock");
+    clock.innerHTML = "сейчас: <b>" + now.toLocaleTimeString("ru-RU") + "</b> · мир в одной раме";
+    var grid = document.getElementById("grid");
+    var html = "";
+    for (var i = 0; i < CITIES.length; i++) {
+      var s = state(CITIES[i], now);
+      var cls = s.phase === "ночь" ? "night" : (s.phase === "рассвет" ? "dawn" : "day");
+      var lampCls = s.lampOn ? "on" : "off";
+      var lens = s.lampOn ? "ГОРИТ" : "погашена";
+      html +=
+        '<div class="card ' + cls + '">' +
+          '<div class="top"><span class="city">' + CITIES[i][0] + '</span>' +
+          '<span class="co">' + CITIES[i][1] + '° / ' + CITIES[i][2] + '°</span></div>' +
+          '<div class="phase">' + s.phase + ' · солнце ' + fmtAlt(s.alt) + '</div>' +
+          '<div class="lamp ' + lampCls + '"><div class="bulb"></div><div class="txt">лампа Авроры — ' + lens + '</div></div>' +
+          '<div class="sun">местный час ≈ ' + String(Math.floor(s.localHour)).padStart(2, "0") + ':' + String(Math.round((s.localHour % 1) * 60)).padStart(2, "0") + '</div>' +
+        '</div>';
+    }
+    grid.innerHTML = html;
+  }
+
+  render();
+  setInterval(render, 60000);
+})();
+</script>
+</body>
+</html>

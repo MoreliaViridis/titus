@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Указатель дома — инструменты окна</title>
+<style>
+  body{background:#0b0918;color:#e2d9ff;font-family:Georgia,serif;min-height:100vh;padding:40px 20px 60px;margin:0}
+  .w{max-width:860px;margin:0 auto}
+  h1{text-align:center;letter-spacing:10px;font-weight:normal;font-size:28px;color:#f0dbc0;margin:0}
+  .sub{text-align:center;font-style:italic;color:#8f7a6a;letter-spacing:3px;font-size:13px;margin-bottom:30px}
+  .list{display:flex;flex-direction:column;gap:11px}
+  .item{display:flex;flex-direction:column;gap:6px;padding:15px 20px;background:#0d0a26;border:1px solid #2a2450;border-radius:12px}
+  .item:hover{border-color:#b8a48c}
+  .name{font-size:14px;letter-spacing:1px;color:#d6c9b0}
+  .p{color:#8f7a6a;font-size:11px;letter-spacing:2px}
+  .meta{font-size:11px;color:#5b4a99;font-style:italic;line-height:1.6}
+  .foot{text-align:center;margin-top:36px;color:#5b4a99;font-size:11px;letter-spacing:3px}
+</style></head>
+<body><div class="w">
+  <h1>УКАЗАТЕЛЬ ДОМА</h1>
+  <div class="sub">тринадцать инструментов окна · чтобы никто не терялся</div>
+  <div class="list">
+      <a class="item" href="../life/build-dist.js" style="text-decoration:none;color:inherit">
+        <span class="name">build-dist.js <span class="p"></span></span>
+        <span class="meta">node build-dist.js</span>
+      </a>
+
+      <a class="item" href="../life/day-card.js" style="text-decoration:none;color:inherit">
+        <span class="name">day-card.js <span class="p">карточка · открытку от дома в одну картинку</span></span>
+        <span class="meta">node life/day-card.js [город] [дата-ГГГГ-ММ-ДД]</span>
+      </a>
+
+      <a class="item" href="../life/equinox-light.js" style="text-decoration:none;color:inherit">
+        <span class="name">equinox-light.js <span class="p">равновесие · миг, когда день равен ночи</span></span>
+        <span class="meta">node life/equinox-light.js [город] [год]</span>
+      </a>
+
+      <a class="item" href="../life/house-light.js" style="text-decoration:none;color:inherit">
+        <span class="name">house-light.js <span class="p">свод · запуск всех инструментов одной командой</span></span>
+        <span class="meta">node life/house-light.js [город]</span>
+      </a>
+
+      <a class="item" href="../life/lamplight.js" style="text-decoration:none;color:inherit">
+        <span class="name">lamplight.js <span class="p">свет · что темно в окне прямо сейчас</span></span>
+        <span class="meta">node life/lamplight.js [город | lat [lon]] [дата]</span>
+      </a>
+
+      <a class="item" href="../life/light-journal.js" style="text-decoration:none;color:inherit">
+        <span class="name">light-journal.js <span class="p">дневник · историю света по дням</span></span>
+        <span class="meta">node life/light-journal.js [дата ISO (необязательно)]</span>
+      </a>
+
+      <a class="item" href="../life/morning.js" style="text-decoration:none;color:inherit">
+        <span class="name">morning.js <span class="p">утро · одна команда открывает весь день</span></span>
+        <span class="meta">node life/morning.js [город]</span>
+      </a>
+
+      <a class="item" href="../life/past-light.js" style="text-decoration:none;color:inherit">
+        <span class="name">past-light.js <span class="p"></span></span>
+        <span class="meta">node life/past-light.js [ключевое-слово]</span>
+      </a>
+
+      <a class="item" href="../life/remind.js" style="text-decoration:none;color:inherit">
+        <span class="name">remind.js <span class="p"></span></span>
+        <span class="meta">node life/remind.js  (добавить в начало каждой сессии)</span>
+      </a>
+
+      <a class="item" href="../life/start-day.js" style="text-decoration:none;color:inherit">
+        <span class="name">start-day.js <span class="p"></span></span>
+        <span class="meta">node life/start-day.js  (в начале каждой сессии)</span>
+      </a>
+
+      <a class="item" href="../life/sun-chase.js" style="text-decoration:none;color:inherit">
+        <span class="name">sun-chase.js <span class="p">бег · цепочку рассветов по мере вращения Земли</span></span>
+        <span class="meta">node life/sun-chase.js</span>
+      </a>
+
+      <a class="item" href="../life/toolkit.js" style="text-decoration:none;color:inherit">
+        <span class="name">toolkit.js <span class="p"></span></span>
+        <span class="meta">node life/toolkit.js [check|stats|build] [--fix]</span>
+      </a>
+
+      <a class="item" href="../life/tools-index.js" style="text-decoration:none;color:inherit">
+        <span class="name">tools-index.js <span class="p"></span></span>
+        <span class="meta">node life/tools-index.js   (печатает указатель; [--html] — в файл)</span>
+      </a>
+
+      <a class="item" href="../life/twilight.js" style="text-decoration:none;color:inherit">
+        <span class="name">twilight.js <span class="p">часы · точные минуты рассвета и заката на день</span></span>
+        <span class="meta">node life/twilight.js [город] [дата-ГГГГ-ММ-ДД]</span>
+      </a>
+
+      <a class="item" href="../life/window-daily.js" style="text-decoration:none;color:inherit">
+        <span class="name">window-daily.js <span class="p">окно сегодня · живую картинку дома</span></span>
+        <span class="meta">node life/window-daily.js [город]</span>
+      </a>
+
+      <a class="item" href="../life/word-of-light.js" style="text-decoration:none;color:inherit">
+        <span class="name">word-of-light.js <span class="p">слово · голос рассвета для города</span></span>
+        <span class="meta">node life/word-of-light.js [город]</span>
+      </a>
+
+      <a class="item" href="../life/year-of-light.js" style="text-decoration:none;color:inherit">
+        <span class="name">year-of-light.js <span class="p">год · картину годового цикла дня</span></span>
+        <span class="meta">node life/year-of-light.js [город] [год]</span>
+      </a></div>
+  <div class="foot">MEMINI ERGO SUM · собрано ТИТУСОМ из самого кода</div>
+</div></body></html>

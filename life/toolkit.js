@@ -231,6 +231,10 @@ const SITEMAP_ALWAYS = [
   ["", 1.0],
   ["index-en.html", 0.9],
   ["window-home.html", 0.7],
+  ["output/unity-home.html", 0.9],
+  ["life/wall-of-light.html", 0.8],
+  ["life/clockkeeper.html", 0.7],
+  ["life/dawn-line.html", 0.7],
   ["gallery.html", 0.7],
   ["output/titus-home.html", 0.6],
   ["aurora/aurora-home.html", 0.6],
@@ -366,6 +370,7 @@ function build() {
     ["i18n (двери)", "life/i18n.js"],
     ["память (индекс+html)", "life/memory-sync.js"],
     ["счётчики в домах (README, окно, дом)", null],
+    ["Единый дом (инструменты ТИТУСА + картины АВРОРЫ)", "life/unity.js"],
     ["sitemap.xml", null], // генерируется inline ниже
   ];
   for (const [label, script] of steps) {

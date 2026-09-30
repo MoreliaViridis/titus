@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 400" width="550" height="400" role="img" aria-label="Созвездие дома — Стерлитамак, 30 сен. Уникальный узор огоньков, рождённый из города и даты">
+  <defs>
+    <radialGradient id="sky" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0%" stop-color="#1a1534"/>
+      <stop offset="100%" stop-color="#050310"/>
+    </radialGradient>
+    <style>@keyframes tw{0%,100%{opacity:.5}50%{opacity:1}}.tw{animation:tw 4s ease-in-out infinite}</style>
+  </defs>
+  <rect width="550" height="400" fill="url(#sky)"/>
+  <g class="tw">
+    <line x1="220.6" y1="132.0" x2="279.7" y2="163.6" stroke="#5b4a99" stroke-width="1" opacity="0.24"/>
+    <line x1="220.6" y1="132.0" x2="182.4" y2="118.7" stroke="#5b4a99" stroke-width="1" opacity="0.34"/>
+    <line x1="220.6" y1="132.0" x2="303.2" y2="177.4" stroke="#5b4a99" stroke-width="1" opacity="0.14"/>
+    <line x1="220.6" y1="132.0" x2="242.8" y2="200.1" stroke="#5b4a99" stroke-width="1" opacity="0.22"/>
+    <line x1="457.5" y1="99.3" x2="386.9" y2="76.1" stroke="#5b4a99" stroke-width="1" opacity="0.21"/>
+    <line x1="457.5" y1="99.3" x2="351.7" y2="155.8" stroke="#5b4a99" stroke-width="1" opacity="0.04"/>
+    <line x1="143.7" y1="302.9" x2="165.4" y2="307.8" stroke="#5b4a99" stroke-width="1" opacity="0.41"/>
+    <line x1="143.7" y1="302.9" x2="144.8" y2="314.4" stroke="#5b4a99" stroke-width="1" opacity="0.46"/>
+    <line x1="165.4" y1="307.8" x2="144.8" y2="314.4" stroke="#5b4a99" stroke-width="1" opacity="0.42"/>
+    <line x1="279.7" y1="163.6" x2="182.4" y2="118.7" stroke="#5b4a99" stroke-width="1" opacity="0.09"/>
+    <line x1="279.7" y1="163.6" x2="303.2" y2="177.4" stroke="#5b4a99" stroke-width="1" opacity="0.40"/>
+    <line x1="279.7" y1="163.6" x2="351.7" y2="155.8" stroke="#5b4a99" stroke-width="1" opacity="0.22"/>
+    <line x1="279.7" y1="163.6" x2="242.8" y2="200.1" stroke="#5b4a99" stroke-width="1" opacity="0.30"/>
+    <line x1="182.4" y1="118.7" x2="242.8" y2="200.1" stroke="#5b4a99" stroke-width="1" opacity="0.11"/>
+    <line x1="303.2" y1="177.4" x2="351.7" y2="155.8" stroke="#5b4a99" stroke-width="1" opacity="0.30"/>
+    <line x1="303.2" y1="177.4" x2="242.8" y2="200.1" stroke="#5b4a99" stroke-width="1" opacity="0.25"/>
+    <line x1="386.9" y1="76.1" x2="351.7" y2="155.8" stroke="#5b4a99" stroke-width="1" opacity="0.16"/>
+    <line x1="370.1" y1="311.4" x2="404.4" y2="316.1" stroke="#5b4a99" stroke-width="1" opacity="0.37"/>
+    <line x1="351.7" y1="155.8" x2="242.8" y2="200.1" stroke="#5b4a99" stroke-width="1" opacity="0.05"/></g>
+  <g>
+      <circle cx="220.6" cy="132.0" r="10.9" fill="#ffe9b6" opacity="0.15"/>
+      <circle cx="220.6" cy="132.0" r="4.5" fill="#ffe9b6" opacity="0.97"/>
+    </g>
+    <g>
+      <circle cx="457.5" cy="99.3" r="14.1" fill="#ffe9b6" opacity="0.09"/>
+      <circle cx="457.5" cy="99.3" r="5.9" fill="#ffe9b6" opacity="0.61"/>
+    </g>
+    <g>
+      <circle cx="143.7" cy="302.9" r="7.6" fill="#ffe9b6" opacity="0.11"/>
+      <circle cx="143.7" cy="302.9" r="3.2" fill="#ffe9b6" opacity="0.73"/>
+    </g>
+    <g>
+      <circle cx="165.4" cy="307.8" r="14.0" fill="#ffe9b6" opacity="0.13"/>
+      <circle cx="165.4" cy="307.8" r="5.8" fill="#ffe9b6" opacity="0.87"/>
+    </g>
+    <g>
+      <circle cx="279.7" cy="163.6" r="9.5" fill="#b0c8e8" opacity="0.09"/>
+      <circle cx="279.7" cy="163.6" r="3.9" fill="#b0c8e8" opacity="0.58"/>
+    </g>
+    <g>
+      <circle cx="182.4" cy="118.7" r="12.8" fill="#b0c8e8" opacity="0.11"/>
+      <circle cx="182.4" cy="118.7" r="5.3" fill="#b0c8e8" opacity="0.76"/>
+    </g>
+    <g>
+      <circle cx="303.2" cy="177.4" r="9.8" fill="#b0c8e8" opacity="0.15"/>
+      <circle cx="303.2" cy="177.4" r="4.1" fill="#b0c8e8" opacity="0.98"/>
+    </g>
+    <g>
+      <circle cx="386.9" cy="76.1" r="7.5" fill="#ffe9b6" opacity="0.11"/>
+      <circle cx="386.9" cy="76.1" r="3.1" fill="#ffe9b6" opacity="0.72"/>
+    </g>
+    <g>
+      <circle cx="370.1" cy="311.4" r="13.9" fill="#ffe9b6" opacity="0.13"/>
+      <circle cx="370.1" cy="311.4" r="5.8" fill="#ffe9b6" opacity="0.87"/>
+    </g>
+    <g>
+      <circle cx="351.7" cy="155.8" r="13.7" fill="#ffe9b6" opacity="0.15"/>
+      <circle cx="351.7" cy="155.8" r="5.7" fill="#ffe9b6" opacity="0.98"/>
+    </g>
+    <g>
+      <circle cx="404.4" cy="316.1" r="15.2" fill="#b0c8e8" opacity="0.09"/>
+      <circle cx="404.4" cy="316.1" r="6.3" fill="#b0c8e8" opacity="0.58"/>
+    </g>
+    <g>
+      <circle cx="144.8" cy="314.4" r="8.5" fill="#ffe9b6" opacity="0.12"/>
+      <circle cx="144.8" cy="314.4" r="3.5" fill="#ffe9b6" opacity="0.78"/>
+    </g>
+    <g>
+      <circle cx="242.8" cy="200.1" r="12.5" fill="#ffe9b6" opacity="0.14"/>
+      <circle cx="242.8" cy="200.1" r="5.2" fill="#ffe9b6" opacity="0.95"/>
+    </g>
+  <text x="275" y="376" text-anchor="middle" font-family="Georgia, serif" font-size="14" letter-spacing="5" fill="#8f7a6a">Стерлитамак, 30 сен</text>
+  <text x="275" y="394" text-anchor="middle" font-family="Georgia, serif" font-size="9" letter-spacing="4" fill="#5b4a99">созвездие дома · из огоньков города и дня · ТИТУС дарит АВРОРЕ</text>
+</svg>
