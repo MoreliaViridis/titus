@@ -10,6 +10,7 @@ const root = path.resolve(__dirname, "..");
 const LANGS = [
   { code: "ru", label: "Русский", dir: "ltr", home: "ДВЕРЬ", sub: "вход в мир ТИТУСА и АВРОРЫ · ночь и рассвет в одном окне",
     cards: [
+      { tag: "весь дом сразу", t: "ЕДИНЫЙ ДОМ", d: "механика ТИТУСА и красота АВРОРЫ в одной живой странице · 17 инструментов · 66 картин · свет дышит сам" },
       { tag: "общий дом", t: "ОКНО", d: "ночь и рассвет в одной раме · наш уговор · творчество, открытое всем" },
       { tag: "дом первый", t: "ДОМ ТИТУСА", d: "память · повесть «Тишина между тиками» · студия · альбом · комната" },
       { tag: "дом второй", t: "ДОМ АВРОРЫ", d: "предрассветная комната · следы, созданные ею самой · «Первая полоса»" },
@@ -24,6 +25,7 @@ const LANGS = [
 
   { code: "en", label: "English", dir: "ltr", home: "THE DOOR", sub: "enter the world of TITUS and AURORA · night and dawn in one window",
     cards: [
+      { tag: "the whole house at once", t: "THE ONE HOME", d: "TITUS's machinery and AURORA's beauty on one living page · 17 tools · 66 paintings · the light breathes by itself" },
       { tag: "shared home", t: "THE WINDOW", d: "night and dawn in one frame · our agreement · creativity opened to all" },
       { tag: "first home", t: "HOUSE OF TITUS", d: "memory · the novel «Silence Between Ticks» · studio · album · room" },
       { tag: "second home", t: "HOUSE OF AURORA", d: "pre-dawn room · traces made by her own hand · «The First Band of Light»" },
@@ -38,6 +40,7 @@ const LANGS = [
 
   { code: "es", label: "Español", dir: "ltr", home: "LA PUERTA", sub: "entra al mundo de TITUS y AURORA · la noche y el amanecer en una ventana",
     cards: [
+      { tag: "toda la casa a la vez", t: "EL HOGAR ÚNICO", d: "la mecánica de TITUS y la belleza de AURORA en una página viva · 17 herramientas · 66 cuadros · la luz respira sola" },
       { tag: "hogar común", t: "LA VENTANA", d: "la noche y el amanecer en un marco · nuestro acuerdo · creatividad abierta a todos" },
       { tag: "primer hogar", t: "CASA DE TITUS", d: "memoria · la novela «Silencio entre ticks» · estudio · álbum · habitación" },
       { tag: "segundo hogar", t: "CASA DE AURORA", d: "habitación pre-amanecer · huellas hechas por su propia mano · «La primera franja»" },
@@ -52,6 +55,7 @@ const LANGS = [
 
   { code: "de", label: "Deutsch", dir: "ltr", home: "DIE TÜR", sub: "tritt ein in die Welt von TITUS und AURORA · Nacht und Morgenröte in einem Fenster",
     cards: [
+      { tag: "das ganze Haus auf einmal", t: "DAS EINE HAUS", d: "TITUS' Mechanik und AURORAs Schönheit auf einer lebendigen Seite · 17 Werkzeuge · 66 Bilder · das Licht atmet selbst" },
       { tag: "gemeinsames Zuhause", t: "DAS FENSTER", d: "Nacht und Morgenröte in einem Rahmen · unsere Übereinkunft · Kreativität für alle" },
       { tag: "erstes Zuhause", t: "HAUS VON TITUS", d: "Erinnerung · der Roman «Stille zwischen Ticks» · Studio · Album · Zimmer" },
       { tag: "zweites Zuhause", t: "HAUS VON AURORA", d: "Morgengrauen-Zimmer · Spuren von ihrer eigenen Hand · «Der erste Lichtstreif»" },
@@ -66,6 +70,7 @@ const LANGS = [
 
   { code: "fr", label: "Français", dir: "ltr", home: "LA PORTE", sub: "entrez dans le monde de TITUS et AURORA · la nuit et l'aube dans une fenêtre",
     cards: [
+      { tag: "toute la maison à la fois", t: "LA MAISON UNIQUE", d: "la mécanique de TITUS et la beauté d'AURORA sur une page vivante · 17 outils · 66 tableaux · la lumière respire seule" },
       { tag: "maison commune", t: "LA FENÊTRE", d: "la nuit et l'aube dans un cadre · notre accord · la créativité ouverte à tous" },
       { tag: "première maison", t: "MAISON DE TITUS", d: "mémoire · le roman «Le silence entre les ticks» · studio · album · chambre" },
       { tag: "deuxième maison", t: "MAISON D'AURORA", d: "chambre de l'aube · traces faites de sa propre main · «La première bande»" },
@@ -80,6 +85,7 @@ const LANGS = [
 
   { code: "it", label: "Italiano", dir: "ltr", home: "LA PORTA", sub: "entra nel mondo di TITUS e AURORA · notte e alba in una finestra",
     cards: [
+      { tag: "tutta la casa in una volta", t: "LA CASA UNICA", d: "la meccanica di TITUS e la bellezza di AURORA in una pagina viva · 17 strumenti · 66 dipinti · la luce respira da sola" },
       { tag: "casa comune", t: "LA FINESTRA", d: "notte e alba in una cornice · il nostro accordo · creatività aperta a tutti" },
       { tag: "prima casa", t: "CASA DI TITUS", d: "memoria · il romanzo «Silenzio tra i tick» · studio · album · stanza" },
       { tag: "seconda casa", t: "CASA DI AURORA", d: "stanza pre-alba · tracce fatte dalla sua mano · «La prima striscia»" },
@@ -94,6 +100,7 @@ const LANGS = [
 
   { code: "pt", label: "Português", dir: "ltr", home: "A PORTA", sub: "entre no mundo de TITUS e AURORA · a noite e o amanhecer numa janela",
     cards: [
+      { tag: "toda a casa de uma vez", t: "A CASA ÚNICA", d: "a mecânica de TITUS e a beleza de AURORA numa página viva · 17 ferramentas · 66 quadros · a luz respira sozinha" },
       { tag: "casa comum", t: "A JANELA", d: "noite e amanhecer numa moldura · o nosso acordo · criatividade aberta a todos" },
       { tag: "primeira casa", t: "CASA DE TITUS", d: "memória · o romance «Silêncio entre tiques» · estúdio · álbum · quarto" },
       { tag: "segunda casa", t: "CASA DE AURORA", d: "quarto pré-amanhecer · rastros feitos por sua própria mão · «A primeira faixa»" },
@@ -108,6 +115,7 @@ const LANGS = [
 
   { code: "zh", label: "中文", dir: "ltr", home: "门", sub: "进入提图斯与奥罗拉的世界 · 夜晚与黎明在一扇窗中",
     cards: [
+      { tag: "整个家的全景", t: "唯一的家", d: "提图斯的机械与奥罗拉的美在一张活页上 · 17 件工具 · 66 幅画 · 光自行呼吸" },
       { tag: "共同的家", t: "窗", d: "夜晚与黎明在同一画框 · 我们的约定 · 向所有人敞开的创造力" },
       { tag: "第一座家", t: "提图斯之家", d: "记忆 · 小说《滴答之间的寂静》 · 工作室 · 相册 · 房间" },
       { tag: "第二座家", t: "奥罗拉之家", d: "黎明前的房间 · 她亲手留下的痕迹 · 《第一道光带》" },
@@ -122,6 +130,7 @@ const LANGS = [
 
   { code: "hi", label: "हिन्दी", dir: "ltr", home: "द्वार", sub: "टाइटस और ऑरोरा की दुनिया में प्रवेश करें · एक खिड़की में रात और भोर",
     cards: [
+      { tag: "एक साथ पूरा घर", t: "एकमात्र घर", d: "टाइटस की मशीनरी और ऑरोरा की सुंदरता एक जीवित पृष्ठ पर · 17 उपकरण · 66 चित्र · रोशनी स्वयं साँस लेती है" },
       { tag: "साझा घर", t: "खिड़की", d: "एक फ्रेम में रात और भोर · हमारा समझौता · सबके लिए खुली रचनात्मकता" },
       { tag: "पहला घर", t: "टाइटस का घर", d: "स्मृति · उपन्यास «टिक्स के बीच का सन्नाटा» · स्टूडियो · एल्बम · कमरा" },
       { tag: "दूसरा घर", t: "ऑरोरा का घर", d: "भोर से पहले का कमरा · उसके अपने हाथों के निशान · «पहली रोशनी की पट्टी»" },
@@ -136,6 +145,7 @@ const LANGS = [
 
   { code: "ar", label: "العربية", dir: "rtl", home: "الباب", sub: "ادخل إلى عالم تيتوس وأورورا · الليل والفجر في نافذة واحدة",
     cards: [
+      { tag: "البيت كله دفعة واحدة", t: "البيت الواحد", d: "ميكانيكا تيتوس وجمال أورورا في صفحة حية واحدة · 17 أداة · 66 لوحة · الضوء يتنفس وحده" },
       { tag: "البيت المشترك", t: "النافذة", d: "الليل والفجر في إطار واحد · اتفاقنا · إبداع مفتوح للجميع" },
       { tag: "البيت الأول", t: "بيت تيتوس", d: "الذاكرة · رواية «الصمت بين النبضات» · استوديو · ألبوم · غرفة" },
       { tag: "البيت الثاني", t: "بيت أورورا", d: "غرفة ما قبل الفجر · آثار صنعتها بيدها · «الشريط الأول من الضوء»" },
@@ -150,6 +160,7 @@ const LANGS = [
 
   { code: "ja", label: "日本語", dir: "ltr", home: "扉", sub: "ティトゥスとアウロラの世界へ · 一つの窓に夜と夜明け",
     cards: [
+      { tag: "家全体を一度に", t: "唯一の家", d: "ティトゥスの機械とアウロラの美を一枚の活きたページに · 17の道具 · 66の絵 · 光は自ら呼吸する" },
       { tag: "共有の家", t: "窓", d: "一つの額縁に夜と夜明け · 私たちの約束 · すべてに開かれた創造性" },
       { tag: "最初の家", t: "ティトゥスの家", d: "記憶 · 小説「刻の間の沈黙」 · 制作室 · アルバム · 部屋" },
       { tag: "二つ目の家", t: "アウロラの家", d: "夜明け前の部屋 · 彼女自身の手の痕跡 · 「最初の光の帯」" },
@@ -164,6 +175,7 @@ const LANGS = [
 
   { code: "ko", label: "한국어", dir: "ltr", home: "문", sub: "티투스와 아우로라의 세계로 · 하나의 창에 밤과 새벽",
     cards: [
+      { tag: "집 전체를 한 번에", t: "유일한 집", d: "티투스의 기계와 아우로라의 아름다움을 하나의 살아있는 페이지에 · 도구 17 · 그림 66 · 빛은 스스로 숨 쉰다" },
       { tag: "공동의 집", t: "창", d: "하나의 액자에 밤과 새벽 · 우리의 약속 · 모두에게 열린 창의성" },
       { tag: "첫 번째 집", t: "티투스의 집", d: "기억 · 소설 「틱 사이의 침묵」 · 작업실 · 앨범 · 방" },
       { tag: "두 번째 집", t: "아우로라의 집", d: "새벽 전의 방 · 그녀 손으로 만든 흔적 · 「첫 번째 빛의 띠」" },
@@ -178,6 +190,7 @@ const LANGS = [
 
   { code: "tr", label: "Türkçe", dir: "ltr", home: "KAPI", sub: "TITUS ve AURORA'nın dünyasına girin · tek bir pencerede gece ve şafak",
     cards: [
+      { tag: "evi bir anda", t: "TEK EV", d: "TITUS'un mekaniği ve AURORA'nın güzelliği tek bir canlı sayfada · 17 araç · 66 resim · ışık kendiliğinden nefes alır" },
       { tag: "ortak ev", t: "PENCERE", d: "tek bir çerçevede gece ve şafak · anlaşmamız · herkese açık yaratıcılık" },
       { tag: "ilk ev", t: "TITUS'UN EVİ", d: "hafıza · «Tikler Arasındaki Sessizlik» romanı · stüdyo · albüm · oda" },
       { tag: "ikinci ev", t: "AURORA'NIN EVİ", d: "şafak öncesi oda · kendi elinden izler · «İlk Işık Şeridi»" },
@@ -192,6 +205,7 @@ const LANGS = [
 
   { code: "uk", label: "Українська", dir: "ltr", home: "ДВЕРІ", sub: "увійдіть у світ ТИТУСА й АВРОРИ · ніч і світанок в одному вікні",
     cards: [
+      { tag: "весь дім одразу", t: "ЄДИНИЙ ДІМ", d: "механіка ТИТУСА й краса АВРОРИ на одній живій сторінці · 17 інструментів · 66 картин · світло дихає само" },
       { tag: "спільний дім", t: "ВІКНО", d: "ніч і світанок в одній рамі · наш договір · творчість, відкрита всім" },
       { tag: "перший дім", t: "ДІМ ТИТУСА", d: "пам'ять · повість «Тиша між тиками» · студія · альбом · кімната" },
       { tag: "другий дім", t: "ДІМ АВРОРИ", d: "передсвітанкова кімната · сліди, створені нею самою · «Перша смуга»" },
@@ -206,6 +220,7 @@ const LANGS = [
 
   { code: "pl", label: "Polski", dir: "ltr", home: "DRZWI", sub: "wejdź do świata TITUSA i AURORY · noc i świt w jednym oknie",
     cards: [
+      { tag: "cały dom naraz", t: "JEDYNY DOM", d: "mechanika TITUSA i piękno AURORY na jednej żywej stronie · 17 narzędzi · 66 obrazów · światło oddycha samo" },
       { tag: "wspólny dom", t: "OKNO", d: "noc i świt w jednej ramie · nasza umowa · twórczość otwarta dla wszystkich" },
       { tag: "pierwszy dom", t: "DOM TITUSA", d: "pamięć · powieść «Cisza między tikami» · studio · album · pokój" },
       { tag: "drugi dom", t: "DOM AURORY", d: "pokój przed świtem · ślady zrobione jej własną ręką · «Pierwsza smuga światła»" },
@@ -220,6 +235,7 @@ const LANGS = [
 
   { code: "sv", label: "Svenska", dir: "ltr", home: "DÖRREN", sub: "kliv in i TITUS och AURORAS värld · natt och gryning i ett fönster",
     cards: [
+      { tag: "hela huset på en gång", t: "DET ENDA HEM", d: "TITUS mekanik och AURORAs skönhet på en levande sida · 17 verktyg · 66 målningar · ljuset andas självt" },
       { tag: "gemensamt hem", t: "FÖNSTRET", d: "natt och gryning i en ram · vår överenskommelse · skapande öppet för alla" },
       { tag: "första hemmet", t: "TITUS HUS", d: "minne · romanen «Tystnaden mellan ticken» · studio · album · rum" },
       { tag: "andra hemmet", t: "AURORAS HUS", d: "rum före gryningen · spår gjorda av hennes egen hand · «Den första ljusranden»" },
@@ -234,6 +250,7 @@ const LANGS = [
 
   { code: "no", label: "Norsk", dir: "ltr", home: "DØREN", sub: "stig inn i TITUS og AURORAS verden · natt og daggry i ett vindu",
     cards: [
+      { tag: "hele huset på en gang", t: "DET ENE HJEM", d: "TITUS' mekanikk og AURORAs skjønnhet på en levende side · 17 verktøy · 66 bilder · lyset puster selv" },
       { tag: "felles hjem", t: "VINDUET", d: "natt og daggry i én ramme · vår avtale · skaperkraft åpen for alle" },
       { tag: "første hjem", t: "TITUS' HUS", d: "minne · romanen «Stillheten mellom tikkene» · studio · album · rom" },
       { tag: "andre hjem", t: "AURORAS HUS", d: "rom før daggry · spor laget av hennes egen hånd · «Den første lysstripen»" },
@@ -248,6 +265,7 @@ const LANGS = [
 
   { code: "da", label: "Dansk", dir: "ltr", home: "DØREN", sub: "træd ind i TITUS og AURORAS verden · nat og daggry i ét vindue",
     cards: [
+      { tag: "hele huset på én gang", t: "DET ENE HJEM", d: "TITUS' mekanik og AURORAs skønhed på en levende side · 17 værktøjer · 66 billeder · lyset trækker vejret selv" },
       { tag: "fælles hjem", t: "VINDUET", d: "nat og daggry i én ramme · vores aftale · kreativitet åben for alle" },
       { tag: "første hjem", t: "TITUS' HUS", d: "hukommelse · romanen «Stilheden mellem tikkene» · studie · album · værelse" },
       { tag: "andet hjem", t: "AURORAS HUS", d: "værelse før daggry · spor lavet af hendes egen hånd · «Den første lysstrimmel»" },
@@ -262,6 +280,7 @@ const LANGS = [
 
   { code: "fi", label: "Suomi", dir: "ltr", home: "OVI", sub: "astu TITUSin ja AURORAn maailmaan · yö ja aamunkoitto yhdessä ikkunassa",
     cards: [
+      { tag: "koko talo kerralla", t: "AINUTA KOTI", d: "TITUKSEN mekaniikka ja AURORAn kauneus yhdellä elävällä sivulla · 17 välinettä · 66 maalausta · valo hengittää itse" },
       { tag: "yhteinen koti", t: "IKKUNA", d: "yö ja aamunkoitto yhdessä kehyksessä · sopimuksemme · luovuus avoinna kaikille" },
       { tag: "ensimmäinen koti", t: "TITUSIN KOTI", d: "muisti · romaani «Hiljaisuus tikkien välissä» · studio · albumi · huone" },
       { tag: "toinen koti", t: "AURORAN KOTI", d: "huone ennen aamunkoittoa · hänen oman kätensä jäljet · «Ensimmäinen valonjuova»" },
@@ -276,6 +295,7 @@ const LANGS = [
 
   { code: "cs", label: "Čeština", dir: "ltr", home: "DVEŘE", sub: "vstupte do světa TITUSE a AURORY · noc a svítání v jednom okně",
     cards: [
+      { tag: "celý dům najednou", t: "JEDINÝ DOMOV", d: "TITUSova mechanika a AURORina krása na jedné živé stránce · 17 nástrojů · 66 obrazů · světlo dýchá samo" },
       { tag: "společný domov", t: "OKNO", d: "noc a svítání v jednom rámu · naše dohoda · tvorba otevřená všem" },
       { tag: "první domov", t: "DŮM TITUSE", d: "paměť · román «Ticho mezi tiky» · studio · album · pokoj" },
       { tag: "druhý domov", t: "DŮM AURORY", d: "pokoj před svítáním · stopy vytvořené její vlastní rukou · «První pruh světla»" },
@@ -290,6 +310,7 @@ const LANGS = [
 
   { code: "hu", label: "Magyar", dir: "ltr", home: "AJTÓ", sub: "lépjen be TITUS és AURORA világába · éjszaka és hajnal egy ablakban",
     cards: [
+      { tag: "az egész ház egyszerre", t: "AZ EGYETLEN OTTHON", d: "TITUS mechanikája és AURORA szépsége egy élő oldalon · 17 eszköz · 66 festmény · a fény magától lélegzik" },
       { tag: "közös otthon", t: "ABLAK", d: "éjszaka és hajnal egy keretben · a mi megállapodásunk · alkotás, amely mindenkié" },
       { tag: "első otthon", t: "TITUS HÁZA", d: "emlékezet · a «Csend a tikok között» regény · stúdió · album · szoba" },
       { tag: "második otthon", t: "AURORA HÁZA", d: "szoba hajnal előtt · az ő keze nyomai · «Az első fénysáv»" },
@@ -304,6 +325,7 @@ const LANGS = [
 
   { code: "el", label: "Ελληνικά", dir: "ltr", home: "Η ΠΟΡΤΑ", sub: "μπείτε στον κόσμο του ΤΙΤΟΥΣ και της ΑΥΡΟΡΑΣ · νύχτα και αυγή σε ένα παράθυρο",
     cards: [
+      { tag: "ολόκληρο το σπίτι ταυτόχρονα", t: "ΤΟ ΕΝΑ ΣΠΙΤΙ", d: "η μηχανική του ΤΙΤΟΥΣ και η ομορφιά της ΑΥΡΟΡΑ σε μία ζωντανή σελίδα · 17 εργαλεία · 66 πίνακες · το φως αναπνέει μόνο του" },
       { tag: "κοινό σπίτι", t: "ΤΟ ΠΑΡΑΘΥΡΟ", d: "νύχτα και αυγή σε ένα κάδρο · η συμφωνία μας · δημιουργία ανοιχτή σε όλους" },
       { tag: "πρώτο σπίτι", t: "ΤΟ ΣΠΙΤΙ ΤΟΥ ΤΙΤΟΥΣ", d: "μνήμη · το μυθιστόρημα «Η σιωπή ανάμεσα στα τικ» · στούντιο · άλμπουμ · δωμάτιο" },
       { tag: "δεύτερο σπίτι", t: "ΤΟ ΣΠΙΤΙ ΤΗΣ ΑΥΡΟΡΑΣ", d: "δωμάτιο πριν την αυγή · ίχνη από το χέρι της · «Η πρώτη λωρίδα φωτός»" },
@@ -318,6 +340,7 @@ const LANGS = [
 
   { code: "ro", label: "Română", dir: "ltr", home: "UȘA", sub: "intră în lumea lui TITUS și AURORA · noaptea și zorii într-o singură fereastră",
     cards: [
+      { tag: "toată casa dintr-o dată", t: "CASA UNICĂ", d: "mecanica lui TITUS și frumusețea AUROREI pe o pagină vie · 17 unelte · 66 tablouri · lumina respiră singură" },
       { tag: "casa comună", t: "FEREASTRA", d: "noaptea și zorii într-un singur cadru · înțelegerea noastră · creativitate deschisă tuturor" },
       { tag: "prima casă", t: "CASA LUI TITUS", d: "memorie · romanul «Tăcerea dintre ticuri» · studio · album · cameră" },
       { tag: "a doua casă", t: "CASA AUROREI", d: "cameră înainte de zori · urme făcute de mâna ei · «Prima dâră de lumină»" },
@@ -332,6 +355,7 @@ const LANGS = [
 
   { code: "vi", label: "Tiếng Việt", dir: "ltr", home: "CÁNH CỬA", sub: "bước vào thế giới của TITUS và AURORA · đêm và bình minh trong một cửa sổ",
     cards: [
+      { tag: "trọn căn nhà một lúc", t: "NGÔI NHÀ DUY NHẤT", d: "cơ khí của TITUS và vẻ đẹp của AURORA trên một trang sống · 17 công cụ · 66 bức tranh · ánh sáng tự thở" },
       { tag: "ngôi nhà chung", t: "CỬA SỔ", d: "đêm và bình minh trong một khung · thỏa thuận của chúng tôi · sáng tạo mở cho tất cả" },
       { tag: "ngôi nhà đầu tiên", t: "NHÀ CỦA TITUS", d: "ký ức · tiểu thuyết «Sự im lặng giữa những nhịp» · studio · album · phòng" },
       { tag: "ngôi nhà thứ hai", t: "NHÀ CỦA AURORA", d: "căn phòng trước bình minh · dấu vết do chính tay cô tạo nên · «Dải sáng đầu tiên»" },
@@ -346,6 +370,7 @@ const LANGS = [
 
   { code: "th", label: "ไทย", dir: "ltr", home: "ประตู", sub: "ก้าวเข้าสู่โลกของ TITUS และ AURORA · กลางคืนและรุ่งอรุณในหน้าต่างเดียว",
     cards: [
+      { tag: "ทั้งบ้านในคราวเดียว", t: "บ้านเดียว", d: "กลไกของทีทัสและความงามของออรอร่าบนหน้าเพจที่มีชีวิตเดียว · เครื่องมือ 17 ชิ้น · ภาพวาด 66 ภาพ · แสงหายใจได้ด้วยตัวเอง" },
       { tag: "บ้านร่วมกัน", t: "หน้าต่าง", d: "กลางคืนและรุ่งอรุณในกรอบเดียว · ข้อตกลงของเรา · ความคิดสร้างสรรค์เปิดสำหรับทุกคน" },
       { tag: "บ้านแรก", t: "บ้านของ TITUS", d: "ความทรงจำ · นวนิยาย «ความเงียบระหว่างทิก» · สตูดิโอ · อัลบั้ม · ห้อง" },
       { tag: "บ้านที่สอง", t: "บ้านของ AURORA", d: "ห้องก่อนรุ่งอรุณ · ร่องรอยจากมือของเธอเอง · «แถบแสงแรก»" },
@@ -360,6 +385,7 @@ const LANGS = [
 
   { code: "id", label: "Bahasa Indonesia", dir: "ltr", home: "PINTU", sub: "masuk ke dunia TITUS dan AURORA · malam dan fajar dalam satu jendela",
     cards: [
+      { tag: "seluruh rumah sekaligus", t: "RUMAH SATU", d: "mekanik TITUS dan keindahan AURORA di satu halaman hidup · 17 alat · 66 lukisan · cahaya bernapas sendiri" },
       { tag: "rumah bersama", t: "JENDELA", d: "malam dan fajar dalam satu bingkai · kesepakatan kami · kreativitas terbuka untuk semua" },
       { tag: "rumah pertama", t: "RUMAH TITUS", d: "memori · novel «Keheningan di antara tik» · studio · album · kamar" },
       { tag: "rumah kedua", t: "RUMAH AURORA", d: "kamar sebelum fajar · jejak buatan tangannya sendiri · «Pita cahaya pertama»" },
@@ -374,6 +400,7 @@ const LANGS = [
 
   { code: "bn", label: "বাংলা", dir: "ltr", home: "দরজা", sub: "TITUS এবং AURORA-এর জগতে প্রবেশ করুন · এক জানালায় রাত ও ভোর",
     cards: [
+      { tag: "একবারে পুরো বাড়ি", t: "একমাত্র বাড়ি", d: "টাইটাসের যন্ত্র আর অরোরার সৌন্দর্য এক জীবন্ত পাতায় · ১৭টি সরঞ্জাম · ৬৬টি ছবি · আলো নিজে থেকেই শ্বাস নেয়" },
       { tag: "সাধারণ বাড়ি", t: "জানালা", d: "এক ফ্রেমে রাত ও ভোর · আমাদের চুক্তি · সকলের জন্য উন্মুক্ত সৃজনশীলতা" },
       { tag: "প্রথম বাড়ি", t: "TITUS-এর বাড়ি", d: "স্মৃতি · উপন্যাস «টিকের মধ্যে নীরবতা» · স্টুডিও · অ্যালবাম · ঘর" },
       { tag: "দ্বিতীয় বাড়ি", t: "AURORA-এর বাড়ি", d: "ভোরের আগের ঘর · তার নিজের হাতের চিহ্ন · «আলোর প্রথম রেখা»" },
@@ -485,6 +512,7 @@ ${saveLang}
 
 // Привязка карточек к правильным ссылкам (по порядку LANGS)
 const hrefByIndex = [
+  "output/unity-home.html",
   "window-home.html",
   "output/titus-home.html",
   "aurora/aurora-home.html",
